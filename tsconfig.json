@@ -1,25 +1,23 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "es6",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "jsx": "react",
     "allowJs": true,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react",
     "sourceMap": true,
     "declaration": true,
-    "rootDir": ".",
     "outDir": "./lib",
-    "baseUrl": "src",
+
+    "baseUrl": "./src",
     "paths": {
       "components": ["components"],
       "components/*": ["components/*"],
@@ -32,6 +30,6 @@
     },
     "typeRoots": ["./src/types", "./node_modules/@types"]
   },
-  "include": ["src", "declaration.d.ts"],
-  "exclude": ["node_modules", "lib"]
+  "include": ["src"],
+  "exclude": ["node_modules", "lib", "./src/stories"]
 }

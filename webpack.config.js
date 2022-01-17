@@ -1,11 +1,11 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
   mode: 'production',
-  context: path.resolve(__dirname, 'src'),
-  entry: './index.ts',
+  entry: './src/index.ts',
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'lib'),
@@ -29,7 +29,8 @@ module.exports = {
   },
 
   externals: {
-    react: 'react',
+    'react': 'react',
+    'react-dom': 'react-dom',
   },
 
   module: {
@@ -37,8 +38,8 @@ module.exports = {
       //-------------------- scripts --------------------
       {
         test: /\.(js|ts)x?$/,
+        use: ['ts-loader'],
         exclude: /node_modules/,
-        loader: 'babel-loader',
       },
       //-------------------- css styles --------------------
       {
@@ -85,8 +86,8 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              outputPath: 'static/img',
-              name: '[name]-[hash:7].[ext]',
+              outputPath: 'assets/img/used',
+              name: '[name]-[hash:5].[ext]',
             },
           },
         ],
@@ -98,7 +99,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              outputPath: 'static/fonts',
+              outputPath: 'assets/fonts',
               name: '[name].[ext]',
             },
           },
@@ -109,10 +110,14 @@ module.exports = {
 
   plugins: [
     new CopyWebpackPlugin({
-      patterns: [{ from: 'img', to: 'static/img' }],
+      patterns: [{ from: 'src/img', to: 'assets/img' }],
     }),
     new MiniCssExtractPlugin({
-      filename: 'static/css/[name]-[hash:5].css',
+      filename: 'assets/css/[name]-[fullhash:5].css',
     }),
   ],
+
+  // optimization: {
+  //   minimizer: [new CssMinimizerPlugin()],
+  // },
 };
