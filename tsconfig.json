@@ -31,5 +31,5 @@
     "typeRoots": ["./src/types", "./node_modules/@types"]
   },
   "include": ["src"],
-  "exclude": ["node_modules", "lib", "./src/stories"]
+  "exclude": ["node_modules", "lib", "src/**/*.test.tsx", "src/**/*.stories.tsx"]
 }
