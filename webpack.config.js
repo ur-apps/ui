@@ -1,7 +1,5 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -16,15 +14,15 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {
-      'components': path.resolve(__dirname, 'src/components'),
-      'constants': path.resolve(__dirname, 'src/constants'),
-      'context': path.resolve(__dirname, 'src/context'),
-      'hooks': path.resolve(__dirname, 'src/hooks'),
-      'img': path.resolve(__dirname, 'src/img'),
-      'scss': path.resolve(__dirname, 'src/scss'),
-      'services': path.resolve(__dirname, 'src/services'),
-      'types': path.resolve(__dirname, 'src/types'),
-      'utils': path.resolve(__dirname, 'src/utils'),
+      'components': path.resolve(__dirname, 'src', 'components'),
+      'constants': path.resolve(__dirname, 'src', 'constants'),
+      'context': path.resolve(__dirname, 'src', 'context'),
+      'hooks': path.resolve(__dirname, 'src', 'hooks'),
+      'icons': path.resolve(__dirname, 'src', 'icons'),
+      'scss': path.resolve(__dirname, 'src', 'scss'),
+      'services': path.resolve(__dirname, 'src', 'services'),
+      'types': path.resolve(__dirname, 'src', 'types'),
+      'utils': path.resolve(__dirname, 'src', 'utils'),
     },
   },
 
@@ -39,13 +37,15 @@ module.exports = {
       {
         test: /\.(js|ts)x?$/,
         use: ['ts-loader'],
+        include: path.resolve(__dirname, 'src'),
         exclude: /node_modules/,
       },
       //-------------------- css styles --------------------
       {
         test: /\.module\.css$/,
+        include: path.resolve(__dirname, 'src'),
         use: [
-          MiniCssExtractPlugin.loader,
+          'style-loader',
           {
             loader: 'css-loader',
             options: {
@@ -56,14 +56,16 @@ module.exports = {
       },
       {
         test: /\.css$/,
+        include: path.resolve(__dirname, 'src'),
         exclude: /\.module\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: ['style-loader', 'css-loader'],
       },
       //-------------------- scss styles --------------------
       {
         test: /\.module\.s(a|c)ss$/,
+        include: path.resolve(__dirname, 'src'),
         use: [
-          MiniCssExtractPlugin.loader,
+          'style-loader',
           {
             loader: 'css-loader',
             options: {
@@ -71,53 +73,35 @@ module.exports = {
               modules: { localIdentName: '[local]_[hash:base64:5]' },
             },
           },
-          { loader: 'sass-loader', options: { sourceMap: true } },
+          'sass-loader',
         ],
       },
       {
         test: /\.s(a|c)ss$/,
+        include: path.resolve(__dirname, 'src'),
         exclude: /\.module\.s(a|c)ss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       //-------------------- images --------------------
       {
-        test: /\.(png|jpg|jpeg|gif|ico|svg)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: 'assets/img/used',
-              name: '[name]-[hash:5].[ext]',
-            },
-          },
-        ],
+        test: /\.(png|jpg|jpeg|gif|ico)$/,
+        include: path.resolve(__dirname, 'src'),
+        type: 'asset/inline',
       },
-      //-------------------- fonts --------------------
       {
-        test: /\.(woff|woff2|ttf|otf|eot)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: 'assets/fonts',
-              name: '[name].[ext]',
-            },
-          },
-        ],
+        test: /\.svg$/,
+        include: path.resolve(__dirname, 'src'),
+        use: ['@svgr/webpack', 'url-loader'],
       },
     ],
   },
 
   plugins: [
     new CopyWebpackPlugin({
-      patterns: [{ from: 'src/img', to: 'assets/img' }],
-    }),
-    new MiniCssExtractPlugin({
-      filename: 'assets/css/[name]-[fullhash:5].css',
+      patterns: [
+        { from: 'src/icons', to: 'icons' },
+        { from: 'src/scss', to: 'scss' },
+      ],
     }),
   ],
-
-  // optimization: {
-  //   minimizer: [new CssMinimizerPlugin()],
-  // },
 };
