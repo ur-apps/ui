@@ -8,6 +8,14 @@
   "files": [
     "lib"
   ],
+  "exports": {
+    ".": "./lib/index.js",
+    "./scss/colors": "./lib/scss/colors.scss",
+    "./scss/constants": "./lib/scss/constants.scss",
+    "./scss/fonts": "./lib/scss/fonts.scss",
+    "./scss/mixins": "./lib/scss/mixins.scss",
+    "./scss/text": "./lib/scss/text.scss"
+  },
   "scripts": {
     "build": "webpack",
     "lint": "eslint ./src",
