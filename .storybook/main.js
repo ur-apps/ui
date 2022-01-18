@@ -1,7 +1,23 @@
 const path = require('path');
 
 module.exports = {
-  webpackFinal: async (config, { configType }) => {
+  webpackFinal: async (config) => {
+    // extensions
+    config.resolve.extensions.push('.js', '.jsx', '.ts', '.tsx');
+
+    // aliases
+    config.resolve.alias = {
+      'components': path.resolve(__dirname, '..', 'src', 'components'),
+      'constants': path.resolve(__dirname, '..', 'src', 'constants'),
+      'context': path.resolve(__dirname, '..', 'src', 'context'),
+      'hooks': path.resolve(__dirname, '..', 'src', 'hooks'),
+      'icons': path.resolve(__dirname, '..', 'src', 'icons'),
+      'scss': path.resolve(__dirname, '..', 'src', 'scss'),
+      'services': path.resolve(__dirname, '..', 'src', 'services'),
+      'types': path.resolve(__dirname, '..', 'src', 'types'),
+      'utils': path.resolve(__dirname, '..', 'src', 'utils'),
+    };
+
     // scss modules
     config.module.rules.push({
       test: /\.module\.s(a|c)ss$/,
@@ -27,35 +43,21 @@ module.exports = {
       include: path.resolve(__dirname, '../src'),
     });
 
-    // css modules
-    // config.module.rules.push({
-    //   test: /\.module\.css$/,
-    //   include: path.resolve(__dirname, '../src'),
-    //   use: [
-    //     'style-loader',
-    //     {
-    //       loader: 'css-loader',
-    //       options: {
-    //         modules: { localIdentName: '[local]_[hash:base64:5]' },
-    //       },
-    //     },
-    //   ],
-    // });
-
-    // css
-    // config.module.rules.push({
-    //   test: /\.css$/,
-    //   include: path.resolve(__dirname, '../src'),
-    //   exclude: /\.module\.css$/,
-    //   use: ['style-loader', 'css-loader'],
-    // });
+    // svg
+    const defaultSvgLoaderRule = config.module.rules.find((rule) => rule.test && rule.test.test('.svg'));
+    defaultSvgLoaderRule.exclude = /\.svg$/;
+    config.module.rules.push({
+      test: /\.svg$/,
+      include: path.resolve(__dirname, '..', 'src'),
+      use: ['@svgr/webpack', 'url-loader'],
+    });
 
     return config;
   },
-  'stories': ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
-  'addons': ['@storybook/addon-links', '@storybook/addon-essentials'],
-  'framework': '@storybook/react',
-  'core': {
-    'builder': 'webpack5',
+  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
+  framework: '@storybook/react',
+  core: {
+    builder: 'webpack5',
   },
 };
