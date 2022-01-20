@@ -34,23 +34,6 @@ FillLarge.args = {
   children: 'Cancel',
 };
 
-export const FillBlue = Template.bind({});
-FillBlue.args = {
-  size: 'large',
-  appearance: 'fill',
-  colorScheme: 'blue',
-  children: 'Submit',
-};
-
-export const FillBlueDisabled = Template.bind({});
-FillBlueDisabled.args = {
-  size: 'large',
-  appearance: 'fill',
-  colorScheme: 'blue',
-  disabled: true,
-  children: 'Submit',
-};
-
 export const FillWhite = Template.bind({});
 FillWhite.args = {
   size: 'large',
@@ -85,6 +68,23 @@ FillBlackDisabled.args = {
   children: 'Submit',
 };
 
+export const FillBlue = Template.bind({});
+FillBlue.args = {
+  size: 'large',
+  appearance: 'fill',
+  colorScheme: 'blue',
+  children: 'Submit',
+};
+
+export const FillBlueDisabled = Template.bind({});
+FillBlueDisabled.args = {
+  size: 'large',
+  appearance: 'fill',
+  colorScheme: 'blue',
+  disabled: true,
+  children: 'Submit',
+};
+
 export const FillRed = Template.bind({});
 FillRed.args = {
   size: 'large',
@@ -114,6 +114,115 @@ export const FillGreenDisabled = Template.bind({});
 FillGreenDisabled.args = {
   size: 'large',
   appearance: 'fill',
+  colorScheme: 'green',
+  disabled: true,
+  children: 'Cancel',
+};
+
+export const OutlineSmall = Template.bind({});
+OutlineSmall.args = {
+  size: 'small',
+  appearance: 'outline',
+  colorScheme: 'green',
+  children: 'Submit',
+};
+
+export const OutlineMedium = Template.bind({});
+OutlineMedium.args = {
+  size: 'medium',
+  appearance: 'outline',
+  colorScheme: 'black',
+  children: 'Submit',
+};
+
+export const OutlineLarge = Template.bind({});
+OutlineLarge.args = {
+  size: 'large',
+  appearance: 'outline',
+  colorScheme: 'blue',
+  children: 'Cancel',
+};
+
+export const OutlineWhite = Template.bind({});
+OutlineWhite.args = {
+  size: 'large',
+  appearance: 'outline',
+  colorScheme: 'white',
+  children: 'Submit',
+};
+
+export const OutlineWhiteDisabled = Template.bind({});
+OutlineWhiteDisabled.args = {
+  size: 'large',
+  appearance: 'outline',
+  colorScheme: 'white',
+  disabled: true,
+  children: 'Submit',
+};
+
+export const OutlineBlack = Template.bind({});
+OutlineBlack.args = {
+  size: 'large',
+  appearance: 'outline',
+  colorScheme: 'black',
+  children: 'Submit',
+};
+
+export const OutlineBlackDisabled = Template.bind({});
+OutlineBlackDisabled.args = {
+  size: 'large',
+  appearance: 'outline',
+  colorScheme: 'black',
+  disabled: true,
+  children: 'Submit',
+};
+
+export const OutlineBlue = Template.bind({});
+OutlineBlue.args = {
+  size: 'large',
+  appearance: 'outline',
+  colorScheme: 'blue',
+  children: 'Submit',
+};
+
+export const OutlineBlueDisabled = Template.bind({});
+OutlineBlueDisabled.args = {
+  size: 'large',
+  appearance: 'outline',
+  colorScheme: 'blue',
+  disabled: true,
+  children: 'Submit',
+};
+
+export const OutlineRed = Template.bind({});
+OutlineRed.args = {
+  size: 'large',
+  appearance: 'outline',
+  colorScheme: 'red',
+  children: 'Cancel',
+};
+
+export const OutlineRedDisabled = Template.bind({});
+OutlineRedDisabled.args = {
+  size: 'large',
+  appearance: 'outline',
+  colorScheme: 'red',
+  disabled: true,
+  children: 'Cancel',
+};
+
+export const OutlineGreen = Template.bind({});
+OutlineGreen.args = {
+  size: 'large',
+  appearance: 'outline',
+  colorScheme: 'green',
+  children: 'Cancel',
+};
+
+export const OutlineGreenDisabled = Template.bind({});
+OutlineGreenDisabled.args = {
+  size: 'large',
+  appearance: 'outline',
   colorScheme: 'green',
   disabled: true,
   children: 'Cancel',
