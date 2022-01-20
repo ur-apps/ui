@@ -6,7 +6,8 @@
   "types": "lib/index.d.ts",
   "module": "lib/index.js",
   "files": [
-    "lib"
+    "lib",
+    "storybook-static"
   ],
   "exports": {
     ".": "./lib/index.js",
