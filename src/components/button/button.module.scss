@@ -1,0 +1,175 @@
+@import 'scss/colors.scss';
+@import 'scss/constants.scss';
+@import 'scss/mixins.scss';
+@import 'scss/text.scss';
+
+.button {
+  @include reset-button();
+  width: max-content;
+
+  transition: 200ms;
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &--small {
+    @include small-text;
+  }
+
+  &--medium {
+    @include default-text;
+  }
+
+  &--large {
+    @include large-text;
+  }
+}
+
+.button--fill {
+  color: $white;
+
+  &.button--small {
+    height: 24px;
+    padding: 4px 12px;
+
+    border-radius: $radius-small;
+  }
+
+  &.button--medium {
+    height: 32px;
+    padding: 7px 16px;
+
+    border-radius: $radius-default;
+  }
+
+  &.button--large {
+    height: 40px;
+    padding: 10px 24px;
+
+    border-radius: $radius-large;
+  }
+
+  &.button--blue {
+    background-color: $blue;
+
+    &:hover {
+      background-color: $dark-blue;
+    }
+
+    &:active {
+      background-color: $darker-blue;
+    }
+
+    &:disabled {
+      color: $white50;
+      background-color: $light-blue;
+    }
+  }
+
+  &.button--white {
+    color: $darkest-blue;
+    background-color: $white;
+
+    &:hover {
+      background-color: $lighter-gray;
+    }
+
+    &:active {
+      background-color: $light-gray;
+    }
+
+    &:disabled {
+      color: $black25;
+      background-color: $lighter-gray;
+    }
+
+    &.button--light {
+      color: $white;
+      background-color: $black;
+
+      &:hover {
+        background-color: $darker-gray;
+      }
+
+      &:active {
+        background-color: $gray;
+      }
+
+      &:disabled {
+        color: $white20;
+        background-color: $gray;
+      }
+    }
+  }
+
+  &.button--black {
+    color: $white;
+    background-color: $black;
+
+    &:hover {
+      background-color: $darker-gray;
+    }
+
+    &:active {
+      background-color: $gray;
+    }
+
+    &:disabled {
+      color: $white20;
+      background-color: $gray;
+    }
+
+    &.button--dark {
+      color: $darkest-blue;
+      background-color: $white;
+
+      &:hover {
+        background-color: $lighter-gray;
+      }
+
+      &:active {
+        background-color: $light-gray;
+      }
+
+      &:disabled {
+        color: $black25;
+        background-color: $lighter-gray;
+      }
+    }
+  }
+
+  &.button--red {
+    background-color: $red;
+
+    &:hover {
+      background-color: $dark-red;
+    }
+
+    &:active {
+      background-color: $darker-red;
+    }
+
+    &:disabled {
+      color: $white50;
+      background-color: $light-red;
+    }
+  }
+
+  &.button--green {
+    background-color: $green;
+
+    &:hover {
+      background-color: $dark-green;
+    }
+
+    &:active {
+      background-color: $darker-green;
+    }
+
+    &:disabled {
+      color: $white50;
+      background-color: $light-gren;
+    }
+  }
+}
