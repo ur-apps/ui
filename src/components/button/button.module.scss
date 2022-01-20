@@ -167,3 +167,144 @@
     }
   }
 }
+
+.button--outline {
+  border-width: 1px;
+  border-style: solid;
+
+  &.button--blue {
+    color: $blue;
+
+    border-color: $blue;
+
+    &:hover {
+      background-color: $blue10;
+    }
+
+    &:active {
+      background-color: $blue25;
+    }
+
+    &:disabled {
+      color: $white50;
+      background-color: $blue25;
+      border-color: $blue25;
+    }
+  }
+
+  &.button--red {
+    border-color: $red;
+
+    color: $red;
+
+    &:hover {
+      background-color: $red10;
+    }
+
+    &:active {
+      background-color: $red25;
+    }
+
+    &:disabled {
+      color: $white50;
+      background-color: $red25;
+      border-color: $red25;
+    }
+  }
+
+  &.button--green {
+    border-color: $green;
+
+    color: $green;
+
+    &:hover {
+      background-color: $green10;
+    }
+
+    &:active {
+      background-color: $green25;
+    }
+
+    &:disabled {
+      color: $white50;
+      background-color: $green25;
+      border-color: $green25;
+    }
+  }
+
+  &.button--white {
+    color: $white;
+    border-color: $white;
+
+    &:hover {
+      background-color: $white20;
+    }
+
+    &:active {
+      background-color: $white25;
+    }
+
+    &:disabled {
+      color: $white50;
+      background-color: $white25;
+      border-color: $white25;
+    }
+
+    &.button--light {
+      color: $black;
+      border-color: $black;
+
+      &:hover {
+        background-color: $black5;
+      }
+
+      &:active {
+        background-color: $black10;
+      }
+
+      &:disabled {
+        color: $black50;
+        background-color: $black10;
+        border-color: $black25;
+      }
+    }
+  }
+
+  &.button--black {
+    color: $black;
+    border-color: $black;
+
+    &:hover {
+      background-color: $black5;
+    }
+
+    &:active {
+      background-color: $black10;
+    }
+
+    &:disabled {
+      color: $black50;
+      background-color: $black10;
+      border-color: $black25;
+    }
+
+    &.button--dark {
+      color: $white;
+      border-color: $white;
+
+      &:hover {
+        background-color: $white20;
+      }
+
+      &:active {
+        background-color: $white25;
+      }
+
+      &:disabled {
+        color: $white50;
+        background-color: $white25;
+        border-color: $white25;
+      }
+    }
+  }
+}
