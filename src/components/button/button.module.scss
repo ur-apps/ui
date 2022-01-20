@@ -15,40 +15,34 @@
 
   &--small {
     @include small-text;
+
+    height: 24px;
+    padding: 0 12px;
+
+    border-radius: $radius-small;
   }
 
   &--medium {
     @include default-text;
+
+    height: 32px;
+    padding: 0 16px;
+
+    border-radius: $radius-default;
   }
 
   &--large {
     @include large-text;
+
+    height: 40px;
+    padding: 0 24px;
+
+    border-radius: $radius-large;
   }
 }
 
 .button--fill {
   color: $white;
-
-  &.button--small {
-    height: 24px;
-    padding: 4px 12px;
-
-    border-radius: $radius-small;
-  }
-
-  &.button--medium {
-    height: 32px;
-    padding: 7px 16px;
-
-    border-radius: $radius-default;
-  }
-
-  &.button--large {
-    height: 40px;
-    padding: 10px 24px;
-
-    border-radius: $radius-large;
-  }
 
   &.button--blue {
     background-color: $blue;
@@ -63,7 +57,7 @@
 
     &:disabled {
       color: $white50;
-      background-color: $light-blue;
+      background-color: $blue50;
     }
   }
 
@@ -152,7 +146,7 @@
 
     &:disabled {
       color: $white50;
-      background-color: $light-red;
+      background-color: $red50;
     }
   }
 
@@ -169,7 +163,7 @@
 
     &:disabled {
       color: $white50;
-      background-color: $light-gren;
+      background-color: $green50;
     }
   }
 }
