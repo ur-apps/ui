@@ -9,29 +9,30 @@ export interface IButtonProps {
   size?: 'small' | 'medium' | 'large';
   appearance?: 'fill' | 'outline' | 'text';
   colorScheme?: 'white' | 'gray' | 'black' | 'blue' | 'red' | 'green';
-  manualTheme?: 'light' | 'dark';
+  autoColor?: boolean;
   type?: 'button' | 'submit' | 'reset';
   id?: string;
   name?: string;
   disabled?: boolean;
   children: React.ReactNode;
-  onClick?: ((evt: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined;
+  onClick?: (evt: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   refLink?: React.RefObject<HTMLButtonElement>;
 }
 
 Button.defaultProps = {
   size: 'medium',
-  appearance: 'outline',
-  colorScheme: 'gray',
+  appearance: 'fill',
+  colorScheme: 'blue',
+  autoColor: true,
   type: 'button',
-};
+} as IButtonProps;
 
 export function Button({
   className,
   size,
   appearance,
   colorScheme,
-  manualTheme,
+  autoColor,
   type,
   id,
   name,
@@ -50,7 +51,7 @@ export function Button({
         styles[`button--${size}`],
         styles[`button--${appearance}`],
         styles[`button--${colorScheme}`],
-        styles[`button--${manualTheme ?? theme}`],
+        autoColor ? styles[`button--${theme}`] : undefined,
         className
       )}
       type={type}
