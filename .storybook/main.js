@@ -49,7 +49,22 @@ module.exports = {
     config.module.rules.push({
       test: /\.svg$/,
       include: path.resolve(__dirname, '..', 'src'),
-      use: ['@svgr/webpack', 'url-loader'],
+      use: [
+        {
+          loader: '@svgr/webpack',
+          options: {
+            svgoConfig: {
+              plugins: [
+                {
+                  name: 'removeViewBox',
+                  active: false,
+                },
+              ],
+            },
+          },
+        },
+        'url-loader',
+      ],
     });
 
     return config;
