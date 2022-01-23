@@ -1,0 +1,21 @@
+export { IconsPreview } from './preview';
+
+export { ReactComponent as BinIcon } from './bin-fill.svg';
+export { ReactComponent as BookIcon } from './book.svg';
+export { ReactComponent as BulbIcon } from './bulb.svg';
+export { ReactComponent as ChatIcon } from './chat.svg';
+export { ReactComponent as CloseIcon } from './close.svg';
+export { ReactComponent as EyeCrossedIcon } from './eye-crossed.svg';
+export { ReactComponent as EyeIcon } from './eye.svg';
+export { ReactComponent as FilterIcon } from './filter.svg';
+export { ReactComponent as HeartIcon } from './heart.svg';
+export { ReactComponent as HomeIcon } from './home.svg';
+export { ReactComponent as InfoIcon } from './info.svg';
+export { ReactComponent as MaginfierIcon } from './magnifier.svg';
+export { ReactComponent as MoonIcon } from './moon.svg';
+export { ReactComponent as PauseIcon } from './pause.svg';
+export { ReactComponent as PencilIcon } from './pencil.svg';
+export { ReactComponent as PlayIcon } from './play.svg';
+export { ReactComponent as SunIcon } from './sun.svg';
+export { ReactComponent as TranslateIcon } from './translate.svg';
+export { ReactComponent as VolumeIcon } from './volume.svg';
