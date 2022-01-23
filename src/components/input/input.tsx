@@ -8,8 +8,7 @@ export interface IInputProps {
   className?: string;
   fieldClassName?: string;
   size?: 'small' | 'medium' | 'large';
-  appearance?: 'fill' | 'outline';
-  colorScheme?: 'lightgray' | 'darkgray';
+  colorScheme?: 'light' | 'dark';
   autoColor?: boolean;
   type?:
     | 'date'
@@ -47,22 +46,12 @@ export interface IInputProps {
 
 Input.defaultProps = {
   size: 'medium',
-  appearance: 'fill',
-  colorScheme: 'gray',
+  colorScheme: 'light',
   autoColor: true,
   type: 'text',
-};
+} as IInputProps;
 
-export function Input({
-  className,
-  size,
-  appearance,
-  colorScheme,
-  autoColor,
-  placeholder,
-  disabled,
-  ...props
-}: IInputProps) {
+export function Input({ className, size, colorScheme, autoColor, placeholder, disabled, ...props }: IInputProps) {
   const { theme } = useTheme();
 
   return (
@@ -71,9 +60,8 @@ export function Input({
       className={classNames(
         styles.input,
         styles[`input--${size}`],
-        styles[`input--${appearance}`],
         styles[`input--${colorScheme}`],
-        autoColor ? styles[`input--${theme}`] : undefined,
+        autoColor ? styles[`input--${theme}-mode`] : undefined,
         className
       )}
       placeholder={placeholder}

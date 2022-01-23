@@ -17,63 +17,56 @@ export default {
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
-export const FillSmall = Template.bind({});
-FillSmall.args = {
+export const Small = Template.bind({});
+Small.args = {
   size: 'small',
-  appearance: 'fill',
-  colorScheme: 'lightgray',
+  colorScheme: 'light',
   placeholder: 'Placeholder',
 } as IInputProps;
 
-export const FillMedium = Template.bind({});
-FillMedium.args = {
+export const Medium = Template.bind({});
+Medium.args = {
   size: 'medium',
-  appearance: 'fill',
-  colorScheme: 'lightgray',
+  colorScheme: 'light',
   placeholder: 'Placeholder',
 } as IInputProps;
 
-export const FillLarge = Template.bind({});
-FillLarge.args = {
+export const Large = Template.bind({});
+Large.args = {
   size: 'large',
-  appearance: 'fill',
-  colorScheme: 'lightgray',
+  colorScheme: 'light',
   placeholder: 'Placeholder',
 } as IInputProps;
 
-export const FillLight = Template.bind({});
-FillLight.args = {
+export const Light = Template.bind({});
+Light.args = {
   size: 'large',
-  appearance: 'fill',
-  colorScheme: 'lightgray',
+  colorScheme: 'light',
   autoColor: true,
   placeholder: 'Placeholder',
 } as IInputProps;
 
-export const FillLightDisabled = Template.bind({});
-FillLightDisabled.args = {
+export const LightDisabled = Template.bind({});
+LightDisabled.args = {
   size: 'large',
-  appearance: 'fill',
-  colorScheme: 'lightgray',
+  colorScheme: 'light',
   autoColor: true,
   placeholder: 'Placeholder',
   disabled: true,
 } as IInputProps;
 
-export const FillDark = Template.bind({});
-FillDark.args = {
+export const Dark = Template.bind({});
+Dark.args = {
   size: 'large',
-  appearance: 'fill',
-  colorScheme: 'darkgray',
+  colorScheme: 'dark',
   autoColor: true,
   placeholder: 'Placeholder',
 } as IInputProps;
 
-export const FillDarkDisabled = Template.bind({});
-FillDarkDisabled.args = {
+export const DarkDisabled = Template.bind({});
+DarkDisabled.args = {
   size: 'large',
-  appearance: 'fill',
-  colorScheme: 'darkgray',
+  colorScheme: 'dark',
   autoColor: true,
   placeholder: 'Placeholder',
   disabled: true,
