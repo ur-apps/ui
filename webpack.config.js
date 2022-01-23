@@ -91,7 +91,22 @@ module.exports = {
       {
         test: /\.svg$/,
         include: path.resolve(__dirname, 'src'),
-        use: ['@svgr/webpack', 'url-loader'],
+        use: [
+          {
+            loader: '@svgr/webpack',
+            options: {
+              svgoConfig: {
+                plugins: [
+                  {
+                    name: 'removeViewBox',
+                    active: false,
+                  },
+                ],
+              },
+            },
+          },
+          'url-loader',
+        ],
       },
     ],
   },
@@ -99,7 +114,7 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'src/icons', to: 'icons' },
+        { from: 'src/**/*.svg', to: 'icons/[name][ext]' },
         { from: 'src/scss', to: 'scss' },
       ],
     }),

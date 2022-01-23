@@ -16,13 +16,16 @@
     "sourceMap": true,
     "declaration": true,
     "outDir": "./lib",
-
     "baseUrl": "./src",
     "paths": {
       "components": ["components"],
       "components/*": ["components/*"],
       "hooks": ["hooks"],
       "hooks/*": ["hooks/*"],
+      "icons": ["icons"],
+      "icons/*": ["icons/*"],
+      "services": ["services"],
+      "services/*": ["services/*"],
       "types": ["types"],
       "types/*": ["types/*"],
       "utils": ["utils"],
