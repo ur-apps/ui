@@ -10,6 +10,7 @@ export interface IInputProps {
   size?: 'small' | 'medium' | 'large';
   colorScheme?: 'light' | 'dark';
   autoColor?: boolean;
+  icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   type?:
     | 'date'
     | 'datetime-local'
@@ -51,22 +52,44 @@ Input.defaultProps = {
   type: 'text',
 } as IInputProps;
 
-export function Input({ className, size, colorScheme, autoColor, placeholder, disabled, ...props }: IInputProps) {
+export function Input({
+  className,
+  size,
+  colorScheme,
+  autoColor,
+  icon: Icon,
+  placeholder,
+  disabled,
+  ...props
+}: IInputProps) {
   const { theme } = useTheme();
 
   return (
-    <input
-      type="text"
-      className={classNames(
-        styles.input,
-        styles[`input--${size}`],
-        styles[`input--${colorScheme}`],
-        autoColor ? styles[`input--${theme}-mode`] : undefined,
-        className
+    <label className={styles.label}>
+      {Icon && (
+        <Icon
+          className={classNames(
+            styles.icon,
+            styles[`icon--${size}`],
+            styles[`icon--${colorScheme}`],
+            autoColor ? styles[`icon--${theme}-mode`] : undefined
+          )}
+        />
       )}
-      placeholder={placeholder}
-      disabled={disabled}
-      {...props}
-    />
+      <input
+        type="text"
+        className={classNames(
+          styles.input,
+          styles[`input--${size}`],
+          styles[`input--${colorScheme}`],
+          autoColor ? styles[`input--${theme}-mode`] : undefined,
+          Icon ? styles['input--with-icon'] : undefined,
+          className
+        )}
+        placeholder={placeholder}
+        disabled={disabled}
+        {...props}
+      />
+    </label>
   );
 }

@@ -2,6 +2,66 @@
 @import 'scss/constants.scss';
 @import 'scss/text';
 
+.label {
+  position: relative;
+
+  display: block;
+  width: fit-content;
+  height: fit-content;
+}
+
+.icon {
+  position: absolute;
+
+  &--small {
+    bottom: 6px;
+    left: 6px;
+
+    width: 12px;
+    height: 12px;
+  }
+
+  &--medium {
+    bottom: 8px;
+    left: 8px;
+
+    width: 16px;
+    height: 16px;
+  }
+
+  &--large {
+    bottom: 11px;
+    left: 12px;
+
+    width: 18px;
+    height: 18px;
+  }
+
+  &--light {
+    & path {
+      fill: $black50;
+    }
+
+    &.icon--dark-mode {
+      & path {
+        fill: $white50;
+      }
+    }
+  }
+
+  &--dark {
+    & path {
+      fill: $white50;
+    }
+
+    &.icon--light-mode {
+      & path {
+        fill: $black25;
+      }
+    }
+  }
+}
+
 .input {
   border: none;
 
@@ -18,6 +78,10 @@
     padding: 0 12px;
 
     border-radius: $radius-small;
+
+    &.input--with-icon {
+      padding-left: 24px;
+    }
   }
 
   &--medium {
@@ -27,6 +91,10 @@
     padding: 0 16px;
 
     border-radius: $radius-default;
+
+    &.input--with-icon {
+      padding-left: 32px;
+    }
   }
 
   &--large {
@@ -36,6 +104,10 @@
     padding: 0 24px;
 
     border-radius: $radius-large;
+
+    &.input--with-icon {
+      padding-left: 44px;
+    }
   }
 
   &--light {
@@ -45,6 +117,7 @@
     &::placeholder {
       color: $black50;
     }
+
     &:hover {
       box-shadow: inset 0 0 2px 0px $light-gray;
     }
@@ -70,6 +143,11 @@
         color: $white50;
       }
 
+      &:hover {
+        background-color: $dark-gray;
+        box-shadow: none;
+      }
+
       &:focus {
         background-color: $gray;
         box-shadow: none;
@@ -77,6 +155,7 @@
 
       &:disabled {
         color: $white50;
+        background-color: $darker-gray;
 
         &::placeholder {
           color: $white25;
@@ -118,12 +197,17 @@
         color: $black50;
       }
 
+      &:hover {
+        box-shadow: inset 0 0 2px 0px $light-gray;
+      }
+
       &:focus {
         box-shadow: inset 0 0 4px 1px $light-gray;
       }
 
       &:disabled {
         color: $black50;
+        box-shadow: none;
 
         &::placeholder {
           color: $black25;

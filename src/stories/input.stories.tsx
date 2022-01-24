@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Input, IInputProps } from '../components';
+import { MaginfierIcon, InfoIcon, PencilIcon } from '../icons';
 
 export default {
   title: 'Components/Input',
@@ -70,4 +71,31 @@ DarkDisabled.args = {
   autoColor: true,
   placeholder: 'Placeholder',
   disabled: true,
+} as IInputProps;
+
+export const WithIconSmall = Template.bind({});
+WithIconSmall.args = {
+  size: 'small',
+  colorScheme: 'light',
+  autoColor: false,
+  icon: PencilIcon,
+  placeholder: 'Placeholder',
+} as IInputProps;
+
+export const WithIconMedium = Template.bind({});
+WithIconMedium.args = {
+  size: 'medium',
+  colorScheme: 'light',
+  autoColor: false,
+  icon: InfoIcon,
+  placeholder: 'Placeholder',
+} as IInputProps;
+
+export const WithIconLarge = Template.bind({});
+WithIconLarge.args = {
+  size: 'large',
+  colorScheme: 'light',
+  autoColor: false,
+  icon: MaginfierIcon,
+  placeholder: 'Placeholder',
 } as IInputProps;
