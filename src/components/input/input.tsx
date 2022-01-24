@@ -37,7 +37,7 @@ export interface IInputProps {
   max?: number | string;
   step?: number | string;
   required?: boolean;
-  readonly?: boolean;
+  readOnly?: boolean;
   disabled?: boolean;
   onChange?: (evt: React.ChangeEvent<HTMLInputElement>) => void;
   onFocus?: (evt: React.FocusEvent<HTMLInputElement>) => void;
@@ -59,7 +59,9 @@ export function Input({
   autoColor,
   icon: Icon,
   placeholder,
+  readOnly,
   disabled,
+  refLink,
   ...props
 }: IInputProps) {
   const { theme } = useTheme();
@@ -87,7 +89,9 @@ export function Input({
           className
         )}
         placeholder={placeholder}
+        readOnly={readOnly}
         disabled={disabled}
+        ref={refLink}
         {...props}
       />
     </label>
