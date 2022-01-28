@@ -54,6 +54,7 @@ Input.defaultProps = {
 
 export function Input({
   className,
+  fieldClassName,
   size,
   colorScheme,
   autoColor,
@@ -67,7 +68,7 @@ export function Input({
   const { theme } = useTheme();
 
   return (
-    <label className={styles.label}>
+    <label className={classNames(styles.label, className)}>
       {Icon && (
         <Icon
           className={classNames(
@@ -86,7 +87,7 @@ export function Input({
           styles[`input--${colorScheme}`],
           autoColor ? styles[`input--${theme}-mode`] : undefined,
           Icon ? styles['input--with-icon'] : undefined,
-          className
+          fieldClassName
         )}
         placeholder={placeholder}
         readOnly={readOnly}
