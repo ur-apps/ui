@@ -66,8 +66,8 @@
 
     @include extra-small-text;
 
-    &:last-child {
-      margin-left: 3px;
+    &:not(:last-child) {
+      margin-right: 3px;
     }
   }
 
@@ -80,8 +80,8 @@
     @include small-text;
     line-height: 18px;
 
-    &:last-child {
-      margin-left: 3px;
+    &:not(:last-child) {
+      margin-right: 3px;
     }
   }
 
@@ -94,8 +94,8 @@
     @include default-text;
     line-height: 20px;
 
-    &:last-child {
-      margin-left: 4px;
+    &:not(:last-child) {
+      margin-right: 4px;
     }
   }
 

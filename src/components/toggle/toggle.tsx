@@ -23,6 +23,7 @@ export interface IToggleProps {
 Toggle.defaultProps = {
   size: 'medium',
   colorScheme: 'light',
+  autoColor: true,
   leftValue: 'off',
   rightValue: 'on',
   value: 'on',
