@@ -1,0 +1,209 @@
+@import 'scss/colors.scss';
+@import 'scss/constants.scss';
+@import 'scss/text.scss';
+
+.toggle {
+  display: flex;
+  width: max-content;
+  height: max-content;
+
+  transition: 200ms;
+
+  &--small {
+    height: 24px;
+    width: fit-content;
+    padding: 3px;
+    border-radius: $radius-small;
+  }
+
+  &--medium {
+    height: 32px;
+    width: fit-content;
+    padding: 3px;
+    border-radius: $radius-default;
+  }
+
+  &--large {
+    height: 40px;
+    width: fit-content;
+    padding: 4px;
+    border-radius: $radius-large;
+  }
+
+  &--blue {
+    background-color: $blue;
+  }
+
+  &--light {
+    background-color: $lighter-gray;
+
+    &.toggle--dark-mode {
+      background-color: $darker-gray;
+    }
+  }
+
+  &--dark {
+    background-color: $darker-gray;
+
+    &.toggle--light-mode {
+      background-color: $lighter-gray;
+    }
+  }
+}
+
+.button {
+  text-align: center;
+
+  cursor: pointer;
+
+  transition: 200ms;
+
+  &--small {
+    min-width: 18px;
+    max-height: 18px;
+    padding: 2px;
+    border-radius: $radius-extra-small;
+
+    @include extra-small-text;
+
+    &:last-child {
+      margin-left: 3px;
+    }
+  }
+
+  &--medium {
+    min-width: 26px;
+    max-height: 26px;
+    padding: 4px;
+    border-radius: $radius-small;
+
+    @include small-text;
+    line-height: 18px;
+
+    &:last-child {
+      margin-left: 3px;
+    }
+  }
+
+  &--large {
+    min-width: 32px;
+    max-height: 32px;
+    padding: 6px;
+    border-radius: $radius-default;
+
+    @include default-text;
+    line-height: 20px;
+
+    &:last-child {
+      margin-left: 4px;
+    }
+  }
+
+  &--blue {
+    color: $white;
+
+    &.button--active {
+      color: $blue;
+      background-color: $white;
+    }
+  }
+
+  &--light {
+    color: $darkest-blue;
+
+    &.button--active {
+      color: $white;
+      background-color: $blue;
+    }
+
+    &.button--dark-mode {
+      color: $white;
+    }
+  }
+
+  &--dark {
+    color: $white;
+
+    &.button--active {
+      background-color: $blue;
+    }
+
+    &.button--light-mode {
+      color: $darkest-blue;
+
+      &.button--active {
+        color: $white;
+      }
+    }
+  }
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+
+  transition: 200ms;
+
+  &--small {
+    max-width: 14px;
+    max-height: 14px;
+  }
+
+  &--medium {
+    max-width: 18px;
+    max-height: 18px;
+  }
+
+  &--large {
+    max-width: 20px;
+    max-height: 20px;
+  }
+
+  &--blue {
+    path {
+      fill: $white;
+    }
+
+    &.icon--active {
+      path {
+        fill: $blue;
+      }
+    }
+  }
+
+  &--light {
+    path {
+      fill: $darkest-blue;
+    }
+
+    &.icon--active {
+      path {
+        fill: $white;
+      }
+    }
+
+    &.icon--dark-mode {
+      path {
+        fill: $white;
+      }
+    }
+  }
+
+  &--dark {
+    path {
+      fill: $white;
+    }
+
+    &.icon--light-mode {
+      path {
+        fill: $darkest-blue;
+      }
+
+      &.icon--active {
+        path {
+          fill: $white;
+        }
+      }
+    }
+  }
+}
