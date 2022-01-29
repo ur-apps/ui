@@ -1,0 +1,366 @@
+@import 'scss/colors.scss';
+@import 'scss/constants.scss';
+@import 'scss/mixins.scss';
+@import 'scss/text.scss';
+
+.select {
+  position: relative;
+
+  &--small {
+    width: 140px;
+    height: 24px;
+  }
+
+  &--medium {
+    width: 180px;
+    height: 32px;
+  }
+
+  &--large {
+    width: 220px;
+    height: 40px;
+  }
+}
+
+.output {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+
+  cursor: pointer;
+
+  transition: 300ms;
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &--small {
+    @include small-text;
+
+    padding: 0 24px 0 12px;
+
+    border-radius: $radius-small;
+
+    &.output--with-icon {
+      padding-left: 24px;
+    }
+  }
+
+  &--medium {
+    @include default-text;
+
+    padding: 0 32px 0 16px;
+
+    border-radius: $radius-default;
+
+    &.output--with-icon {
+      padding-left: 28px;
+    }
+  }
+
+  &--large {
+    @include large-text;
+
+    padding: 0 40px 0 20px;
+
+    border-radius: $radius-large;
+
+    &.output--with-icon {
+      padding-left: 40px;
+    }
+  }
+
+  &--light {
+    color: $darkest-blue;
+    background-color: $lighter-gray;
+
+    &::placeholder {
+      color: $black50;
+    }
+
+    &:disabled {
+      color: $black50;
+
+      &::placeholder {
+        color: $black25;
+      }
+    }
+
+    &.output--dark-mode {
+      color: $white;
+      background-color: $darker-gray;
+
+      &::placeholder {
+        color: $white50;
+      }
+
+      &:disabled {
+        color: $white50;
+
+        &::placeholder {
+          color: $white25;
+        }
+      }
+    }
+  }
+
+  &--dark {
+    color: $white;
+    background-color: $darker-gray;
+
+    &::placeholder {
+      color: $white50;
+    }
+
+    &:disabled {
+      color: $white50;
+
+      &::placeholder {
+        color: $white25;
+      }
+    }
+
+    &.output--light-mode {
+      color: $darkest-blue;
+      background-color: $lighter-gray;
+
+      &::placeholder {
+        color: $black50;
+      }
+
+      &:disabled {
+        color: $black50;
+
+        &::placeholder {
+          color: $black25;
+        }
+      }
+    }
+  }
+
+  &--expanded {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.icon {
+  position: absolute;
+
+  &--small {
+    bottom: 6px;
+    left: 6px;
+
+    width: 12px;
+    height: 12px;
+  }
+
+  &--medium {
+    bottom: 8px;
+    left: 8px;
+
+    width: 16px;
+    height: 16px;
+  }
+
+  &--large {
+    bottom: 11px;
+    left: 12px;
+
+    width: 18px;
+    height: 18px;
+  }
+
+  &--light {
+    & path {
+      fill: $black50;
+    }
+
+    &.icon--dark-mode {
+      & path {
+        fill: $white50;
+      }
+    }
+  }
+
+  &--dark {
+    & path {
+      fill: $white50;
+    }
+
+    &.icon--light-mode {
+      & path {
+        fill: $black25;
+      }
+    }
+  }
+}
+
+.arrow {
+  position: absolute;
+
+  height: auto;
+
+  transition: 200ms;
+
+  &--small {
+    top: 10px;
+    right: 8px;
+
+    width: 10px;
+  }
+
+  &--medium {
+    top: 12px;
+    right: 10px;
+
+    width: 14px;
+  }
+
+  &--large {
+    top: 16px;
+    right: 14px;
+
+    width: 16px;
+  }
+
+  &--light {
+    path {
+      stroke: $darkest-blue;
+    }
+
+    &.arrow--dark-mode {
+      path {
+        stroke: $white;
+      }
+    }
+  }
+
+  &--dark {
+    path {
+      stroke: $white;
+    }
+
+    &.arrow--light-mode {
+      path {
+        stroke: $darkest-blue;
+      }
+    }
+  }
+
+  &--expanded {
+    transform: rotate(180deg);
+  }
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  max-height: 0;
+  overflow-y: scroll;
+
+  transition: 300ms;
+
+  @include useScrollbar;
+
+  &--small {
+    border-bottom-left-radius: $radius-small;
+    border-bottom-right-radius: $radius-small;
+
+    &.dropdown--expanded {
+      max-height: 200px;
+    }
+  }
+
+  &--medium {
+    border-bottom-left-radius: $radius-default;
+    border-bottom-right-radius: $radius-default;
+
+    &.dropdown--expanded {
+      max-height: 250px;
+    }
+  }
+
+  &--large {
+    border-bottom-left-radius: $radius-large;
+    border-bottom-right-radius: $radius-large;
+
+    &.dropdown--expanded {
+      max-height: 300px;
+    }
+  }
+
+  &--light {
+    background-color: $lighter-gray;
+
+    &.dropdown--dark-mode {
+      background-color: $darker-gray;
+    }
+  }
+
+  &--dark {
+    background-color: $darker-gray;
+
+    &.dropdown--light-mode {
+      background-color: $lighter-gray;
+    }
+  }
+}
+
+.option {
+  cursor: pointer;
+
+  &--small {
+    padding: 4px 12px;
+
+    @include small-text;
+  }
+
+  &--medium {
+    padding: 7px 16px;
+
+    @include default-text;
+  }
+
+  &--large {
+    padding: 10px 24px;
+
+    @include large-text;
+  }
+
+  &--light {
+    color: $darkest-blue;
+
+    &:hover {
+      background-color: $light-gray;
+    }
+
+    &.option--dark-mode {
+      color: $white;
+
+      &:hover {
+        background-color: $dark-gray;
+      }
+    }
+  }
+
+  &--dark {
+    color: $white;
+
+    &:hover {
+      background-color: $dark-gray;
+    }
+
+    &.option--light-mode {
+      color: $darkest-blue;
+
+      &:hover {
+        background-color: $light-gray;
+      }
+    }
+  }
+}

@@ -15,7 +15,7 @@
   -webkit-appearance: none;
 }
 
-@mixin useScrollbar($width) {
+@mixin useScrollbar($width: 5px) {
   &::-webkit-scrollbar {
     width: $width;
   }
