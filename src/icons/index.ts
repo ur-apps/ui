@@ -13,7 +13,7 @@ export { ReactComponent as FilterIcon } from './filter.svg';
 export { ReactComponent as HeartIcon } from './heart.svg';
 export { ReactComponent as HomeIcon } from './home.svg';
 export { ReactComponent as InfoIcon } from './info.svg';
-export { ReactComponent as LockIcon } from './Lock.svg';
+export { ReactComponent as LockIcon } from './lock.svg';
 export { ReactComponent as MaginfierIcon } from './magnifier.svg';
 export { ReactComponent as MoonIcon } from './moon.svg';
 export { ReactComponent as PathDownIcon } from './path-down.svg';
