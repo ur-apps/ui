@@ -4,10 +4,10 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { IconsPreview } from '../icons';
 
 export default {
-  title: 'Components',
+  title: 'Components/Icons',
   component: IconsPreview,
 } as ComponentMeta<typeof IconsPreview>;
 
 const Template: ComponentStory<typeof IconsPreview> = () => <IconsPreview />;
 
-export const Icons = Template.bind({});
+export const AllIcons = Template.bind({});
