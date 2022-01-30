@@ -1,0 +1,64 @@
+@import 'scss/colors.scss';
+@import 'scss/constants.scss';
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 5px;
+
+  &--small {
+    width: 40px;
+    height: 40px;
+  }
+
+  &--medium {
+    width: 60px;
+    height: 60px;
+  }
+
+  &--large {
+    width: 100px;
+    height: 100px;
+  }
+
+  &--circle {
+    border-radius: 50%;
+  }
+}
+
+.img {
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+
+  &--light {
+    path {
+      fill: $lighter-gray;
+    }
+
+    &.icon--light-mode {
+      path {
+        fill: $darker-gray;
+      }
+    }
+  }
+
+  &--dark {
+    path {
+      fill: $darker-gray;
+    }
+
+    &.icon--dark-mode {
+      path {
+        fill: $lighter-gray;
+      }
+    }
+  }
+}
