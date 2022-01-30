@@ -1,0 +1,208 @@
+@import 'scss/colors.scss';
+@import 'scss/constants.scss';
+@import 'scss/text.scss';
+
+.link {
+  display: flex;
+  align-items: center;
+  width: max-content;
+
+  transition: 200ms;
+
+  &--small {
+    @include small-text;
+
+    height: 24px;
+    padding: 0 12px;
+
+    border-radius: $radius-small;
+  }
+
+  &--medium {
+    @include default-text;
+
+    height: 32px;
+    padding: 0 16px;
+
+    border-radius: $radius-default;
+  }
+
+  &--large {
+    @include large-text;
+
+    height: 40px;
+    padding: 0 24px;
+
+    border-radius: $radius-large;
+  }
+}
+
+.link--fill {
+  color: $white;
+
+  &.link--blue {
+    background-color: $blue;
+
+    &:hover {
+      background-color: $dark-blue;
+    }
+
+    &:active {
+      background-color: $darker-blue;
+    }
+  }
+
+  &.link--white {
+    color: $darkest-blue;
+    background-color: $white;
+
+    &:hover {
+      background-color: $lighter-gray;
+    }
+
+    &:active {
+      background-color: $light-gray;
+    }
+
+    &.link--light-mode {
+      color: $white;
+      background-color: $black;
+
+      &:hover {
+        background-color: $darker-gray;
+      }
+
+      &:active {
+        background-color: $gray;
+      }
+    }
+  }
+
+  &.link--black {
+    color: $white;
+    background-color: $black;
+
+    &:hover {
+      background-color: $darker-gray;
+    }
+
+    &:active {
+      background-color: $gray;
+    }
+
+    &.link--dark-mode {
+      color: $darkest-blue;
+      background-color: $white;
+
+      &:hover {
+        background-color: $lighter-gray;
+      }
+
+      &:active {
+        background-color: $light-gray;
+      }
+    }
+  }
+}
+
+.link--outline {
+  border-width: 1px;
+  border-style: solid;
+
+  &.link--blue {
+    color: $blue;
+
+    border-color: $blue;
+
+    &:hover {
+      background-color: $blue10;
+    }
+
+    &:active {
+      background-color: $blue25;
+    }
+  }
+
+  &.link--white {
+    color: $white;
+    border-color: $white;
+
+    &:hover {
+      background-color: $white20;
+    }
+
+    &:active {
+      background-color: $white25;
+    }
+
+    &.link--light-mode {
+      color: $black;
+      border-color: $black;
+
+      &:hover {
+        background-color: $black5;
+      }
+
+      &:active {
+        background-color: $black10;
+      }
+    }
+  }
+
+  &.link--black {
+    color: $black;
+    border-color: $black;
+
+    &:hover {
+      background-color: $black5;
+    }
+
+    &:active {
+      background-color: $black10;
+    }
+
+    &.link--dark-mode {
+      color: $white;
+      border-color: $white;
+
+      &:hover {
+        background-color: $white20;
+      }
+
+      &:active {
+        background-color: $white25;
+      }
+    }
+  }
+}
+
+.link--text {
+  display: inline-block;
+  height: auto;
+  padding: 0;
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-position: from-font;
+  }
+
+  &.link--blue {
+    color: $blue;
+  }
+
+  &.link--white {
+    color: $white;
+
+    &.link--light-mode {
+      color: $black;
+    }
+  }
+
+  &.link--black {
+    color: $black;
+
+    &.link--dark-mode {
+      color: $white;
+    }
+  }
+}
