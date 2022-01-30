@@ -1,5 +1,7 @@
 export { IconsPreview } from './preview';
 
+export { ReactComponent as AvatarFillIcon } from './avatar-fill.svg';
+export { ReactComponent as AvatarOutlineIcon } from './avatar-outline.svg';
 export { ReactComponent as BinIcon } from './bin-fill.svg';
 export { ReactComponent as BookIcon } from './book.svg';
 export { ReactComponent as BulbIcon } from './bulb.svg';

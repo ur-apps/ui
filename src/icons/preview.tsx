@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { ReactComponent as AvatarFillIcon } from './avatar-fill.svg';
+import { ReactComponent as AvatarOutlineIcon } from './avatar-outline.svg';
 import { ReactComponent as BinIcon } from './bin-fill.svg';
 import { ReactComponent as BookIcon } from './book.svg';
 import { ReactComponent as BulbIcon } from './bulb.svg';
@@ -13,6 +15,10 @@ import { ReactComponent as HomeIcon } from './home.svg';
 import { ReactComponent as InfoIcon } from './info.svg';
 import { ReactComponent as MaginfierIcon } from './magnifier.svg';
 import { ReactComponent as MoonIcon } from './moon.svg';
+import { ReactComponent as PathDownIcon } from './path-down.svg';
+import { ReactComponent as PathLeftIcon } from './path-left.svg';
+import { ReactComponent as PathRightIcon } from './path-right.svg';
+import { ReactComponent as PathUpIcon } from './path-up.svg';
 import { ReactComponent as PauseIcon } from './pause.svg';
 import { ReactComponent as PencilIcon } from './pencil.svg';
 import { ReactComponent as PlayIcon } from './play.svg';
@@ -24,6 +30,8 @@ import styles from './preview.module.scss';
 export function IconsPreview() {
   return (
     <>
+      <AvatarFillIcon className={styles.icon} />
+      <AvatarOutlineIcon className={styles.icon} />
       <BinIcon className={styles.icon} />
       <BookIcon className={styles.icon} />
       <BulbIcon className={styles.icon} />
@@ -37,6 +45,10 @@ export function IconsPreview() {
       <InfoIcon className={styles.icon} />
       <MaginfierIcon className={styles.icon} />
       <MoonIcon className={styles.icon} />
+      <PathDownIcon className={styles.icon} />
+      <PathLeftIcon className={styles.icon} />
+      <PathRightIcon className={styles.icon} />
+      <PathUpIcon className={styles.icon} />
       <PauseIcon className={styles.icon} />
       <PencilIcon className={styles.icon} />
       <PlayIcon className={styles.icon} />
