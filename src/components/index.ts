@@ -2,6 +2,7 @@ export * from './avatar';
 export * from './button';
 export * from './input';
 export * from './input-with-button';
+export * from './modal';
 export * from './sandwich';
 export * from './select';
 export * from './theme-toggle';

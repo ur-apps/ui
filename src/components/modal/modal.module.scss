@@ -1,0 +1,137 @@
+@import 'scss/colors';
+@import 'scss/mixins';
+
+.overlay {
+  position: fixed;
+  z-index: 100;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  backdrop-filter: blur(5px);
+
+  &--white {
+    background-color: $black10;
+
+    &.overlay--dark-mode {
+      background-color: $white10;
+    }
+  }
+
+  &--black {
+    background-color: $white10;
+
+    &.overlay--light-mode {
+      background-color: $black10;
+    }
+  }
+}
+
+.modal {
+  position: relative;
+
+  width: max-content;
+  height: max-content;
+  border: 1px solid;
+
+  &--small {
+    padding: 24px 16px 16px;
+
+    border-radius: 10px;
+  }
+
+  &--medium {
+    padding: 24px;
+
+    border-radius: 10px;
+  }
+
+  &--large {
+    padding: 32px;
+
+    border-radius: 15px;
+  }
+
+  &--white {
+    border-color: $black25;
+    background-color: $white;
+
+    &.modal--dark-mode {
+      border-color: $white20;
+      background-color: $black;
+    }
+  }
+
+  &--black {
+    border-color: $white20;
+    background-color: $black;
+
+    &.modal--light-mode {
+      border-color: $black25;
+      background-color: $white;
+    }
+  }
+}
+
+.close {
+  @include reset-button;
+
+  position: absolute;
+
+  &--small {
+    top: 12px;
+    right: 12px;
+
+    width: 12px;
+    height: 12px;
+  }
+
+  &--medium {
+    top: 12px;
+    right: 12px;
+
+    width: 16px;
+    height: 16px;
+  }
+
+  &--large {
+    top: 16px;
+    right: 16px;
+
+    width: 16px;
+    height: 16px;
+  }
+
+  &--white {
+    path {
+      fill: $black;
+    }
+
+    &.close--dark-mode {
+      path {
+        fill: $white;
+      }
+    }
+  }
+
+  &--black {
+    path {
+      fill: $white;
+    }
+
+    &.close--light-mode {
+      path {
+        fill: $black;
+      }
+    }
+  }
+
+  & > svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
