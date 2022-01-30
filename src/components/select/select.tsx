@@ -38,7 +38,7 @@ export type TSelectValue = string | number;
 Select.defaultProps = {
   size: 'medium',
   colorScheme: 'light',
-  autoColor: false,
+  autoColor: true,
   controlled: false,
   name: `select-${Math.random()}`,
   emptyText: '',

@@ -39,24 +39,24 @@
 
   &--light {
     & path {
-      fill: $black50;
+      fill: $darkest-blue;
     }
 
     &.icon--dark-mode {
       & path {
-        fill: $white50;
+        fill: $white;
       }
     }
   }
 
   &--dark {
     & path {
-      fill: $white50;
+      fill: $white;
     }
 
     &.icon--light-mode {
       & path {
-        fill: $black25;
+        fill: $darkest-blue;
       }
     }
   }
