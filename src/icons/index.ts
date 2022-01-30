@@ -13,6 +13,7 @@ export { ReactComponent as FilterIcon } from './filter.svg';
 export { ReactComponent as HeartIcon } from './heart.svg';
 export { ReactComponent as HomeIcon } from './home.svg';
 export { ReactComponent as InfoIcon } from './info.svg';
+export { ReactComponent as LockIcon } from './Lock.svg';
 export { ReactComponent as MaginfierIcon } from './magnifier.svg';
 export { ReactComponent as MoonIcon } from './moon.svg';
 export { ReactComponent as PathDownIcon } from './path-down.svg';
@@ -25,3 +26,9 @@ export { ReactComponent as PlayIcon } from './play.svg';
 export { ReactComponent as SunIcon } from './sun.svg';
 export { ReactComponent as TranslateIcon } from './translate.svg';
 export { ReactComponent as VolumeIcon } from './volume.svg';
+
+export type TSVGIcon = React.FunctionComponent<
+  React.SVGProps<SVGSVGElement> & {
+    title?: string | undefined;
+  }
+>;

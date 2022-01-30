@@ -12,6 +12,7 @@ import { ReactComponent as EyeIcon } from './eye.svg';
 import { ReactComponent as FilterIcon } from './filter.svg';
 import { ReactComponent as HeartIcon } from './heart.svg';
 import { ReactComponent as HomeIcon } from './home.svg';
+import { ReactComponent as LockIcon } from './lock.svg';
 import { ReactComponent as InfoIcon } from './info.svg';
 import { ReactComponent as MaginfierIcon } from './magnifier.svg';
 import { ReactComponent as MoonIcon } from './moon.svg';
@@ -42,6 +43,7 @@ export function IconsPreview() {
       <FilterIcon className={styles.icon} />
       <HeartIcon className={styles.icon} />
       <HomeIcon className={styles.icon} />
+      <LockIcon className={styles.icon} />
       <InfoIcon className={styles.icon} />
       <MaginfierIcon className={styles.icon} />
       <MoonIcon className={styles.icon} />
