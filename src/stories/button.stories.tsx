@@ -227,3 +227,112 @@ OutlineGreenDisabled.args = {
   disabled: true,
   children: 'Cancel',
 };
+
+export const TextSmall = Template.bind({});
+TextSmall.args = {
+  size: 'small',
+  appearance: 'text',
+  colorScheme: 'green',
+  children: 'Submit',
+};
+
+export const TextMedium = Template.bind({});
+TextMedium.args = {
+  size: 'medium',
+  appearance: 'text',
+  colorScheme: 'black',
+  children: 'Submit',
+};
+
+export const TextLarge = Template.bind({});
+TextLarge.args = {
+  size: 'large',
+  appearance: 'text',
+  colorScheme: 'blue',
+  children: 'Cancel',
+};
+
+export const TextWhite = Template.bind({});
+TextWhite.args = {
+  size: 'large',
+  appearance: 'text',
+  colorScheme: 'white',
+  children: 'Submit',
+};
+
+export const TextWhiteDisabled = Template.bind({});
+TextWhiteDisabled.args = {
+  size: 'large',
+  appearance: 'text',
+  colorScheme: 'white',
+  disabled: true,
+  children: 'Submit',
+};
+
+export const TextBlack = Template.bind({});
+TextBlack.args = {
+  size: 'large',
+  appearance: 'text',
+  colorScheme: 'black',
+  children: 'Submit',
+};
+
+export const TextBlackDisabled = Template.bind({});
+TextBlackDisabled.args = {
+  size: 'large',
+  appearance: 'text',
+  colorScheme: 'black',
+  disabled: true,
+  children: 'Submit',
+};
+
+export const TextBlue = Template.bind({});
+TextBlue.args = {
+  size: 'large',
+  appearance: 'text',
+  colorScheme: 'blue',
+  children: 'Submit',
+};
+
+export const TextBlueDisabled = Template.bind({});
+TextBlueDisabled.args = {
+  size: 'large',
+  appearance: 'text',
+  colorScheme: 'blue',
+  disabled: true,
+  children: 'Submit',
+};
+
+export const TextRed = Template.bind({});
+TextRed.args = {
+  size: 'large',
+  appearance: 'text',
+  colorScheme: 'red',
+  children: 'Cancel',
+};
+
+export const TextRedDisabled = Template.bind({});
+TextRedDisabled.args = {
+  size: 'large',
+  appearance: 'text',
+  colorScheme: 'red',
+  disabled: true,
+  children: 'Cancel',
+};
+
+export const TextGreen = Template.bind({});
+TextGreen.args = {
+  size: 'large',
+  appearance: 'text',
+  colorScheme: 'green',
+  children: 'Cancel',
+};
+
+export const TextGreenDisabled = Template.bind({});
+TextGreenDisabled.args = {
+  size: 'large',
+  appearance: 'text',
+  colorScheme: 'green',
+  disabled: true,
+  children: 'Cancel',
+};

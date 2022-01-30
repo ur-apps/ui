@@ -308,3 +308,64 @@
     }
   }
 }
+
+.button--text {
+  height: auto;
+  padding: 0;
+
+  &.button--blue {
+    color: $blue;
+
+    &:disabled {
+      color: $blue50;
+    }
+  }
+
+  &.button--white {
+    color: $white;
+
+    &:disabled {
+      color: $light-gray;
+    }
+
+    &.button--light {
+      color: $black;
+
+      &:disabled {
+        color: $light-gray;
+      }
+    }
+  }
+
+  &.button--black {
+    color: $black;
+
+    &:disabled {
+      color: $light-gray;
+    }
+
+    &.button--light {
+      color: $white;
+
+      &:disabled {
+        color: $light-gray;
+      }
+    }
+  }
+
+  &.button--red {
+    color: $red;
+
+    &:disabled {
+      color: $red50;
+    }
+  }
+
+  &.button--green {
+    color: $green;
+
+    &:disabled {
+      color: $green50;
+    }
+  }
+}
