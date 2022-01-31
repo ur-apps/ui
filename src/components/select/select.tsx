@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 
 import { PathDownIcon } from 'icons';
-import { useTheme } from 'context';
+import { useTheme } from 'contexts';
 import { classNames } from 'utils';
 import styles from './select.module.scss';
 

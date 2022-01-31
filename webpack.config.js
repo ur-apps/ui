@@ -1,9 +1,10 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: 'production',
-  entry: { app: './src/index.ts', icons: { import: './src/icons/index.ts', filename: 'icons.js' } },
+  entry: { index: './src/index.ts', icons: { import: './src/icons/index.ts', filename: 'icons.js' } },
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'lib'),
@@ -16,10 +17,10 @@ module.exports = {
     alias: {
       'components': path.resolve(__dirname, 'src', 'components'),
       'constants': path.resolve(__dirname, 'src', 'constants'),
-      'context': path.resolve(__dirname, 'src', 'context'),
+      'contexts': path.resolve(__dirname, 'src', 'contexts'),
       'hooks': path.resolve(__dirname, 'src', 'hooks'),
       'icons': path.resolve(__dirname, 'src', 'icons'),
-      'scss': path.resolve(__dirname, 'src', 'scss'),
+      'styles': path.resolve(__dirname, 'src', 'styles'),
       'services': path.resolve(__dirname, 'src', 'services'),
       'types': path.resolve(__dirname, 'src', 'types'),
       'utils': path.resolve(__dirname, 'src', 'utils'),
@@ -45,7 +46,7 @@ module.exports = {
         test: /\.module\.css$/,
         include: path.resolve(__dirname, 'src'),
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -58,14 +59,14 @@ module.exports = {
         test: /\.css$/,
         include: path.resolve(__dirname, 'src'),
         exclude: /\.module\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       //-------------------- scss styles --------------------
       {
         test: /\.module\.s(a|c)ss$/,
         include: path.resolve(__dirname, 'src'),
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -80,7 +81,7 @@ module.exports = {
         test: /\.s(a|c)ss$/,
         include: path.resolve(__dirname, 'src'),
         exclude: /\.module\.s(a|c)ss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       //-------------------- images --------------------
       {
@@ -115,8 +116,11 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { from: 'src/**/*.svg', to: 'icons/[name][ext]' },
-        { from: 'src/scss', to: 'scss' },
+        { from: 'src/styles', to: 'styles' },
       ],
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'styles/[name].css',
     }),
   ],
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { useTheme } from 'context';
+import { useTheme } from 'contexts';
 import { classNames } from 'utils';
 import styles from './toggle.module.scss';
 

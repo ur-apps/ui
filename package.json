@@ -23,11 +23,11 @@
   "exports": {
     ".": "./lib/index.js",
     "./icons": "./lib/icons.js",
-    "./scss/colors": "./lib/scss/colors.scss",
-    "./scss/constants": "./lib/scss/constants.scss",
-    "./scss/fonts": "./lib/scss/fonts.scss",
-    "./scss/mixins": "./lib/scss/mixins.scss",
-    "./scss/text": "./lib/scss/text.scss"
+    "./styles": "./lib/styles/index.css",
+    "./styles/colors": "./lib/styles/colors.scss",
+    "./styles/constants": "./lib/styles/constants.scss",
+    "./styles/mixins": "./lib/styles/mixins.scss",
+    "./styles/text": "./lib/styles/text.scss"
   },
   "typesVersions": {
     "*": {
@@ -69,6 +69,7 @@
     "copy-webpack-plugin": "^10.2.0",
     "css-loader": "^6.5.1",
     "eslint": "^8.6.0",
+    "mini-css-extract-plugin": "^2.5.3",
     "pre-commit": "^1.2.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

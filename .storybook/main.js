@@ -9,10 +9,10 @@ module.exports = {
     config.resolve.alias = {
       'components': path.resolve(__dirname, '..', 'src', 'components'),
       'constants': path.resolve(__dirname, '..', 'src', 'constants'),
-      'context': path.resolve(__dirname, '..', 'src', 'context'),
+      'contexts': path.resolve(__dirname, '..', 'src', 'contexts'),
       'hooks': path.resolve(__dirname, '..', 'src', 'hooks'),
       'icons': path.resolve(__dirname, '..', 'src', 'icons'),
-      'scss': path.resolve(__dirname, '..', 'src', 'scss'),
+      'styles': path.resolve(__dirname, '..', 'src', 'styles'),
       'services': path.resolve(__dirname, '..', 'src', 'services'),
       'types': path.resolve(__dirname, '..', 'src', 'types'),
       'utils': path.resolve(__dirname, '..', 'src', 'utils'),

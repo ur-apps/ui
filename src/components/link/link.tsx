@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
-import { useTheme } from 'context';
+import { useTheme } from 'contexts';
 import { classNames } from 'utils';
 import styles from './link.module.scss';
 

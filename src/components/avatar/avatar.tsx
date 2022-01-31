@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { AvatarFillIcon } from 'icons';
-import { useTheme } from 'context';
+import { useTheme } from 'contexts';
 import { classNames } from 'utils';
 import styles from './avatar.module.scss';
 

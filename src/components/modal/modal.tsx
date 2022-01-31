@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback } from 'react';
 
 import { CloseIcon } from 'icons';
-import { useTheme } from 'context';
+import { useTheme } from 'contexts';
 import { classNames } from 'utils';
 import styles from './modal.module.scss';
 

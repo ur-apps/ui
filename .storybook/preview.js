@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { ThemeProvider } from '../src/context';
-import '../src/scss/main.scss';
+import { ThemeProvider } from '../src/contexts';
+import '../src/styles/main.scss';
 
 export const decorators = [
   (Story) => {

@@ -1,6 +1,6 @@
-@import 'scss/colors.scss';
-@import 'scss/constants.scss';
-@import 'scss/mixins.scss';
+@import 'styles/colors.scss';
+@import 'styles/constants.scss';
+@import 'styles/mixins.scss';
 
 .sandwich {
   @include reset-button;
