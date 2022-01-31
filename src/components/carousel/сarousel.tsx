@@ -16,17 +16,15 @@ Carousel.defaultProps = {
   interval: 5000,
 } as ICarouselProps;
 
-// TODO fix bugs
 export function Carousel({ className, imgWrapperClassName, data, interval }: ICarouselProps) {
   const сarousel = useRef<HTMLDivElement>(null);
   const intervalID = useRef<NodeJS.Timer>();
 
   useEffect(() => {
     if (сarousel.current && data.length > 1) {
-      const scrollbarWidth = сarousel.current.scrollWidth;
-      const step = scrollbarWidth / data.length;
-
       intervalID.current = setInterval(() => {
+        const scrollbarWidth = сarousel.current!.scrollWidth;
+        const step = scrollbarWidth / data.length;
         const scrolled = сarousel.current?.scrollLeft || 0;
 
         if (scrolled < scrollbarWidth - step) {
