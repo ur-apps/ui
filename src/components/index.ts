@@ -1,5 +1,6 @@
 export * from './avatar';
 export * from './button';
+export * from './carousel';
 export * from './input';
 export * from './input-with-button';
 export * from './link';
