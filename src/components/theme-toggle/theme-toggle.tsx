@@ -24,6 +24,7 @@ export function ThemeToggle({ className, size, colorScheme, autoColor, onChange 
   const { theme, themeValue, switchTheme } = useTheme();
 
   const changeHandler = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(evt.target.value);
     onChange && onChange(evt);
     switchTheme(evt.target.value as 'dark' | 'light' | 'auto');
   };
@@ -43,14 +44,14 @@ export function ThemeToggle({ className, size, colorScheme, autoColor, onChange 
           styles[`button--${size}`],
           styles[`button--${colorScheme}`],
           autoColor ? styles[`button--${theme}-mode`] : undefined,
-          theme === 'light' ? styles['button--active'] : undefined
+          themeValue === 'light' ? styles['button--active'] : undefined
         )}>
         <input
           className={styles.input}
           type="radio"
           name="app-theme"
           value="light"
-          checked={theme === 'light'}
+          checked={themeValue === 'light'}
           onChange={changeHandler}
         />
         <SunIcon
@@ -59,7 +60,7 @@ export function ThemeToggle({ className, size, colorScheme, autoColor, onChange 
             styles[`icon--${size}`],
             styles[`icon--${colorScheme}`],
             autoColor ? styles[`icon--${theme}-mode`] : undefined,
-            theme === 'light' ? styles['icon--active'] : undefined
+            themeValue === 'light' ? styles['icon--active'] : undefined
           )}
         />
       </label>
