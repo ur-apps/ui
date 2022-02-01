@@ -24,7 +24,6 @@ export function ThemeToggle({ className, size, colorScheme, autoColor, onChange 
   const { theme, themeValue, switchTheme } = useTheme();
 
   const changeHandler = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(evt.target.value);
     onChange && onChange(evt);
     switchTheme(evt.target.value as 'dark' | 'light' | 'auto');
   };

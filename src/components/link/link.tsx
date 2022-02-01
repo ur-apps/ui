@@ -12,7 +12,7 @@ export interface ILinkProps {
   colorScheme?: 'white' | 'black' | 'blue';
   autoColor?: boolean;
   href?: string;
-  target: '_self' | '_blank' | '_parent' | '_top';
+  target?: '_self' | '_blank' | '_parent' | '_top';
   id?: string;
   children: React.ReactNode;
   onClick?: ((evt: React.MouseEvent<HTMLAnchorElement>) => void) | undefined;
