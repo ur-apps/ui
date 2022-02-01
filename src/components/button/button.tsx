@@ -51,7 +51,7 @@ export function Button({
         styles[`button--${size}`],
         styles[`button--${appearance}`],
         styles[`button--${colorScheme}`],
-        autoColor ? styles[`button--${theme}`] : undefined,
+        autoColor ? styles[`button--${theme}-mode`] : undefined,
         className
       )}
       type={type}
