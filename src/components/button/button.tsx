@@ -8,7 +8,7 @@ export interface IButtonProps {
   className?: string;
   size?: 'small' | 'medium' | 'large';
   appearance?: 'fill' | 'outline' | 'text';
-  colorScheme?: 'white' | 'gray' | 'black' | 'blue' | 'red' | 'green';
+  colorScheme?: 'white' | 'black' | 'blue' | 'red' | 'green';
   autoColor?: boolean;
   type?: 'button' | 'submit' | 'reset';
   id?: string;
