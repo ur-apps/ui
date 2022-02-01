@@ -23,6 +23,7 @@ Link.defaultProps = {
   size: 'medium',
   appearance: 'text',
   colorScheme: 'blue',
+  autoColor: true,
   href: '/',
   target: '_self',
 } as ILinkProps;
