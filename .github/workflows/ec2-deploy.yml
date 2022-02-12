@@ -1,0 +1,39 @@
+name: deploy to AWS EC2
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - run: npm i --silent
+      - run: npm run build-storybook --silent
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_KEY" > ~/.ssh/ssh.key
+          chmod 600 ~/.ssh/ssh.key
+          cat >> ~/.ssh/config <<END
+            Host remote
+            HostName $HOST
+            User ubuntu
+            IdentityFile ~/.ssh/ssh.key
+            StrictHostKeyChecking no
+          END
+        env:
+          HOST: ${{ secrets.HOST }}
+          SSH_KEY: ${{ secrets.SSH_KEY }}
+      - name: Copy to remote server
+        run: |
+          echo "Copy UI-Kit to remote server"
+          pwd
+          ls -la
+          rsync -a $(pwd)/storybook-static remote:/home/ubuntu/apps/ureng-ui-kit/
+          echo "Github Actions CI/CD pipeline completed"
