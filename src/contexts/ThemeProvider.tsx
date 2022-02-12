@@ -22,7 +22,7 @@ type TThemeProps = {
 };
 
 export function ThemeProvider({ children }: TThemeProps): JSX.Element {
-  const [themeValue, setThemeValue] = useState<'light' | 'dark' | 'auto'>(ThemeService.getThemeFromLS || 'auto');
+  const [themeValue, setThemeValue] = useState<'light' | 'dark' | 'auto'>(ThemeService.getThemeFromLS);
   const [theme, setTheme] = useState<'light' | 'dark'>(
     themeValue === 'auto' ? ThemeService.getThemeByTime() : themeValue
   );
