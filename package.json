@@ -1,6 +1,6 @@
 {
   "name": "ureng-ui",
-  "version": "0.0.1-18",
+  "version": "0.0.1-19",
   "description": "URENG UI KIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
