@@ -12,6 +12,10 @@ module.exports = {
     clean: true,
   },
 
+  optimization: {
+    minimize: false,
+  },
+
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {
