@@ -91,7 +91,7 @@
     padding: 6px;
     border-radius: $radius-default;
 
-    @include default-text;
+    @include medium-text;
     line-height: 20px;
 
     &:not(:last-child) {

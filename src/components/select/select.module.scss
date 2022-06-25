@@ -49,7 +49,7 @@
   }
 
   &--medium {
-    @include default-text;
+    @include medium-text;
 
     padding: 0 32px 0 16px;
 
@@ -323,7 +323,7 @@
   &--medium {
     padding: 7px 16px;
 
-    @include default-text;
+    @include medium-text;
   }
 
   &--large {

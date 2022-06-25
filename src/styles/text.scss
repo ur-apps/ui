@@ -9,7 +9,7 @@
   line-height: 16px;
 }
 
-@mixin default-text {
+@mixin medium-text {
   font-size: 14px;
   line-height: 18px;
 }
@@ -55,7 +55,7 @@ h6 {
 }
 
 p {
-  @include default-text;
+  @include medium-text;
 }
 
 .large-paragraph {
