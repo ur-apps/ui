@@ -1,0 +1,23 @@
+@import 'styles/text.scss';
+
+.text {
+  &--xs {
+    @include extra-small-text;
+  }
+
+  &--s {
+    @include small-text;
+  }
+
+  &--m {
+    @include medium-text;
+  }
+
+  &--l {
+    @include large-text;
+  }
+
+  &--xl {
+    @include extra-large-text;
+  }
+}

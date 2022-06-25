@@ -10,5 +10,6 @@ export * from './modal';
 export * from './sandwich';
 export * from './select';
 export * from './spinner';
+export * from './text';
 export * from './theme-toggle';
 export * from './toggle';
