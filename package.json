@@ -7,10 +7,10 @@
   "module": "lib/index.js",
   "scripts": {
     "build": "webpack && tsc-alias",
+    "build:storybook": "build-storybook",
+    "storybook": "start-storybook -p 6006",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
     "release:patch": "npm version patch && git push --follow-tags",
     "release:minor": "npm version minor && git push --follow-tags",
     "release:major": "npm version major && git push --follow-tags",

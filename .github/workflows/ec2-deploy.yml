@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: 16
       - run: npm i --silent
-      - run: npm run build-storybook --silent
+      - run: npm run build:storybook --silent
       - name: Configure SSH
         run: |
           mkdir -p ~/.ssh/
