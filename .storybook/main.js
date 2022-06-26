@@ -10,6 +10,7 @@ module.exports = {
       'components': path.resolve(__dirname, '..', 'src', 'components'),
       'constants': path.resolve(__dirname, '..', 'src', 'constants'),
       'contexts': path.resolve(__dirname, '..', 'src', 'contexts'),
+      'fonts': path.resolve(__dirname, '..', 'src', 'fonts'),
       'hooks': path.resolve(__dirname, '..', 'src', 'hooks'),
       'icons': path.resolve(__dirname, '..', 'src', 'icons'),
       'styles': path.resolve(__dirname, '..', 'src', 'styles'),

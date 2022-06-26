@@ -11,6 +11,7 @@ module.exports = {
     path: path.resolve(__dirname, 'lib'),
     libraryTarget: 'umd',
     clean: true,
+    publicPath: 'ureng-ui/',
   },
 
   optimization: {
@@ -30,6 +31,7 @@ module.exports = {
       'components': path.resolve(__dirname, 'src', 'components'),
       'constants': path.resolve(__dirname, 'src', 'constants'),
       'contexts': path.resolve(__dirname, 'src', 'contexts'),
+      'fonts': path.resolve(__dirname, 'src', 'fonts'),
       'hooks': path.resolve(__dirname, 'src', 'hooks'),
       'icons': path.resolve(__dirname, 'src', 'icons'),
       'styles': path.resolve(__dirname, 'src', 'styles'),
@@ -121,6 +123,15 @@ module.exports = {
           },
           'url-loader',
         ],
+      },
+      //-------------------- fonts --------------------
+      {
+        test: /\.(woff|woff2)$/,
+        include: path.resolve(__dirname, 'src'),
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext]',
+        },
       },
     ],
   },

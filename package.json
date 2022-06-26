@@ -27,7 +27,8 @@
     "./styles/colors": "./lib/styles/colors.scss",
     "./styles/constants": "./lib/styles/constants.scss",
     "./styles/mixins": "./lib/styles/mixins.scss",
-    "./styles/text": "./lib/styles/text.scss"
+    "./styles/text": "./lib/styles/text.scss",
+    "./fonts/": "./lib/fonts/"
   },
   "typesVersions": {
     "*": {

@@ -4,8 +4,7 @@
   font-style: normal;
   font-display: swap;
   src: local('Visby Round CF ExtraLight'), local('VisbyRoundCF-ExtraLight'),
-    url('../fonts/VisbyRoundCF-ExtraLight.woff2') format('woff2'),
-    url('../fonts/VisbyRoundCF-ExtraLight.woff') format('woff');
+    url('fonts/VisbyRoundCF-ExtraLight.woff2') format('woff2'), url('fonts/VisbyRoundCF-ExtraLight.woff') format('woff');
 }
 
 @font-face {
@@ -13,8 +12,8 @@
   font-weight: 300;
   font-style: normal;
   font-display: swap;
-  src: local('Visby Round CF Light'), local('VisbyRoundCF-Light'),
-    url('../fonts/VisbyRoundCF-Light.woff2') format('woff2'), url('../fonts/VisbyRoundCF-Light.woff') format('woff');
+  src: local('Visby Round CF Light'), local('VisbyRoundCF-Light'), url('fonts/VisbyRoundCF-Light.woff2') format('woff2'),
+    url('fonts/VisbyRoundCF-Light.woff') format('woff');
 }
 
 @font-face {
@@ -23,7 +22,7 @@
   font-style: normal;
   font-display: swap;
   src: local('Visby Round CF Regular'), local('VisbyRoundCF-Regular'),
-    url('../fonts/VisbyRoundCF-Regular.woff2') format('woff2'), url('../fonts/VisbyRoundCF-Regular.woff') format('woff');
+    url('fonts/VisbyRoundCF-Regular.woff2') format('woff2'), url('fonts/VisbyRoundCF-Regular.woff') format('woff');
 }
 
 @font-face {
@@ -32,7 +31,7 @@
   font-style: normal;
   font-display: swap;
   src: local('Visby Round CF Medium'), local('VisbyRoundCF-Medium'),
-    url('../fonts/VisbyRoundCF-Medium.woff2') format('woff2'), url('../fonts/VisbyRoundCF-Medium.woff') format('woff');
+    url('fonts/VisbyRoundCF-Medium.woff2') format('woff2'), url('fonts/VisbyRoundCF-Medium.woff') format('woff');
 }
 
 @font-face {
@@ -41,8 +40,7 @@
   font-style: normal;
   font-display: swap;
   src: local('Visby Round CF DemiBold'), local('VisbyRoundCF-DemiBold'),
-    url('../fonts/VisbyRoundCF-DemiBold.woff2') format('woff2'),
-    url('../fonts/VisbyRoundCF-DemiBold.woff') format('woff');
+    url('fonts/VisbyRoundCF-DemiBold.woff2') format('woff2'), url('fonts/VisbyRoundCF-DemiBold.woff') format('woff');
 }
 
 @font-face {
@@ -50,8 +48,8 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: local('Visby Round CF Bold'), local('VisbyRoundCF-Bold'), url('../fonts/VisbyRoundCF-Bold.woff2') format('woff2'),
-    url('../fonts/VisbyRoundCF-Bold.woff') format('woff');
+  src: local('Visby Round CF Bold'), local('VisbyRoundCF-Bold'), url('fonts/VisbyRoundCF-Bold.woff2') format('woff2'),
+    url('fonts/VisbyRoundCF-Bold.woff') format('woff');
 }
 
 @font-face {
@@ -60,8 +58,7 @@
   font-style: normal;
   font-display: swap;
   src: local('Visby Round CF ExtraBold'), local('VisbyRoundCF-ExtraBold'),
-    url('../fonts/VisbyRoundCF-ExtraBold.woff2') format('woff2'),
-    url('../fonts/VisbyRoundCF-ExtraBold.woff') format('woff');
+    url('fonts/VisbyRoundCF-ExtraBold.woff2') format('woff2'), url('fonts/VisbyRoundCF-ExtraBold.woff') format('woff');
 }
 
 @font-face {
@@ -69,87 +66,87 @@
   font-weight: 900;
   font-style: normal;
   font-display: swap;
-  src: local('Visby Round CF Heavy'), local('VisbyRoundCF-Heavy'),
-    url('../fonts/VisbyRoundCF-Heavy.woff2') format('woff2'), url('../fonts/VisbyRoundCF-Heavy.woff') format('woff');
+  src: local('Visby Round CF Heavy'), local('VisbyRoundCF-Heavy'), url('fonts/VisbyRoundCF-Heavy.woff2') format('woff2'),
+    url('fonts/VisbyRoundCF-Heavy.woff') format('woff');
 }
 
-@font-face {
-  font-family: 'Visby Round CF';
-  font-weight: 200;
-  font-style: oblique;
-  font-display: swap;
-  src: local('Visby Round CF ExtraLight Oblique'), local('VisbyRoundCF-ExtraLightOblique'),
-    url('../fonts/VisbyRoundCF-ExtraLightOblique.woff2') format('woff2'),
-    url('../fonts/VisbyRoundCF-ExtraLightOblique.woff') format('woff');
-}
+// @font-face {
+//   font-family: 'Visby Round CF';
+//   font-weight: 200;
+//   font-style: oblique;
+//   font-display: swap;
+//   src: local('Visby Round CF ExtraLight Oblique'), local('VisbyRoundCF-ExtraLightOblique'),
+//     url('fonts/VisbyRoundCF-ExtraLightOblique.woff2') format('woff2'),
+//     url('fonts/VisbyRoundCF-ExtraLightOblique.woff') format('woff');
+// }
 
-@font-face {
-  font-family: 'Visby Round CF';
-  font-weight: 300;
-  font-style: oblique;
-  font-display: swap;
-  src: local('Visby Round CF Light Oblique'), local('VisbyRoundCF-LightOblique'),
-    url('../fonts/VisbyRoundCF-LightOblique.woff2') format('woff2'),
-    url('../fonts/VisbyRoundCF-LightOblique.woff') format('woff');
-}
+// @font-face {
+//   font-family: 'Visby Round CF';
+//   font-weight: 300;
+//   font-style: oblique;
+//   font-display: swap;
+//   src: local('Visby Round CF Light Oblique'), local('VisbyRoundCF-LightOblique'),
+//     url('fonts/VisbyRoundCF-LightOblique.woff2') format('woff2'),
+//     url('fonts/VisbyRoundCF-LightOblique.woff') format('woff');
+// }
 
-@font-face {
-  font-family: 'Visby Round CF';
-  font-weight: 400;
-  font-style: oblique;
-  font-display: swap;
-  src: local('Visby Round CF Oblique'), local('VisbyRoundCF-Oblique'),
-    url('../fonts/VisbyRoundCF-Oblique.woff2') format('woff2'), url('../fonts/VisbyRoundCF-Oblique.woff') format('woff');
-}
+// @font-face {
+//   font-family: 'Visby Round CF';
+//   font-weight: 400;
+//   font-style: oblique;
+//   font-display: swap;
+//   src: local('Visby Round CF Oblique'), local('VisbyRoundCF-Oblique'),
+//     url('fonts/VisbyRoundCF-Oblique.woff2') format('woff2'), url('fonts/VisbyRoundCF-Oblique.woff') format('woff');
+// }
 
-@font-face {
-  font-family: 'Visby Round CF';
-  font-weight: 500;
-  font-style: oblique;
-  font-display: swap;
-  src: local('Visby Round CF Medium Oblique'), local('VisbyRoundCF-MediumOblique'),
-    url('../fonts/VisbyRoundCF-MediumOblique.woff2') format('woff2'),
-    url('../fonts/VisbyRoundCF-MediumOblique.woff') format('woff');
-}
+// @font-face {
+//   font-family: 'Visby Round CF';
+//   font-weight: 500;
+//   font-style: oblique;
+//   font-display: swap;
+//   src: local('Visby Round CF Medium Oblique'), local('VisbyRoundCF-MediumOblique'),
+//     url('fonts/VisbyRoundCF-MediumOblique.woff2') format('woff2'),
+//     url('fonts/VisbyRoundCF-MediumOblique.woff') format('woff');
+// }
 
-@font-face {
-  font-family: 'Visby Round CF';
-  font-weight: 600;
-  font-style: oblique;
-  font-display: swap;
-  src: local('Visby Round CF DemiBold Oblique'), local('VisbyRoundCF-DemiBoldOblique'),
-    url('../fonts/VisbyRoundCF-DemiBoldOblique.woff2') format('woff2'),
-    url('../fonts/VisbyRoundCF-DemiBoldOblique.woff') format('woff');
-}
+// @font-face {
+//   font-family: 'Visby Round CF';
+//   font-weight: 600;
+//   font-style: oblique;
+//   font-display: swap;
+//   src: local('Visby Round CF DemiBold Oblique'), local('VisbyRoundCF-DemiBoldOblique'),
+//     url('fonts/VisbyRoundCF-DemiBoldOblique.woff2') format('woff2'),
+//     url('fonts/VisbyRoundCF-DemiBoldOblique.woff') format('woff');
+// }
 
-@font-face {
-  font-family: 'Visby Round CF';
-  font-weight: 700;
-  font-style: oblique;
-  font-display: swap;
-  src: local('Visby Round CF Bold Oblique'), local('VisbyRoundCF-BoldOblique'),
-    url('../fonts/VisbyRoundCF-BoldOblique.woff2') format('woff2'),
-    url('../fonts/VisbyRoundCF-BoldOblique.woff') format('woff');
-}
+// @font-face {
+//   font-family: 'Visby Round CF';
+//   font-weight: 700;
+//   font-style: oblique;
+//   font-display: swap;
+//   src: local('Visby Round CF Bold Oblique'), local('VisbyRoundCF-BoldOblique'),
+//     url('fonts/VisbyRoundCF-BoldOblique.woff2') format('woff2'),
+//     url('fonts/VisbyRoundCF-BoldOblique.woff') format('woff');
+// }
 
-@font-face {
-  font-family: 'Visby Round CF';
-  font-weight: 800;
-  font-style: oblique;
-  font-display: swap;
-  src: local('Visby Round CF ExtraBold Oblique'), local('VisbyRoundCF-ExtraBoldOblique'),
-    url('../fonts/VisbyRoundCF-ExtraBoldOblique.woff2') format('woff2'),
-    url('../fonts/VisbyRoundCF-ExtraBoldOblique.woff') format('woff');
-}
+// @font-face {
+//   font-family: 'Visby Round CF';
+//   font-weight: 800;
+//   font-style: oblique;
+//   font-display: swap;
+//   src: local('Visby Round CF ExtraBold Oblique'), local('VisbyRoundCF-ExtraBoldOblique'),
+//     url('fonts/VisbyRoundCF-ExtraBoldOblique.woff2') format('woff2'),
+//     url('fonts/VisbyRoundCF-ExtraBoldOblique.woff') format('woff');
+// }
 
-@font-face {
-  font-family: 'Visby Round CF';
-  font-weight: 900;
-  font-style: oblique;
-  font-display: swap;
-  src: local('Visby Round CF Heavy Oblique'), local('VisbyRoundCF-HeavyOblique'),
-    url('../fonts/VisbyRoundCF-HeavyOblique.woff2') format('woff2'),
-    url('../fonts/VisbyRoundCF-HeavyOblique.woff') format('woff');
-}
+// @font-face {
+//   font-family: 'Visby Round CF';
+//   font-weight: 900;
+//   font-style: oblique;
+//   font-display: swap;
+//   src: local('Visby Round CF Heavy Oblique'), local('VisbyRoundCF-HeavyOblique'),
+//     url('fonts/VisbyRoundCF-HeavyOblique.woff2') format('woff2'),
+//     url('fonts/VisbyRoundCF-HeavyOblique.woff') format('woff');
+// }
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
