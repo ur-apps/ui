@@ -15,7 +15,7 @@
     height: 24px;
     padding: 0 12px;
 
-    border-radius: constants.$radius-small;
+    border-radius: constants.$radius-s;
   }
 
   &--medium {
@@ -24,7 +24,7 @@
     height: 32px;
     padding: 0 16px;
 
-    border-radius: constants.$radius-default;
+    border-radius: constants.$radius-m;
   }
 
   &--large {
@@ -33,7 +33,7 @@
     height: 40px;
     padding: 0 24px;
 
-    border-radius: constants.$radius-large;
+    border-radius: constants.$radius-l;
   }
 }
 

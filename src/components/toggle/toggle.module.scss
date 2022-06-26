@@ -13,21 +13,21 @@
     height: 24px;
     width: fit-content;
     padding: 3px;
-    border-radius: constants.$radius-small;
+    border-radius: constants.$radius-s;
   }
 
   &--medium {
     height: 32px;
     width: fit-content;
     padding: 3px;
-    border-radius: constants.$radius-default;
+    border-radius: constants.$radius-m;
   }
 
   &--large {
     height: 40px;
     width: fit-content;
     padding: 4px;
-    border-radius: constants.$radius-large;
+    border-radius: constants.$radius-l;
   }
 
   &--blue {
@@ -62,7 +62,7 @@
     min-width: 18px;
     max-height: 18px;
     padding: 2px;
-    border-radius: constants.$radius-extra-small;
+    border-radius: constants.$radius-xs;
 
     @include text.text-xs;
 
@@ -75,7 +75,7 @@
     min-width: 26px;
     max-height: 26px;
     padding: 4px;
-    border-radius: constants.$radius-small;
+    border-radius: constants.$radius-s;
 
     @include text.text-s;
     line-height: 18px;
@@ -89,7 +89,7 @@
     min-width: 32px;
     max-height: 32px;
     padding: 6px;
-    border-radius: constants.$radius-default;
+    border-radius: constants.$radius-m;
 
     @include text.text-m;
     line-height: 20px;

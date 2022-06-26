@@ -41,7 +41,7 @@
 
     padding: 0 24px 0 12px;
 
-    border-radius: constants.$radius-small;
+    border-radius: constants.$radius-s;
 
     &.output--with-icon {
       padding-left: 24px;
@@ -53,7 +53,7 @@
 
     padding: 0 32px 0 16px;
 
-    border-radius: constants.$radius-default;
+    border-radius: constants.$radius-m;
 
     &.output--with-icon {
       padding-left: 28px;
@@ -65,7 +65,7 @@
 
     padding: 0 40px 0 20px;
 
-    border-radius: constants.$radius-large;
+    border-radius: constants.$radius-l;
 
     &.output--with-icon {
       padding-left: 40px;
@@ -268,8 +268,8 @@
   @include mixins.useScrollbar;
 
   &--small {
-    border-bottom-left-radius: constants.$radius-small;
-    border-bottom-right-radius: constants.$radius-small;
+    border-bottom-left-radius: constants.$radius-s;
+    border-bottom-right-radius: constants.$radius-s;
 
     &.dropdown--expanded {
       max-height: 200px;
@@ -277,8 +277,8 @@
   }
 
   &--medium {
-    border-bottom-left-radius: constants.$radius-default;
-    border-bottom-right-radius: constants.$radius-default;
+    border-bottom-left-radius: constants.$radius-m;
+    border-bottom-right-radius: constants.$radius-m;
 
     &.dropdown--expanded {
       max-height: 250px;
@@ -286,8 +286,8 @@
   }
 
   &--large {
-    border-bottom-left-radius: constants.$radius-large;
-    border-bottom-right-radius: constants.$radius-large;
+    border-bottom-left-radius: constants.$radius-l;
+    border-bottom-right-radius: constants.$radius-l;
 
     &.dropdown--expanded {
       max-height: 300px;
