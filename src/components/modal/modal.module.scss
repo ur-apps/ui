@@ -1,5 +1,5 @@
-@import 'styles/colors';
-@import 'styles/mixins';
+@use 'styles/colors';
+@use 'styles/mixins';
 
 .overlay {
   position: fixed;
@@ -14,18 +14,18 @@
   backdrop-filter: blur(5px);
 
   &--white {
-    background-color: $black10;
+    background-color: colors.$black10;
 
     &.overlay--dark-mode {
-      background-color: $white10;
+      background-color: colors.$white10;
     }
   }
 
   &--black {
-    background-color: $white10;
+    background-color: colors.$white10;
 
     &.overlay--light-mode {
-      background-color: $black10;
+      background-color: colors.$black10;
     }
   }
 }
@@ -56,28 +56,28 @@
   }
 
   &--white {
-    border-color: $black25;
-    background-color: $white;
+    border-color: colors.$black25;
+    background-color: colors.$white;
 
     &.modal--dark-mode {
-      border-color: $white20;
-      background-color: $black;
+      border-color: colors.$white20;
+      background-color: colors.$black;
     }
   }
 
   &--black {
-    border-color: $white20;
-    background-color: $black;
+    border-color: colors.$white20;
+    background-color: colors.$black;
 
     &.modal--light-mode {
-      border-color: $black25;
-      background-color: $white;
+      border-color: colors.$black25;
+      background-color: colors.$white;
     }
   }
 }
 
 .close {
-  @include reset-button;
+  @include mixins.reset-button;
 
   position: absolute;
 
@@ -107,24 +107,24 @@
 
   &--white {
     path {
-      fill: $black;
+      fill: colors.$black;
     }
 
     &.close--dark-mode {
       path {
-        fill: $white;
+        fill: colors.$white;
       }
     }
   }
 
   &--black {
     path {
-      fill: $white;
+      fill: colors.$white;
     }
 
     &.close--light-mode {
       path {
-        fill: $black;
+        fill: colors.$black;
       }
     }
   }

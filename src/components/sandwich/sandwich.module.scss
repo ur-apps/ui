@@ -1,9 +1,9 @@
-@import 'styles/colors.scss';
-@import 'styles/constants.scss';
-@import 'styles/mixins.scss';
+@use 'styles/colors';
+@use 'styles/constants';
+@use 'styles/mixins';
 
 .sandwich {
-  @include reset-button;
+  @include mixins.reset-button;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -11,26 +11,26 @@
   height: 32px;
   padding: 11px 14px 10px;
 
-  border-radius: $radius-large;
+  border-radius: constants.$radius-large;
   cursor: pointer;
 
   &--blue {
-    background-color: $blue;
+    background-color: colors.$blue;
   }
 
   &--white {
-    background-color: $white;
+    background-color: colors.$white;
 
     &.sandwich--light-mode {
-      background-color: $black;
+      background-color: colors.$black;
     }
   }
 
   &--black {
-    background-color: $black;
+    background-color: colors.$black;
 
     &.sandwich--dark-mode {
-      background-color: $white;
+      background-color: colors.$white;
     }
   }
 }
@@ -46,22 +46,22 @@
   }
 
   &--blue {
-    background-color: $white;
+    background-color: colors.$white;
   }
 
   &--white {
-    background-color: $black;
+    background-color: colors.$black;
 
     &.line--light-mode {
-      background-color: $white;
+      background-color: colors.$white;
     }
   }
 
   &--black {
-    background-color: $white;
+    background-color: colors.$white;
 
     &.line--dark-mode {
-      background-color: $black;
+      background-color: colors.$black;
     }
   }
 }

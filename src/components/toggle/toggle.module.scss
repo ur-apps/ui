@@ -1,6 +1,6 @@
-@import 'styles/colors.scss';
-@import 'styles/constants.scss';
-@import 'styles/text.scss';
+@use 'styles/colors';
+@use 'styles/constants';
+@use 'styles/text';
 
 .toggle {
   display: flex;
@@ -13,40 +13,40 @@
     height: 24px;
     width: fit-content;
     padding: 3px;
-    border-radius: $radius-small;
+    border-radius: constants.$radius-small;
   }
 
   &--medium {
     height: 32px;
     width: fit-content;
     padding: 3px;
-    border-radius: $radius-default;
+    border-radius: constants.$radius-default;
   }
 
   &--large {
     height: 40px;
     width: fit-content;
     padding: 4px;
-    border-radius: $radius-large;
+    border-radius: constants.$radius-large;
   }
 
   &--blue {
-    background-color: $blue;
+    background-color: colors.$blue;
   }
 
   &--light {
-    background-color: $lighter-gray;
+    background-color: colors.$lighter-gray;
 
     &.toggle--dark-mode {
-      background-color: $darker-gray;
+      background-color: colors.$darker-gray;
     }
   }
 
   &--dark {
-    background-color: $darker-gray;
+    background-color: colors.$darker-gray;
 
     &.toggle--light-mode {
-      background-color: $lighter-gray;
+      background-color: colors.$lighter-gray;
     }
   }
 }
@@ -62,9 +62,9 @@
     min-width: 18px;
     max-height: 18px;
     padding: 2px;
-    border-radius: $radius-extra-small;
+    border-radius: constants.$radius-extra-small;
 
-    @include extra-small-text;
+    @include text.text-xs;
 
     &:not(:last-child) {
       margin-right: 3px;
@@ -75,9 +75,9 @@
     min-width: 26px;
     max-height: 26px;
     padding: 4px;
-    border-radius: $radius-small;
+    border-radius: constants.$radius-small;
 
-    @include small-text;
+    @include text.text-s;
     line-height: 18px;
 
     &:not(:last-child) {
@@ -89,9 +89,9 @@
     min-width: 32px;
     max-height: 32px;
     padding: 6px;
-    border-radius: $radius-default;
+    border-radius: constants.$radius-default;
 
-    @include medium-text;
+    @include text.text-m;
     line-height: 20px;
 
     &:not(:last-child) {
@@ -100,39 +100,39 @@
   }
 
   &--blue {
-    color: $white;
+    color: colors.$white;
 
     &.button--active {
-      color: $blue;
-      background-color: $white;
+      color: colors.$blue;
+      background-color: colors.$white;
     }
   }
 
   &--light {
-    color: $darkest-blue;
+    color: colors.$darkest-blue;
 
     &.button--active {
-      color: $white;
-      background-color: $blue;
+      color: colors.$white;
+      background-color: colors.$blue;
     }
 
     &.button--dark-mode {
-      color: $white;
+      color: colors.$white;
     }
   }
 
   &--dark {
-    color: $white;
+    color: colors.$white;
 
     &.button--active {
-      background-color: $blue;
+      background-color: colors.$blue;
     }
 
     &.button--light-mode {
-      color: $darkest-blue;
+      color: colors.$darkest-blue;
 
       &.button--active {
-        color: $white;
+        color: colors.$white;
       }
     }
   }
@@ -161,47 +161,47 @@
 
   &--blue {
     path {
-      fill: $white;
+      fill: colors.$white;
     }
 
     &.icon--active {
       path {
-        fill: $blue;
+        fill: colors.$blue;
       }
     }
   }
 
   &--light {
     path {
-      fill: $darkest-blue;
+      fill: colors.$darkest-blue;
     }
 
     &.icon--active {
       path {
-        fill: $white;
+        fill: colors.$white;
       }
     }
 
     &.icon--dark-mode {
       path {
-        fill: $white;
+        fill: colors.$white;
       }
     }
   }
 
   &--dark {
     path {
-      fill: $white;
+      fill: colors.$white;
     }
 
     &.icon--light-mode {
       path {
-        fill: $darkest-blue;
+        fill: colors.$darkest-blue;
       }
 
       &.icon--active {
         path {
-          fill: $white;
+          fill: colors.$white;
         }
       }
     }

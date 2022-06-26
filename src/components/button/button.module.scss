@@ -1,10 +1,10 @@
-@import 'styles/colors.scss';
-@import 'styles/constants.scss';
-@import 'styles/mixins.scss';
-@import 'styles/text.scss';
+@use 'styles/colors';
+@use 'styles/constants';
+@use 'styles/mixins';
+@use 'styles/text';
 
 .button {
-  @include reset-button();
+  @include mixins.reset-button();
   width: max-content;
 
   transition: 200ms;
@@ -14,156 +14,156 @@
   }
 
   &--small {
-    @include small-text;
+    @include text.text-s;
 
     height: 24px;
     padding: 0 12px;
 
-    border-radius: $radius-small;
+    border-radius: constants.$radius-small;
   }
 
   &--medium {
-    @include medium-text;
+    @include text.text-m;
 
     height: 32px;
     padding: 0 16px;
 
-    border-radius: $radius-default;
+    border-radius: constants.$radius-default;
   }
 
   &--large {
-    @include large-text;
+    @include text.text-l;
 
     height: 40px;
     padding: 0 24px;
 
-    border-radius: $radius-large;
+    border-radius: constants.$radius-large;
   }
 }
 
 .button--fill {
-  color: $white;
+  color: colors.$white;
 
   &.button--blue {
-    background-color: $blue;
+    background-color: colors.$blue;
 
     &:hover {
-      background-color: $dark-blue;
+      background-color: colors.$dark-blue;
     }
 
     &:active {
-      background-color: $darker-blue;
+      background-color: colors.$darker-blue;
     }
 
     &:disabled {
-      color: $white50;
-      background-color: $blue50;
+      color: colors.$white50;
+      background-color: colors.$blue50;
     }
   }
 
   &.button--white {
-    color: $darkest-blue;
-    background-color: $white;
+    color: colors.$darkest-blue;
+    background-color: colors.$white;
 
     &:hover {
-      background-color: $lighter-gray;
+      background-color: colors.$lighter-gray;
     }
 
     &:active {
-      background-color: $light-gray;
+      background-color: colors.$light-gray;
     }
 
     &:disabled {
-      color: $black25;
-      background-color: $lighter-gray;
+      color: colors.$black25;
+      background-color: colors.$lighter-gray;
     }
 
     &.button--light-mode {
-      color: $white;
-      background-color: $black;
+      color: colors.$white;
+      background-color: colors.$black;
 
       &:hover {
-        background-color: $darker-gray;
+        background-color: colors.$darker-gray;
       }
 
       &:active {
-        background-color: $gray;
+        background-color: colors.$gray;
       }
 
       &:disabled {
-        color: $white20;
-        background-color: $gray;
+        color: colors.$white20;
+        background-color: colors.$gray;
       }
     }
   }
 
   &.button--black {
-    color: $white;
-    background-color: $black;
+    color: colors.$white;
+    background-color: colors.$black;
 
     &:hover {
-      background-color: $darker-gray;
+      background-color: colors.$darker-gray;
     }
 
     &:active {
-      background-color: $gray;
+      background-color: colors.$gray;
     }
 
     &:disabled {
-      color: $white20;
-      background-color: $gray;
+      color: colors.$white20;
+      background-color: colors.$gray;
     }
 
     &.button--dark-mode {
-      color: $darkest-blue;
-      background-color: $white;
+      color: colors.$darkest-blue;
+      background-color: colors.$white;
 
       &:hover {
-        background-color: $lighter-gray;
+        background-color: colors.$lighter-gray;
       }
 
       &:active {
-        background-color: $light-gray;
+        background-color: colors.$light-gray;
       }
 
       &:disabled {
-        color: $black25;
-        background-color: $lighter-gray;
+        color: colors.$black25;
+        background-color: colors.$lighter-gray;
       }
     }
   }
 
   &.button--red {
-    background-color: $red;
+    background-color: colors.$red;
 
     &:hover {
-      background-color: $dark-red;
+      background-color: colors.$dark-red;
     }
 
     &:active {
-      background-color: $darker-red;
+      background-color: colors.$darker-red;
     }
 
     &:disabled {
-      color: $white50;
-      background-color: $red50;
+      color: colors.$white50;
+      background-color: colors.$red50;
     }
   }
 
   &.button--green {
-    background-color: $green;
+    background-color: colors.$green;
 
     &:hover {
-      background-color: $dark-green;
+      background-color: colors.$dark-green;
     }
 
     &:active {
-      background-color: $darker-green;
+      background-color: colors.$darker-green;
     }
 
     &:disabled {
-      color: $white50;
-      background-color: $green50;
+      color: colors.$white50;
+      background-color: colors.$green50;
     }
   }
 }
@@ -173,137 +173,137 @@
   border-style: solid;
 
   &.button--blue {
-    color: $blue;
+    color: colors.$blue;
 
-    border-color: $blue;
+    border-color: colors.$blue;
 
     &:hover {
-      background-color: $blue10;
+      background-color: colors.$blue10;
     }
 
     &:active {
-      background-color: $blue25;
+      background-color: colors.$blue25;
     }
 
     &:disabled {
-      color: $white50;
-      background-color: $blue25;
-      border-color: $blue25;
+      color: colors.$white50;
+      background-color: colors.$blue25;
+      border-color: colors.$blue25;
     }
   }
 
   &.button--red {
-    border-color: $red;
+    border-color: colors.$red;
 
-    color: $red;
+    color: colors.$red;
 
     &:hover {
-      background-color: $red10;
+      background-color: colors.$red10;
     }
 
     &:active {
-      background-color: $red25;
+      background-color: colors.$red25;
     }
 
     &:disabled {
-      color: $white50;
-      background-color: $red25;
-      border-color: $red25;
+      color: colors.$white50;
+      background-color: colors.$red25;
+      border-color: colors.$red25;
     }
   }
 
   &.button--green {
-    border-color: $green;
+    border-color: colors.$green;
 
-    color: $green;
+    color: colors.$green;
 
     &:hover {
-      background-color: $green10;
+      background-color: colors.$green10;
     }
 
     &:active {
-      background-color: $green25;
+      background-color: colors.$green25;
     }
 
     &:disabled {
-      color: $white50;
-      background-color: $green25;
-      border-color: $green25;
+      color: colors.$white50;
+      background-color: colors.$green25;
+      border-color: colors.$green25;
     }
   }
 
   &.button--white {
-    color: $white;
-    border-color: $white;
+    color: colors.$white;
+    border-color: colors.$white;
 
     &:hover {
-      background-color: $white20;
+      background-color: colors.$white20;
     }
 
     &:active {
-      background-color: $white25;
+      background-color: colors.$white25;
     }
 
     &:disabled {
-      color: $white50;
-      background-color: $white25;
-      border-color: $white25;
+      color: colors.$white50;
+      background-color: colors.$white25;
+      border-color: colors.$white25;
     }
 
     &.button--light-mode {
-      color: $black;
-      border-color: $black;
+      color: colors.$black;
+      border-color: colors.$black;
 
       &:hover {
-        background-color: $black5;
+        background-color: colors.$black5;
       }
 
       &:active {
-        background-color: $black10;
+        background-color: colors.$black10;
       }
 
       &:disabled {
-        color: $black50;
-        background-color: $black10;
-        border-color: $black25;
+        color: colors.$black50;
+        background-color: colors.$black10;
+        border-color: colors.$black25;
       }
     }
   }
 
   &.button--black {
-    color: $black;
-    border-color: $black;
+    color: colors.$black;
+    border-color: colors.$black;
 
     &:hover {
-      background-color: $black5;
+      background-color: colors.$black5;
     }
 
     &:active {
-      background-color: $black10;
+      background-color: colors.$black10;
     }
 
     &:disabled {
-      color: $black50;
-      background-color: $black10;
-      border-color: $black25;
+      color: colors.$black50;
+      background-color: colors.$black10;
+      border-color: colors.$black25;
     }
 
     &.button--dark-mode {
-      color: $white;
-      border-color: $white;
+      color: colors.$white;
+      border-color: colors.$white;
 
       &:hover {
-        background-color: $white20;
+        background-color: colors.$white20;
       }
 
       &:active {
-        background-color: $white25;
+        background-color: colors.$white25;
       }
 
       &:disabled {
-        color: $white50;
-        background-color: $white25;
-        border-color: $white25;
+        color: colors.$white50;
+        background-color: colors.$white25;
+        border-color: colors.$white25;
       }
     }
   }
@@ -314,58 +314,58 @@
   padding: 0;
 
   &.button--blue {
-    color: $blue;
+    color: colors.$blue;
 
     &:disabled {
-      color: $blue50;
+      color: colors.$blue50;
     }
   }
 
   &.button--white {
-    color: $white;
+    color: colors.$white;
 
     &:disabled {
-      color: $light-gray;
+      color: colors.$light-gray;
     }
 
     &.button--light-mode {
-      color: $black;
+      color: colors.$black;
 
       &:disabled {
-        color: $light-gray;
+        color: colors.$light-gray;
       }
     }
   }
 
   &.button--black {
-    color: $black;
+    color: colors.$black;
 
     &:disabled {
-      color: $light-gray;
+      color: colors.$light-gray;
     }
 
     &.button--dark-mode {
-      color: $white;
+      color: colors.$white;
 
       &:disabled {
-        color: $light-gray;
+        color: colors.$light-gray;
       }
     }
   }
 
   &.button--red {
-    color: $red;
+    color: colors.$red;
 
     &:disabled {
-      color: $red50;
+      color: colors.$red50;
     }
   }
 
   &.button--green {
-    color: $green;
+    color: colors.$green;
 
     &:disabled {
-      color: $green50;
+      color: colors.$green50;
     }
   }
 }

@@ -1,4 +1,4 @@
-@import 'colors';
+@use 'colors';
 
 @mixin reset-button {
   padding: 0;
@@ -25,18 +25,18 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: $black25;
+    background: colors.$black25;
     border-radius: $width;
   }
 
-  scrollbar-color: $black25 transparent;
+  scrollbar-color: colors.$black25 transparent;
   scrollbar-width: thin;
 }
 
 @mixin useDarkScrollBar {
   &::-webkit-scrollbar-thumb {
-    background: $lightest-gray;
+    background: colors.$lightest-gray;
   }
 
-  scrollbar-color: $lightest-gray transparent;
+  scrollbar-color: colors.$lightest-gray transparent;
 }

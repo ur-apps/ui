@@ -1,21 +1,21 @@
-@import 'styles/colors';
+@use 'styles/colors';
 
 .hr {
   border: none;
 
   &--light {
-    border-bottom: 1px solid $white25;
+    border-bottom: 1px solid colors.$white25;
 
     &.hr--light-mode {
-      border-bottom: 1px solid $black25;
+      border-bottom: 1px solid colors.$black25;
     }
   }
 
   &--dark {
-    border-bottom: 1px solid $black25;
+    border-bottom: 1px solid colors.$black25;
 
     &.hr--dark-mode {
-      border-bottom: 1px solid $white25;
+      border-bottom: 1px solid colors.$white25;
     }
   }
 }

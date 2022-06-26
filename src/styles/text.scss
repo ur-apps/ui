@@ -1,67 +1,59 @@
-@mixin extra-small-text {
+@mixin text-xs {
   font-size: 10px;
   line-height: 14px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
-@mixin small-text {
+@mixin text-s {
   font-size: 12px;
   line-height: 16px;
+  font-weight: 500;
 }
 
-@mixin medium-text {
+@mixin text-m {
   font-size: 14px;
   line-height: 18px;
+  font-weight: 500;
 }
 
-@mixin large-text {
+@mixin text-l {
   font-size: 16px;
   line-height: 20px;
+  font-weight: 500;
 }
 
-@mixin extra-large-text {
+@mixin text-xl {
   font-size: 18px;
   line-height: 22px;
+  font-weight: 500;
 }
 
-h1 {
+@mixin heading-h1 {
   font-size: 48px;
   line-height: 56px;
 }
 
-h2 {
+@mixin heading-h2 {
   font-size: 40px;
   line-height: 48px;
 }
 
-h3 {
+@mixin heading-h3 {
   font-size: 32px;
   line-height: 40px;
 }
 
-h4 {
+@mixin heading-h4 {
   font-size: 24px;
   line-height: 32px;
 }
 
-h5 {
+@mixin heading-h5 {
   font-size: 20px;
   line-height: 24px;
 }
 
-h6 {
+@mixin heading-h6 {
   font-size: 16px;
   line-height: 20px;
-}
-
-p {
-  @include medium-text;
-}
-
-.large-paragraph {
-  @include large-text;
-}
-
-.small-paragraph {
-  @include small-text;
 }

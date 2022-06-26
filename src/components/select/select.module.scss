@@ -1,7 +1,7 @@
-@import 'styles/colors.scss';
-@import 'styles/constants.scss';
-@import 'styles/mixins.scss';
-@import 'styles/text.scss';
+@use 'styles/colors';
+@use 'styles/constants';
+@use 'styles/mixins';
+@use 'styles/text';
 
 .select {
   position: relative;
@@ -37,11 +37,11 @@
   }
 
   &--small {
-    @include small-text;
+    @include text.text-s;
 
     padding: 0 24px 0 12px;
 
-    border-radius: $radius-small;
+    border-radius: constants.$radius-small;
 
     &.output--with-icon {
       padding-left: 24px;
@@ -49,11 +49,11 @@
   }
 
   &--medium {
-    @include medium-text;
+    @include text.text-m;
 
     padding: 0 32px 0 16px;
 
-    border-radius: $radius-default;
+    border-radius: constants.$radius-default;
 
     &.output--with-icon {
       padding-left: 28px;
@@ -61,11 +61,11 @@
   }
 
   &--large {
-    @include large-text;
+    @include text.text-l;
 
     padding: 0 40px 0 20px;
 
-    border-radius: $radius-large;
+    border-radius: constants.$radius-large;
 
     &.output--with-icon {
       padding-left: 40px;
@@ -73,68 +73,68 @@
   }
 
   &--light {
-    color: $darkest-blue;
-    background-color: $lighter-gray;
+    color: colors.$darkest-blue;
+    background-color: colors.$lighter-gray;
 
     &::placeholder {
-      color: $black50;
+      color: colors.$black50;
     }
 
     &:disabled {
-      color: $black50;
+      color: colors.$black50;
 
       &::placeholder {
-        color: $black25;
+        color: colors.$black25;
       }
     }
 
     &.output--dark-mode {
-      color: $white;
-      background-color: $darker-gray;
+      color: colors.$white;
+      background-color: colors.$darker-gray;
 
       &::placeholder {
-        color: $white50;
+        color: colors.$white50;
       }
 
       &:disabled {
-        color: $white50;
+        color: colors.$white50;
 
         &::placeholder {
-          color: $white25;
+          color: colors.$white25;
         }
       }
     }
   }
 
   &--dark {
-    color: $white;
-    background-color: $darker-gray;
+    color: colors.$white;
+    background-color: colors.$darker-gray;
 
     &::placeholder {
-      color: $white50;
+      color: colors.$white50;
     }
 
     &:disabled {
-      color: $white50;
+      color: colors.$white50;
 
       &::placeholder {
-        color: $white25;
+        color: colors.$white25;
       }
     }
 
     &.output--light-mode {
-      color: $darkest-blue;
-      background-color: $lighter-gray;
+      color: colors.$darkest-blue;
+      background-color: colors.$lighter-gray;
 
       &::placeholder {
-        color: $black50;
+        color: colors.$black50;
       }
 
       &:disabled {
-        color: $black50;
+        color: colors.$black50;
 
         &::placeholder {
-          color: $black25;
+          color: colors.$black25;
         }
       }
     }
@@ -175,24 +175,24 @@
 
   &--light {
     & path {
-      fill: $darkest-blue;
+      fill: colors.$darkest-blue;
     }
 
     &.icon--dark-mode {
       & path {
-        fill: $white;
+        fill: colors.$white;
       }
     }
   }
 
   &--dark {
     & path {
-      fill: $white;
+      fill: colors.$white;
     }
 
     &.icon--light-mode {
       & path {
-        fill: $darkest-blue;
+        fill: colors.$darkest-blue;
       }
     }
   }
@@ -228,24 +228,24 @@
 
   &--light {
     path {
-      stroke: $darkest-blue;
+      stroke: colors.$darkest-blue;
     }
 
     &.arrow--dark-mode {
       path {
-        stroke: $white;
+        stroke: colors.$white;
       }
     }
   }
 
   &--dark {
     path {
-      stroke: $white;
+      stroke: colors.$white;
     }
 
     &.arrow--light-mode {
       path {
-        stroke: $darkest-blue;
+        stroke: colors.$darkest-blue;
       }
     }
   }
@@ -265,11 +265,11 @@
 
   transition: 300ms;
 
-  @include useScrollbar;
+  @include mixins.useScrollbar;
 
   &--small {
-    border-bottom-left-radius: $radius-small;
-    border-bottom-right-radius: $radius-small;
+    border-bottom-left-radius: constants.$radius-small;
+    border-bottom-right-radius: constants.$radius-small;
 
     &.dropdown--expanded {
       max-height: 200px;
@@ -277,8 +277,8 @@
   }
 
   &--medium {
-    border-bottom-left-radius: $radius-default;
-    border-bottom-right-radius: $radius-default;
+    border-bottom-left-radius: constants.$radius-default;
+    border-bottom-right-radius: constants.$radius-default;
 
     &.dropdown--expanded {
       max-height: 250px;
@@ -286,8 +286,8 @@
   }
 
   &--large {
-    border-bottom-left-radius: $radius-large;
-    border-bottom-right-radius: $radius-large;
+    border-bottom-left-radius: constants.$radius-large;
+    border-bottom-right-radius: constants.$radius-large;
 
     &.dropdown--expanded {
       max-height: 300px;
@@ -295,18 +295,18 @@
   }
 
   &--light {
-    background-color: $lighter-gray;
+    background-color: colors.$lighter-gray;
 
     &.dropdown--dark-mode {
-      background-color: $darker-gray;
+      background-color: colors.$darker-gray;
     }
   }
 
   &--dark {
-    background-color: $darker-gray;
+    background-color: colors.$darker-gray;
 
     &.dropdown--light-mode {
-      background-color: $lighter-gray;
+      background-color: colors.$lighter-gray;
     }
   }
 }
@@ -317,49 +317,49 @@
   &--small {
     padding: 4px 12px;
 
-    @include small-text;
+    @include text.text-s;
   }
 
   &--medium {
     padding: 7px 16px;
 
-    @include medium-text;
+    @include text.text-m;
   }
 
   &--large {
     padding: 10px 24px;
 
-    @include large-text;
+    @include text.text-l;
   }
 
   &--light {
-    color: $darkest-blue;
+    color: colors.$darkest-blue;
 
     &:hover {
-      background-color: $light-gray;
+      background-color: colors.$light-gray;
     }
 
     &.option--dark-mode {
-      color: $white;
+      color: colors.$white;
 
       &:hover {
-        background-color: $dark-gray;
+        background-color: colors.$dark-gray;
       }
     }
   }
 
   &--dark {
-    color: $white;
+    color: colors.$white;
 
     &:hover {
-      background-color: $dark-gray;
+      background-color: colors.$dark-gray;
     }
 
     &.option--light-mode {
-      color: $darkest-blue;
+      color: colors.$darkest-blue;
 
       &:hover {
-        background-color: $light-gray;
+        background-color: colors.$light-gray;
       }
     }
   }
