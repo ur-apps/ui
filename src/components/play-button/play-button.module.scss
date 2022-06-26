@@ -1,0 +1,25 @@
+.button {
+  width: auto;
+
+  cursor: pointer;
+
+  &--size-xs {
+    height: 12px;
+  }
+
+  &--size-s {
+    height: 16px;
+  }
+
+  &--size-m {
+    height: 20px;
+  }
+
+  &--size-l {
+    height: 24px;
+  }
+
+  &--size-xl {
+    height: 32px;
+  }
+}
