@@ -1,0 +1,64 @@
+@use 'styles/colors';
+@use 'styles/constants';
+@use 'styles/text';
+
+.tag {
+  cursor: default;
+
+  &--size-small {
+    width: max-content;
+    height: 24px;
+    padding: 5px 8px;
+
+    @include text.text-m;
+    line-height: 14px;
+
+    border-radius: constants.$radius-s;
+  }
+}
+
+.tag--appearance-fill {
+  &.tag--color-lightblue {
+    color: colors.$blue;
+
+    background-color: colors.$blue10;
+  }
+
+  &.tag--color-blue {
+    color: colors.$white;
+
+    background-color: colors.$blue;
+  }
+
+  &.tag--color-lightpink {
+    color: colors.$pink;
+
+    background-color: colors.$pink10;
+  }
+
+  &.tag--color-pink {
+    color: colors.$white;
+
+    background-color: colors.$pink;
+  }
+}
+
+.tag--appearance-outline {
+  padding: 4px 8px;
+  border-width: 1px;
+  border-style: solid;
+
+  &.tag--color-lightblue,
+  &.tag--color-blue {
+    color: colors.$blue;
+
+    border-color: colors.$blue;
+  }
+
+  &.tag--color-lightpink,
+  &.tag--color-pink {
+    color: colors.$pink;
+
+    border-color: colors.$pink;
+  }
+}
