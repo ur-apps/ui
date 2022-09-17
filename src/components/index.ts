@@ -16,3 +16,4 @@ export * from './tag';
 export * from './text';
 export * from './theme-toggle';
 export * from './toggle';
+export * from './transcription';
