@@ -35,5 +35,5 @@ jobs:
           echo "Copy UI-Kit to remote server"
           pwd
           ls -la
-          rsync -a $(pwd)/storybook-static remote:/home/ubuntu/apps/ureng-ui-kit/
+          rsync -a $(pwd)/storybook-static remote:/home/ubuntu/apps/ur-ui/
           echo "Github Actions CI/CD pipeline completed"

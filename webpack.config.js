@@ -11,7 +11,7 @@ module.exports = {
     path: path.resolve(__dirname, 'lib'),
     libraryTarget: 'umd',
     clean: true,
-    publicPath: 'ureng-ui/',
+    publicPath: 'ur-ui/',
   },
 
   optimization: {

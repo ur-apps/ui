@@ -42,17 +42,17 @@
   ],
   "keywords": [
     "ui-kit",
-    "ureng"
+    "ur apps"
   ],
   "license": "ISC",
   "author": "Garik Freedomyan <garikfreedomyan@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/garikfreedomyan/ureng-ui-kit.git"
+    "url": "git+https://github.com/garikfreedomyan/ur-ui.git"
   },
-  "homepage": "https://github.com/garikfreedomyan/ureng-ui-kit#readme",
+  "homepage": "https://github.com/garikfreedomyan/ur-ui#readme",
   "bugs": {
-    "url": "https://github.com/garikfreedomyan/ureng-ui-kit/issues"
+    "url": "https://github.com/garikfreedomyan/ur-ui/issues"
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
