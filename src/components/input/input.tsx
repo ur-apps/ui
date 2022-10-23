@@ -1,13 +1,15 @@
 import React from 'react';
 
 import { useTheme } from 'contexts';
+import { InfoIcon } from 'icons';
 import { classNames } from 'utils';
+import { Tooltip } from '../tooltip';
 import styles from './input.module.scss';
 
 export interface IInputProps {
   className?: string;
   fieldClassName?: string;
-  size?: 'small' | 'medium' | 'large';
+  size?: 's' | 'm' | 'l';
   colorScheme?: 'light' | 'dark';
   autoColor?: boolean;
   icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
@@ -27,9 +29,10 @@ export interface IInputProps {
   id?: string;
   name?: string;
   label?: string;
-  error?: string;
   placeholder?: string;
   value?: string | number;
+  info?: string | string[];
+  error?: string | string[];
   pattern?: string;
   minLength?: number;
   maxLength?: number;
@@ -46,7 +49,7 @@ export interface IInputProps {
 }
 
 Input.defaultProps = {
-  size: 'medium',
+  size: 'm',
   colorScheme: 'light',
   autoColor: true,
   type: 'text',
@@ -60,6 +63,8 @@ export function Input({
   autoColor,
   icon: Icon,
   placeholder,
+  info,
+  error,
   readOnly,
   disabled,
   refLink,
@@ -75,7 +80,7 @@ export function Input({
             styles.icon,
             styles[`icon--${size}`],
             styles[`icon--${colorScheme}`],
-            autoColor ? styles[`icon--${theme}-mode`] : undefined
+            autoColor ? styles[`icon--${theme}-mode`] : null
           )}
         />
       )}
@@ -85,8 +90,9 @@ export function Input({
           styles.input,
           styles[`input--${size}`],
           styles[`input--${colorScheme}`],
-          autoColor ? styles[`input--${theme}-mode`] : undefined,
-          Icon ? styles['input--with-icon'] : undefined,
+          autoColor ? styles[`input--${theme}-mode`] : null,
+          Icon ? styles['input--with-icon'] : null,
+          info || error ? styles['input--with-info'] : null,
           fieldClassName
         )}
         placeholder={placeholder}
@@ -95,6 +101,25 @@ export function Input({
         ref={refLink}
         {...props}
       />
+
+      {(info || error) && (
+        <Tooltip
+          className={classNames(styles.info, styles[`info--${size}`])}
+          size="s"
+          color={colorScheme}
+          autoColor={autoColor}
+          text={error || info}>
+          <InfoIcon
+            className={classNames(
+              styles.info__icon,
+              styles[`info__icon--${size}`],
+              styles[`info__icon--${colorScheme}`],
+              autoColor ? styles[`info__icon--${theme}-mode`] : null,
+              error ? styles['info__icon--error'] : null
+            )}
+          />
+        </Tooltip>
+      )}
     </label>
   );
 }

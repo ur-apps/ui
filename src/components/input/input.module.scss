@@ -13,7 +13,7 @@
 .icon {
   position: absolute;
 
-  &--small {
+  &--s {
     bottom: 6px;
     left: 6px;
 
@@ -21,7 +21,7 @@
     height: 12px;
   }
 
-  &--medium {
+  &--m {
     bottom: 8px;
     left: 8px;
 
@@ -29,7 +29,7 @@
     height: 16px;
   }
 
-  &--large {
+  &--l {
     bottom: 11px;
     left: 12px;
 
@@ -39,7 +39,7 @@
 
   &--light {
     & path {
-      fill: colors.$darkest-blue;
+      fill: colors.$darkest-gray;
     }
 
     &.icon--dark-mode {
@@ -56,7 +56,7 @@
 
     &.icon--light-mode {
       & path {
-        fill: colors.$darkest-blue;
+        fill: colors.$darkest-gray;
       }
     }
   }
@@ -73,7 +73,7 @@
     cursor: default;
   }
 
-  &--small {
+  &--s {
     @include text.text-s;
 
     height: 24px;
@@ -84,9 +84,13 @@
     &.input--with-icon {
       padding-left: 24px;
     }
+
+    &.input--with-info {
+      padding-right: 24px;
+    }
   }
 
-  &--medium {
+  &--m {
     @include text.text-m;
 
     height: 32px;
@@ -97,9 +101,13 @@
     &.input--with-icon {
       padding-left: 32px;
     }
+
+    &.input--with-info {
+      padding-right: 32px;
+    }
   }
 
-  &--large {
+  &--l {
     @include text.text-l;
 
     height: 40px;
@@ -110,10 +118,14 @@
     &.input--with-icon {
       padding-left: 44px;
     }
+
+    &.input--with-info {
+      padding-right: 44px;
+    }
   }
 
   &--light {
-    color: colors.$darkest-blue;
+    color: colors.$darkest-gray;
     background-color: colors.$lighter-gray;
 
     &::placeholder {
@@ -192,7 +204,7 @@
     }
 
     &.input--light-mode {
-      color: colors.$darkest-blue;
+      color: colors.$darkest-gray;
       background-color: colors.$lighter-gray;
 
       &::placeholder {
@@ -216,5 +228,65 @@
         }
       }
     }
+  }
+}
+
+.info {
+  position: absolute;
+
+  &--s {
+    top: 6px;
+    right: 6px;
+  }
+
+  &--m {
+    top: 8px;
+    right: 8px;
+  }
+
+  &--l {
+    top: 11px;
+    right: 12px;
+  }
+}
+
+.info__icon {
+  display: block;
+
+  cursor: pointer;
+
+  &--s {
+    width: 12px;
+    height: 12px;
+  }
+
+  &--m {
+    width: 16px;
+    height: 16px;
+  }
+
+  &--l {
+    width: 18px;
+    height: 18px;
+  }
+
+  &--light {
+    color: colors.$darkest-gray;
+
+    &.info__icon--dark-mode {
+      color: colors.$white;
+    }
+  }
+
+  &--dark {
+    color: colors.$white;
+
+    &.info__icon--light-mode {
+      color: colors.$darkest-gray;
+    }
+  }
+
+  &--error {
+    color: colors.$red !important;
   }
 }
