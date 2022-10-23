@@ -21,7 +21,7 @@
   border-width: 1px;
   border-style: solid;
 
-  color: white;
+  color: colors.$white;
 
   background-color: black;
 
@@ -43,7 +43,7 @@
     border-radius: constants.$radius-l;
   }
 
-  &--white {
+  &--light {
     border-color: colors.$lighter-gray;
     background-color: colors.$white;
     color: colors.$black;
@@ -55,7 +55,7 @@
     }
   }
 
-  &--black {
+  &--dark {
     border-color: colors.$darker-gray;
     background-color: colors.$black;
     color: colors.$white;

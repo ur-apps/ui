@@ -1,34 +1,16 @@
 import { useTheme } from 'contexts';
 import React, { useCallback, useEffect, useRef } from 'react';
 import { classNames } from 'utils';
-import { Indicator, IndicatorColor } from '../indicator';
+import { Indicator } from '../indicator';
 import { Text } from '../text';
 import { getTooltipPostion } from './helpers';
 import styles from './tooltip.module.scss';
 
-export enum TooltipColor {
-  White = 'white',
-  Black = 'black',
-}
-
-export enum TooltipSize {
-  Small = 's',
-  Medium = 'm',
-  Large = 'l',
-}
-
-export enum TooltipPosition {
-  Top = 'top',
-  Bottom = 'bottom',
-  Left = 'left',
-  Right = 'right',
-}
-
 export interface ITooltipProps {
   className?: string;
-  color?: TooltipColor;
-  size?: TooltipSize;
-  position?: TooltipPosition;
+  color?: 'light' | 'dark';
+  size?: 's' | 'm' | 'l';
+  position?: 'top' | 'bottom' | 'left' | 'right';
   autoColor?: boolean;
   withIndicator?: boolean;
   isIndicatorBlinking?: boolean;
@@ -38,9 +20,9 @@ export interface ITooltipProps {
 
 export function Tooltip({
   className,
-  color = TooltipColor.White,
-  size = TooltipSize.Small,
-  position = TooltipPosition.Bottom,
+  color = 'light',
+  size = 's',
+  position = 'bottom',
   autoColor = true,
   withIndicator = false,
   isIndicatorBlinking = false,
@@ -81,15 +63,17 @@ export function Tooltip({
         {typeof text === 'string' ? (
           <Text size={size}>{text}</Text>
         ) : Array.isArray(text) ? (
-          text.map((item) => <Text size={size}>- {item}</Text>)
+          text.map((item) => (
+            <Text size={size} key={item}>
+              - {item}
+            </Text>
+          ))
         ) : (
           text
         )}
       </div>
 
-      {withIndicator && (
-        <Indicator className={styles.indicator} color={IndicatorColor.Pink} isBlinking={isIndicatorBlinking} />
-      )}
+      {withIndicator && <Indicator className={styles.indicator} color={'pink'} isBlinking={isIndicatorBlinking} />}
     </div>
   );
 }

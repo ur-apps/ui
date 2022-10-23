@@ -1,5 +1,3 @@
-import { TooltipPosition } from './tooltip';
-
 const margins = {
   s: 3,
   m: 4,
@@ -9,7 +7,7 @@ const margins = {
 export function getTooltipPostion(
   wrapper: HTMLDivElement | null,
   tooltip: HTMLDivElement | null,
-  position: TooltipPosition
+  position: 'top' | 'bottom' | 'left' | 'right'
 ): { top?: string; left?: string } {
   if (!wrapper || !tooltip) return {};
 
@@ -106,7 +104,7 @@ export function getTooltipPostion(
   }
 
   switch (position) {
-    case TooltipPosition.Top:
+    case 'top':
       if (isTopPossible) {
         return getTopPosition();
       } else if (isBottomPossible) {
@@ -118,7 +116,7 @@ export function getTooltipPostion(
       }
       return {};
 
-    case TooltipPosition.Bottom:
+    case 'bottom':
       if (isBottomPossible) {
         return getBottomPosotion();
       } else if (isTopPossible) {
@@ -130,7 +128,7 @@ export function getTooltipPostion(
       }
       return {};
 
-    case TooltipPosition.Left:
+    case 'left':
       if (isLeftPossible) {
         return getLeftPosotion();
       } else if (isRightPossible) {
@@ -142,7 +140,7 @@ export function getTooltipPostion(
       }
       return {};
 
-    case TooltipPosition.Right:
+    case 'right':
       if (isRightPossible) {
         return getRightPosition();
       } else if (isLeftPossible) {
