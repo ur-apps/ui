@@ -3,6 +3,7 @@ export * from './button';
 export * from './carousel';
 export * from './heading';
 export * from './hr';
+export * from './indicator';
 export * from './input';
 export * from './input-with-button';
 export * from './link';

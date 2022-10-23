@@ -1,0 +1,41 @@
+@use 'styles/colors';
+
+.indicator {
+  display: block;
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  &--green {
+    background-color: colors.$green;
+  }
+
+  &--red {
+    background-color: colors.$red;
+  }
+
+  &--blue {
+    background-color: colors.$blue;
+  }
+
+  &--pink {
+    background-color: colors.$pink;
+  }
+
+  &--blinking {
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
