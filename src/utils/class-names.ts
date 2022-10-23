@@ -1,4 +1,4 @@
-type TClasses = Array<string | TClasses | undefined>;
+type TClasses = Array<string | TClasses | null | undefined>;
 
 export function classNames(...classes: TClasses): string {
   return classes
