@@ -1,0 +1,75 @@
+@use 'styles/colors';
+@use 'styles/constants';
+@use 'styles/text';
+
+.wrapper {
+  position: relative;
+
+  width: max-content;
+  height: max-content;
+
+  &:hover .tooltip {
+    display: block;
+  }
+}
+
+.tooltip {
+  position: absolute;
+
+  display: none;
+  width: max-content;
+  border-width: 1px;
+  border-style: solid;
+
+  color: white;
+
+  background-color: black;
+
+  &--s {
+    max-width: 200px;
+    padding: 3px 8px;
+    border-radius: constants.$radius-s;
+  }
+
+  &--m {
+    max-width: 300px;
+    padding: 6px 12px;
+    border-radius: constants.$radius-m;
+  }
+
+  &--l {
+    max-width: 400px;
+    padding: 9px 16px;
+    border-radius: constants.$radius-l;
+  }
+
+  &--white {
+    border-color: colors.$lighter-gray;
+    background-color: colors.$white;
+    color: colors.$black;
+
+    &.tooltip--dark-mode {
+      border-color: colors.$darker-gray;
+      background-color: colors.$black;
+      color: colors.$white;
+    }
+  }
+
+  &--black {
+    border-color: colors.$darker-gray;
+    background-color: colors.$black;
+    color: colors.$white;
+
+    &.tooltip--light-mode {
+      border-color: colors.$lighter-gray;
+      background-color: colors.$white;
+      color: colors.$black;
+    }
+  }
+}
+
+.indicator {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+}
