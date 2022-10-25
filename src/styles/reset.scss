@@ -17,6 +17,11 @@ input {
   -webkit-appearance: none;
 }
 
+input[type='radio'],
+input[type='checkbox'] {
+  display: none;
+}
+
 ul {
   list-style: none;
 }
