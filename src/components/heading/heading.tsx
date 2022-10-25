@@ -5,7 +5,7 @@ import styles from './heading.module.scss';
 
 export interface IHeadingProps {
   className?: string;
-  size: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  size?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   children: React.ReactNode;
 }
 

@@ -5,8 +5,8 @@ import styles from './text.module.scss';
 
 export interface ITextProps {
   className?: string;
-  size: 'xs' | 's' | 'm' | 'l' | 'xl';
-  tag: 'p' | 'span';
+  size?: 'xs' | 's' | 'm' | 'l' | 'xl';
+  tag?: 'p' | 'span';
   children: React.ReactNode;
 }
 
