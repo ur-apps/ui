@@ -7,14 +7,14 @@ import styles from 'components/toggle/toggle.module.scss';
 
 export interface IThemeToggleProps {
   className?: string;
-  size?: 'small' | 'medium' | 'large';
+  size?: 's' | 'm' | 'l';
   colorScheme?: 'light' | 'dark' | 'blue';
   autoColor?: boolean;
   onChange?: (evt: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 ThemeToggle.defaultProps = {
-  size: 'medium',
+  size: 'm',
   colorScheme: 'light',
   autoColor: true,
   value: 'on',

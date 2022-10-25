@@ -6,7 +6,7 @@ import styles from './toggle.module.scss';
 
 export interface IToggleProps {
   className?: string;
-  size?: 'small' | 'medium' | 'large';
+  size?: 's' | 'm' | 'l';
   colorScheme?: 'light' | 'dark' | 'blue';
   autoColor?: boolean;
   name?: string;
@@ -21,7 +21,7 @@ export interface IToggleProps {
 }
 
 Toggle.defaultProps = {
-  size: 'medium',
+  size: 'm',
   colorScheme: 'light',
   autoColor: true,
   leftValue: 'off',

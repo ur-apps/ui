@@ -5,14 +5,14 @@ import styles from './tag.module.scss';
 
 export interface ITagProps {
   className?: string;
-  size: 'small';
+  size: 's';
   appearance?: 'fill' | 'outline';
   colorScheme?: 'lightblue' | 'blue' | 'lightpink' | 'pink';
   children: React.ReactNode;
 }
 
 Tag.defaultProps = {
-  size: 'small',
+  size: 's',
   appearance: 'fill',
   colorScheme: 'lightblue',
 } as ITagProps;

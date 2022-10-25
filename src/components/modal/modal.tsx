@@ -8,7 +8,7 @@ import styles from './modal.module.scss';
 export interface IModalProps {
   className?: string;
   overlayClassName?: string;
-  size?: 'small' | 'medium' | 'large';
+  size?: 's' | 'm' | 'l';
   colorScheme?: 'white' | 'black';
   autoColor?: boolean;
   onClose: () => void;
@@ -18,7 +18,7 @@ export interface IModalProps {
 }
 
 Modal.defaultProps = {
-  size: 'medium',
+  size: 'm',
   colorScheme: 'white',
   autoColor: true,
   closeOnOverlay: true,

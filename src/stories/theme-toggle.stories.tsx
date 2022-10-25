@@ -12,15 +12,15 @@ const Template: ComponentStory<typeof ThemeToggle> = (args) => <ThemeToggle {...
 
 export const Small = Template.bind({});
 Small.args = {
-  size: 'small',
+  size: 's',
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
-  size: 'medium',
+  size: 'm',
 };
 
 export const Large = Template.bind({});
 Large.args = {
-  size: 'large',
+  size: 'l',
 };

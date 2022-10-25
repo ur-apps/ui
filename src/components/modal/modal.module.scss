@@ -39,19 +39,19 @@
   height: max-content;
   border: 1px solid;
 
-  &--small {
+  &--s {
     padding: 24px 16px 16px;
 
     border-radius: 10px;
   }
 
-  &--medium {
+  &--m {
     padding: 24px;
 
     border-radius: 10px;
   }
 
-  &--large {
+  &--l {
     padding: 32px;
 
     border-radius: 15px;
@@ -83,7 +83,7 @@
 
   position: absolute;
 
-  &--small {
+  &--s {
     top: 12px;
     right: 12px;
 
@@ -91,7 +91,7 @@
     height: 12px;
   }
 
-  &--medium {
+  &--m {
     top: 12px;
     right: 12px;
 
@@ -99,7 +99,7 @@
     height: 16px;
   }
 
-  &--large {
+  &--l {
     top: 16px;
     right: 16px;
 

@@ -13,25 +13,25 @@ const Template: ComponentStory<typeof Toggle> = (args) => <Toggle {...args} />;
 
 export const Small = Template.bind({});
 Small.args = {
-  size: 'small',
+  size: 's',
   colorScheme: 'blue',
 } as IToggleProps;
 
 export const Medium = Template.bind({});
 Medium.args = {
-  size: 'medium',
+  size: 'm',
   colorScheme: 'blue',
 } as IToggleProps;
 
 export const Large = Template.bind({});
 Large.args = {
-  size: 'large',
+  size: 'l',
   colorScheme: 'blue',
 } as IToggleProps;
 
 export const SmallWithIcon = Template.bind({});
 SmallWithIcon.args = {
-  size: 'small',
+  size: 's',
   colorScheme: 'blue',
   leftIcon: SunIcon,
   rightIcon: MoonIcon,
@@ -39,7 +39,7 @@ SmallWithIcon.args = {
 
 export const MediumWithIcon = Template.bind({});
 MediumWithIcon.args = {
-  size: 'medium',
+  size: 'm',
   colorScheme: 'blue',
   leftIcon: SunIcon,
   rightIcon: MoonIcon,
@@ -47,7 +47,7 @@ MediumWithIcon.args = {
 
 export const LargeWithIcon = Template.bind({});
 LargeWithIcon.args = {
-  size: 'large',
+  size: 'l',
   colorScheme: 'blue',
   leftIcon: SunIcon,
   rightIcon: MoonIcon,
@@ -55,7 +55,7 @@ LargeWithIcon.args = {
 
 export const SmallWithText = Template.bind({});
 SmallWithText.args = {
-  size: 'small',
+  size: 's',
   colorScheme: 'blue',
   leftText: 'EN',
   rightText: 'RU',
@@ -63,7 +63,7 @@ SmallWithText.args = {
 
 export const MediumWithText = Template.bind({});
 MediumWithText.args = {
-  size: 'medium',
+  size: 'm',
   colorScheme: 'blue',
   leftText: 'EN',
   rightText: 'RU',
@@ -71,7 +71,7 @@ MediumWithText.args = {
 
 export const LargeWithText = Template.bind({});
 LargeWithText.args = {
-  size: 'large',
+  size: 'l',
   colorScheme: 'blue',
   leftText: 'EN',
   rightText: 'RU',
@@ -79,7 +79,7 @@ LargeWithText.args = {
 
 export const LightWithIcon = Template.bind({});
 LightWithIcon.args = {
-  size: 'large',
+  size: 'l',
   colorScheme: 'light',
   leftIcon: SunIcon,
   rightIcon: MoonIcon,
@@ -88,7 +88,7 @@ LightWithIcon.args = {
 
 export const DarkWithIcon = Template.bind({});
 DarkWithIcon.args = {
-  size: 'large',
+  size: 'l',
   colorScheme: 'dark',
   leftIcon: SunIcon,
   rightIcon: MoonIcon,
@@ -97,7 +97,7 @@ DarkWithIcon.args = {
 
 export const LightWithText = Template.bind({});
 LightWithText.args = {
-  size: 'large',
+  size: 'l',
   colorScheme: 'light',
   leftText: 'EN',
   rightText: 'RU',
@@ -106,7 +106,7 @@ LightWithText.args = {
 
 export const DarkWithText = Template.bind({});
 DarkWithText.args = {
-  size: 'large',
+  size: 'l',
   colorScheme: 'dark',
   leftText: 'EN',
   rightText: 'RU',

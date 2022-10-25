@@ -12,43 +12,43 @@ const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />;
 
 export const Small = Template.bind({});
 Small.args = {
-  size: 'small',
+  size: 's',
   colorScheme: 'light',
 } as IAvatarProps;
 
 export const Medium = Template.bind({});
 Medium.args = {
-  size: 'medium',
+  size: 'm',
   colorScheme: 'light',
 } as IAvatarProps;
 
 export const Large = Template.bind({});
 Large.args = {
-  size: 'large',
+  size: 'l',
   colorScheme: 'light',
 } as IAvatarProps;
 
 export const Blue = Template.bind({});
 Blue.args = {
-  size: 'large',
+  size: 'l',
   colorScheme: 'blue',
 } as IAvatarProps;
 
 export const Light = Template.bind({});
 Light.args = {
-  size: 'large',
+  size: 'l',
   colorScheme: 'light',
 } as IAvatarProps;
 
 export const Dark = Template.bind({});
 Dark.args = {
-  size: 'large',
+  size: 'l',
   colorScheme: 'dark',
 } as IAvatarProps;
 
 export const WithImg = Template.bind({});
 WithImg.args = {
-  size: 'large',
+  size: 'l',
   colorScheme: 'light',
   img: 'https://cdn.dribbble.com/users/2314387/screenshots/11401644/aang-high-resolution_4x.png',
 } as IAvatarProps;

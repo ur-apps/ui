@@ -7,7 +7,7 @@ import styles from './avatar.module.scss';
 
 export interface IAvatarProps {
   className?: string;
-  size?: 'small' | 'medium' | 'large';
+  size?: 's' | 'm' | 'l';
   appearance?: 'circle' | 'square';
   colorScheme?: 'light' | 'dark' | 'blue';
   autoColor?: boolean;
@@ -15,7 +15,7 @@ export interface IAvatarProps {
 }
 
 Avatar.defaultProps = {
-  size: 'medium',
+  size: 'm',
   appearance: 'circle',
   colorScheme: 'light',
   autoColor: true,

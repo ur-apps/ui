@@ -7,7 +7,7 @@ import styles from './select.module.scss';
 
 export interface ISelectProps {
   className?: string;
-  size?: 'small' | 'medium' | 'large';
+  size?: 's' | 'm' | 'l';
   colorScheme?: 'light' | 'dark';
   autoColor?: boolean;
   icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
@@ -36,7 +36,7 @@ export interface ISelectOption {
 export type TSelectValue = string | number;
 
 Select.defaultProps = {
-  size: 'medium',
+  size: 'm',
   colorScheme: 'light',
   autoColor: true,
   controlled: false,

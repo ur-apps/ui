@@ -12,7 +12,7 @@ const Template: ComponentStory<typeof Link> = (args) => <Link {...args} />;
 
 export const FillSmall = Template.bind({});
 FillSmall.args = {
-  size: 'small',
+  size: 's',
   appearance: 'fill',
   colorScheme: 'blue',
   children: 'Submit',
@@ -20,7 +20,7 @@ FillSmall.args = {
 
 export const FillMedium = Template.bind({});
 FillMedium.args = {
-  size: 'medium',
+  size: 'm',
   appearance: 'fill',
   colorScheme: 'white',
   children: 'Submit',
@@ -28,7 +28,7 @@ FillMedium.args = {
 
 export const FillLarge = Template.bind({});
 FillLarge.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'fill',
   colorScheme: 'blue',
   children: 'Submit',
@@ -36,7 +36,7 @@ FillLarge.args = {
 
 export const FillWhite = Template.bind({});
 FillWhite.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'fill',
   colorScheme: 'white',
   children: 'Submit',
@@ -44,7 +44,7 @@ FillWhite.args = {
 
 export const FillBlack = Template.bind({});
 FillBlack.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'fill',
   colorScheme: 'black',
   children: 'Submit',
@@ -52,7 +52,7 @@ FillBlack.args = {
 
 export const FillBlue = Template.bind({});
 FillBlue.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'fill',
   colorScheme: 'blue',
   children: 'Submit',
@@ -60,7 +60,7 @@ FillBlue.args = {
 
 export const OutlineSmall = Template.bind({});
 OutlineSmall.args = {
-  size: 'small',
+  size: 's',
   appearance: 'outline',
   colorScheme: 'blue',
   children: 'Submit',
@@ -68,7 +68,7 @@ OutlineSmall.args = {
 
 export const OutlineMedium = Template.bind({});
 OutlineMedium.args = {
-  size: 'medium',
+  size: 'm',
   appearance: 'outline',
   colorScheme: 'black',
   children: 'Submit',
@@ -76,7 +76,7 @@ OutlineMedium.args = {
 
 export const OutlineLarge = Template.bind({});
 OutlineLarge.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'outline',
   colorScheme: 'blue',
   children: 'Submit',
@@ -84,7 +84,7 @@ OutlineLarge.args = {
 
 export const OutlineWhite = Template.bind({});
 OutlineWhite.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'outline',
   colorScheme: 'white',
   children: 'Submit',
@@ -92,7 +92,7 @@ OutlineWhite.args = {
 
 export const OutlineBlack = Template.bind({});
 OutlineBlack.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'outline',
   colorScheme: 'black',
   children: 'Submit',
@@ -100,7 +100,7 @@ OutlineBlack.args = {
 
 export const OutlineBlue = Template.bind({});
 OutlineBlue.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'outline',
   colorScheme: 'blue',
   children: 'Submit',
@@ -108,7 +108,7 @@ OutlineBlue.args = {
 
 export const TextSmall = Template.bind({});
 TextSmall.args = {
-  size: 'small',
+  size: 's',
   appearance: 'text',
   colorScheme: 'blue',
   children: 'Submit',
@@ -116,7 +116,7 @@ TextSmall.args = {
 
 export const TextMedium = Template.bind({});
 TextMedium.args = {
-  size: 'medium',
+  size: 'm',
   appearance: 'text',
   colorScheme: 'black',
   children: 'Submit',
@@ -124,7 +124,7 @@ TextMedium.args = {
 
 export const TextLarge = Template.bind({});
 TextLarge.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'text',
   colorScheme: 'blue',
   children: 'Submit',
@@ -132,7 +132,7 @@ TextLarge.args = {
 
 export const TextWhite = Template.bind({});
 TextWhite.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'text',
   colorScheme: 'white',
   children: 'Submit',
@@ -140,7 +140,7 @@ TextWhite.args = {
 
 export const TextBlack = Template.bind({});
 TextBlack.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'text',
   colorScheme: 'black',
   children: 'Submit',
@@ -148,7 +148,7 @@ TextBlack.args = {
 
 export const TextBlue = Template.bind({});
 TextBlue.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'text',
   colorScheme: 'blue',
   children: 'Submit',

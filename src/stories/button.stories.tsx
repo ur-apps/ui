@@ -12,7 +12,7 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const FillSmall = Template.bind({});
 FillSmall.args = {
-  size: 'small',
+  size: 's',
   appearance: 'fill',
   colorScheme: 'blue',
   children: 'Submit',
@@ -20,7 +20,7 @@ FillSmall.args = {
 
 export const FillMedium = Template.bind({});
 FillMedium.args = {
-  size: 'medium',
+  size: 'm',
   appearance: 'fill',
   colorScheme: 'white',
   children: 'Submit',
@@ -28,7 +28,7 @@ FillMedium.args = {
 
 export const FillLarge = Template.bind({});
 FillLarge.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'fill',
   colorScheme: 'red',
   children: 'Cancel',
@@ -36,7 +36,7 @@ FillLarge.args = {
 
 export const FillWhite = Template.bind({});
 FillWhite.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'fill',
   colorScheme: 'white',
   children: 'Submit',
@@ -44,7 +44,7 @@ FillWhite.args = {
 
 export const FillWhiteDisabled = Template.bind({});
 FillWhiteDisabled.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'fill',
   colorScheme: 'white',
   disabled: true,
@@ -53,7 +53,7 @@ FillWhiteDisabled.args = {
 
 export const FillBlack = Template.bind({});
 FillBlack.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'fill',
   colorScheme: 'black',
   children: 'Submit',
@@ -61,7 +61,7 @@ FillBlack.args = {
 
 export const FillBlackDisabled = Template.bind({});
 FillBlackDisabled.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'fill',
   colorScheme: 'black',
   disabled: true,
@@ -70,7 +70,7 @@ FillBlackDisabled.args = {
 
 export const FillBlue = Template.bind({});
 FillBlue.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'fill',
   colorScheme: 'blue',
   children: 'Submit',
@@ -78,7 +78,7 @@ FillBlue.args = {
 
 export const FillBlueDisabled = Template.bind({});
 FillBlueDisabled.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'fill',
   colorScheme: 'blue',
   disabled: true,
@@ -87,7 +87,7 @@ FillBlueDisabled.args = {
 
 export const FillRed = Template.bind({});
 FillRed.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'fill',
   colorScheme: 'red',
   children: 'Cancel',
@@ -95,7 +95,7 @@ FillRed.args = {
 
 export const FillRedDisabled = Template.bind({});
 FillRedDisabled.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'fill',
   colorScheme: 'red',
   disabled: true,
@@ -104,7 +104,7 @@ FillRedDisabled.args = {
 
 export const FillGreen = Template.bind({});
 FillGreen.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'fill',
   colorScheme: 'green',
   children: 'Cancel',
@@ -112,7 +112,7 @@ FillGreen.args = {
 
 export const FillGreenDisabled = Template.bind({});
 FillGreenDisabled.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'fill',
   colorScheme: 'green',
   disabled: true,
@@ -121,7 +121,7 @@ FillGreenDisabled.args = {
 
 export const OutlineSmall = Template.bind({});
 OutlineSmall.args = {
-  size: 'small',
+  size: 's',
   appearance: 'outline',
   colorScheme: 'green',
   children: 'Submit',
@@ -129,7 +129,7 @@ OutlineSmall.args = {
 
 export const OutlineMedium = Template.bind({});
 OutlineMedium.args = {
-  size: 'medium',
+  size: 'm',
   appearance: 'outline',
   colorScheme: 'black',
   children: 'Submit',
@@ -137,7 +137,7 @@ OutlineMedium.args = {
 
 export const OutlineLarge = Template.bind({});
 OutlineLarge.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'outline',
   colorScheme: 'blue',
   children: 'Cancel',
@@ -145,7 +145,7 @@ OutlineLarge.args = {
 
 export const OutlineWhite = Template.bind({});
 OutlineWhite.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'outline',
   colorScheme: 'white',
   children: 'Submit',
@@ -153,7 +153,7 @@ OutlineWhite.args = {
 
 export const OutlineWhiteDisabled = Template.bind({});
 OutlineWhiteDisabled.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'outline',
   colorScheme: 'white',
   disabled: true,
@@ -162,7 +162,7 @@ OutlineWhiteDisabled.args = {
 
 export const OutlineBlack = Template.bind({});
 OutlineBlack.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'outline',
   colorScheme: 'black',
   children: 'Submit',
@@ -170,7 +170,7 @@ OutlineBlack.args = {
 
 export const OutlineBlackDisabled = Template.bind({});
 OutlineBlackDisabled.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'outline',
   colorScheme: 'black',
   disabled: true,
@@ -179,7 +179,7 @@ OutlineBlackDisabled.args = {
 
 export const OutlineBlue = Template.bind({});
 OutlineBlue.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'outline',
   colorScheme: 'blue',
   children: 'Submit',
@@ -187,7 +187,7 @@ OutlineBlue.args = {
 
 export const OutlineBlueDisabled = Template.bind({});
 OutlineBlueDisabled.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'outline',
   colorScheme: 'blue',
   disabled: true,
@@ -196,7 +196,7 @@ OutlineBlueDisabled.args = {
 
 export const OutlineRed = Template.bind({});
 OutlineRed.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'outline',
   colorScheme: 'red',
   children: 'Cancel',
@@ -204,7 +204,7 @@ OutlineRed.args = {
 
 export const OutlineRedDisabled = Template.bind({});
 OutlineRedDisabled.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'outline',
   colorScheme: 'red',
   disabled: true,
@@ -213,7 +213,7 @@ OutlineRedDisabled.args = {
 
 export const OutlineGreen = Template.bind({});
 OutlineGreen.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'outline',
   colorScheme: 'green',
   children: 'Cancel',
@@ -221,7 +221,7 @@ OutlineGreen.args = {
 
 export const OutlineGreenDisabled = Template.bind({});
 OutlineGreenDisabled.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'outline',
   colorScheme: 'green',
   disabled: true,
@@ -230,7 +230,7 @@ OutlineGreenDisabled.args = {
 
 export const TextSmall = Template.bind({});
 TextSmall.args = {
-  size: 'small',
+  size: 's',
   appearance: 'text',
   colorScheme: 'green',
   children: 'Submit',
@@ -238,7 +238,7 @@ TextSmall.args = {
 
 export const TextMedium = Template.bind({});
 TextMedium.args = {
-  size: 'medium',
+  size: 'm',
   appearance: 'text',
   colorScheme: 'black',
   children: 'Submit',
@@ -246,7 +246,7 @@ TextMedium.args = {
 
 export const TextLarge = Template.bind({});
 TextLarge.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'text',
   colorScheme: 'blue',
   children: 'Cancel',
@@ -254,7 +254,7 @@ TextLarge.args = {
 
 export const TextWhite = Template.bind({});
 TextWhite.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'text',
   colorScheme: 'white',
   children: 'Submit',
@@ -262,7 +262,7 @@ TextWhite.args = {
 
 export const TextWhiteDisabled = Template.bind({});
 TextWhiteDisabled.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'text',
   colorScheme: 'white',
   disabled: true,
@@ -271,7 +271,7 @@ TextWhiteDisabled.args = {
 
 export const TextBlack = Template.bind({});
 TextBlack.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'text',
   colorScheme: 'black',
   children: 'Submit',
@@ -279,7 +279,7 @@ TextBlack.args = {
 
 export const TextBlackDisabled = Template.bind({});
 TextBlackDisabled.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'text',
   colorScheme: 'black',
   disabled: true,
@@ -288,7 +288,7 @@ TextBlackDisabled.args = {
 
 export const TextBlue = Template.bind({});
 TextBlue.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'text',
   colorScheme: 'blue',
   children: 'Submit',
@@ -296,7 +296,7 @@ TextBlue.args = {
 
 export const TextBlueDisabled = Template.bind({});
 TextBlueDisabled.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'text',
   colorScheme: 'blue',
   disabled: true,
@@ -305,7 +305,7 @@ TextBlueDisabled.args = {
 
 export const TextRed = Template.bind({});
 TextRed.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'text',
   colorScheme: 'red',
   children: 'Cancel',
@@ -313,7 +313,7 @@ TextRed.args = {
 
 export const TextRedDisabled = Template.bind({});
 TextRedDisabled.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'text',
   colorScheme: 'red',
   disabled: true,
@@ -322,7 +322,7 @@ TextRedDisabled.args = {
 
 export const TextGreen = Template.bind({});
 TextGreen.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'text',
   colorScheme: 'green',
   children: 'Cancel',
@@ -330,7 +330,7 @@ TextGreen.args = {
 
 export const TextGreenDisabled = Template.bind({});
 TextGreenDisabled.args = {
-  size: 'large',
+  size: 'l',
   appearance: 'text',
   colorScheme: 'green',
   disabled: true,

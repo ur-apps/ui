@@ -55,28 +55,28 @@ const options: ISelectOption[] = [
 
 export const Small = Template.bind({});
 Small.args = {
-  size: 'small',
+  size: 's',
   placeholder: 'choose a value',
   options,
 } as ISelectProps;
 
 export const Medium = Template.bind({});
 Medium.args = {
-  size: 'medium',
+  size: 'm',
   placeholder: 'choose a value',
   options,
 } as ISelectProps;
 
 export const Large = Template.bind({});
 Large.args = {
-  size: 'large',
+  size: 'l',
   placeholder: 'choose a value',
   options,
 } as ISelectProps;
 
 export const Light = Template.bind({});
 Light.args = {
-  size: 'large',
+  size: 'l',
   colorScheme: 'light',
   placeholder: 'choose a value',
   options,
@@ -84,7 +84,7 @@ Light.args = {
 
 export const LightDisabled = Template.bind({});
 LightDisabled.args = {
-  size: 'large',
+  size: 'l',
   colorScheme: 'light',
   placeholder: 'choose a value',
   disabled: true,
@@ -93,7 +93,7 @@ LightDisabled.args = {
 
 export const Dark = Template.bind({});
 Dark.args = {
-  size: 'large',
+  size: 'l',
   colorScheme: 'dark',
   placeholder: 'choose a value',
   options,
@@ -101,7 +101,7 @@ Dark.args = {
 
 export const DarkDisabled = Template.bind({});
 DarkDisabled.args = {
-  size: 'large',
+  size: 'l',
   colorScheme: 'dark',
   placeholder: 'choose a value',
   disabled: true,
@@ -110,7 +110,7 @@ DarkDisabled.args = {
 
 export const WithIconSmall = Template.bind({});
 WithIconSmall.args = {
-  size: 'small',
+  size: 's',
   placeholder: 'choose a value',
   icon: InfoIcon,
   options,
@@ -118,7 +118,7 @@ WithIconSmall.args = {
 
 export const WithIconMedium = Template.bind({});
 WithIconMedium.args = {
-  size: 'medium',
+  size: 'm',
   placeholder: 'choose a value',
   icon: BulbIcon,
   options,
@@ -130,7 +130,7 @@ WithIconMedium.args = {
 
 export const WithIconLarge = Template.bind({});
 WithIconLarge.args = {
-  size: 'large',
+  size: 'l',
   placeholder: 'choose dictionary',
   icon: BookIcon,
   options,

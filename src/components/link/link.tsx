@@ -7,7 +7,7 @@ import styles from './link.module.scss';
 
 export interface ILinkProps {
   className?: string;
-  size?: 'small' | 'medium' | 'large';
+  size?: 's' | 'm' | 'l';
   appearance?: 'fill' | 'outline' | 'text';
   colorScheme?: 'white' | 'black' | 'blue';
   autoColor?: boolean;
@@ -20,7 +20,7 @@ export interface ILinkProps {
 }
 
 Link.defaultProps = {
-  size: 'medium',
+  size: 'm',
   appearance: 'text',
   colorScheme: 'blue',
   autoColor: true,

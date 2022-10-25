@@ -12,18 +12,18 @@ const Template: ComponentStory<typeof InputWithButton> = (args) => <InputWithBut
 
 export const Small = Template.bind({});
 Small.args = {
-  size: 'small',
+  size: 's',
   children: 'Submit',
 } as IInputWithButtonProps;
 
 export const Medium = Template.bind({});
 Medium.args = {
-  size: 'medium',
+  size: 'm',
   children: 'Submit',
 } as IInputWithButtonProps;
 
 export const Large = Template.bind({});
 Large.args = {
-  size: 'large',
+  size: 'l',
   children: 'Submit',
 } as IInputWithButtonProps;

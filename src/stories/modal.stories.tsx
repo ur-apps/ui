@@ -22,27 +22,27 @@ const Template: ComponentStory<typeof Modal> = (args) => (
 
 export const Small = Template.bind({});
 Small.args = {
-  size: 'small',
+  size: 's',
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
-  size: 'medium',
+  size: 'm',
 };
 
 export const Large = Template.bind({});
 Large.args = {
-  size: 'large',
+  size: 'l',
 };
 
 export const Light = Template.bind({});
 Light.args = {
-  size: 'large',
+  size: 'l',
   colorScheme: 'white',
 } as IModalProps;
 
 export const Dark = Template.bind({});
 Dark.args = {
-  size: 'large',
+  size: 'l',
   colorScheme: 'black',
 } as IModalProps;

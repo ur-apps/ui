@@ -9,7 +9,7 @@
 
   transition: 200ms;
 
-  &--small {
+  &--s {
     @include text.text-s;
 
     height: 24px;
@@ -18,7 +18,7 @@
     border-radius: constants.$radius-s;
   }
 
-  &--medium {
+  &--m {
     @include text.text-m;
 
     height: 32px;
@@ -27,7 +27,7 @@
     border-radius: constants.$radius-m;
   }
 
-  &--large {
+  &--l {
     @include text.text-l;
 
     height: 40px;
