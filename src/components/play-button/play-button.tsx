@@ -11,12 +11,7 @@ export interface IPlayButtonProps {
   audioURL: string;
 }
 
-PlayButton.defaultProps = {
-  size: 'm',
-  variant: 'play',
-} as IPlayButtonProps;
-
-export function PlayButton({ className, size, variant, audioURL }: IPlayButtonProps) {
+export function PlayButton({ className, size = 'm', variant = 'play', audioURL }: IPlayButtonProps) {
   const clickHandler = () => {
     new Audio(audioURL).play();
   };

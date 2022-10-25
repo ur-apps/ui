@@ -20,24 +20,15 @@ export interface IToggleProps {
   onChange?: (evt: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-Toggle.defaultProps = {
-  size: 'm',
-  colorScheme: 'light',
-  autoColor: true,
-  leftValue: 'off',
-  rightValue: 'on',
-  value: 'on',
-} as IToggleProps;
-
 export function Toggle({
   className,
-  size,
-  colorScheme,
-  autoColor,
+  size = 'm',
+  colorScheme = 'light',
+  autoColor = true,
   name,
-  leftValue,
-  rightValue,
-  value: defaultValue,
+  leftValue = 'off',
+  rightValue = 'on',
+  value: defaultValue = 'on',
   leftText,
   rightText,
   leftIcon: LeftIcon,

@@ -1,8 +1,8 @@
-import { useTheme } from 'contexts';
 import React, { useCallback, useEffect, useRef } from 'react';
+
+import { Indicator, Text } from 'components';
+import { useTheme } from 'contexts';
 import { classNames } from 'utils';
-import { Indicator } from '../indicator';
-import { Text } from '../text';
 import { getTooltipPostion } from './helpers';
 import styles from './tooltip.module.scss';
 

@@ -5,19 +5,13 @@ import styles from './tag.module.scss';
 
 export interface ITagProps {
   className?: string;
-  size: 's';
+  size?: 's';
   appearance?: 'fill' | 'outline';
   colorScheme?: 'lightblue' | 'blue' | 'lightpink' | 'pink';
   children: React.ReactNode;
 }
 
-Tag.defaultProps = {
-  size: 's',
-  appearance: 'fill',
-  colorScheme: 'lightblue',
-} as ITagProps;
-
-export function Tag({ className, size, appearance, colorScheme, children }: ITagProps) {
+export function Tag({ className, size = 's', appearance = 'fill', colorScheme = 'lightblue', children }: ITagProps) {
   return (
     <div
       className={classNames(

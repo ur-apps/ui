@@ -11,12 +11,7 @@ export interface ISandwichProps {
   onClick?: () => void;
 }
 
-Sandwich.defaultProps = {
-  colorScheme: 'blue',
-  autoColor: true,
-} as ISandwichProps;
-
-export function Sandwich({ className, colorScheme, autoColor, onClick }: ISandwichProps) {
+export function Sandwich({ className, colorScheme = 'blue', autoColor = true, onClick }: ISandwichProps) {
   const { theme } = useTheme();
 
   const clickHandler = () => {

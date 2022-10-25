@@ -10,12 +10,7 @@ export interface IHrProps {
   autoColor?: boolean;
 }
 
-Hr.defaultProps = {
-  colorScheme: 'light',
-  autoColor: true,
-} as IHrProps;
-
-export function Hr({ className, colorScheme, autoColor }: IHrProps) {
+export function Hr({ className, colorScheme = 'light', autoColor = true }: IHrProps) {
   const { theme } = useTheme();
 
   return (

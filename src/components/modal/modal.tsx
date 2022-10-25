@@ -17,23 +17,15 @@ export interface IModalProps {
   children?: React.ReactNode;
 }
 
-Modal.defaultProps = {
-  size: 'm',
-  colorScheme: 'white',
-  autoColor: true,
-  closeOnOverlay: true,
-  closeOnESC: true,
-} as IModalProps;
-
 export function Modal({
   className,
   overlayClassName,
-  size,
-  colorScheme,
-  autoColor,
+  size = 'm',
+  colorScheme = 'white',
+  autoColor = true,
   onClose,
-  closeOnOverlay,
-  closeOnESC,
+  closeOnOverlay = true,
+  closeOnESC = true,
   children,
 }: IModalProps) {
   const { theme } = useTheme();

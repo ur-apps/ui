@@ -14,14 +14,14 @@ export interface IAvatarProps {
   img?: string;
 }
 
-Avatar.defaultProps = {
-  size: 'm',
-  appearance: 'circle',
-  colorScheme: 'light',
-  autoColor: true,
-} as IAvatarProps;
-
-export function Avatar({ className, size, appearance, colorScheme, autoColor, img }: IAvatarProps) {
+export function Avatar({
+  className,
+  size = 'm',
+  appearance = 'circle',
+  colorScheme = 'light',
+  autoColor = true,
+  img,
+}: IAvatarProps) {
   const { theme } = useTheme();
 
   return (

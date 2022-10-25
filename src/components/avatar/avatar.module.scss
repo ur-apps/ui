@@ -61,4 +61,10 @@
       }
     }
   }
+
+  &--blue {
+    path {
+      fill: colors.$blue;
+    }
+  }
 }

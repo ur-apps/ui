@@ -35,24 +35,15 @@ export interface ISelectOption {
 
 export type TSelectValue = string | number;
 
-Select.defaultProps = {
-  size: 'm',
-  colorScheme: 'light',
-  autoColor: true,
-  controlled: false,
-  name: `select-${Math.random()}`,
-  emptyText: '',
-} as ISelectProps;
-
 export function Select({
   className,
-  size,
-  colorScheme,
-  autoColor,
+  size = 'm',
+  colorScheme = 'light',
+  autoColor = true,
   icon: Icon,
   controlled = false,
   id,
-  name,
+  name = `select-${Math.random()}`,
   placeholder,
   value = '',
   disabled,

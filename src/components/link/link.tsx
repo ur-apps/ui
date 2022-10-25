@@ -19,23 +19,14 @@ export interface ILinkProps {
   refLink?: React.RefObject<HTMLAnchorElement>;
 }
 
-Link.defaultProps = {
-  size: 'm',
-  appearance: 'text',
-  colorScheme: 'blue',
-  autoColor: true,
-  href: '/',
-  target: '_self',
-} as ILinkProps;
-
 export function Link({
   className,
-  size,
-  appearance,
-  colorScheme,
-  autoColor,
+  size = 'm',
+  appearance = 'text',
+  colorScheme = 'blue',
+  autoColor = true,
   href = '/',
-  target,
+  target = '_self',
   id,
   onClick,
   refLink,

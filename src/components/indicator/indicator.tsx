@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { classNames } from 'utils';
 import styles from './indicator.module.scss';
 

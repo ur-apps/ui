@@ -1,10 +1,9 @@
 import React from 'react';
 
-import { Tag, ITagProps } from '../tag';
-import { PlayButton } from '../play-button';
+import { PlayButton, Tag } from 'components';
 import { CloseIcon, EyeCrossedIcon, EyeIcon, PencilIcon } from 'icons';
-import styles from './transcription.module.scss';
 import { classNames } from 'utils';
+import styles from './transcription.module.scss';
 
 export interface ITranscriptionProps {
   className?: string;
@@ -19,7 +18,6 @@ export interface ITranscriptionProps {
 
 export function Transcription({
   className,
-  id,
   transcription,
   audio,
   isActive,

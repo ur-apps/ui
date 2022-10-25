@@ -10,12 +10,7 @@ export interface ITextProps {
   children: React.ReactNode;
 }
 
-Text.defaultProps = {
-  size: 'm',
-  tag: 'p',
-} as ITextProps;
-
-export function Text({ className, size, tag, children }: ITextProps) {
+export function Text({ className, size = 'm', tag = 'p', children }: ITextProps) {
   return tag === 'p' ? (
     <p className={classNames(styles[`text--${size}`], className)}>{children}</p>
   ) : (

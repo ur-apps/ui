@@ -13,14 +13,13 @@ export interface IThemeToggleProps {
   onChange?: (evt: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-ThemeToggle.defaultProps = {
-  size: 'm',
-  colorScheme: 'light',
-  autoColor: true,
-  value: 'on',
-} as IThemeToggleProps;
-
-export function ThemeToggle({ className, size, colorScheme, autoColor, onChange }: IThemeToggleProps) {
+export function ThemeToggle({
+  className,
+  size = 'm',
+  colorScheme = 'light',
+  autoColor = true,
+  onChange,
+}: IThemeToggleProps) {
   const { theme, themeValue, switchTheme } = useTheme();
 
   const changeHandler = (evt: React.ChangeEvent<HTMLInputElement>) => {

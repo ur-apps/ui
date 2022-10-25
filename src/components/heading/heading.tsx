@@ -9,11 +9,7 @@ export interface IHeadingProps {
   children: React.ReactNode;
 }
 
-Heading.defaultProps = {
-  size: 'h1',
-} as IHeadingProps;
-
-export function Heading({ className, size, children }: IHeadingProps) {
+export function Heading({ className, size = 'h1', children }: IHeadingProps) {
   const classes = classNames(styles[`heading--${size}`], className);
 
   switch (size) {

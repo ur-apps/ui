@@ -19,21 +19,13 @@ export interface IButtonProps {
   refLink?: React.RefObject<HTMLButtonElement>;
 }
 
-Button.defaultProps = {
-  size: 'm',
-  appearance: 'fill',
-  colorScheme: 'blue',
-  autoColor: true,
-  type: 'button',
-} as IButtonProps;
-
 export function Button({
   className,
-  size,
-  appearance,
-  colorScheme,
-  autoColor,
-  type,
+  size = 'm',
+  appearance = 'fill',
+  colorScheme = 'blue',
+  autoColor = true,
+  type = 'button',
   id,
   name,
   disabled,

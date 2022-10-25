@@ -10,13 +10,7 @@ export interface ICarouselProps {
   interval?: number;
 }
 
-Carousel.defaultProps = {
-  className: '',
-  imgWrapperClassName: '',
-  interval: 5000,
-} as ICarouselProps;
-
-export function Carousel({ className, imgWrapperClassName, data, interval }: ICarouselProps) {
+export function Carousel({ className, imgWrapperClassName, data, interval = 5000 }: ICarouselProps) {
   const сarousel = useRef<HTMLDivElement>(null);
   const intervalID = useRef<NodeJS.Timer>();
 

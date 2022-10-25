@@ -48,20 +48,14 @@ export interface IInputProps {
   refLink?: React.RefObject<HTMLInputElement> | null;
 }
 
-Input.defaultProps = {
-  size: 'm',
-  colorScheme: 'light',
-  autoColor: true,
-  type: 'text',
-} as IInputProps;
-
 export function Input({
   className,
   fieldClassName,
-  size,
-  colorScheme,
-  autoColor,
+  size = 'm',
+  colorScheme = 'light',
+  autoColor = true,
   icon: Icon,
+  type = 'text',
   placeholder,
   info,
   error,
@@ -85,7 +79,7 @@ export function Input({
         />
       )}
       <input
-        type="text"
+        type={type}
         className={classNames(
           styles.input,
           styles[`input--${size}`],
