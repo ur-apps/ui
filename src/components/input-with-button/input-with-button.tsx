@@ -9,7 +9,7 @@ export interface IInputWithButtonProps {
   className?: string;
   inputClassName?: string;
   buttonClassName?: string;
-  size?: 's' | 'm' | 'l';
+  size?: 's' | 'm' | 'l' | 'xl' | 'xxl';
   buttonAppearance?: IButtonProps['appearance'];
   inputColorScheme?: IInputProps['colorScheme'];
   buttonColorScheme?: IButtonProps['colorScheme'];
