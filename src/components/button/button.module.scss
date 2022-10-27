@@ -39,6 +39,24 @@
 
     border-radius: constants.$radius-l;
   }
+
+  &--xl {
+    @include text.text-xxl;
+
+    height: 52px;
+    padding: 0 28px;
+
+    border-radius: constants.$radius-xl;
+  }
+
+  &--xxl {
+    @include text.text-3xl;
+
+    height: 64px;
+    padding: 0 32px;
+
+    border-radius: constants.$radius-xxl;
+  }
 }
 
 .button--fill {

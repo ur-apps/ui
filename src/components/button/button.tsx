@@ -6,7 +6,7 @@ import styles from './button.module.scss';
 
 export interface IButtonProps {
   className?: string;
-  size?: 's' | 'm' | 'l';
+  size?: 's' | 'm' | 'l' | 'xl' | 'xxl';
   appearance?: 'fill' | 'outline' | 'text';
   colorScheme?: 'white' | 'black' | 'blue' | 'red' | 'green';
   autoColor?: boolean;
