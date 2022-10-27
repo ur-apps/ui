@@ -22,19 +22,35 @@
   }
 
   &--m {
-    bottom: 8px;
+    bottom: 9px;
     left: 8px;
+
+    width: 14px;
+    height: 14px;
+  }
+
+  &--l {
+    bottom: 12px;
+    left: 12px;
 
     width: 16px;
     height: 16px;
   }
 
-  &--l {
-    bottom: 11px;
-    left: 12px;
+  &--xl {
+    bottom: 16px;
+    left: 14px;
 
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &--xxl {
+    bottom: 20px;
+    left: 16px;
+
+    width: 24px;
+    height: 24px;
   }
 
   &--light {
@@ -99,11 +115,11 @@
     border-radius: constants.$radius-m;
 
     &.input--with-icon {
-      padding-left: 32px;
+      padding-left: 30px;
     }
 
     &.input--with-info {
-      padding-right: 32px;
+      padding-right: 30px;
     }
   }
 
@@ -116,11 +132,45 @@
     border-radius: constants.$radius-l;
 
     &.input--with-icon {
-      padding-left: 44px;
+      padding-left: 40px;
     }
 
     &.input--with-info {
-      padding-right: 44px;
+      padding-right: 40px;
+    }
+  }
+
+  &--xl {
+    @include text.text-xxl;
+
+    height: 52px;
+    padding: 0 28px;
+
+    border-radius: constants.$radius-xl;
+
+    &.input--with-icon {
+      padding-left: 48px;
+    }
+
+    &.input--with-info {
+      padding-right: 48px;
+    }
+  }
+
+  &--xxl {
+    @include text.text-3xl;
+
+    height: 64px;
+    padding: 0 32px;
+
+    border-radius: constants.$radius-xxl;
+
+    &.input--with-icon {
+      padding-left: 56px;
+    }
+
+    &.input--with-info {
+      padding-right: 56px;
     }
   }
 
@@ -240,13 +290,23 @@
   }
 
   &--m {
-    top: 8px;
+    top: 9px;
     right: 8px;
   }
 
   &--l {
-    top: 11px;
+    top: 12px;
     right: 12px;
+  }
+
+  &--xl {
+    top: 16px;
+    right: 14px;
+  }
+
+  &--xxl {
+    top: 20px;
+    right: 16px;
   }
 }
 
@@ -261,13 +321,23 @@
   }
 
   &--m {
+    width: 14px;
+    height: 14px;
+  }
+
+  &--l {
     width: 16px;
     height: 16px;
   }
 
-  &--l {
-    width: 18px;
-    height: 18px;
+  &--xl {
+    width: 20px;
+    height: 20px;
+  }
+
+  &--xxl {
+    width: 24px;
+    height: 24px;
   }
 
   &--light {

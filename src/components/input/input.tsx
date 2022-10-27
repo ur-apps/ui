@@ -9,7 +9,7 @@ import styles from './input.module.scss';
 export interface IInputProps {
   className?: string;
   fieldClassName?: string;
-  size?: 's' | 'm' | 'l';
+  size?: 's' | 'm' | 'l' | 'xl' | 'xxl';
   colorScheme?: 'light' | 'dark';
   autoColor?: boolean;
   icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
