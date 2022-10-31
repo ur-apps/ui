@@ -16,6 +16,7 @@ export interface ITooltipProps {
   isIndicatorBlinking?: boolean;
   text: React.ReactNode | string[];
   children: React.ReactNode;
+  onClick?: (evt: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 export function Tooltip({
@@ -28,6 +29,7 @@ export function Tooltip({
   isIndicatorBlinking = false,
   text,
   children,
+  onClick,
 }: ITooltipProps) {
   const { theme } = useTheme();
   const wrapper = useRef<HTMLDivElement>(null);
@@ -48,7 +50,7 @@ export function Tooltip({
   }, [hoverHandler]);
 
   return (
-    <div className={classNames(styles.wrapper, styles[`wrapper--${size}`], className)} ref={wrapper}>
+    <div className={classNames(styles.wrapper, styles[`wrapper--${size}`], className)} ref={wrapper} onClick={onClick}>
       {children}
 
       <div

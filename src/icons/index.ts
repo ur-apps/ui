@@ -23,6 +23,8 @@ export { ReactComponent as PathUpIcon } from './path-up.svg';
 export { ReactComponent as PauseIcon } from './pause.svg';
 export { ReactComponent as PencilIcon } from './pencil.svg';
 export { ReactComponent as PlayIcon } from './play.svg';
+export { ReactComponent as SaveFillIcon } from './save-fill.svg';
+export { ReactComponent as SaveOutlineIcon } from './save-outline.svg';
 export { ReactComponent as Spinner } from './spinner-blue.svg';
 export { ReactComponent as SunIcon } from './sun.svg';
 export { ReactComponent as TranslateIcon } from './translate.svg';
