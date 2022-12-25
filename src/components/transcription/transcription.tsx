@@ -24,10 +24,10 @@ export function Transcription({
   id,
   transcription,
   audio,
-  isActive,
-  editable,
-  removable,
-  mode,
+  isActive = true,
+  editable = false,
+  removable = false,
+  mode = 'read',
   onActivate,
   onChange,
   onDelete,
@@ -62,7 +62,7 @@ export function Transcription({
   };
 
   return (
-    <Tag className={classNames(styles.transcription, className)} appearance="outline">
+    <Tag className={classNames(styles.transcription, className)} colorScheme="blue" appearance="outline">
       <div className={classNames(styles.content, isActive ? styles['content--active'] : null)}>
         {mode === 'edit' && isEditing ? (
           <input className={styles.input} value={value} onChange={changeHandler} />
