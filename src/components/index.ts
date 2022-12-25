@@ -9,6 +9,7 @@ export * from './input-with-button';
 export * from './link';
 export * from './loading-bar';
 export * from './modal';
+export * from './paper';
 export * from './play-button';
 export * from './sandwich';
 export * from './select';
