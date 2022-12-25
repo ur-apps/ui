@@ -7,16 +7,16 @@ import styles from './transcription.module.scss';
 
 export interface ITranscriptionProps {
   className?: string;
-  id: string;
+  id: string | number;
   transcription: string;
-  audio?: string;
+  audio?: string | null;
   isActive: boolean;
   editable: boolean;
   removable: boolean;
   mode: 'read' | 'edit';
-  onActivate?: (id: string, value: boolean) => void;
-  onChange?: (id: string, value: string) => void;
-  onDelete?: (id: string) => void;
+  onActivate?: (id: string | number, value: boolean) => void;
+  onChange?: (id: string | number, value: string) => void;
+  onDelete?: (id: string | number) => void;
 }
 
 export function Transcription({
