@@ -7,7 +7,7 @@ import styles from './paper.module.scss';
 export interface IPaperProps {
   className?: string;
   color?: 'white' | 'lightgray' | 'darkgray' | 'black';
-  size?: 'xs' | 's' | 'm' | 'l';
+  size?: 'xs' | 's' | 'm' | 'l' | 'xl';
   elevation?: 0 | 1 | 2 | 3 | 5 | 8 | 13 | 21 | '0' | '1' | '2' | '3' | '5' | '8' | '13' | '21';
   autoColor?: boolean;
   children?: React.ReactNode;
