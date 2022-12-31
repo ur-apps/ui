@@ -1,0 +1,65 @@
+@use 'styles/colors';
+@use 'styles/constants';
+@use 'styles/text';
+
+.feature {
+  display: flex;
+  width: max-content;
+  border-style: solid;
+
+  &--size {
+    &-s {
+      height: 24px;
+      border-width: 1px;
+      border-radius: constants.$radius-s;
+    }
+  }
+
+  &--color {
+    &-blue {
+      border-color: colors.$blue;
+    }
+
+    &-pink {
+      border-color: colors.$pink;
+    }
+  }
+}
+
+.category {
+  &--size {
+    &-s {
+      padding: 3px 4px;
+    }
+  }
+
+  &--color {
+    &-blue {
+      color: colors.$white;
+      background-color: colors.$blue;
+    }
+
+    &-pink {
+      color: colors.$white;
+      background-color: colors.$pink;
+    }
+  }
+}
+
+.text {
+  &--size {
+    &-s {
+      padding: 2px 8px;
+    }
+  }
+
+  &--color {
+    &-blue {
+      color: colors.$blue;
+    }
+
+    &-pink {
+      color: colors.$pink;
+    }
+  }
+}
