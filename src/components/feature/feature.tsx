@@ -10,7 +10,7 @@ export interface IFeatureProps {
   colorScheme?: 'blue' | 'pink';
   category?: string;
   feature?: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export function Feature({ className, size = 's', colorScheme = 'blue', category, feature, children }: IFeatureProps) {
