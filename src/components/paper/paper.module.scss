@@ -2,11 +2,6 @@
 @use 'styles/constants';
 
 .paper {
-  display: block;
-  width: max-content;
-  height: max-content;
-  max-width: 100%;
-
   &--color {
     &-white {
       color: colors.$black;
