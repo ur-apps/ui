@@ -30,7 +30,7 @@ export function Paper({
         styles[`paper--color-${color}`],
         styles[`paper--size-${size}`],
         styles[`paper--elevation-${elevation}`],
-        autoColor ? styles[`tooltip--${theme}-mode`] : null,
+        autoColor ? styles[`paper--${theme}-mode`] : null,
         className
       )}>
       {children}
