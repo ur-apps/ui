@@ -47,29 +47,41 @@
     &.output--with-icon {
       padding-left: 24px;
     }
+
+    &.output--with-value {
+      padding-right: 40px;
+    }
   }
 
   &--m {
     @include text.text-m;
 
-    padding: 0 32px 0 16px;
+    padding: 0 30px 0 16px;
 
     border-radius: constants.$radius-m;
 
     &.output--with-icon {
       padding-left: 28px;
     }
+
+    &.output--with-value {
+      padding-right: 50px;
+    }
   }
 
   &--l {
     @include text.text-l;
 
-    padding: 0 40px 0 20px;
+    padding: 0 36px 0 20px;
 
     border-radius: constants.$radius-l;
 
     &.output--with-icon {
       padding-left: 40px;
+    }
+
+    &.output--with-value {
+      padding-right: 60px;
     }
   }
 
@@ -152,6 +164,8 @@
 .icon {
   position: absolute;
 
+  display: block;
+
   &--s {
     bottom: 6px;
     left: 6px;
@@ -201,6 +215,60 @@
   }
 }
 
+.reset {
+  position: absolute;
+
+  display: block;
+
+  cursor: pointer;
+
+  &--s {
+    top: 7px;
+    right: 24px;
+
+    width: 10px;
+    height: 10px;
+  }
+
+  &--m {
+    top: 10px;
+    right: 30px;
+
+    width: 12px;
+    height: 12px;
+  }
+
+  &--l {
+    top: 13px;
+    right: 36px;
+
+    width: 14px;
+    height: 14px;
+  }
+
+  &--light {
+    color: colors.$darkest-blue;
+
+    &.reset--dark-mode {
+      color: colors.$white;
+    }
+  }
+
+  &--dark {
+    color: colors.$white;
+
+    &.reset--light-mode {
+      color: colors.$darkest-blue;
+    }
+  }
+
+  & > svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
 .arrow {
   position: absolute;
 
@@ -209,47 +277,39 @@
   transition: 200ms;
 
   &--s {
-    top: 10px;
+    top: 9px;
     right: 8px;
 
     width: 10px;
   }
 
   &--m {
-    top: 12px;
+    top: 13px;
     right: 10px;
 
-    width: 14px;
+    width: 12px;
   }
 
   &--l {
     top: 16px;
-    right: 14px;
+    right: 12px;
 
-    width: 16px;
+    width: 14px;
   }
 
   &--light {
-    path {
-      stroke: colors.$darkest-blue;
-    }
+    color: colors.$darkest-blue;
 
     &.arrow--dark-mode {
-      path {
-        stroke: colors.$white;
-      }
+      color: colors.$white;
     }
   }
 
   &--dark {
-    path {
-      stroke: colors.$white;
-    }
+    color: colors.$white;
 
     &.arrow--light-mode {
-      path {
-        stroke: colors.$darkest-blue;
-      }
+      color: colors.$darkest-blue;
     }
   }
 
@@ -260,6 +320,7 @@
 
 .dropdown {
   position: relative;
+  z-index: 1;
 
   display: flex;
   flex-direction: column;

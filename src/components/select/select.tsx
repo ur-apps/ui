@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 
-import { PathDownIcon } from 'icons';
+import { CloseIcon, PathDownIcon } from 'icons';
 import { useTheme } from 'contexts';
 import { classNames } from 'utils';
 import styles from './select.module.scss';
@@ -22,15 +22,15 @@ export interface ISelectProps {
   readOnly?: boolean;
   disabled?: boolean;
   options?: ISelectOption[];
-  onChange?: (evt: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (evt: React.ChangeEvent<HTMLInputElement>, value: TSelectValue) => void;
   onFocus?: (evt: React.FocusEvent<HTMLInputElement>) => void;
   onBlur?: (evt: React.FocusEvent<HTMLInputElement>) => void;
   refLink?: React.RefObject<HTMLInputElement> | null;
 }
 
-export interface ISelectOption {
+export interface ISelectOption<T = TSelectValue> {
   label: string;
-  value: TSelectValue;
+  value: T;
 }
 
 export type TSelectValue = string | number;
@@ -59,20 +59,22 @@ export function Select({
         prev[current.value] = current.label;
 
         return prev;
-      }, {} as Record<string, any>) || {},
+      }, {} as Record<string, string>) || {},
     [options]
   );
+  const currentValue = controlled ? value : innerValue;
 
   const clickHandler = () => {
     !disabled && setExpanded(!expanded);
   };
 
   const changeHandler = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    if (controlled) {
-      onChange && onChange(evt);
-    } else {
+    onChange && onChange(evt, evt.target.value);
+
+    if (!controlled) {
       setInnerValue(evt.target.value);
     }
+
     setExpanded(false);
   };
 
@@ -96,13 +98,27 @@ export function Select({
           styles[`output--${colorScheme}`],
           autoColor ? styles[`output--${theme}-mode`] : undefined,
           Icon ? styles['output--with-icon'] : undefined,
+          currentValue ? styles['output--with-value'] : undefined,
           expanded ? styles['output--expanded'] : undefined
         )}
         placeholder={placeholder}
-        value={optionsValues[controlled ? value : innerValue] || ''}
+        value={optionsValues[currentValue] ?? ''}
         readOnly
         disabled={disabled}
       />
+
+      {currentValue && (
+        <label
+          className={classNames(
+            styles.reset,
+            styles[`reset--${size}`],
+            styles[`reset--${colorScheme}`],
+            autoColor ? styles[`reset--${theme}-mode`] : undefined
+          )}>
+          <CloseIcon />
+          <input type="radio" name={name} value="" onChange={changeHandler} />
+        </label>
+      )}
 
       <PathDownIcon
         className={classNames(
@@ -122,16 +138,6 @@ export function Select({
           autoColor ? styles[`dropdown--${theme}-mode`] : undefined,
           expanded ? styles['dropdown--expanded'] : undefined
         )}>
-        <label
-          className={classNames(
-            styles.option,
-            styles[`option--${size}`],
-            styles[`option--${colorScheme}`],
-            autoColor ? styles[`option--${theme}-mode`] : undefined
-          )}>
-          Reset
-          <input type="radio" name={name} value="" onChange={changeHandler} />
-        </label>
         {options?.map(({ value, label }) => (
           <label
             className={classNames(
