@@ -30,7 +30,8 @@
 
   cursor: pointer;
 
-  transition: 300ms;
+  transition: border-radius 50ms;
+  transition-delay: 250ms;
 
   &:disabled {
     cursor: default;
@@ -143,6 +144,8 @@
   &--expanded {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+
+    transition-delay: unset;
   }
 }
 
@@ -256,14 +259,16 @@
 }
 
 .dropdown {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   width: 100%;
   height: fit-content;
   max-height: 0;
-  overflow-y: scroll;
+  overflow-y: auto;
 
-  transition: 300ms;
+  transition: 250ms;
 
   @include mixins.useScrollbar;
 
