@@ -1,4 +1,4 @@
-name: deploy to AWS EC2
+name: Storybook deploy
 
 on:
   push:
@@ -8,14 +8,22 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm i --silent
-      - run: npm run build:storybook --silent
-      - name: Configure SSH
+
+      - name: install dependencies
+        run: npm i
+
+      - name: build storybook
+        run: npm run build:storybook
+
+      - name: configure SSH
         run: |
           mkdir -p ~/.ssh/
           echo "$SSH_KEY" > ~/.ssh/ssh.key
@@ -23,17 +31,19 @@ jobs:
           cat >> ~/.ssh/config <<END
             Host remote
             HostName $HOST
-            User ubuntu
+            User $USER
             IdentityFile ~/.ssh/ssh.key
             StrictHostKeyChecking no
           END
         env:
-          HOST: ${{ secrets.HOST }}
-          SSH_KEY: ${{ secrets.SSH_KEY }}
-      - name: Copy to remote server
+          HOST: ${{ secrets.UR_APPS_SERVER_HOST }}
+          USER: ${{ secretes.UR_APPS_SERVER_USER }}
+          SSH_KEY: ${{ secrets.UR_APPS_SERVER_SSH_KEY }}
+
+      - name: copy to remote server
         run: |
           echo "Copy UI-Kit to remote server"
           pwd
           ls -la
-          rsync -a $(pwd)/storybook-static remote:/home/ubuntu/apps/ur-ui/
+          rsync -a $(pwd)/storybook-static remote:/home/apps/ur-ui/
           echo "Github Actions CI/CD pipeline completed"
