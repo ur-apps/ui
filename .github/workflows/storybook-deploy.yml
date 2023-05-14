@@ -37,7 +37,7 @@ jobs:
           END
         env:
           HOST: ${{ secrets.UR_APPS_SERVER_HOST }}
-          USER: ${{ secretes.UR_APPS_SERVER_USER }}
+          USER: ${{ secrets.UR_APPS_SERVER_USER }}
           SSH_KEY: ${{ secrets.UR_APPS_SERVER_SSH_KEY }}
 
       - name: copy to remote server
@@ -45,5 +45,20 @@ jobs:
           echo "Copy UI-Kit to remote server"
           pwd
           ls -la
+          if [ ! -d "remote:/home/apps/ur-ui/" ]; then
+            echo "creating folder: /home/apps/ur-ui"
+            mkdir -p remote:/home/apps/ur-ui
+          fi
+          if [ -d "remote:/home/apps/ur-ui/storybook-static" ]; then
+            echo "removing folder: /home/apps/ur-ui/storybook-static"
+            rm -R remote:/home/apps/ur-ui/storybook-static
+          fi
           rsync -a $(pwd)/storybook-static remote:/home/apps/ur-ui/
-          echo "Github Actions CI/CD pipeline completed"
+          echo "files copied successfully"
+
+      - name: remove ssh config
+        run: |
+          echo "removing ssh.key"
+          rm ~/.ssh/ssh.key
+          echo "removing ssh config"
+          rm ~/.ssh/config
