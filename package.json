@@ -45,14 +45,14 @@
     "ur apps"
   ],
   "license": "ISC",
-  "author": "Garik Freedomyan <garikfreedomyan@gmail.com>",
+  "author": "Garry Freeman <garryfreeman09@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/garikfreedomyan/ur-ui.git"
+    "url": "git+https://github.com/ur-apps/ui.git"
   },
-  "homepage": "https://github.com/garikfreedomyan/ur-ui#readme",
+  "homepage": "https://github.com/ur-apps/ui#readme",
   "bugs": {
-    "url": "https://github.com/garikfreedomyan/ur-ui/issues"
+    "url": "https://github.com/ur-apps/ui/issues"
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
