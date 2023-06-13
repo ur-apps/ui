@@ -1,4 +1,4 @@
-name: publish on NPM
+name: Publish on NPM
 
 on:
   push:
@@ -12,16 +12,22 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.JS
+        uses: actions/setup-node@v3
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - name: install dependencies
-        run: npm i
-      - name: build package
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build package
         run: npm run build
-      - name: publish package
+
+      - name: Publish package
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
