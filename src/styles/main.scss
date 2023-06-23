@@ -1,2 +1,43 @@
 @forward 'fonts';
 @forward 'reset';
+
+:root {
+  // main colors
+  --color-white: rgba(255, 255, 255, 1);
+  --color-lightest-gray: rgba(245, 245, 245, 1);
+  --color-black: rgba(0, 0, 0, 1);
+  --color-smoky-black: rgba(15, 15, 15, 1);
+  --color-azure: rgba(0, 127, 255, 1);
+  --color-green: rgba(100, 217, 90, 1);
+  --color-orange: rgba(255, 153, 0, 1);
+  --color-red: rgba(236, 50, 50, 1);
+
+  // background colors
+  --color-bg-primary-light: var(--color-white);
+  --color-bg-secondary-light: var(--color-lightest-gray);
+  --color-bg-primary-dark: var(--color-black);
+  --color-bg-secondary-dark: var(--color-smoky-black);
+
+  // space
+  --space-3xs: 2px;
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-s: 12px;
+  --space-m: 16px;
+  --space-l: 20px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+  --space-3xl: 40px;
+  --space-4xl: 48px;
+  --space-5xl: 64px;
+  --space-6xl: 96px;
+
+  // radius
+  --radius-3xs: 2px;
+  --radius-2xs: 3px;
+  --radius-xs: 5px;
+  --radius-s: 7px;
+  --radius-m: 10px;
+  --radius-l: 15px;
+  --radius-xl: 20px;
+}
