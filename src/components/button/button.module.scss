@@ -60,17 +60,17 @@
 }
 
 .button--fill {
-  color: colors.$white;
+  color: var(--color-white);
 
   &.button--blue {
-    background-color: colors.$blue;
+    background-color: var(--color-azure);
 
     &:hover {
-      background-color: colors.$dark-blue;
+      background-color: rgb(0, 118, 236);
     }
 
     &:active {
-      background-color: colors.$darker-blue;
+      background-color: rgb(0, 112, 225);
     }
 
     &:disabled {
@@ -81,7 +81,7 @@
 
   &.button--white {
     color: colors.$darkest-blue;
-    background-color: colors.$white;
+    background-color: var(--color-white);
 
     &:hover {
       background-color: colors.$lighter-gray;
@@ -97,7 +97,7 @@
     }
 
     &.button--light-mode {
-      color: colors.$white;
+      color: var(--color-white);
       background-color: colors.$black;
 
       &:hover {
@@ -116,7 +116,7 @@
   }
 
   &.button--black {
-    color: colors.$white;
+    color: var(--color-white);
     background-color: colors.$black;
 
     &:hover {
@@ -134,7 +134,7 @@
 
     &.button--dark-mode {
       color: colors.$darkest-blue;
-      background-color: colors.$white;
+      background-color: var(--color-white);
 
       &:hover {
         background-color: colors.$lighter-gray;
@@ -152,7 +152,7 @@
   }
 
   &.button--red {
-    background-color: colors.$red;
+    background-color: var(--color-red);
 
     &:hover {
       background-color: colors.$dark-red;
@@ -169,7 +169,7 @@
   }
 
   &.button--green {
-    background-color: colors.$green;
+    background-color: var(--color-green);
 
     &:hover {
       background-color: colors.$dark-green;
@@ -191,9 +191,9 @@
   border-style: solid;
 
   &.button--blue {
-    color: colors.$blue;
+    color: var(--color-azure);
 
-    border-color: colors.$blue;
+    border-color: var(--color-azure);
 
     &:hover {
       background-color: colors.$blue10;
@@ -211,9 +211,9 @@
   }
 
   &.button--red {
-    border-color: colors.$red;
+    border-color: var(--color-red);
 
-    color: colors.$red;
+    color: var(--color-red);
 
     &:hover {
       background-color: colors.$red10;
@@ -231,9 +231,9 @@
   }
 
   &.button--green {
-    border-color: colors.$green;
+    border-color: var(--color-green);
 
-    color: colors.$green;
+    color: var(--color-green);
 
     &:hover {
       background-color: colors.$green10;
@@ -251,8 +251,8 @@
   }
 
   &.button--white {
-    color: colors.$white;
-    border-color: colors.$white;
+    color: var(--color-white);
+    border-color: var(--color-white);
 
     &:hover {
       background-color: colors.$white20;
@@ -307,8 +307,8 @@
     }
 
     &.button--dark-mode {
-      color: colors.$white;
-      border-color: colors.$white;
+      color: var(--color-white);
+      border-color: var(--color-white);
 
       &:hover {
         background-color: colors.$white20;
@@ -332,7 +332,7 @@
   padding: 0;
 
   &.button--blue {
-    color: colors.$blue;
+    color: var(--color-azure);
 
     &:disabled {
       color: colors.$blue50;
@@ -340,7 +340,7 @@
   }
 
   &.button--white {
-    color: colors.$white;
+    color: var(--color-white);
 
     &:disabled {
       color: colors.$light-gray;
@@ -363,7 +363,7 @@
     }
 
     &.button--dark-mode {
-      color: colors.$white;
+      color: var(--color-white);
 
       &:disabled {
         color: colors.$light-gray;
@@ -372,7 +372,7 @@
   }
 
   &.button--red {
-    color: colors.$red;
+    color: var(--color-red);
 
     &:disabled {
       color: colors.$red50;
@@ -380,7 +380,7 @@
   }
 
   &.button--green {
-    color: colors.$green;
+    color: var(--color-green);
 
     &:disabled {
       color: colors.$green50;
