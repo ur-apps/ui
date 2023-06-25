@@ -23,6 +23,7 @@ import { ReactComponent as PathUpIcon } from './path-up.svg';
 import { ReactComponent as PauseIcon } from './pause.svg';
 import { ReactComponent as PencilIcon } from './pencil.svg';
 import { ReactComponent as PlayIcon } from './play.svg';
+import { ReactComponent as ReloadIcon } from './reload.svg';
 import { ReactComponent as SunIcon } from './sun.svg';
 import { ReactComponent as TranslateIcon } from './translate.svg';
 import { ReactComponent as VolumeIcon } from './volume.svg';
@@ -54,6 +55,7 @@ export function IconsPreview() {
       <PauseIcon className={styles.icon} />
       <PencilIcon className={styles.icon} />
       <PlayIcon className={styles.icon} />
+      <ReloadIcon className={styles.icon} />
       <SunIcon className={styles.icon} />
       <TranslateIcon className={styles.icon} />
       <VolumeIcon className={styles.icon} />
