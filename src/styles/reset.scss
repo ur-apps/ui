@@ -6,8 +6,8 @@
 
 body {
   font-family: 'Visby Round CF', 'Open Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-medium);
 }
 
 input {

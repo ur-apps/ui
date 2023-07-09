@@ -11,6 +11,7 @@
   --color-green: rgba(100, 217, 90, 1);
   --color-orange: rgba(255, 153, 0, 1);
   --color-red: rgba(236, 50, 50, 1);
+  --color-pink: rgba(255, 73, 193, 1);
 
   // background colors
   --color-bg-primary-light: var(--color-white);
@@ -40,4 +41,28 @@
   --radius-m: 10px;
   --radius-l: 15px;
   --radius-xl: 20px;
+
+  // font
+  --font-size-2xs: 10px;
+  --font-size-xs: 12px;
+  --font-size-s: 14px;
+  --font-size-m: 16px;
+  --font-size-l: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-weight-extralight: 200;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-demibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-heavy: 900;
+  --line-height-2xs: 14px;
+  --line-height-xs: 16px;
+  --line-height-s: 18px;
+  --line-height-m: 20px;
+  --line-height-l: 22px;
+  --line-height-xl: 24px;
+  --line-height-2xl: 28px;
 }
