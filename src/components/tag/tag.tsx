@@ -8,6 +8,7 @@ import styles from './tag.module.scss';
 export interface ITagProps {
   className?: string;
   contentClassName?: string;
+  id?: string;
   size?: 's';
   appearance?: 'fill' | 'outline';
   color?: 'primary' | 'accent' | 'secondary' | 'success' | 'warning' | 'error';
@@ -18,6 +19,7 @@ export interface ITagProps {
 export function Tag({
   className,
   contentClassName,
+  id,
   size = 's',
   appearance = 'fill',
   color = 'primary',
@@ -47,12 +49,13 @@ export function Tag({
         styles[`tag--appearance-${appearance}`],
         styles[`tag--color-${color}`],
         className
-      )}>
-      <TagButtons className={styles['buttons--start']} buttons={startButtons} />
+      )}
+      id={id}>
+      {startButtons.length ? <TagButtons className={styles['buttons--start']} buttons={startButtons} /> : null}
 
       <div className={classNames(styles.content, contentClassName)}>{children}</div>
 
-      <TagButtons className={styles['buttons--end']} buttons={endButtons} />
+      {endButtons.length ? <TagButtons className={styles['buttons--end']} buttons={endButtons} /> : null}
     </div>
   );
 }
