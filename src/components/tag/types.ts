@@ -9,6 +9,7 @@ export type TTagButton = (
     }
 ) & {
   id: string | number;
+  className?: string;
   position?: 'start' | 'end';
   onClick?: (evt: React.MouseEvent<HTMLButtonElement>) => void;
 };

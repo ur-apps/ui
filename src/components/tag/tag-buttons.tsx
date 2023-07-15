@@ -12,10 +12,10 @@ interface ITagButtonsProps {
 export function TagButtons({ className, buttons }: ITagButtonsProps) {
   return (
     <div className={classNames(styles.buttons, className)}>
-      {buttons.map(({ id, label, icon, onClick }) => {
+      {buttons.map(({ id, className, label, icon, onClick }) => {
         return (
           <button
-            className={classNames(styles.button, onClick ? styles['button--interactive'] : null)}
+            className={classNames(styles.button, onClick ? styles['button--interactive'] : null, className)}
             onClick={onClick}
             id={String(id)}
             key={id}>
