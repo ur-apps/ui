@@ -1,7 +1,6 @@
 export * from './avatar';
 export * from './button';
 export * from './carousel';
-export * from './feature';
 export * from './heading';
 export * from './hr';
 export * from './indicator';
