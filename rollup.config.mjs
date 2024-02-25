@@ -20,7 +20,7 @@ const OUTPUT_DIR = 'lib';
 
 /** @type {(import('rollup').MergedRollupOptions)} */
 export default {
-  input: ['src/index.ts', 'src/icons/index.ts'],
+  input: ['src/index.ts', 'src/utils/index.ts'],
   output: {
     dir: OUTPUT_DIR,
     format: 'es',

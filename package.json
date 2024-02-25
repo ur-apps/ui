@@ -22,6 +22,7 @@
   ],
   "exports": {
     ".": "./lib/index.js",
+    "./utils": "./lib/utils/index.js",
     "./icons": "./lib/icons/index.js",
     "./styles": "./lib/index.css",
     "./fonts/*": "./lib/fonts/*",
@@ -32,6 +33,9 @@
     "*": {
       "icons": [
         "./lib/icons/index.d.ts"
+      ],
+      "utils": [
+        "./lib/utils/index.d.ts"
       ]
     }
   },
