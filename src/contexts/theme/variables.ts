@@ -1,3 +1,5 @@
+import { buttonDarkModeStyleTokens, buttonStyleTokens } from 'components';
+
 import { TStylePreset } from './types';
 
 export const preset: TStylePreset = {
@@ -615,6 +617,9 @@ export const preset: TStylePreset = {
       '6xl': 'var(--uu-sys-space-20)',
     },
   },
+  components: {
+    button: buttonStyleTokens,
+  },
 };
 
 export const darkModePreset: TStylePreset = {
@@ -786,5 +791,8 @@ export const darkModePreset: TStylePreset = {
         'a95': 'var(--uu-sys-color-white-a95)',
       },
     },
+  },
+  components: {
+    button: buttonDarkModeStyleTokens,
   },
 };

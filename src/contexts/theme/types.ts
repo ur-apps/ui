@@ -1,3 +1,5 @@
+import { IButtonStyleTokens } from 'components';
+
 type Size = '3xs' | '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
 
 type Color = { [key: string]: Color | string };
@@ -50,4 +52,7 @@ export type TStyleTokens = {
 export type TStylePreset = {
   primitives?: TStylePrimitives;
   tokens?: TStyleTokens;
+  components?: {
+    button?: IButtonStyleTokens;
+  };
 };

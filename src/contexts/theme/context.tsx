@@ -2,6 +2,7 @@ import React, { useState, createContext, useMemo } from 'react';
 import { classNames, clone, merge } from 'utils';
 
 import 'styles/index.scss';
+import { BUTTON_TOKENS_CLASS_NAME } from 'components';
 
 import { darkModePreset, preset } from './variables';
 import { formatCSSVariables } from './helpers';
@@ -30,7 +31,7 @@ export function ThemeProvider({ className, defaultTheme, customePreset = {}, chi
   const [theme] = useState<'light' | 'dark'>(defaultTheme ?? 'light');
 
   const [styles, classes] = useMemo(() => {
-    const { primitives, tokens } = merge(clone(preset), theme === 'dark' ? darkModePreset : customePreset);
+    const { primitives, tokens, components } = merge(clone(preset), theme === 'dark' ? darkModePreset : customePreset);
 
     const styles: Record<string, string[]> = {
       'uu-sys-colors': formatCSSVariables({ color: primitives?.color }, 'uu-sys'),
@@ -53,10 +54,11 @@ export function ThemeProvider({ className, defaultTheme, customePreset = {}, chi
       'uu-heights': formatCSSVariables({ height: tokens?.height }, 'uu'),
       'uu-radiuses': formatCSSVariables({ radius: tokens?.radius }, 'uu'),
       'uu-spaces': formatCSSVariables({ space: tokens?.space }, 'uu'),
+      [BUTTON_TOKENS_CLASS_NAME]: formatCSSVariables({ '': components?.button }),
     };
 
     const stringifiedStyles = Object.entries(styles).map(([group, value]) => `.${group} { \n${value.join(';\n')};\n}`);
-    const classes = Object.keys(styles).filter((c) => !([] as string[]).includes(c));
+    const classes = Object.keys(styles).filter((c) => ![BUTTON_TOKENS_CLASS_NAME].includes(c));
 
     return [stringifiedStyles, classes];
   }, [theme, preset]);
