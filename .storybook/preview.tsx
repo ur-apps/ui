@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Preview } from '@storybook/react';
 
+import { ThemeProvider } from '../src/contexts/theme';
 import './preview.css';
 
 const preview: Preview = {
@@ -34,15 +35,15 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story) => (
-      <div className="container">
+    (Story, context) => (
+      <ThemeProvider className="container" defaultTheme={context.globals.theme} key={context.globals.theme}>
         <div className="section section--primary">
           <Story />
         </div>
         <div className="section section--secondary">
           <Story />
         </div>
-      </div>
+      </ThemeProvider>
     ),
   ],
 };
