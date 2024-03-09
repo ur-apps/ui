@@ -1,0 +1,13 @@
+@use 'fonts';
+
+.uu-theme {
+  font-family: var(--uu-font-family);
+  font-size: var(--uu-font-size-m);
+  font-weight: var(--uu-font-weight-medium);
+
+  & * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+}
