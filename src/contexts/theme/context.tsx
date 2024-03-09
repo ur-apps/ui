@@ -2,7 +2,7 @@ import React, { useState, createContext, useMemo } from 'react';
 import { classNames, clone, merge } from 'utils';
 
 import 'styles/index.scss';
-import { BUTTON_TOKENS_CLASS_NAME } from 'components';
+import { BUTTON_TOKENS_CLASS_NAME, INPUT_TOKENS_CLASS_NAME } from 'components';
 
 import { darkModePreset, preset } from './variables';
 import { formatCSSVariables } from './helpers';
@@ -55,10 +55,11 @@ export function ThemeProvider({ className, defaultTheme, customePreset = {}, chi
       'uu-radiuses': formatCSSVariables({ radius: tokens?.radius }, 'uu'),
       'uu-spaces': formatCSSVariables({ space: tokens?.space }, 'uu'),
       [BUTTON_TOKENS_CLASS_NAME]: formatCSSVariables({ '': components?.button }),
+      [INPUT_TOKENS_CLASS_NAME]: formatCSSVariables({ '': components?.input }),
     };
 
     const stringifiedStyles = Object.entries(styles).map(([group, value]) => `.${group} { \n${value.join(';\n')};\n}`);
-    const classes = Object.keys(styles).filter((c) => ![BUTTON_TOKENS_CLASS_NAME].includes(c));
+    const classes = Object.keys(styles).filter((c) => ![BUTTON_TOKENS_CLASS_NAME, INPUT_TOKENS_CLASS_NAME].includes(c));
 
     return [stringifiedStyles, classes];
   }, [theme, preset]);

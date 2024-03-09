@@ -1,4 +1,4 @@
-import { IButtonStyleTokens } from 'components';
+import { IButtonStyleTokens, IInputStyleTokens } from 'components';
 
 type Size = '3xs' | '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
 
@@ -54,5 +54,6 @@ export type TStylePreset = {
   tokens?: TStyleTokens;
   components?: {
     button?: IButtonStyleTokens;
+    input?: IInputStyleTokens;
   };
 };
