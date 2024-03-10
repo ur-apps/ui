@@ -6,6 +6,8 @@
   border-style: var(--border-style, solid);
   border-color: var(--border-color, black);
   border-radius: var(--border-radius, 6px);
+  margin: 0;
+  box-sizing: border-box;
 
   font-family: var(--font-family, inherit);
   font-size: var(--font-size, 14px);

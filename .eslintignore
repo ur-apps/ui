@@ -3,4 +3,6 @@ dist
 build
 lib
 .github
-webpack.config.js
+.vscode
+*.css
+*.scss

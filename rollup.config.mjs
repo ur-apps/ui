@@ -58,11 +58,11 @@ export default {
         postcssurl([
           {
             filter: '**/fonts/**/*',
-            url: ({ url }) => url.replace(/^.*fonts/, 'ui2.0/fonts'),
+            url: ({ url }) => url.replace(/^.*fonts/, 'ur-ui/fonts'),
           },
           {
             filter: '**/images/**/*',
-            url: ({ url }) => url.replace(/^.*images/, 'ui2.0/images'),
+            url: ({ url }) => url.replace(/^.*images/, 'ur-ui/images'),
           },
         ]),
       ],
