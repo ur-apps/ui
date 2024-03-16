@@ -1,4 +1,4 @@
-import React, { useState, createContext, useMemo } from 'react';
+import React, { useState, createContext, useMemo, useRef, useEffect } from 'react';
 
 import { classNames, clone, merge, pick } from 'utils';
 import 'styles/index.scss';
@@ -30,6 +30,7 @@ const TOKEN_CLASSES = Object.values(CssVariableGroup).filter((c) => !COMPONENT_C
 
 export function ThemeProvider({ className, defaultTheme, customePreset = {}, children }: TThemeProps): JSX.Element {
   const [theme] = useState<'light' | 'dark'>(defaultTheme ?? 'light');
+  const portal = useRef(document.querySelector('#portal'));
 
   const styles = useMemo(() => {
     const {
@@ -63,6 +64,14 @@ export function ThemeProvider({ className, defaultTheme, customePreset = {}, chi
       getVariableStyles(components.input ?? {}, CssVariableGroup.InputTokens),
     ];
   }, [theme, preset]);
+
+  useEffect(() => {
+    if (portal.current) {
+      portal.current.classList.add(UU_THEME_CLASS_NAME, ...TOKEN_CLASSES);
+    } else {
+      console.error('portal container was not found');
+    }
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ theme }}>
