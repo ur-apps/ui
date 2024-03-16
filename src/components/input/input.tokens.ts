@@ -1,7 +1,5 @@
 import { IInputStyleTokens } from './input.types';
 
-export const INPUT_TOKENS_CLASS_NAME = 'uu-input-tokens';
-
 export const inputStyleTokens: IInputStyleTokens = {
   color: {
     bg: {

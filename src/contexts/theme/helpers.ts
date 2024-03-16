@@ -1,6 +1,6 @@
 import { isObject } from 'utils';
 
-export function formatCSSVariables(variables: Record<string, any>, prefix = ''): string[] {
+export function formatToCSSVariables(variables: Record<string, any>, prefix = ''): string[] {
   const result: string[] = [];
 
   if (isObject(variables)) {
@@ -8,7 +8,7 @@ export function formatCSSVariables(variables: Record<string, any>, prefix = ''):
       const formattedKey = prefix ? `${prefix}-${key}` : `${key}`;
 
       if (typeof value === 'object' && value !== null) {
-        result.push(...formatCSSVariables(value, formattedKey));
+        result.push(...formatToCSSVariables(value, formattedKey));
       } else {
         result.push(`--${formattedKey}: ${value}`);
       }
@@ -16,4 +16,10 @@ export function formatCSSVariables(variables: Record<string, any>, prefix = ''):
   }
 
   return result;
+}
+
+export function getVariableStyles(variables: Record<string, any>, className: string, prefix = '') {
+  const tokens = formatToCSSVariables(variables, prefix);
+
+  return tokens.length ? `.${className} { \n${tokens.join(';\n')};\n}` : '';
 }

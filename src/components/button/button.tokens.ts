@@ -1,7 +1,5 @@
 import { IButtonStyleTokens } from './button.types';
 
-export const BUTTON_TOKENS_CLASS_NAME = 'uu-button-tokens';
-
 export const buttonStyleTokens: IButtonStyleTokens = {
   color: {
     bg: {

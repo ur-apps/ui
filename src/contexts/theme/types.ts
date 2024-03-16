@@ -1,7 +1,24 @@
 import { IButtonStyleTokens, IInputStyleTokens } from 'components';
 
-type Size = '3xs' | '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
+export enum CssVariableGroup {
+  SystemColors = 'uu-sys-colors',
+  SystemSizes = 'uu-sys-sizes',
+  SystemRadiuses = 'uu-sys-radiuses',
+  SystemSpaces = 'uu-sys-spaces',
+  SystemWeights = 'uu-sys-weights',
+  SystemFontFamilies = 'uu-sys-font-families',
 
+  Colors = 'uu-colors',
+  Texts = 'uu-texts',
+  Heights = 'uu-heights',
+  Radiuses = 'uu-radiuses',
+  Spaces = 'uu-spaces',
+
+  ButtonTokens = 'uu-button-tokens',
+  InputTokens = 'uu-input-tokens',
+}
+
+type Size = '3xs' | '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
 type Color = { [key: string]: Color | string };
 type FontSize = Record<Extract<Size, 'xs' | 's' | 'm' | 'l' | 'xl'>, string | number>;
 type LineHeight = Record<Extract<Size, 'xs' | 's' | 'm' | 'l' | 'xl'>, string | number>;

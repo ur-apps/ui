@@ -1,14 +1,11 @@
 import React, { useState, createContext, useMemo } from 'react';
-import { classNames, clone, merge } from 'utils';
 
+import { classNames, clone, merge, pick } from 'utils';
 import 'styles/index.scss';
-import { BUTTON_TOKENS_CLASS_NAME, INPUT_TOKENS_CLASS_NAME } from 'components';
 
 import { darkModePreset, preset } from './presets';
-import { formatCSSVariables } from './helpers';
-import { TStylePreset } from './types';
-
-const UU_THEME_CLASS_NAME = 'uu-theme';
+import { getVariableStyles } from './helpers';
+import { CssVariableGroup, TStylePreset } from './types';
 
 type TThemeContext = {
   theme: 'light' | 'dark';
@@ -27,47 +24,50 @@ type TThemeProps = {
   children: React.ReactNode;
 };
 
+const UU_THEME_CLASS_NAME = 'uu-theme';
+const COMPONENT_CLASSES = [CssVariableGroup.ButtonTokens, CssVariableGroup.InputTokens];
+const TOKEN_CLASSES = Object.values(CssVariableGroup).filter((c) => !COMPONENT_CLASSES.includes(c));
+
 export function ThemeProvider({ className, defaultTheme, customePreset = {}, children }: TThemeProps): JSX.Element {
   const [theme] = useState<'light' | 'dark'>(defaultTheme ?? 'light');
 
-  const [styles, classes] = useMemo(() => {
-    const { primitives, tokens, components } = merge(clone(preset), theme === 'dark' ? darkModePreset : customePreset);
+  const styles = useMemo(() => {
+    const {
+      primitives = {},
+      tokens = {},
+      components = {},
+    } = merge(clone(preset), theme === 'dark' ? darkModePreset : customePreset);
 
-    const styles: Record<string, string[]> = {
-      'uu-sys-colors': formatCSSVariables({ color: primitives?.color }, 'uu-sys'),
-      'uu-sys-radiuses': formatCSSVariables({ radius: primitives?.radius }, 'uu-sys'),
-      'uu-sys-sizes': formatCSSVariables({ size: primitives?.size }, 'uu-sys'),
-      'uu-sys-spaces': formatCSSVariables({ space: primitives?.space }, 'uu-sys'),
-      'uu-sys-weights': formatCSSVariables({ weight: primitives?.weight }, 'uu-sys'),
-      'uu-sys-font-families': formatCSSVariables({ 'font-family': primitives?.['font-family'] }, 'uu-sys'),
+    return [
+      // Primitives
+      getVariableStyles(pick(primitives, ['color']), CssVariableGroup.SystemColors, 'uu-sys'),
+      getVariableStyles(pick(primitives, ['size']), CssVariableGroup.SystemSizes, 'uu-sys'),
+      getVariableStyles(pick(primitives, ['space']), CssVariableGroup.SystemSpaces, 'uu-sys'),
+      getVariableStyles(pick(primitives, ['radius']), CssVariableGroup.SystemRadiuses, 'uu-sys'),
+      getVariableStyles(pick(primitives, ['weight']), CssVariableGroup.SystemWeights, 'uu-sys'),
+      getVariableStyles(pick(primitives, ['font-family']), CssVariableGroup.SystemFontFamilies, 'uu-sys'),
 
-      'uu-colors': formatCSSVariables({ color: tokens?.color }, 'uu'),
-      'uu-font': formatCSSVariables(
-        {
-          'font-family': tokens?.['font-family'],
-          'font-size': tokens?.['font-size'],
-          'font-weight': tokens?.['font-weight'],
-          'line-height': tokens?.['line-height'],
-        },
+      // Tokens
+      getVariableStyles(pick(tokens, ['color']), CssVariableGroup.Colors, 'uu'),
+      getVariableStyles(pick(tokens, ['height']), CssVariableGroup.Heights, 'uu'),
+      getVariableStyles(pick(tokens, ['space']), CssVariableGroup.Spaces, 'uu'),
+      getVariableStyles(pick(tokens, ['radius']), CssVariableGroup.Radiuses, 'uu'),
+      getVariableStyles(
+        pick(tokens, ['font-family', 'font-size', 'font-weight', 'line-height']),
+        CssVariableGroup.Texts,
         'uu'
       ),
-      'uu-heights': formatCSSVariables({ height: tokens?.height }, 'uu'),
-      'uu-radiuses': formatCSSVariables({ radius: tokens?.radius }, 'uu'),
-      'uu-spaces': formatCSSVariables({ space: tokens?.space }, 'uu'),
-      [BUTTON_TOKENS_CLASS_NAME]: formatCSSVariables({ '': components?.button }),
-      [INPUT_TOKENS_CLASS_NAME]: formatCSSVariables({ '': components?.input }),
-    };
 
-    const stringifiedStyles = Object.entries(styles).map(([group, value]) => `.${group} { \n${value.join(';\n')};\n}`);
-    const classes = Object.keys(styles).filter((c) => ![BUTTON_TOKENS_CLASS_NAME, INPUT_TOKENS_CLASS_NAME].includes(c));
-
-    return [stringifiedStyles, classes];
+      // Components
+      getVariableStyles(components.button ?? {}, CssVariableGroup.ButtonTokens),
+      getVariableStyles(components.input ?? {}, CssVariableGroup.InputTokens),
+    ];
   }, [theme, preset]);
 
   return (
     <ThemeContext.Provider value={{ theme }}>
       <style>{styles}</style>
-      <div className={classNames(UU_THEME_CLASS_NAME, classes, className)}>{children}</div>
+      <div className={classNames(UU_THEME_CLASS_NAME, TOKEN_CLASSES, className)}>{children}</div>
     </ThemeContext.Provider>
   );
 }

@@ -1,14 +1,14 @@
 import React from 'react';
 
+import { CssVariableGroup } from 'contexts';
 import { classNames } from 'utils';
 
 import { IInputProps } from './input.types';
-import { INPUT_TOKENS_CLASS_NAME } from './input.tokens';
 import styles from './input.module.scss';
 
 export function Input({ className, variant = 'filled', shape = 'default', size = 'm', ...props }: IInputProps) {
   const classes = classNames(
-    INPUT_TOKENS_CLASS_NAME,
+    CssVariableGroup.InputTokens,
     styles.input,
     styles[`input--variant-${variant}`],
     styles[`input--shape-${shape}`],
