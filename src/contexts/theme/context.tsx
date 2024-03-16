@@ -4,7 +4,7 @@ import { classNames, clone, merge } from 'utils';
 import 'styles/index.scss';
 import { BUTTON_TOKENS_CLASS_NAME, INPUT_TOKENS_CLASS_NAME } from 'components';
 
-import { darkModePreset, preset } from './variables';
+import { darkModePreset, preset } from './presets';
 import { formatCSSVariables } from './helpers';
 import { TStylePreset } from './types';
 
