@@ -13,6 +13,10 @@
   max-height: 100%;
 }
 
+#storybook-root:not(:first-of-type) {
+  display: none;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
