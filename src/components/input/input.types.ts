@@ -6,11 +6,28 @@ export type InputShape = 'default' | 'brick' | 'round';
 export type InputSize = 's' | 'm' | 'l';
 export type InputState = 'default' | 'hover' | 'focus';
 
-export interface IInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'className' | 'size'> {
+export interface IInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'className' | 'type' | 'size'> {
   /**
    * @description additinal css class name
    */
   className?: string | TClasses;
+  /**
+   * @description input type
+   * @default "text"
+   */
+  type?:
+    | 'date'
+    | 'datetime-local'
+    | 'email'
+    | 'month'
+    | 'number'
+    | 'password'
+    | 'search'
+    | 'tel'
+    | 'text'
+    | 'time'
+    | 'url'
+    | 'week';
   /**
    * @description input variant
    * @default "fill"
