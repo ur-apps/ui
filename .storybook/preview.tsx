@@ -6,7 +6,7 @@ import './preview.css';
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
+    actions: { argTypesRegex: '^on.*' },
     layout: 'fullscreen',
     backgrounds: {
       disable: true,
