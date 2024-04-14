@@ -12,7 +12,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Text: Story = {
+export const Modal: Story = {
   args: {
     children: (
       <div
