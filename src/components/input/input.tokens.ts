@@ -23,6 +23,74 @@ export const inputStyleTokens: IInputStyleTokens = {
         default: 'var(--uu-color-text-primary)',
       },
     },
+    prefix: {
+      filled: {
+        default: 'var(--uu-color-text-secondary)',
+        hover: 'var(--uu-color-text-secondary)',
+        focus: 'var(--uu-color-primary-500)',
+      },
+      outlined: {
+        default: 'var(--uu-color-text-secondary)',
+        hover: 'var(--uu-color-text-secondary)',
+        focus: 'var(--uu-color-primary-500)',
+      },
+      clear: {
+        default: 'var(--uu-color-text-secondary)',
+        hover: 'var(--uu-color-text-secondary)',
+        focus: 'var(--uu-color-primary-500)',
+      },
+    },
+    postfix: {
+      filled: {
+        default: 'var(--uu-color-text-secondary)',
+        hover: 'var(--uu-color-text-secondary)',
+        focus: 'var(--uu-color-primary-500)',
+      },
+      outlined: {
+        default: 'var(--uu-color-text-secondary)',
+        hover: 'var(--uu-color-text-secondary)',
+        focus: 'var(--uu-color-primary-500)',
+      },
+      clear: {
+        default: 'var(--uu-color-text-secondary)',
+        hover: 'var(--uu-color-text-secondary)',
+        focus: 'var(--uu-color-primary-500)',
+      },
+    },
+    'icon-left': {
+      filled: {
+        default: 'var(--uu-color-neutral-500)',
+        hover: 'var(--uu-color-neutral-1000)',
+        focus: 'var(--uu-color-primary-500)',
+      },
+      outlined: {
+        default: 'var(--uu-color-neutral-a25)',
+        hover: 'var(--uu-color-neutral-a35)',
+        focus: 'var(--uu-color-primary-500)',
+      },
+      clear: {
+        default: 'var(--uu-color-neutral-500)',
+        hover: 'var(--uu-color-neutral-500)',
+        focus: 'var(--uu-color-primary-500)',
+      },
+    },
+    'icon-right': {
+      filled: {
+        default: 'var(--uu-color-neutral-500)',
+        hover: 'var(--uu-color-neutral-1000)',
+        focus: 'var(--uu-color-primary-500)',
+      },
+      outlined: {
+        default: 'var(--uu-color-neutral-a25)',
+        hover: 'var(--uu-color-neutral-a35)',
+        focus: 'var(--uu-color-primary-500)',
+      },
+      clear: {
+        default: 'var(--uu-color-neutral-500)',
+        hover: 'var(--uu-color-neutral-500)',
+        focus: 'var(--uu-color-primary-500)',
+      },
+    },
     border: {
       outlined: {
         default: 'var(--uu-color-neutral-a15)',
@@ -35,6 +103,16 @@ export const inputStyleTokens: IInputStyleTokens = {
     s: 'var(--uu-height-s)',
     m: 'var(--uu-height-m)',
     l: 'var(--uu-height-l)',
+  },
+  'icon-left-height': {
+    s: 'var(--uu-icon-height-s)',
+    m: 'var(--uu-icon-height-m)',
+    l: 'var(--uu-icon-height-l)',
+  },
+  'icon-right-height': {
+    s: 'var(--uu-icon-height-s)',
+    m: 'var(--uu-icon-height-m)',
+    l: 'var(--uu-icon-height-l)',
   },
   'horizontal-padding': {
     s: 'var(--uu-space-s)',
@@ -66,6 +144,16 @@ export const inputStyleTokens: IInputStyleTokens = {
     m: 'var(--uu-font-weight-500)',
     l: 'var(--uu-font-weight-500)',
   },
+  'prefix-font-weight': {
+    s: 'var(--uu-font-weight-400)',
+    m: 'var(--uu-font-weight-400)',
+    l: 'var(--uu-font-weight-400)',
+  },
+  'postfix-font-weight': {
+    s: 'var(--uu-font-weight-400)',
+    m: 'var(--uu-font-weight-400)',
+    l: 'var(--uu-font-weight-400)',
+  },
 };
 
 export const inputDarkModeStyleTokens: IInputStyleTokens = {
@@ -75,6 +163,16 @@ export const inputDarkModeStyleTokens: IInputStyleTokens = {
         default: 'var(--uu-color-neutral-800)',
         hover: 'var(--uu-color-neutral-750)',
         focus: 'var(--uu-color-primary-900)',
+      },
+    },
+    'icon-left': {
+      filled: {
+        hover: 'var(--uu-color-neutral-0)',
+      },
+    },
+    'icon-right': {
+      filled: {
+        hover: 'var(--uu-color-neutral-0)',
       },
     },
   },

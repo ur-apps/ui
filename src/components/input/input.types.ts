@@ -8,12 +8,12 @@ export type InputState = 'default' | 'hover' | 'focus';
 
 export interface IInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'className' | 'type' | 'size'> {
   /**
-   * @description additinal css class name
+   * additinal css class name
    */
   className?: string | TClasses;
   /**
-   * @description input type
-   * @default "text"
+   * input type
+   * @default text
    */
   type?:
     | 'date'
@@ -29,21 +29,38 @@ export interface IInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>,
     | 'url'
     | 'week';
   /**
-   * @description input variant
-   * @default "fill"
+   * input variant
+   * @default "filled"
    */
   variant?: InputVariant;
   /**
-   * @description input corner shape
+   * input corner shape
    * @default "default"
    */
   shape?: InputShape;
   /**
-   * @description input size
+   * input size
    * @default "m"
    */
   size?: InputSize;
   disabled?: boolean;
+
+  /**
+   * additional text before input
+   */
+  prefix?: string;
+  /**
+   * additional text after input
+   */
+  postfix?: string;
+  /**
+   * icon before input
+   */
+  iconLeft?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  /**
+   * icon after input
+   */
+  iconRight?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
 }
 
 export interface IInputStyleTokens {
@@ -58,6 +75,26 @@ export interface IInputStyleTokens {
         [color in InputState]?: string;
       };
     };
+    prefix?: {
+      [variant in InputVariant]?: {
+        [color in InputState]?: string;
+      };
+    };
+    postfix?: {
+      [variant in InputVariant]?: {
+        [color in InputState]?: string;
+      };
+    };
+    'icon-left'?: {
+      [variant in InputVariant]?: {
+        [color in InputState]?: string;
+      };
+    };
+    'icon-right'?: {
+      [variant in InputVariant]?: {
+        [color in InputState]?: string;
+      };
+    };
     border?: {
       [variant in InputVariant]?: {
         [color in InputState]?: string;
@@ -65,6 +102,12 @@ export interface IInputStyleTokens {
     };
   };
   height?: {
+    [size in InputSize]?: string;
+  };
+  'icon-left-height'?: {
+    [size in InputSize]?: string;
+  };
+  'icon-right-height'?: {
     [size in InputSize]?: string;
   };
   'horizontal-padding'?: {
@@ -86,6 +129,24 @@ export interface IInputStyleTokens {
     [size in InputSize]?: string;
   };
   'font-weight'?: {
+    [size in InputSize]?: string;
+  };
+  'prefix-font-size'?: {
+    [size in InputSize]?: string;
+  };
+  'prefix-line-height'?: {
+    [size in InputSize]?: string;
+  };
+  'prefix-font-weight'?: {
+    [size in InputSize]?: string;
+  };
+  'postfix-font-size'?: {
+    [size in InputSize]?: string;
+  };
+  'postfix-line-height'?: {
+    [size in InputSize]?: string;
+  };
+  'postfix-font-weight'?: {
     [size in InputSize]?: string;
   };
 }

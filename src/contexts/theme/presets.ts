@@ -593,6 +593,11 @@ export const preset: TStylePreset = {
       'm': 'var(--uu-sys-size-17)',
       'l': 'var(--uu-sys-size-19)',
     },
+    'icon-height': {
+      's': 'var(--uu-sys-size-8)',
+      'm': 'var(--uu-sys-size-9)',
+      'l': 'var(--uu-sys-size-10)',
+    },
     radius: {
       '3xs': 'var(--uu-sys-radius-2)',
       '2xs': 'var(--uu-sys-radius-3)',

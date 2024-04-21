@@ -51,6 +51,7 @@ export function ThemeProvider({ className, defaultTheme, customePreset = {}, chi
       // Tokens
       getVariableStyles(pick(tokens, ['color']), CssVariableGroup.Colors, 'uu'),
       getVariableStyles(pick(tokens, ['height']), CssVariableGroup.Heights, 'uu'),
+      getVariableStyles(pick(tokens, ['icon-height']), CssVariableGroup.IconHeights, 'uu'),
       getVariableStyles(pick(tokens, ['space']), CssVariableGroup.Spaces, 'uu'),
       getVariableStyles(pick(tokens, ['radius']), CssVariableGroup.Radiuses, 'uu'),
       getVariableStyles(

@@ -11,6 +11,7 @@ export enum CssVariableGroup {
   Colors = 'uu-colors',
   Texts = 'uu-texts',
   Heights = 'uu-heights',
+  IconHeights = 'uu-icon-heights',
   Radiuses = 'uu-radiuses',
   Spaces = 'uu-spaces',
 
@@ -62,6 +63,7 @@ export type TStyleTokens = {
   'font-weight'?: FontWeight;
   'line-height'?: LineHeight;
   height?: Height;
+  'icon-height'?: Height;
   radius?: Radius;
   space?: Spacing;
 };
