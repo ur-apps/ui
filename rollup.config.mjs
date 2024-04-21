@@ -52,7 +52,7 @@ export default {
     postcss({
       extract: 'index.css',
       modules: {
-        generateScopedName: 'uu_[local]',
+        generateScopedName: 'uu_[folder]__[local]',
       },
       plugins: [
         postcssurl([

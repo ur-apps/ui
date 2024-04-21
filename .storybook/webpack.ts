@@ -39,7 +39,7 @@ export function webpackOverride(config: Configuration) {
         loader: 'css-loader',
         options: {
           importLoaders: 1,
-          modules: { localIdentName: 'uu_[local]' },
+          modules: { localIdentName: 'uu_[folder]__[local]' },
         },
       },
       { loader: 'sass-loader', options: { sourceMap: true } },
@@ -68,14 +68,15 @@ export function webpackOverride(config: Configuration) {
       {
         loader: '@svgr/webpack',
         options: {
-          svgoConfig: {
-            plugins: [
-              {
-                name: 'removeViewBox',
-                active: false,
-              },
-            ],
-          },
+          svgo: false,
+          // svgoConfig: {
+          //   plugins: [
+          //     {
+          //       name: 'removeViewBox',
+          //       active: false,
+          //     },
+          //   ],
+          // },
         },
       },
       'url-loader',
