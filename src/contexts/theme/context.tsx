@@ -25,7 +25,12 @@ type TThemeProps = {
 };
 
 const UU_THEME_CLASS_NAME = 'uu-theme';
-const COMPONENT_CLASSES = [CssVariableGroup.ButtonTokens, CssVariableGroup.InputTokens, CssVariableGroup.OptionTokens];
+const COMPONENT_CLASSES = [
+  CssVariableGroup.ButtonTokens,
+  CssVariableGroup.InputTokens,
+  CssVariableGroup.OptionTokens,
+  CssVariableGroup.DropdownTokens,
+];
 const TOKEN_CLASSES = Object.values(CssVariableGroup).filter((c) => !COMPONENT_CLASSES.includes(c));
 
 export function ThemeProvider({ className, defaultTheme, customePreset = {}, children }: TThemeProps): JSX.Element {
@@ -64,6 +69,7 @@ export function ThemeProvider({ className, defaultTheme, customePreset = {}, chi
       getVariableStyles(components.button ?? {}, CssVariableGroup.ButtonTokens),
       getVariableStyles(components.input ?? {}, CssVariableGroup.InputTokens),
       getVariableStyles(components.option ?? {}, CssVariableGroup.OptionTokens),
+      getVariableStyles(components.dropdown ?? {}, CssVariableGroup.DropdownTokens),
     ];
   }, [theme, preset]);
 

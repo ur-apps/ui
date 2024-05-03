@@ -19,6 +19,7 @@ export function webpackOverride(config: Configuration) {
     'components': path.resolve(__dirname, '..', 'src', 'components'),
     'constants': path.resolve(__dirname, '..', 'src', 'constants'),
     'contexts': path.resolve(__dirname, '..', 'src', 'contexts'),
+    'data': path.resolve(__dirname, '..', 'src', 'data'),
     'fonts': path.resolve(__dirname, '..', 'src', 'fonts'),
     'icons': path.resolve(__dirname, '..', 'src', 'icons'),
     'images': path.resolve(__dirname, '..', 'src', 'images'),
