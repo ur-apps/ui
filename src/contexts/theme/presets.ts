@@ -1,4 +1,11 @@
-import { buttonDarkModeStyleTokens, buttonStyleTokens, inputStyleTokens, inputDarkModeStyleTokens } from 'components';
+import {
+  buttonDarkModeStyleTokens,
+  buttonStyleTokens,
+  inputStyleTokens,
+  inputDarkModeStyleTokens,
+  optionStyleTokens,
+  optionDarkModeStyleTokens,
+} from 'components';
 
 import { TStylePreset } from './types';
 
@@ -625,6 +632,7 @@ export const preset: TStylePreset = {
   components: {
     button: buttonStyleTokens,
     input: inputStyleTokens,
+    option: optionStyleTokens,
   },
 };
 
@@ -801,5 +809,6 @@ export const darkModePreset: TStylePreset = {
   components: {
     button: buttonDarkModeStyleTokens,
     input: inputDarkModeStyleTokens,
+    option: optionDarkModeStyleTokens,
   },
 };
