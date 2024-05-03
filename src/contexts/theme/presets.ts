@@ -5,6 +5,8 @@ import {
   inputDarkModeStyleTokens,
   optionStyleTokens,
   optionDarkModeStyleTokens,
+  dropdownStyleTokens,
+  dropdownDarkModeStyleTokens,
 } from 'components';
 
 import { TStylePreset } from './types';
@@ -633,6 +635,7 @@ export const preset: TStylePreset = {
     button: buttonStyleTokens,
     input: inputStyleTokens,
     option: optionStyleTokens,
+    dropdown: dropdownStyleTokens,
   },
 };
 
@@ -810,5 +813,6 @@ export const darkModePreset: TStylePreset = {
     button: buttonDarkModeStyleTokens,
     input: inputDarkModeStyleTokens,
     option: optionDarkModeStyleTokens,
+    dropdown: dropdownDarkModeStyleTokens,
   },
 };

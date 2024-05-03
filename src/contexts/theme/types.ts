@@ -1,4 +1,4 @@
-import { IButtonStyleTokens, IInputStyleTokens, IOptionStyleTokens } from 'components';
+import { IButtonStyleTokens, IDropdownStyleTokens, IInputStyleTokens, IOptionStyleTokens } from 'components';
 
 export enum CssVariableGroup {
   SystemColors = 'uu-sys-colors',
@@ -18,6 +18,7 @@ export enum CssVariableGroup {
   ButtonTokens = 'uu-button-tokens',
   InputTokens = 'uu-input-tokens',
   OptionTokens = 'uu-option-tokens',
+  DropdownTokens = 'uu-dropdown-tokens',
 }
 
 type Size = '3xs' | '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
@@ -76,5 +77,6 @@ export type TStylePreset = {
     button?: IButtonStyleTokens;
     input?: IInputStyleTokens;
     option?: IOptionStyleTokens;
+    dropdown?: IDropdownStyleTokens;
   };
 };

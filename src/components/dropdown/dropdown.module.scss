@@ -1,0 +1,89 @@
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: auto;
+  height: calc(var(--height, 32px) * 6 + var(--border-width, 1px));
+  padding: 0;
+  border-width: var(--border-width, 1px);
+  border-style: var(--border-style, solid);
+  border-color: var(--border-color, black);
+  border-radius: var(--border-radius, 6px);
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden auto;
+
+  background-color: var(--background-color, white);
+}
+
+.dropdown--size {
+  &-s {
+    --height: var(--height-s, 32px);
+    --border-width: var(--border-width-s, 1px);
+    --border-radius: var(--border-radius-s);
+  }
+
+  &-m {
+    --height: var(--height-m, 32px);
+    --border-width: var(--border-width-m, 1px);
+    --border-radius: var(--border-radius-m);
+  }
+
+  &-l {
+    --height: var(--height-l, 32px);
+    --border-width: var(--border-width-l, 1px);
+    --border-radius: var(--border-radius-l);
+  }
+}
+
+.dropdown--shape {
+  &-round {
+    --border-radius: calc(var(--height) / 2);
+  }
+
+  &-brick {
+    --border-radius: 0;
+  }
+}
+
+.dropdown--variant {
+  &-filled {
+    --border-width: 0px;
+    --background-color: var(--color-bg-filled-default, lightgray);
+  }
+
+  &-outlined {
+    --border-color: var(--color-border-outlined-default, black);
+    --background-color: var(--color-bg-outlined-default, white);
+  }
+
+  &-clear {
+    --border-color: var(--color-border-clear-default, black);
+    --background-color: var(--color-bg-clear-default, white);
+  }
+}
+
+.option {
+  width: 100%;
+  flex-shrink: 0;
+  border-width: 0;
+
+  &:not(:first-of-type) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top-width: var(--border-width, 0);
+  }
+
+  &:not(:last-of-type) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &:not(:has(input:checked)):hover + .option:not(:has(input:checked)) {
+    border-top-color: var(--color-border-outlined-hover);
+  }
+
+  &:has(input:checked) + .option {
+    border-top-color: var(--color-border-outlined-selected);
+  }
+}
