@@ -2,10 +2,11 @@ import { InputHTMLAttributes } from 'react';
 
 import { TClasses } from 'utils';
 
-export type OptionVariant = 'filled' | 'outlined' | 'clear';
-export type OptionShape = 'default' | 'brick' | 'round';
-export type OptionSize = 's' | 'm' | 'l';
-export type OptionState = 'default' | 'hover' | 'selected';
+export type TOptionVariant = 'filled' | 'outlined' | 'clear';
+export type TOptionShape = 'default' | 'brick' | 'round';
+export type TOptionSize = 's' | 'm' | 'l';
+export type TOptionState = 'default' | 'hover' | 'selected';
+export type TOptionValue = string | number;
 
 export interface IOptionProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'className' | 'type' | 'size' | 'type' | 'value'> {
@@ -17,17 +18,17 @@ export interface IOptionProps
    * option variant
    * @default "filled"
    */
-  variant?: OptionVariant;
+  variant?: TOptionVariant;
   /**
    * option corner shape
    * @default "default"
    */
-  shape?: OptionShape;
+  shape?: TOptionShape;
   /**
    * option size
    * @default "m"
    */
-  size?: OptionSize;
+  size?: TOptionSize;
   /**
    * this property determines whether multiple options can be selected within the same name.
    * @default radio
@@ -40,7 +41,7 @@ export interface IOptionProps
   /**
    * option value
    */
-  value: string | number;
+  value: TOptionValue;
   /**
    * option label
    */
@@ -54,43 +55,43 @@ export interface IOptionProps
 export interface IOptionStyleTokens {
   color?: {
     bg?: {
-      [variant in OptionVariant]?: {
-        [state in OptionState]?: string;
+      [variant in TOptionVariant]?: {
+        [state in TOptionState]?: string;
       };
     };
     text?: {
-      [variant in OptionVariant]?: {
-        [color in OptionState]?: string;
+      [variant in TOptionVariant]?: {
+        [color in TOptionState]?: string;
       };
     };
     border?: {
-      [variant in OptionVariant]?: {
-        [color in OptionState]?: string;
+      [variant in TOptionVariant]?: {
+        [color in TOptionState]?: string;
       };
     };
   };
   height?: {
-    [size in OptionSize]?: string;
+    [size in TOptionSize]?: string;
   };
   'horizontal-padding'?: {
-    [size in OptionSize]?: string;
+    [size in TOptionSize]?: string;
   };
   'vertical-padding'?: {
-    [size in OptionSize]?: string;
+    [size in TOptionSize]?: string;
   };
   'border-width'?: {
-    [size in OptionSize]?: string;
+    [size in TOptionSize]?: string;
   };
   'border-radius'?: {
-    [size in OptionSize]?: string;
+    [size in TOptionSize]?: string;
   };
   'font-size'?: {
-    [size in OptionSize]?: string;
+    [size in TOptionSize]?: string;
   };
   'line-height'?: {
-    [size in OptionSize]?: string;
+    [size in TOptionSize]?: string;
   };
   'font-weight'?: {
-    [size in OptionSize]?: string;
+    [size in TOptionSize]?: string;
   };
 }
