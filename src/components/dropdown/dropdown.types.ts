@@ -2,14 +2,15 @@ import { ChangeEvent, HTMLAttributes } from 'react';
 
 import { TClasses } from 'utils';
 
-import { IOptionProps } from '../option';
+import { IOptionProps, TOptionShape, TOptionSize, TOptionValue, TOptionVariant } from '../option';
 
-export type DropdownVariant = 'filled' | 'outlined' | 'clear';
-export type DropdownShape = 'default' | 'brick' | 'round';
-export type DropdownSize = 's' | 'm' | 'l';
-export type DropdownState = 'default';
+export type TDropdownVariant = TOptionVariant;
+export type TDropdownShape = TOptionShape;
+export type TDropdownSize = TOptionSize;
+export type TDropdownState = 'default';
+export type TDropdownValue<M extends boolean> = M extends true ? TOptionValue[] : TOptionValue;
 
-export interface IDropdownProps<M extends boolean>
+export interface IDropdownProps<M extends boolean = false>
   extends Omit<HTMLAttributes<HTMLDivElement>, 'className' | 'onChange'> {
   /**
    * additinal css class name(s)
@@ -19,17 +20,17 @@ export interface IDropdownProps<M extends boolean>
    * dropdown variant
    * @default "filled"
    */
-  variant?: DropdownVariant;
+  variant?: TDropdownVariant;
   /**
    * dropdown corner shape
    * @default "default"
    */
-  shape?: DropdownShape;
+  shape?: TDropdownShape;
   /**
    * dropdown size
    * @default "m"
    */
-  size?: DropdownSize;
+  size?: TDropdownSize;
   /**
    * is dropdown open (shown)
    * @default false
@@ -42,7 +43,7 @@ export interface IDropdownProps<M extends boolean>
   /**
    * dropdown value(s)
    */
-  value?: M extends true ? Array<string | number> : string | number;
+  value?: TDropdownValue<M>;
   /**
    * This property determines whether multiple options can be selected within the same name. In other words, when true it works like checkboxes, when false it works like radio buttons
    * @default false
@@ -61,23 +62,23 @@ export type IDropdownComponent = <M extends boolean = false>(props: IDropdownPro
 export interface IDropdownStyleTokens {
   color?: {
     bg?: {
-      [variant in DropdownVariant]?: {
-        [state in DropdownState]?: string;
+      [variant in TDropdownVariant]?: {
+        [state in TDropdownState]?: string;
       };
     };
     border?: {
-      [variant in DropdownVariant]?: {
-        [color in DropdownState]?: string;
+      [variant in TDropdownVariant]?: {
+        [color in TDropdownState]?: string;
       };
     };
   };
   height?: {
-    [size in DropdownSize]?: string;
+    [size in TDropdownSize]?: string;
   };
   'border-width'?: {
-    [size in DropdownSize]?: string;
+    [size in TDropdownSize]?: string;
   };
   'border-radius'?: {
-    [size in DropdownSize]?: string;
+    [size in TDropdownSize]?: string;
   };
 }

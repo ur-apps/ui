@@ -171,7 +171,7 @@
   }
 
   &-l {
-    --height: var(--height-l);
+    --height: var(--height-l, 32px);
     --horizontal-padding: var(--horizontal-padding-l, 16px);
     --vertical-padding: var(--vertical-padding-l, 0);
 

@@ -16,6 +16,7 @@ export const Input = forwardRef<HTMLInputElement, IInputProps>(function Input(
     postfix,
     iconLeft: IconLeft,
     iconRight: IconRight,
+    wrapperRef,
     ...props
   },
   ref
@@ -34,7 +35,7 @@ export const Input = forwardRef<HTMLInputElement, IInputProps>(function Input(
   const rightIconClasses = classNames(styles['icon-right'], styles[`icon-right--size-${size}`]);
 
   return (
-    <label className={wrapperClasses}>
+    <label className={wrapperClasses} ref={wrapperRef}>
       {prefix && <span className={prefixClasses}>{prefix}</span>}
 
       {!prefix && IconLeft && <IconLeft className={leftIconClasses} />}

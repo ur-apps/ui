@@ -6,3 +6,4 @@ lib
 .vscode
 *.css
 *.scss
+*.svg

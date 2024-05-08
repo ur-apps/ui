@@ -12,6 +12,21 @@ export interface IInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>,
    */
   className?: string | TClasses;
   /**
+   * input variant
+   * @default "filled"
+   */
+  variant?: InputVariant;
+  /**
+   * input corner shape
+   * @default "default"
+   */
+  shape?: InputShape;
+  /**
+   * input size
+   * @default "m"
+   */
+  size?: InputSize;
+  /**
    * input type
    * @default text
    */
@@ -29,22 +44,10 @@ export interface IInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>,
     | 'url'
     | 'week';
   /**
-   * input variant
-   * @default "filled"
+   * is input disabled
+   * @default false
    */
-  variant?: InputVariant;
-  /**
-   * input corner shape
-   * @default "default"
-   */
-  shape?: InputShape;
-  /**
-   * input size
-   * @default "m"
-   */
-  size?: InputSize;
   disabled?: boolean;
-
   /**
    * additional text before input
    */
@@ -61,6 +64,10 @@ export interface IInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>,
    * icon after input
    */
   iconRight?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  /**
+   * reference to the input wrapper
+   */
+  wrapperRef?: React.LegacyRef<HTMLLabelElement>;
 }
 
 export interface IInputStyleTokens {
