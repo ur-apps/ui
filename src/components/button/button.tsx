@@ -1,59 +1,42 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import { useTheme } from 'contexts';
+import { CssVariableGroup } from 'contexts';
 import { classNames } from 'utils';
-import styles from './button.module.scss';
 
-export interface IButtonProps {
-  className?: string;
-  size?: 's' | 'm' | 'l' | 'xl' | 'xxl';
-  appearance?: 'fill' | 'outline' | 'text';
-  colorScheme?: 'white' | 'black' | 'blue' | 'red' | 'green';
-  autoColor?: boolean;
-  type?: 'button' | 'submit' | 'reset';
-  id?: string;
-  name?: string;
-  disabled?: boolean;
-  children: React.ReactNode;
-  onClick?: (evt: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  refLink?: React.RefObject<HTMLButtonElement>;
-}
+import { IButtonProps } from './button.types';
+import styles from './button.module.scss';
 
 export function Button({
   className,
+  variant = 'filled',
+  color = 'primary',
+  shape = 'default',
   size = 'm',
-  appearance = 'fill',
-  colorScheme = 'blue',
-  autoColor = true,
-  type = 'button',
-  id,
-  name,
-  disabled,
-  onClick,
-  refLink,
+  label,
   children,
   ...props
 }: IButtonProps) {
-  const { theme } = useTheme();
+  const classes = classNames(
+    CssVariableGroup.ButtonTokens,
+    styles.button,
+    styles[`button--variant-${variant}`],
+    styles[`button--color-${color}`],
+    styles[`button--shape-${shape}`],
+    styles[`button--size-${size}`],
+    className
+  );
+
+  useEffect(() => {
+    if (label && children) {
+      console.warn(
+        'The props "label" and "children" were passed to the Button component. Only the "children" will be displayed.'
+      );
+    }
+  }, [label, children]);
 
   return (
-    <button
-      className={classNames(
-        styles.button,
-        styles[`button--${size}`],
-        styles[`button--${appearance}`],
-        styles[`button--${colorScheme}`],
-        autoColor ? styles[`button--${theme}-mode`] : undefined,
-        className
-      )}
-      type={type}
-      id={id}
-      name={name}
-      disabled={disabled}
-      onClick={onClick}
-      ref={refLink}
-      {...props}>
-      {children}
+    <button {...props} className={classes}>
+      {children || label}
     </button>
   );
 }

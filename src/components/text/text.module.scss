@@ -1,23 +1,64 @@
-@use 'styles/text';
-
 .text {
-  &--xs {
-    @include text.text-xs;
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: var(--font-family, inherit);
+  font-size: var(--font-size, 16px);
+  font-weight: var(--font-weight, 500);
+  line-height: var(--line-height, 20px);
+  color: var(--text-color, black);
+}
+
+.text--color {
+  &-primary {
+    --text-color: var(--uu-color-text-primary);
   }
 
-  &--s {
-    @include text.text-s;
+  &-secondary {
+    --text-color: var(--uu-color-text-secondary);
   }
 
-  &--m {
-    @include text.text-m;
+  &-contrast {
+    --text-color: var(--uu-color-text-contrast);
   }
 
-  &--l {
-    @include text.text-l;
+  &-link {
+    --text-color: var(--uu-color-text-link);
   }
 
-  &--xl {
-    @include text.text-xl;
+  &-link-visited {
+    --text-color: var(--uu-color-text-link-visited);
+  }
+}
+
+.text--size {
+  &-xs {
+    --font-size: var(--uu-font-size-xs);
+    --line-height: var(--uu-line-height-xs);
+    --font-weight: var(--uu-font-weight-500);
+  }
+
+  &-s {
+    --font-size: var(--uu-font-size-s);
+    --line-height: var(--uu-line-height-s);
+    --font-weight: var(--uu-font-weight-500);
+  }
+
+  &-m {
+    --font-size: var(--uu-font-size-m);
+    --line-height: var(--uu-line-height-m);
+    --font-weight: var(--uu-font-weight-500);
+  }
+
+  &-l {
+    --font-size: var(--uu-font-size-l);
+    --line-height: var(--uu-line-height-l);
+    --font-weight: var(--uu-font-weight-400);
+  }
+
+  &-xl {
+    --font-size: var(--uu-font-size-xl);
+    --line-height: var(--uu-line-height-xl);
+    --font-weight: var(--uu-font-weight-400);
   }
 }

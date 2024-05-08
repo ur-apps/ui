@@ -1,19 +1,18 @@
 import React from 'react';
 
 import { classNames } from 'utils';
+
+import { ITextProps } from './text.types';
 import styles from './text.module.scss';
 
-export interface ITextProps {
-  className?: string;
-  size?: 'xs' | 's' | 'm' | 'l' | 'xl';
-  tag?: 'p' | 'span';
-  children: React.ReactNode;
-}
+export function Text<T extends 'p' | 'span' = 'p'>({
+  className,
+  color = 'primary',
+  size = 'm',
+  tag = 'p' as T,
+  ...props
+}: ITextProps<T>) {
+  const classes = classNames(styles.text, styles[`text--color-${color}`], styles[`text--size-${size}`], className);
 
-export function Text({ className, size = 'm', tag = 'p', children }: ITextProps) {
-  return tag === 'p' ? (
-    <p className={classNames(styles[`text--${size}`], className)}>{children}</p>
-  ) : (
-    <span className={classNames(styles[`text--${size}`], className)}>{children}</span>
-  );
+  return React.createElement(tag, { ...props, className: classes });
 }
