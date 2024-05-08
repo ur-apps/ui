@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Portal } from './portal';
 
 const meta = {
-  title: 'Components/Portal',
+  title: 'Base/Portal',
   component: Portal,
 } satisfies Meta<typeof Portal>;
 
