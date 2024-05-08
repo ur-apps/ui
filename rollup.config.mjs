@@ -71,7 +71,9 @@ export default {
       // sourceMap: true,
     }),
     url({ fileName: '[dirname][name][extname]', 'limit': null }),
-    svgr(),
+    svgr({
+      svgo: false,
+    }),
     copy({
       targets: [
         { src: './src/fonts/*', dest: './lib/fonts' },
