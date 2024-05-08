@@ -12,7 +12,6 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@storybook/addon-links',
-    '@storybook/addon-onboarding',
     '@storybook/addon-webpack5-compiler-babel',
   ],
   docs: {
