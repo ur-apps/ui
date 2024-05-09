@@ -1,12 +1,13 @@
 import {
   buttonDarkModeStyleTokens,
   buttonStyleTokens,
+  dropdownStyleTokens,
+  dropdownDarkModeStyleTokens,
   inputStyleTokens,
   inputDarkModeStyleTokens,
   optionStyleTokens,
   optionDarkModeStyleTokens,
-  dropdownStyleTokens,
-  dropdownDarkModeStyleTokens,
+  overlayStyleTokens,
 } from 'components';
 
 import { TStylePreset } from './types';
@@ -635,6 +636,7 @@ export const preset: TStylePreset = {
     button: buttonStyleTokens,
     input: inputStyleTokens,
     option: optionStyleTokens,
+    overlay: overlayStyleTokens,
     dropdown: dropdownStyleTokens,
   },
 };

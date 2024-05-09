@@ -27,9 +27,10 @@ type TThemeProps = {
 const UU_THEME_CLASS_NAME = 'uu-theme';
 const COMPONENT_CLASSES = [
   CssVariableGroup.ButtonTokens,
+  CssVariableGroup.DropdownTokens,
   CssVariableGroup.InputTokens,
   CssVariableGroup.OptionTokens,
-  CssVariableGroup.DropdownTokens,
+  CssVariableGroup.OverlayTokens,
 ];
 const TOKEN_CLASSES = Object.values(CssVariableGroup).filter((c) => !COMPONENT_CLASSES.includes(c));
 
@@ -67,9 +68,10 @@ export function ThemeProvider({ className, defaultTheme, customePreset = {}, chi
 
       // Components
       getVariableStyles(components.button ?? {}, CssVariableGroup.ButtonTokens),
+      getVariableStyles(components.dropdown ?? {}, CssVariableGroup.DropdownTokens),
       getVariableStyles(components.input ?? {}, CssVariableGroup.InputTokens),
       getVariableStyles(components.option ?? {}, CssVariableGroup.OptionTokens),
-      getVariableStyles(components.dropdown ?? {}, CssVariableGroup.DropdownTokens),
+      getVariableStyles(components.overlay ?? {}, CssVariableGroup.OverlayTokens),
     ];
   }, [theme, preset]);
 
