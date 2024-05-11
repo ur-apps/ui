@@ -1,6 +1,7 @@
 export * from './button';
 export * from './dropdown';
 export * from './input';
+export * from './modal';
 export * from './option';
 export * from './overlay';
 export * from './portal';

@@ -1,0 +1,58 @@
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  outline: none;
+
+  &--hidden {
+    background-color: transparent;
+    backdrop-filter: none;
+  }
+}
+
+.modal {
+  width: var(--width, auto);
+  height: var(--height, auto);
+  max-width: 100vw;
+  max-height: 100vh;
+  padding: var(--padding, 24px);
+  border-width: var(--border-width, 1px);
+  border-style: var(--border-style, solid);
+  border-color: var(--color-border, lightgray);
+  border-radius: var(--border-radius, 12px);
+  box-sizing: border-box;
+  overflow: auto;
+
+  background-color: var(--color-bg, white);
+}
+
+.modal--size {
+  &-s {
+    --width: var(--width-s);
+    --height: var(--height-s);
+    --padding: var(--padding-s);
+    --border-width: var(--border-width-s);
+    --border-radius: var(--border-radius-s);
+  }
+
+  &-m {
+    --width: var(--width-m);
+    --height: var(--height-m);
+    --padding: var(--padding-m);
+    --border-width: var(--border-width-m);
+    --border-radius: var(--border-radius-m);
+  }
+
+  &-l {
+    --width: var(--width-l);
+    --height: var(--height-l);
+    --padding: var(--padding-l);
+    --border-width: var(--border-width-l);
+    --border-radius: var(--border-radius-l);
+  }
+}
+
+.modal--shape-brick {
+  --border-radius: 0;
+}
