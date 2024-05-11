@@ -29,6 +29,7 @@ const COMPONENT_CLASSES = [
   CssVariableGroup.ButtonTokens,
   CssVariableGroup.DropdownTokens,
   CssVariableGroup.InputTokens,
+  CssVariableGroup.ModalTokens,
   CssVariableGroup.OptionTokens,
   CssVariableGroup.OverlayTokens,
 ];
@@ -70,6 +71,7 @@ export function ThemeProvider({ className, defaultTheme, customePreset = {}, chi
       getVariableStyles(components.button ?? {}, CssVariableGroup.ButtonTokens),
       getVariableStyles(components.dropdown ?? {}, CssVariableGroup.DropdownTokens),
       getVariableStyles(components.input ?? {}, CssVariableGroup.InputTokens),
+      getVariableStyles(components.modal ?? {}, CssVariableGroup.ModalTokens),
       getVariableStyles(components.option ?? {}, CssVariableGroup.OptionTokens),
       getVariableStyles(components.overlay ?? {}, CssVariableGroup.OverlayTokens),
     ];

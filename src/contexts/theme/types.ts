@@ -2,6 +2,7 @@ import {
   IButtonStyleTokens,
   IDropdownStyleTokens,
   IInputStyleTokens,
+  IModalStyleTokens,
   IOptionStyleTokens,
   IOverlayStyleTokens,
 } from 'components';
@@ -23,6 +24,7 @@ export enum CssVariableGroup {
 
   ButtonTokens = 'uu-button-tokens',
   InputTokens = 'uu-input-tokens',
+  ModalTokens = 'uu-modal-tokens',
   OptionTokens = 'uu-option-tokens',
   OverlayTokens = 'uu-overlay-tokens',
   DropdownTokens = 'uu-dropdown-tokens',
@@ -83,6 +85,7 @@ export type TStylePreset = {
   components?: {
     button?: IButtonStyleTokens;
     input?: IInputStyleTokens;
+    modal?: IModalStyleTokens;
     option?: IOptionStyleTokens;
     overlay?: IOverlayStyleTokens;
     dropdown?: IDropdownStyleTokens;
