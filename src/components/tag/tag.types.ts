@@ -1,0 +1,82 @@
+import { HTMLAttributes } from 'react';
+import { TClasses } from 'utils';
+
+export type TagVariant = 'filled' | 'outlined' | 'ghost';
+export type TagColor = 'primary' | 'secondary' | 'accent' | 'success' | 'warning' | 'danger';
+export type TagShape = 'default' | 'brick' | 'round';
+export type TagSize = 'm';
+
+export interface ITagProps extends Omit<HTMLAttributes<HTMLDivElement>, 'className'> {
+  /**
+   * additinal css class name(s)
+   */
+  className?: string | TClasses;
+  /**
+   * tag variant
+   * @default filled
+   */
+  variant?: TagVariant;
+  /**
+   * tag color scheme
+   * @default primary
+   * */
+  color?: TagColor;
+  /**
+   * tag corner shape
+   * @default default
+   */
+  shape?: TagShape;
+  /**
+   * tag size
+   * @default m
+   */
+  size?: TagSize;
+  /**
+   * tag label
+   * */
+  label?: string;
+}
+
+export interface ITagStyleTokens {
+  color?: {
+    bg?: {
+      [variant in TagVariant]?: {
+        [color in TagColor]?: string;
+      };
+    };
+    text?: {
+      [variant in TagVariant]?: {
+        [color in TagColor]?: string;
+      };
+    };
+    border?: {
+      [variant in TagVariant]?: {
+        [color in TagColor]?: string;
+      };
+    };
+  };
+  height?: {
+    [size in TagSize]?: string;
+  };
+  'horizontal-padding'?: {
+    [size in TagSize]?: string;
+  };
+  'vertical-padding'?: {
+    [size in TagSize]?: string;
+  };
+  'border-width'?: {
+    [size in TagSize]?: string;
+  };
+  'border-radius'?: {
+    [size in TagSize]?: string;
+  };
+  'font-size'?: {
+    [size in TagSize]?: string;
+  };
+  'line-height'?: {
+    [size in TagSize]?: string;
+  };
+  'font-weight'?: {
+    [size in TagSize]?: string;
+  };
+}
