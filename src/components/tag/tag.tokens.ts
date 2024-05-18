@@ -60,8 +60,14 @@ export const tagStyleTokens: ITagStyleTokens = {
   height: {
     m: 'var(--uu-height-s)',
   },
+  'icon-height': {
+    m: 'var(--uu-icon-height-s)',
+  },
   'horizontal-padding': {
     m: 'var(--uu-space-xs)',
+  },
+  gap: {
+    m: 'var(--uu-spaec-2xs)',
   },
   'border-radius': {
     m: 'var(--uu-radius-xs)',

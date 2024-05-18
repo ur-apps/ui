@@ -1,6 +1,7 @@
 .tag {
   display: flex;
   align-items: center;
+  gap: var(--gap, 4px);
   width: auto;
   height: var(--height, 24px);
   padding: var(--vertical-padding, 0) var(--horizontal-padding, 8px);
@@ -27,8 +28,10 @@
 .tag--size {
   &-m {
     --height: var(--height-m);
+    --icon-height: var(--icon-height-m);
     --horizontal-padding: var(--horizontal-padding-m);
     --vertical-padding: var(--vertical-padding-m);
+    --gap: var(--gap-m);
     --border-width: var(--border-width-m);
     --border-radius: var(--border-radius-m);
 
@@ -54,31 +57,37 @@
   &.tag--color-primary {
     --background-color: var(--color-bg-filled-primary);
     --text-color: var(--color-text-filled-primary);
+    --icon-color: var(--color-icon-filled-primary);
   }
 
   &.tag--color-secondary {
     --background-color: var(--color-bg-filled-secondary);
     --text-color: var(--color-text-filled-secondary);
+    --icon-color: var(--color-icon-filled-secondary);
   }
 
   &.tag--color-accent {
     --background-color: var(--color-bg-filled-accent);
     --text-color: var(--color-text-filled-accent);
+    --icon-color: var(--color-icon-filled-accent);
   }
 
   &.tag--color-success {
     --background-color: var(--color-bg-filled-success);
     --text-color: var(--color-text-filled-success);
+    --icon-color: var(--color-icon-filled-success);
   }
 
   &.tag--color-warning {
     --background-color: var(--color-bg-filled-warning);
     --text-color: var(--color-text-filled-warning);
+    --icon-color: var(--color-icon-filled-warning);
   }
 
   &.tag--color-danger {
     --background-color: var(--color-bg-filled-danger);
     --text-color: var(--color-text-filled-danger);
+    --icon-color: var(--color-icon-filled-danger);
   }
 }
 
@@ -88,31 +97,37 @@
   &.tag--color-primary {
     --border-color: var(--color-border-outlined-primary);
     --text-color: var(--color-text-outlined-primary);
+    --icon-color: var(--color-icon-outlined-primary);
   }
 
   &.tag--color-secondary {
     --border-color: var(--color-border-outlined-secondary);
     --text-color: var(--color-text-outlined-secondary);
+    --icon-color: var(--color-icon-outlined-secondary);
   }
 
   &.tag--color-accent {
     --border-color: var(--color-border-outlined-accent);
     --text-color: var(--color-text-outlined-accent);
+    --icon-color: var(--color-icon-outlined-accent);
   }
 
   &.tag--color-success {
     --border-color: var(--color-border-outlined-success);
     --text-color: var(--color-text-outlined-success);
+    --icon-color: var(--color-icon-outlined-success);
   }
 
   &.tag--color-warning {
     --border-color: var(--color-border-outlined-warning);
     --text-color: var(--color-text-outlined-warning);
+    --icon-color: var(--color-icon-outlined-warning);
   }
 
   &.tag--color-danger {
     --border-color: var(--color-border-outlined-danger);
     --text-color: var(--color-text-outlined-danger);
+    --icon-color: var(--color-icon-outlined-danger);
   }
 }
 
@@ -122,30 +137,71 @@
   &.tag--color-primary {
     --background-color: var(--color-bg-ghost-primary);
     --text-color: var(--color-text-ghost-primary);
+    --icon-color: var(--color-icon-ghost-primary);
   }
 
   &.tag--color-secondary {
     --background-color: var(--color-bg-ghost-secondary);
     --text-color: var(--color-text-ghost-secondary);
+    --icon-color: var(--color-icon-ghost-secondary);
   }
 
   &.tag--color-accent {
     --background-color: var(--color-bg-ghost-accent);
     --text-color: var(--color-text-ghost-accent);
+    --icon-color: var(--color-icon-ghost-accent);
   }
 
   &.tag--color-success {
     --background-color: var(--color-bg-ghost-success);
     --text-color: var(--color-text-ghost-success);
+    --icon-color: var(--color-icon-ghost-success);
   }
 
   &.tag--color-warning {
     --background-color: var(--color-bg-ghost-warning);
     --text-color: var(--color-text-ghost-warning);
+    --icon-color: var(--color-icon-ghost-warning);
   }
 
   &.tag--color-danger {
     --background-color: var(--color-bg-ghost-danger);
     --text-color: var(--color-text-ghost-danger);
+    --icon-color: var(--color-icon-ghost-danger);
   }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0;
+  border: none;
+  margin: 0;
+
+  color: var(--icon-color, inherit);
+
+  background-color: transparent;
+}
+
+@media screen and (min-width: 640px) {
+  .button--interactive {
+    cursor: pointer;
+
+    &:hover .button__icon {
+      transform: scale(1.2);
+    }
+
+    &:active .button__icon {
+      transform: scale(1);
+    }
+  }
+}
+
+.button__icon {
+  width: auto;
+  height: var(--icon-height, 14px);
+
+  transition: 200ms;
 }

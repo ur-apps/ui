@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, HTMLAttributes } from 'react';
 import { TClasses } from 'utils';
 
 export type TagVariant = 'filled' | 'outlined' | 'ghost';
@@ -19,7 +19,7 @@ export interface ITagProps extends Omit<HTMLAttributes<HTMLDivElement>, 'classNa
   /**
    * tag color scheme
    * @default primary
-   * */
+   */
   color?: TagColor;
   /**
    * tag corner shape
@@ -33,8 +33,28 @@ export interface ITagProps extends Omit<HTMLAttributes<HTMLDivElement>, 'classNa
   size?: TagSize;
   /**
    * tag label
-   * */
+   */
   label?: string;
+  /**
+   * buttons inside a tag
+   */
+  buttons?: ITagButtonProps[];
+}
+
+export interface ITagButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className'> {
+  /**
+   * additinal css class name(s)
+   */
+  className?: string | TClasses;
+  /**
+   * button position inside tag
+   * @default after
+   */
+  position?: 'before' | 'after';
+  /**
+   * button icon
+   */
+  icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
 }
 
 export interface ITagStyleTokens {
@@ -54,14 +74,25 @@ export interface ITagStyleTokens {
         [color in TagColor]?: string;
       };
     };
+    icon?: {
+      [variant in TagVariant]?: {
+        [color in TagColor]?: string;
+      };
+    };
   };
   height?: {
+    [size in TagSize]?: string;
+  };
+  'icon-height'?: {
     [size in TagSize]?: string;
   };
   'horizontal-padding'?: {
     [size in TagSize]?: string;
   };
   'vertical-padding'?: {
+    [size in TagSize]?: string;
+  };
+  gap?: {
     [size in TagSize]?: string;
   };
   'border-width'?: {
