@@ -9,6 +9,8 @@ import {
   optionStyleTokens,
   optionDarkModeStyleTokens,
   overlayStyleTokens,
+  tagStyleTokens,
+  tagDarkModeStyleTokens,
 } from 'components';
 
 import { TStylePreset } from './types';
@@ -635,11 +637,12 @@ export const preset: TStylePreset = {
   },
   components: {
     button: buttonStyleTokens,
+    dropdown: dropdownStyleTokens,
     input: inputStyleTokens,
     modal: modalStyleTokens,
     option: optionStyleTokens,
     overlay: overlayStyleTokens,
-    dropdown: dropdownStyleTokens,
+    tag: tagStyleTokens,
   },
 };
 
@@ -815,8 +818,9 @@ export const darkModePreset: TStylePreset = {
   },
   components: {
     button: buttonDarkModeStyleTokens,
+    dropdown: dropdownDarkModeStyleTokens,
     input: inputDarkModeStyleTokens,
     option: optionDarkModeStyleTokens,
-    dropdown: dropdownDarkModeStyleTokens,
+    tag: tagDarkModeStyleTokens,
   },
 };

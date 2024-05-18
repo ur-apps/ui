@@ -32,6 +32,7 @@ const COMPONENT_CLASSES = [
   CssVariableGroup.ModalTokens,
   CssVariableGroup.OptionTokens,
   CssVariableGroup.OverlayTokens,
+  CssVariableGroup.TagTokens,
 ];
 const TOKEN_CLASSES = Object.values(CssVariableGroup).filter((c) => !COMPONENT_CLASSES.includes(c));
 
@@ -74,6 +75,7 @@ export function ThemeProvider({ className, defaultTheme, customePreset = {}, chi
       getVariableStyles(components.modal ?? {}, CssVariableGroup.ModalTokens),
       getVariableStyles(components.option ?? {}, CssVariableGroup.OptionTokens),
       getVariableStyles(components.overlay ?? {}, CssVariableGroup.OverlayTokens),
+      getVariableStyles(components.tag ?? {}, CssVariableGroup.TagTokens),
     ];
   }, [theme, preset]);
 

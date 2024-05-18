@@ -6,4 +6,5 @@ export * from './option';
 export * from './overlay';
 export * from './portal';
 export * from './select';
+export * from './tag';
 export * from './text';

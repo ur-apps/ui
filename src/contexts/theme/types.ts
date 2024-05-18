@@ -5,6 +5,7 @@ import {
   IModalStyleTokens,
   IOptionStyleTokens,
   IOverlayStyleTokens,
+  ITagStyleTokens,
 } from 'components';
 
 export enum CssVariableGroup {
@@ -23,11 +24,12 @@ export enum CssVariableGroup {
   Spaces = 'uu-spaces',
 
   ButtonTokens = 'uu-button-tokens',
+  DropdownTokens = 'uu-dropdown-tokens',
   InputTokens = 'uu-input-tokens',
   ModalTokens = 'uu-modal-tokens',
   OptionTokens = 'uu-option-tokens',
   OverlayTokens = 'uu-overlay-tokens',
-  DropdownTokens = 'uu-dropdown-tokens',
+  TagTokens = 'uu-tag-tokens',
 }
 
 type Size = '3xs' | '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
@@ -89,5 +91,6 @@ export type TStylePreset = {
     option?: IOptionStyleTokens;
     overlay?: IOverlayStyleTokens;
     dropdown?: IDropdownStyleTokens;
+    tag?: ITagStyleTokens;
   };
 };
