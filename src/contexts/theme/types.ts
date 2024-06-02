@@ -5,6 +5,7 @@ import {
   IModalStyleTokens,
   IOptionStyleTokens,
   IOverlayStyleTokens,
+  ISwitchStyleTokens,
   ITagStyleTokens,
 } from 'components';
 
@@ -29,15 +30,16 @@ export enum CssVariableGroup {
   ModalTokens = 'uu-modal-tokens',
   OptionTokens = 'uu-option-tokens',
   OverlayTokens = 'uu-overlay-tokens',
+  SwitchTokens = 'uu-switch-tokens',
   TagTokens = 'uu-tag-tokens',
 }
 
 type Size = '3xs' | '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
 type Color = { [key: string]: Color | string };
-type FontSize = Record<Extract<Size, 'xs' | 's' | 'm' | 'l' | 'xl'>, string | number>;
+type FontSize = Record<Extract<Size, '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl'>, string | number>;
 type LineHeight = Record<Extract<Size, 'xs' | 's' | 'm' | 'l' | 'xl'>, string | number>;
 type FontWeight = Record<string | number, string | number>;
-type Height = Record<Extract<Size, 's' | 'm' | 'l'>, string | number>;
+type Height = Record<Extract<Size, 'xs' | 's' | 'm' | 'l'>, string | number>;
 type Radius = Record<Extract<Size, '3xs' | '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl'>, string | number>;
 type Spacing = Record<Size, string | number>;
 
@@ -86,11 +88,12 @@ export type TStylePreset = {
   tokens?: TStyleTokens;
   components?: {
     button?: IButtonStyleTokens;
+    dropdown?: IDropdownStyleTokens;
     input?: IInputStyleTokens;
     modal?: IModalStyleTokens;
     option?: IOptionStyleTokens;
     overlay?: IOverlayStyleTokens;
-    dropdown?: IDropdownStyleTokens;
+    switch?: ISwitchStyleTokens;
     tag?: ITagStyleTokens;
   };
 };
