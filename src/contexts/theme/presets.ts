@@ -9,6 +9,8 @@ import {
   optionStyleTokens,
   optionDarkModeStyleTokens,
   overlayStyleTokens,
+  switchStyleTokens,
+  switchDarkModeStyleTokens,
   tagStyleTokens,
   tagDarkModeStyleTokens,
 } from 'components';
@@ -577,6 +579,7 @@ export const preset: TStylePreset = {
     },
     'font-family': 'var(--uu-sys-font-family-1), var(--uu-sys-font-family-2), var(--uu-sys-font-family-3)',
     'font-size': {
+      '2xs': 'var(--uu-sys-size-6)',
       'xs': 'var(--uu-sys-size-7)',
       's': 'var(--uu-sys-size-8)',
       'm': 'var(--uu-sys-size-9)',
@@ -602,11 +605,13 @@ export const preset: TStylePreset = {
       'xl': 'var(--uu-sys-size-13)',
     },
     height: {
+      'xs': 'var(--uu-sys-size-9)',
       's': 'var(--uu-sys-size-13)',
       'm': 'var(--uu-sys-size-17)',
       'l': 'var(--uu-sys-size-19)',
     },
     'icon-height': {
+      'xs': 'var(--uu-sys-size-7)',
       's': 'var(--uu-sys-size-8)',
       'm': 'var(--uu-sys-size-9)',
       'l': 'var(--uu-sys-size-10)',
@@ -635,6 +640,7 @@ export const preset: TStylePreset = {
       '6xl': 'var(--uu-sys-space-20)',
     },
   },
+
   components: {
     button: buttonStyleTokens,
     dropdown: dropdownStyleTokens,
@@ -642,6 +648,7 @@ export const preset: TStylePreset = {
     modal: modalStyleTokens,
     option: optionStyleTokens,
     overlay: overlayStyleTokens,
+    switch: switchStyleTokens,
     tag: tagStyleTokens,
   },
 };
@@ -821,6 +828,7 @@ export const darkModePreset: TStylePreset = {
     dropdown: dropdownDarkModeStyleTokens,
     input: inputDarkModeStyleTokens,
     option: optionDarkModeStyleTokens,
+    switch: switchDarkModeStyleTokens,
     tag: tagDarkModeStyleTokens,
   },
 };
