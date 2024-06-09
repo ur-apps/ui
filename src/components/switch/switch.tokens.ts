@@ -115,9 +115,9 @@ export const switchStyleTokens: ISwitchStyleTokens = {
     l: 'var(--uu-font-size-s)',
   },
   'font-weight': {
-    s: 'var(--uu-font-weight-500)',
-    m: 'var(--uu-font-weight-500)',
-    l: 'var(--uu-font-weight-500)',
+    s: 'var(--uu-font-weight-400)',
+    m: 'var(--uu-font-weight-400)',
+    l: 'var(--uu-font-weight-400)',
   },
   'content-horizontal-padding': {
     s: 'var(--uu-space-2xs)',

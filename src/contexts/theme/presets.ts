@@ -353,9 +353,14 @@ export const preset: TStylePreset = {
       9: 900,
     },
     'font-family': {
-      1: "'Visby Round CF'",
+      1: 'sans-serif',
       2: "'Open Sans'",
-      3: 'sans-serif',
+      /** font weights: 100, 300, 400, 500, 700, 900 */
+      3: "'Roboto'",
+      /** font weights: 200, 300, 400, 600, 700, 900 ? */
+      4: "'Segoe UI'",
+      /** font weights: 100, 200, 400, 500, 700 */
+      5: "'Helvetica Neue'",
     },
   },
 
@@ -577,7 +582,8 @@ export const preset: TStylePreset = {
         'a95': 'var(--uu-sys-color-black-a95)',
       },
     },
-    'font-family': 'var(--uu-sys-font-family-1), var(--uu-sys-font-family-2), var(--uu-sys-font-family-3)',
+    'font-family':
+      'var(--uu-sys-font-family-5), var(--uu-sys-font-family-4), var(--uu-sys-font-family-3), var(--uu-sys-font-family-2), var(--uu-sys-font-family-1)',
     'font-size': {
       '2xs': 'var(--uu-sys-size-6)',
       'xs': 'var(--uu-sys-size-7)',

@@ -196,9 +196,9 @@ export const buttonStyleTokens: IButtonStyleTokens = {
     l: 'var(--uu-line-height-m)',
   },
   'font-weight': {
-    s: 'var(--uu-font-weight-500)',
-    m: 'var(--uu-font-weight-500)',
-    l: 'var(--uu-font-weight-500)',
+    s: 'var(--uu-font-weight-400)',
+    m: 'var(--uu-font-weight-400)',
+    l: 'var(--uu-font-weight-400)',
   },
 };
 export const buttonDarkModeStyleTokens: IButtonStyleTokens = {
