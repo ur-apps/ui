@@ -13,6 +13,7 @@ import {
   switchDarkModeStyleTokens,
   tagStyleTokens,
   tagDarkModeStyleTokens,
+  headingStyleTokens,
 } from 'components';
 
 import { TStylePreset } from './types';
@@ -353,9 +354,14 @@ export const preset: TStylePreset = {
       9: 900,
     },
     'font-family': {
-      1: "'Visby Round CF'",
+      1: 'sans-serif',
       2: "'Open Sans'",
-      3: 'sans-serif',
+      /** font weights: 100, 300, 400, 500, 700, 900 */
+      3: "'Roboto'",
+      /** font weights: 200, 300, 400, 600, 700, 900 ? */
+      4: "'Segoe UI'",
+      /** font weights: 100, 200, 400, 500, 700 */
+      5: "'Helvetica Neue'",
     },
   },
 
@@ -577,7 +583,8 @@ export const preset: TStylePreset = {
         'a95': 'var(--uu-sys-color-black-a95)',
       },
     },
-    'font-family': 'var(--uu-sys-font-family-1), var(--uu-sys-font-family-2), var(--uu-sys-font-family-3)',
+    'font-family':
+      'var(--uu-sys-font-family-5), var(--uu-sys-font-family-4), var(--uu-sys-font-family-3), var(--uu-sys-font-family-2), var(--uu-sys-font-family-1)',
     'font-size': {
       '2xs': 'var(--uu-sys-size-6)',
       'xs': 'var(--uu-sys-size-7)',
@@ -585,6 +592,10 @@ export const preset: TStylePreset = {
       'm': 'var(--uu-sys-size-9)',
       'l': 'var(--uu-sys-size-10)',
       'xl': 'var(--uu-sys-size-11)',
+      '2xl': 'var(--uu-sys-size-13)',
+      '3xl': 'var(--uu-sys-size-15)',
+      '4xl': 'var(--uu-sys-size-17)',
+      '5xl': 'var(--uu-sys-size-19)',
     },
     'font-weight': {
       100: 'var(--uu-sys-weight-1)',
@@ -598,11 +609,16 @@ export const preset: TStylePreset = {
       900: 'var(--uu-sys-weight-9)',
     },
     'line-height': {
+      '2xs': 'var(--uu-sys-size-7)',
       'xs': 'var(--uu-sys-size-9)',
       's': 'var(--uu-sys-size-10)',
       'm': 'var(--uu-sys-size-11)',
       'l': 'var(--uu-sys-size-12)',
       'xl': 'var(--uu-sys-size-13)',
+      '2xl': 'var(--uu-sys-size-16)',
+      '3xl': 'var(--uu-sys-size-18)',
+      '4xl': 'var(--uu-sys-size-19)',
+      '5xl': 'var(--uu-sys-size-21)',
     },
     height: {
       'xs': 'var(--uu-sys-size-9)',
@@ -644,6 +660,7 @@ export const preset: TStylePreset = {
   components: {
     button: buttonStyleTokens,
     dropdown: dropdownStyleTokens,
+    heading: headingStyleTokens,
     input: inputStyleTokens,
     modal: modalStyleTokens,
     option: optionStyleTokens,

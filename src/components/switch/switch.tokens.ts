@@ -110,14 +110,14 @@ export const switchStyleTokens: ISwitchStyleTokens = {
     l: 'var(--uu-font-size-s)',
   },
   'line-height': {
-    s: 'var(--uu-font-size-2xs)',
-    m: 'var(--uu-font-size-xs)',
-    l: 'var(--uu-font-size-s)',
+    s: 'var(--uu-line-height-2xs)',
+    m: 'var(--uu-line-height-xs)',
+    l: 'var(--uu-line-height-s)',
   },
   'font-weight': {
-    s: 'var(--uu-font-weight-500)',
-    m: 'var(--uu-font-weight-500)',
-    l: 'var(--uu-font-weight-500)',
+    s: 'var(--uu-font-weight-400)',
+    m: 'var(--uu-font-weight-400)',
+    l: 'var(--uu-font-weight-400)',
   },
   'content-horizontal-padding': {
     s: 'var(--uu-space-2xs)',

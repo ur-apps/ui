@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Modal } from './modal';
 import { Input } from 'components/input';
 import { Button } from 'components/button';
 import { Select } from 'components/select';
-import { FAKE_COUNTRY_LIST } from 'data/fake';
 import { Text } from 'components/text';
+import { FAKE_COUNTRY_LIST } from 'data/fake';
+
+import { Modal } from './modal';
 
 const meta = {
   title: 'Components/Modal',

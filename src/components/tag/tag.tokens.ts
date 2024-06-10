@@ -82,7 +82,7 @@ export const tagStyleTokens: ITagStyleTokens = {
     m: 'var(--uu-line-height-xs)',
   },
   'font-weight': {
-    m: 'var(--uu-font-weight-500)',
+    m: 'var(--uu-font-weight-400)',
   },
 };
 

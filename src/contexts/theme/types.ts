@@ -1,6 +1,7 @@
 import {
   IButtonStyleTokens,
   IDropdownStyleTokens,
+  IHeadingStyleTokens,
   IInputStyleTokens,
   IModalStyleTokens,
   IOptionStyleTokens,
@@ -26,6 +27,7 @@ export enum CssVariableGroup {
 
   ButtonTokens = 'uu-button-tokens',
   DropdownTokens = 'uu-dropdown-tokens',
+  HeadingTokens = 'uu-heading-tokens',
   InputTokens = 'uu-input-tokens',
   ModalTokens = 'uu-modal-tokens',
   OptionTokens = 'uu-option-tokens',
@@ -36,8 +38,14 @@ export enum CssVariableGroup {
 
 type Size = '3xs' | '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
 type Color = { [key: string]: Color | string };
-type FontSize = Record<Extract<Size, '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl'>, string | number>;
-type LineHeight = Record<Extract<Size, 'xs' | 's' | 'm' | 'l' | 'xl'>, string | number>;
+type FontSize = Record<
+  Extract<Size, '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl'>,
+  string | number
+>;
+type LineHeight = Record<
+  Extract<Size, '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl'>,
+  string | number
+>;
 type FontWeight = Record<string | number, string | number>;
 type Height = Record<Extract<Size, 'xs' | 's' | 'm' | 'l'>, string | number>;
 type Radius = Record<Extract<Size, '3xs' | '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl'>, string | number>;
@@ -89,6 +97,7 @@ export type TStylePreset = {
   components?: {
     button?: IButtonStyleTokens;
     dropdown?: IDropdownStyleTokens;
+    heading?: IHeadingStyleTokens;
     input?: IInputStyleTokens;
     modal?: IModalStyleTokens;
     option?: IOptionStyleTokens;

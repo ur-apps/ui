@@ -28,6 +28,7 @@ const UU_THEME_CLASS_NAME = 'uu-theme';
 const COMPONENT_CLASSES = [
   CssVariableGroup.ButtonTokens,
   CssVariableGroup.DropdownTokens,
+  CssVariableGroup.HeadingTokens,
   CssVariableGroup.InputTokens,
   CssVariableGroup.ModalTokens,
   CssVariableGroup.OptionTokens,
@@ -72,6 +73,7 @@ export function ThemeProvider({ className, defaultTheme, customePreset = {}, chi
       // Components
       getVariableStyles(components.button ?? {}, CssVariableGroup.ButtonTokens),
       getVariableStyles(components.dropdown ?? {}, CssVariableGroup.DropdownTokens),
+      getVariableStyles(components.heading ?? {}, CssVariableGroup.HeadingTokens),
       getVariableStyles(components.input ?? {}, CssVariableGroup.InputTokens),
       getVariableStyles(components.modal ?? {}, CssVariableGroup.ModalTokens),
       getVariableStyles(components.option ?? {}, CssVariableGroup.OptionTokens),

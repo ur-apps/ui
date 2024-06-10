@@ -1,73 +1,145 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 @font-face {
-  font-family: 'Visby Round CF';
-  font-weight: 200;
+  font-family: 'Roboto';
+  font-weight: 100;
   font-style: normal;
   font-display: swap;
-  src: local('Visby Round CF ExtraLight'), local('VisbyRoundCF-ExtraLight'),
-    url('fonts/VisbyRoundCF-ExtraLight.woff2') format('woff2'), url('fonts/VisbyRoundCF-ExtraLight.woff') format('woff');
+  src:
+    local('Roboto Thin'),
+    local('Roboto-Thin'),
+    url('fonts/Roboto/Robotothin.woff2') format('woff2'),
+    url('fonts/Roboto/Robotothin.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Visby Round CF';
+  font-family: 'Roboto';
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+  src:
+    local('Roboto Thin Italic'),
+    local('Roboto-ThinItalic'),
+    url('fonts/Roboto/Robotothinitalic.woff2') format('woff2'),
+    url('fonts/Roboto/Robotothinitalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
   font-weight: 300;
   font-style: normal;
   font-display: swap;
-  src: local('Visby Round CF Light'), local('VisbyRoundCF-Light'), url('fonts/VisbyRoundCF-Light.woff2') format('woff2'),
-    url('fonts/VisbyRoundCF-Light.woff') format('woff');
+  src:
+    local('Roboto Light'),
+    local('Roboto-Light'),
+    url('fonts/Roboto/Robotolight.woff2') format('woff2'),
+    url('fonts/Roboto/Robotolight.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Visby Round CF';
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+  src:
+    local('Roboto Light Italic'),
+    local('Roboto-LightItalic'),
+    url('fonts/Roboto/Robotolightitalic.woff2') format('woff2'),
+    url('fonts/Roboto/Robotolightitalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: local('Visby Round CF Regular'), local('VisbyRoundCF-Regular'),
-    url('fonts/VisbyRoundCF-Regular.woff2') format('woff2'), url('fonts/VisbyRoundCF-Regular.woff') format('woff');
+  src:
+    local('Roboto'),
+    local('Roboto-Regular'),
+    url('fonts/Roboto/Roboto.woff2') format('woff2'),
+    url('fonts/Roboto/Roboto.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Visby Round CF';
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src:
+    local('Roboto Italic'),
+    local('Roboto-Italic'),
+    url('fonts/Roboto/Robotoitalic.woff2') format('woff2'),
+    url('fonts/Roboto/Robotoitalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-  src: local('Visby Round CF Medium'), local('VisbyRoundCF-Medium'),
-    url('fonts/VisbyRoundCF-Medium.woff2') format('woff2'), url('fonts/VisbyRoundCF-Medium.woff') format('woff');
+  src:
+    local('Roboto Medium'),
+    local('Roboto-Medium'),
+    url('fonts/Roboto/Robotomedium.woff2') format('woff2'),
+    url('fonts/Roboto/Robotomedium.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Visby Round CF';
-  font-weight: 600;
-  font-style: normal;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-style: italic;
   font-display: swap;
-  src: local('Visby Round CF DemiBold'), local('VisbyRoundCF-DemiBold'),
-    url('fonts/VisbyRoundCF-DemiBold.woff2') format('woff2'), url('fonts/VisbyRoundCF-DemiBold.woff') format('woff');
+  src:
+    local('Roboto Medium Italic'),
+    local('Roboto-MediumItalic'),
+    url('fonts/Roboto/Robotomediumitalic.woff2') format('woff2'),
+    url('fonts/Roboto/Robotomediumitalic.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Visby Round CF';
+  font-family: 'Roboto';
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: local('Visby Round CF Bold'), local('VisbyRoundCF-Bold'), url('fonts/VisbyRoundCF-Bold.woff2') format('woff2'),
-    url('fonts/VisbyRoundCF-Bold.woff') format('woff');
+  src:
+    local('Roboto Bold'),
+    local('Roboto-Bold'),
+    url('fonts/Roboto/Robotobold.woff2') format('woff2'),
+    url('fonts/Roboto/Robotobold.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Visby Round CF';
-  font-weight: 800;
-  font-style: normal;
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-style: italic;
   font-display: swap;
-  src: local('Visby Round CF ExtraBold'), local('VisbyRoundCF-ExtraBold'),
-    url('fonts/VisbyRoundCF-ExtraBold.woff2') format('woff2'), url('fonts/VisbyRoundCF-ExtraBold.woff') format('woff');
+  src:
+    local('Roboto Bold Italic'),
+    local('Roboto-BoldItalic'),
+    url('fonts/Roboto/Robotobolditalic.woff2') format('woff2'),
+    url('fonts/Roboto/Robotobolditalic.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Visby Round CF';
+  font-family: 'Roboto';
   font-weight: 900;
   font-style: normal;
   font-display: swap;
-  src: local('Visby Round CF Heavy'), local('VisbyRoundCF-Heavy'), url('fonts/VisbyRoundCF-Heavy.woff2') format('woff2'),
-    url('fonts/VisbyRoundCF-Heavy.woff') format('woff');
+  src:
+    local('Roboto Black'),
+    local('Roboto-Black'),
+    url('fonts/Roboto/Robotoblack.woff2') format('woff2'),
+    url('fonts/Roboto/Robotoblack.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+  src:
+    local('Roboto Black Italic'),
+    local('Roboto-BlackItalic'),
+    url('fonts/Roboto/Robotoblackitalic.woff2') format('woff2'),
+    url('fonts/Roboto/Robotoblackitalic.woff') format('woff');
 }
