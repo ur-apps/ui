@@ -110,9 +110,9 @@ export const switchStyleTokens: ISwitchStyleTokens = {
     l: 'var(--uu-font-size-s)',
   },
   'line-height': {
-    s: 'var(--uu-font-size-2xs)',
-    m: 'var(--uu-font-size-xs)',
-    l: 'var(--uu-font-size-s)',
+    s: 'var(--uu-line-height-2xs)',
+    m: 'var(--uu-line-height-xs)',
+    l: 'var(--uu-line-height-s)',
   },
   'font-weight': {
     s: 'var(--uu-font-weight-400)',
