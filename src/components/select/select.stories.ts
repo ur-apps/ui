@@ -5,7 +5,7 @@ import { FAKE_COUNTRY_LIST } from 'data/fake';
 import { Select } from './select';
 
 const meta = {
-  title: 'Components/Select',
+  title: 'Form/Select',
   component: Select,
   tags: ['autodocs'],
 } satisfies Meta<typeof Select>;

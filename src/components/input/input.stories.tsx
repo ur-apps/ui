@@ -7,7 +7,7 @@ import { ReactComponent as MagnifyingglassIconOutlined } from 'icons/magnifyingg
 import { Input } from './input';
 
 const meta = {
-  title: 'Components/Input',
+  title: 'Form/Input',
   component: Input,
   tags: ['autodocs'],
 } satisfies Meta<typeof Input>;

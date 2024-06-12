@@ -6,7 +6,7 @@ import { Text } from 'components/text';
 import { Heading } from './heading';
 
 const meta = {
-  title: 'Components/Heading',
+  title: 'Typography/Heading',
   component: Heading,
   tags: ['autodocs'],
 } satisfies Meta<typeof Heading>;
