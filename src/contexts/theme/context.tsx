@@ -33,6 +33,8 @@ const COMPONENT_CLASSES = [
   CssVariableGroup.ModalTokens,
   CssVariableGroup.OptionTokens,
   CssVariableGroup.OverlayTokens,
+  CssVariableGroup.SegmentTokens,
+  CssVariableGroup.SegmentedControlTokens,
   CssVariableGroup.SwitchTokens,
   CssVariableGroup.TagTokens,
 ];
@@ -78,6 +80,8 @@ export function ThemeProvider({ className, defaultTheme, customePreset = {}, chi
       getVariableStyles(components.modal ?? {}, CssVariableGroup.ModalTokens),
       getVariableStyles(components.option ?? {}, CssVariableGroup.OptionTokens),
       getVariableStyles(components.overlay ?? {}, CssVariableGroup.OverlayTokens),
+      getVariableStyles(components.segment ?? {}, CssVariableGroup.SegmentTokens),
+      getVariableStyles(components.segmentedControl ?? {}, CssVariableGroup.SegmentedControlTokens),
       getVariableStyles(components.switch ?? {}, CssVariableGroup.SwitchTokens),
       getVariableStyles(components.tag ?? {}, CssVariableGroup.TagTokens),
     ];

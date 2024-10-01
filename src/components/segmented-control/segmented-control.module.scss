@@ -1,0 +1,169 @@
+.control {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: var(--gap, 2px);
+  width: auto;
+  height: var(--height, 32px);
+  padding: var(--vertical-padding, 2px) var(--horizontal-padding, 2px);
+  border-width: var(--border-width, 0px);
+  border-style: var(--border-style, solid);
+  border-color: var(--border-color, trnasparent);
+  border-radius: var(--border-radius, 6px);
+  margin: 0;
+  box-sizing: border-box;
+
+  background-color: var(--background-color, lightgray);
+}
+
+.control--shape {
+  &-default {
+    &.control--size-s {
+      --border-radius: var(--border-radius-s, 6px);
+    }
+
+    &.control--size-m {
+      --border-radius: var(--border-radius-m, 6px);
+    }
+
+    &.control--size-l {
+      --border-radius: var(--border-radius-l, 6px);
+    }
+  }
+
+  &-round {
+    --border-radius: calc(var(--height, 32px) / 2);
+  }
+
+  &-brick {
+    --border-radius: 0;
+  }
+}
+
+.control--size {
+  &-s {
+    --height: var(--height-s, 32px);
+    --horizontal-padding: var(--horizontal-padding-s, 2px);
+    --vertical-padding: var(--vertical-padding-s, 2px);
+    --gap: var(--gap-s, 2px);
+  }
+
+  &-m {
+    --height: var(--height-m, 32px);
+    --horizontal-padding: var(--horizontal-padding-m, 2px);
+    --vertical-padding: var(--vertical-padding-m, 2px);
+    --gap: var(--gap-m, 2px);
+  }
+
+  &-l {
+    --height: var(--height-l, 32px);
+    --horizontal-padding: var(--horizontal-padding-l, 2px);
+    --vertical-padding: var(--vertical-padding-l, 2px);
+    --gap: var(--gap-l, 2px);
+  }
+}
+
+.control--variant-filled {
+  &.control--color-primary {
+    --background-color: var(--color-bg-filled-primary);
+  }
+
+  &.control--color-secondary {
+    --background-color: var(--color-bg-filled-secondary);
+  }
+
+  &.control--color-accent {
+    --background-color: var(--color-bg-filled-accent);
+  }
+
+  &.control--color-success {
+    --background-color: var(--color-bg-filled-success);
+  }
+
+  &.control--color-warning {
+    --background-color: var(--color-bg-filled-warning);
+  }
+
+  &.control--color-danger {
+    --background-color: var(--color-bg-filled-danger);
+  }
+
+  // think about it
+  // .segment {
+  //   --border-radius: calc(var(--border-radius, 6px) - var(--vertical-padding, 0px));
+  // }
+
+  // we can use this, but it's not necessary
+  // .segment:has(input:checked) + .segment:has(input:checked) {
+  //   border-top-left-radius: 0;
+  //   border-bottom-left-radius: 0;
+  // }
+
+  // .segment:has(input:checked):has(+ .segment > input:checked) {
+  //   border-top-right-radius: 0;
+  //   border-bottom-right-radius: 0;
+  // }
+
+  .segment:has(input:checked) {
+    box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.control--variant-outlined {
+  --vertical-padding: 0;
+  --horizontal-padding: 0;
+  --gap: 0;
+  --background-color: transparent;
+
+  .segment {
+    border-radius: 0px;
+  }
+
+  .segment:first-child {
+    border-top-left-radius: var(--border-radius, 6px);
+    border-bottom-left-radius: var(--border-radius, 6px);
+  }
+
+  .segment:last-child {
+    border-top-right-radius: var(--border-radius, 6px);
+    border-bottom-right-radius: var(--border-radius, 6px);
+  }
+
+  .segment:not(:last-child) {
+    border-right-width: 0px;
+  }
+
+  .segment:has(input:checked) + .segment:has(input:checked) {
+    // FIXME
+    border-left-color: var(--uu-color-bg-primary);
+  }
+}
+
+.control--variant-clear {
+  --vertical-padding: 0;
+  --horizontal-padding: 0;
+  --background-color: transparent;
+}
+
+.segment {
+  max-height: 100%;
+}
+
+// maybe will be used in the future
+// .indicator {
+//   position: absolute;
+//   top: var(--vertical-padding, 2px);
+//   left: var(--horizontal-padding, 2px);
+//   z-index: 0;
+
+//   width: 0;
+//   height: calc(100% - var(--vertical-padding, 2px) * 2);
+//   border-radius: calc(6px - 2px);
+
+//   background-color: var(--color-bg-filled-selected, blue);
+
+//   transition: 300ms;
+// }
