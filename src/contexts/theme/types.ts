@@ -6,6 +6,8 @@ import {
   IModalStyleTokens,
   IOptionStyleTokens,
   IOverlayStyleTokens,
+  ISegmentStyleTokens,
+  ISegmentedControlStyleTokens,
   ISwitchStyleTokens,
   ITagStyleTokens,
 } from 'components';
@@ -32,6 +34,8 @@ export enum CssVariableGroup {
   ModalTokens = 'uu-modal-tokens',
   OptionTokens = 'uu-option-tokens',
   OverlayTokens = 'uu-overlay-tokens',
+  SegmentTokens = 'uu-segment-tokens',
+  SegmentedControlTokens = 'uu-segmented-control-tokens',
   SwitchTokens = 'uu-switch-tokens',
   TagTokens = 'uu-tag-tokens',
 }
@@ -102,6 +106,8 @@ export type TStylePreset = {
     modal?: IModalStyleTokens;
     option?: IOptionStyleTokens;
     overlay?: IOverlayStyleTokens;
+    segment?: ISegmentStyleTokens;
+    segmentedControl?: ISegmentedControlStyleTokens;
     switch?: ISwitchStyleTokens;
     tag?: ITagStyleTokens;
   };

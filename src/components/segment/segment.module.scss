@@ -1,0 +1,399 @@
+.segment {
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: var(--height, 32px);
+  padding: var(--vertical-padding, 0) var(--horizontal-padding, 8px);
+  border-width: var(--border-width, 0px);
+  border-style: var(--border-style, solid);
+  border-color: var(--border-color, black);
+  border-radius: var(--border-radius, 6px);
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: var(--font-family, inherit);
+  font-size: var(--font-size, 14px);
+  font-weight: var(--font-weight, 400);
+  line-height: var(--line-height, 18px);
+  color: var(--text-color, black);
+
+  background-color: var(--background-color, transparent);
+  outline: none;
+  cursor: pointer;
+
+  transition: 200ms;
+
+  &:has(.input:disabled) {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.input {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+
+.segment--variant-filled {
+  &.segment--color-primary {
+    --text-color: var(--color-text-filled-primary-default, black);
+    --background-color: var(--color-bg-filled-primary-default, lightgray);
+
+    &:not(:has(.input:disabled)):not(:has(.input:checked)):hover {
+      --text-color: var(--color-text-filled-primary-hover, black);
+      --background-color: var(--color-bg-filled-primary-hover, gray);
+    }
+
+    &:has(.input:checked) {
+      --text-color: var(--color-text-filled-primary-selected, white);
+      --background-color: var(--color-bg-filled-primary-selected, blue);
+    }
+  }
+
+  &.segment--color-secondary {
+    --text-color: var(--color-text-filled-secondary-default, black);
+    --background-color: var(--color-bg-filled-secondary-default, lightgray);
+
+    &:not(:has(.input:disabled)):not(:has(.input:checked)):hover {
+      --text-color: var(--color-text-filled-secondary-hover, black);
+      --background-color: var(--color-bg-filled-secondary-hover, whitesmoke);
+    }
+
+    &:has(.input:checked) {
+      --text-color: var(--color-text-filled-secondary-selected, black);
+      --background-color: var(--color-bg-filled-secondary-selected, white);
+    }
+  }
+
+  &.segment--color-accent {
+    --text-color: var(--color-text-filled-accent-default, black);
+    --background-color: var(--color-bg-filled-accent-default, lightgray);
+
+    &:not(:has(.input:disabled)):not(:has(.input:checked)):hover {
+      --text-color: var(--color-text-filled-accent-hover, black);
+      --background-color: var(--color-bg-filled-accent-hover, gray);
+    }
+
+    &:has(.input:checked) {
+      --text-color: var(--color-text-filled-accent-selected, white);
+      --background-color: var(--color-bg-filled-accent-selected, hotpink);
+    }
+  }
+
+  &.segment--color-success {
+    --text-color: var(--color-text-filled-success-default, black);
+    --background-color: var(--color-bg-filled-success-default, lightgray);
+
+    &:not(:has(.input:disabled)):not(:has(.input:checked)):hover {
+      --text-color: var(--color-text-filled-success-hover, black);
+      --background-color: var(--color-bg-filled-success-hover, gray);
+    }
+
+    &:has(.input:checked) {
+      --text-color: var(--color-text-filled-success-selected, white);
+      --background-color: var(--color-bg-filled-success-selected, green);
+    }
+  }
+
+  &.segment--color-warning {
+    --text-color: var(--color-text-filled-warning-default, black);
+    --background-color: var(--color-bg-filled-warning-default, lightgray);
+
+    &:not(:has(.input:disabled)):not(:has(.input:checked)):hover {
+      --text-color: var(--color-text-filled-warning-hover, black);
+      --background-color: var(--color-bg-filled-warning-hover, gray);
+    }
+
+    &:has(.input:checked) {
+      --text-color: var(--color-text-filled-warning-selected, white);
+      --background-color: var(--color-bg-filled-warning-selected, orange);
+    }
+  }
+
+  &.segment--color-danger {
+    --text-color: var(--color-text-filled-danger-default, black);
+    --background-color: var(--color-bg-filled-danger-default, lightgray);
+
+    &:not(:has(.input:disabled)):not(:has(.input:checked)):hover {
+      --text-color: var(--color-text-filled-danger-hover, black);
+      --background-color: var(--color-bg-filled-danger-hover, gray);
+    }
+
+    &:has(.input:checked) {
+      --text-color: var(--color-text-filled-danger-selected, white);
+      --background-color: var(--color-bg-filled-danger-selected, red);
+    }
+  }
+}
+
+.segment--variant-outlined {
+  &.segment--size-s {
+    --border-width: var(--border-width-s, 1px);
+  }
+
+  &.segment--size-m {
+    --border-width: var(--border-width-m, 1px);
+  }
+
+  &.segment--size-l {
+    --border-width: var(--border-width-l, 1px);
+  }
+
+  &.segment--color-primary {
+    --text-color: var(--color-text-outlined-primary-default, blue);
+    --border-color: var(--color-border-outlined-primary-default, blue);
+    --background-color: var(--color-bg-outlined-primary-default, transparent);
+
+    &:not(:has(.input:disabled)):not(:has(.input:checked)):hover {
+      --text-color: var(--color-text-outlined-primary-hover, blue);
+      --border-color: var(--color-border-outlined-primary-hover, blue);
+      --background-color: var(--color-bg-outlined-primary-hover, lightblue);
+    }
+
+    &:has(.input:checked) {
+      --text-color: var(--color-text-outlined-primary-selected, white);
+      --border-color: var(--color-border-outlined-primary-selected, blue);
+      --background-color: var(--color-bg-outlined-primary-selected, blue);
+    }
+  }
+
+  &.segment--color-secondary {
+    --text-color: var(--color-text-outlined-secondary-default, gray);
+    --border-color: var(--color-border-outlined-secondary-default, gray);
+    --background-color: var(--color-bg-outlined-secondary-default, transparent);
+
+    &:not(:has(.input:disabled)):not(:has(.input:checked)):hover {
+      --text-color: var(--color-text-outlined-secondary-hover, gray);
+      --border-color: var(--color-border-outlined-secondary-hover, gray);
+      --background-color: var(--color-bg-outlined-secondary-hover, whitesmoke);
+    }
+
+    &:has(.input:checked) {
+      --text-color: var(--color-text-outlined-secondary-selected, white);
+      --border-color: var(--color-border-outlined-secondary-selected, gray);
+      --background-color: var(--color-bg-outlined-secondary-selected, gray);
+    }
+  }
+
+  &.segment--color-accent {
+    --text-color: var(--color-text-outlined-accent-default, hotpink);
+    --border-color: var(--color-border-outlined-accent-default, hotpink);
+    --background-color: var(--color-bg-outlined-accent-default, transparent);
+
+    &:not(:has(.input:disabled)):not(:has(.input:checked)):hover {
+      --text-color: var(--color-text-outlined-accent-hover, hotpink);
+      --border-color: var(--color-border-outlined-accent-hover, hotpink);
+      --background-color: var(--color-bg-outlined-accent-hover, lightpink);
+    }
+
+    &:has(.input:checked) {
+      --text-color: var(--color-text-outlined-accent-selected, white);
+      --border-color: var(--color-border-outlined-accent-selected, hotpink);
+      --background-color: var(--color-bg-outlined-accent-selected, hotpink);
+    }
+  }
+
+  &.segment--color-success {
+    --text-color: var(--color-text-outlined-success-default, green);
+    --border-color: var(--color-border-outlined-success-default, green);
+    --background-color: var(--color-bg-outlined-success-default, transparent);
+
+    &:not(:has(.input:disabled)):not(:has(.input:checked)):hover {
+      --text-color: var(--color-text-outlined-success-hover, green);
+      --border-color: var(--color-border-outlined-success-hover, green);
+      --background-color: var(--color-bg-outlined-success-hover, lightgreen);
+    }
+
+    &:has(.input:checked) {
+      --text-color: var(--color-text-outlined-success-selected, white);
+      --border-color: var(--color-border-outlined-success-selected, green);
+      --background-color: var(--color-bg-outlined-success-selected, green);
+    }
+  }
+
+  &.segment--color-warning {
+    --text-color: var(--color-text-outlined-warning-default, orange);
+    --border-color: var(--color-border-outlined-warning-default, orange);
+    --background-color: var(--color-bg-outlined-warning-default, transparent);
+
+    &:not(:has(.input:disabled)):not(:has(.input:checked)):hover {
+      --text-color: var(--color-text-outlined-warning-hover, orange);
+      --border-color: var(--color-border-outlined-warning-hover, orange);
+      --background-color: var(--color-bg-outlined-warning-hover, moccasin);
+    }
+
+    &:has(.input:checked) {
+      --text-color: var(--color-text-outlined-warning-selected, white);
+      --border-color: var(--color-border-outlined-warning-selected, orange);
+      --background-color: var(--color-bg-outlined-warning-selected, orange);
+    }
+  }
+
+  &.segment--color-danger {
+    --text-color: var(--color-text-outlined-danger-default, red);
+    --border-color: var(--color-border-outlined-danger-default, red);
+    --background-color: var(--color-bg-outlined-danger-default, transparent);
+
+    &:not(:has(.input:disabled)):not(:has(.input:checked)):hover {
+      --text-color: var(--color-text-outlined-danger-hover, red);
+      --border-color: var(--color-border-outlined-danger-hover, red);
+      --background-color: var(--color-bg-outlined-danger-hover, lightpink);
+    }
+
+    &:has(.input:checked) {
+      --text-color: var(--color-text-outlined-danger-selected, white);
+      --border-color: var(--color-border-outlined-danger-selected, red);
+      --background-color: var(--color-bg-outlined-danger-selected, red);
+    }
+  }
+}
+
+.segment--variant-clear {
+  &.segment--color-primary {
+    --text-color: var(--color-text-clear-primary-default, blue);
+    --background-color: var(--color-bg-clear-primary-default, transparent);
+
+    &:not(:has(.input:disabled)):not(:has(.input:checked)):hover {
+      --text-color: var(--color-text-clear-primary-hover, blue);
+      --background-color: var(--color-bg-clear-primary-hover, rgba(0, 0, 0, 0.05));
+    }
+
+    &:has(.input:checked) {
+      --text-color: var(--color-text-clear-primary-selected, blue);
+      --background-color: var(--color-bg-clear-primary-selected, rgba(0, 0, 0, 0.1));
+    }
+  }
+
+  &.segment--color-secondary {
+    --text-color: var(--color-text-clear-secondary-default, black);
+    --background-color: var(--color-bg-clear-secondary-default, transparent);
+
+    &:not(:has(.input:disabled)):not(:has(.input:checked)):hover {
+      --text-color: var(--color-text-clear-secondary-hover, black);
+      --background-color: var(--color-bg-clear-secondary-hover, rgba(0, 0, 0, 0.05));
+    }
+
+    &:has(.input:checked) {
+      --text-color: var(--color-text-clear-secondary-selected, black);
+      --background-color: var(--color-bg-clear-secondary-selected, rgba(0, 0, 0, 0.1));
+    }
+  }
+
+  &.segment--color-accent {
+    --text-color: var(--color-text-clear-accent-default, hotpink);
+    --background-color: var(--color-bg-clear-accent-default, transparent);
+
+    &:not(:has(.input:disabled)):not(:has(.input:checked)):hover {
+      --text-color: var(--color-text-clear-accent-hover, hotpink);
+      --background-color: var(--color-bg-clear-accent-hover, rgba(0, 0, 0, 0.05));
+    }
+
+    &:has(.input:checked) {
+      --text-color: var(--color-text-clear-accent-selected, hotpink);
+      --background-color: var(--color-bg-clear-accent-selected, rgba(0, 0, 0, 0.1));
+    }
+  }
+
+  &.segment--color-success {
+    --text-color: var(--color-text-clear-success-default, green);
+    --background-color: var(--color-bg-clear-success-default, transparent);
+
+    &:not(:has(.input:disabled)):not(:has(.input:checked)):hover {
+      --text-color: var(--color-text-clear-success-hover, green);
+      --background-color: var(--color-bg-clear-success-hover, rgba(0, 0, 0, 0.05));
+    }
+
+    &:has(.input:checked) {
+      --text-color: var(--color-text-clear-success-selected, green);
+      --background-color: var(--color-bg-clear-success-selected, rgba(0, 0, 0, 0.1));
+    }
+  }
+
+  &.segment--color-warning {
+    --text-color: var(--color-text-clear-warning-default, orange);
+    --background-color: var(--color-bg-clear-warning-default, transparent);
+
+    &:not(:has(.input:disabled)):not(:has(.input:checked)):hover {
+      --text-color: var(--color-text-clear-warning-hover, orange);
+      --background-color: var(--color-bg-clear-warning-hover, rgba(0, 0, 0, 0.05));
+    }
+
+    &:has(.input:checked) {
+      --text-color: var(--color-text-clear-warning-selected, orange);
+      --background-color: var(--color-bg-clear-warning-selected, rgba(0, 0, 0, 0.1));
+    }
+  }
+
+  &.segment--color-danger {
+    --text-color: var(--color-text-clear-danger-default, red);
+    --background-color: var(--color-bg-clear-danger-default, transparent);
+
+    &:not(:has(.input:disabled)):not(:has(.input:checked)):hover {
+      --text-color: var(--color-text-clear-danger-hover, red);
+      --background-color: var(--color-bg-clear-danger-hover, rgba(0, 0, 0, 0.05));
+    }
+
+    &:has(.input:checked) {
+      --text-color: var(--color-text-clear-danger-selected, red);
+      --background-color: var(--color-bg-clear-danger-selected, rgba(0, 0, 0, 0.1));
+    }
+  }
+}
+
+.segment--shape {
+  &-default {
+    &.segment--size-s {
+      --border-radius: var(--border-radius-s);
+    }
+
+    &.segment--size-m {
+      --border-radius: var(--border-radius-m);
+    }
+
+    &.segment--size-l {
+      --border-radius: var(--border-radius-l);
+    }
+  }
+
+  &-round {
+    --border-radius: calc(var(--height) / 2);
+  }
+
+  &-brick {
+    --border-radius: 0;
+  }
+}
+
+.segment--size {
+  &-s {
+    --height: var(--height-s, 32px);
+    --horizontal-padding: var(--horizontal-padding-s, 16px);
+    --vertical-padding: var(--vertical-padding-s, 0);
+
+    --font-size: var(--font-size-s, 14px);
+    --line-height: var(--line-height-s, 18px);
+    --font-weight: var(--font-weight-s, 400);
+  }
+
+  &-m {
+    --height: var(--height-m, 32px);
+    --horizontal-padding: var(--horizontal-padding-m, 16px);
+    --vertical-padding: var(--vertical-padding-m, 0);
+
+    --font-size: var(--font-size-m, 14px);
+    --line-height: var(--line-height-m, 18px);
+    --font-weight: var(--font-weight-m, 400);
+  }
+
+  &-l {
+    --height: var(--height-l, 32px);
+    --horizontal-padding: var(--horizontal-padding-l, 16px);
+    --vertical-padding: var(--vertical-padding-l, 0);
+
+    --font-size: var(--font-size-l, 14px);
+    --line-height: var(--line-height-l, 18px);
+    --font-weight: var(--font-weight-l, 400);
+  }
+}

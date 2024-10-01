@@ -6,6 +6,8 @@ export * from './modal';
 export * from './option';
 export * from './overlay';
 export * from './portal';
+export * from './segment';
+export * from './segmented-control';
 export * from './select';
 export * from './switch';
 export * from './tag';
