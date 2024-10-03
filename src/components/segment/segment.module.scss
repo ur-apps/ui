@@ -1,6 +1,7 @@
 .segment {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: auto;
   height: var(--height, 32px);
   padding: var(--vertical-padding, 0) var(--horizontal-padding, 8px);
@@ -372,6 +373,8 @@
     --horizontal-padding: var(--horizontal-padding-s, 16px);
     --vertical-padding: var(--vertical-padding-s, 0);
 
+    --icon-height: var(--icon-height-s, 16px);
+
     --font-size: var(--font-size-s, 14px);
     --line-height: var(--line-height-s, 18px);
     --font-weight: var(--font-weight-s, 400);
@@ -381,6 +384,8 @@
     --height: var(--height-m, 32px);
     --horizontal-padding: var(--horizontal-padding-m, 16px);
     --vertical-padding: var(--vertical-padding-m, 0);
+
+    --icon-height: var(--icon-height-m, 16px);
 
     --font-size: var(--font-size-m, 14px);
     --line-height: var(--line-height-m, 18px);
@@ -392,8 +397,15 @@
     --horizontal-padding: var(--horizontal-padding-l, 16px);
     --vertical-padding: var(--vertical-padding-l, 0);
 
+    --icon-height: var(--icon-height-l, 16px);
+
     --font-size: var(--font-size-l, 14px);
     --line-height: var(--line-height-l, 18px);
     --font-weight: var(--font-weight-l, 400);
   }
+}
+
+.icon {
+  width: auto;
+  height: var(--icon-height, 16px);
 }

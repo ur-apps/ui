@@ -248,6 +248,11 @@ export const segmentStyleTokens: ISegmentStyleTokens = {
     m: 'var(--uu-radius-s)',
     l: 'var(--uu-radius-m)',
   },
+  'icon-height': {
+    s: 'var(--uu-icon-height-s)',
+    m: 'var(--uu-icon-height-m)',
+    l: 'var(--uu-icon-height-l)',
+  },
   'font-size': {
     s: 'var(--uu-font-size-xs)',
     m: 'var(--uu-font-size-s)',

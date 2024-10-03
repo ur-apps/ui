@@ -6,7 +6,8 @@
   align-items: center;
   flex-wrap: nowrap;
   gap: var(--gap, 2px);
-  width: auto;
+  width: max-content;
+  min-width: min-content;
   height: var(--height, 32px);
   padding: var(--vertical-padding, 2px) var(--horizontal-padding, 2px);
   border-width: var(--border-width, 0px);
@@ -149,6 +150,7 @@
 }
 
 .segment {
+  flex: 1;
   max-height: 100%;
 }
 
