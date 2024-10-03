@@ -51,7 +51,11 @@ export interface ISegmentProps
   /**
    * segment label
    */
-  label: string;
+  label?: string;
+  /**
+   * segment icon
+   */
+  icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   /**
    * is segment disabled
    */
@@ -98,6 +102,9 @@ export interface ISegmentStyleTokens {
     [size in TSegmentSize]?: string;
   };
   'border-radius'?: {
+    [size in TSegmentSize]?: string;
+  };
+  'icon-height'?: {
     [size in TSegmentSize]?: string;
   };
   'font-size'?: {

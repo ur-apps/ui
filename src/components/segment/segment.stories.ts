@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { ReactComponent as SunIcon } from 'icons/sun.max.filled.svg';
+
 import { Segment } from './segment';
 
 const meta = {
@@ -16,5 +18,13 @@ export const Default: Story = {
     name: 'language',
     value: 'eng',
     label: 'English',
+  },
+};
+
+export const WithIcon: Story = {
+  args: {
+    type: 'checkbox',
+    value: 'light',
+    icon: SunIcon,
   },
 };
