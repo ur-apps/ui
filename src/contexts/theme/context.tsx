@@ -3,23 +3,25 @@ import React, { useState, createContext, useMemo, useRef, useEffect } from 'reac
 import { classNames, clone, merge, pick } from 'utils';
 import 'styles/index.scss';
 
+import { getBrowserTheme, getThemeFromLS, getVariableStyles, saveThemeToLS } from './helpers';
 import { darkModePreset, preset } from './presets';
-import { getVariableStyles } from './helpers';
-import { CssVariableGroup, TStylePreset } from './types';
+import { CssVariableGroup, Theme, TStylePreset } from './types';
 
 type TThemeContext = {
-  theme: 'light' | 'dark';
+  theme: Theme;
+  switchTheme: (theme?: Theme) => void;
 };
 
 export const ThemeContext = createContext<TThemeContext>({
-  theme: 'light',
+  theme: Theme.Light,
+  switchTheme: () => {},
 });
 
 ThemeContext.displayName = 'ThemeContext';
 
 type TThemeProps = {
   className?: string;
-  defaultTheme?: 'light' | 'dark';
+  defaultTheme?: Theme;
   customePreset?: TStylePreset;
   children: React.ReactNode;
 };
@@ -41,15 +43,17 @@ const COMPONENT_CLASSES = [
 const TOKEN_CLASSES = Object.values(CssVariableGroup).filter((c) => !COMPONENT_CLASSES.includes(c));
 
 export function ThemeProvider({ className, defaultTheme, customePreset = {}, children }: TThemeProps): JSX.Element {
-  const [theme] = useState<'light' | 'dark'>(defaultTheme ?? 'light');
+  const [theme, setTheme] = useState<Theme>(() => getThemeFromLS(defaultTheme));
   const portal = useRef(document.querySelector('#portal'));
 
   const styles = useMemo(() => {
+    const themeValue = theme === Theme.Auto ? getBrowserTheme() : theme;
+
     const {
       primitives = {},
       tokens = {},
       components = {},
-    } = merge(clone(preset), theme === 'dark' ? darkModePreset : customePreset);
+    } = merge(clone(preset), themeValue === Theme.Dark ? darkModePreset : customePreset);
 
     return [
       // Primitives
@@ -95,8 +99,15 @@ export function ThemeProvider({ className, defaultTheme, customePreset = {}, chi
     }
   }, []);
 
+  const switchTheme = (value?: Theme) => {
+    const newValue = value ? value : theme === Theme.Light ? Theme.Dark : Theme.Light;
+
+    saveThemeToLS(newValue);
+    setTheme(newValue);
+  };
+
   return (
-    <ThemeContext.Provider value={{ theme }}>
+    <ThemeContext.Provider value={{ theme, switchTheme }}>
       <style>{styles}</style>
       <div className={classNames(UU_THEME_CLASS_NAME, TOKEN_CLASSES, className)}>{children}</div>
     </ThemeContext.Provider>

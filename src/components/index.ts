@@ -12,3 +12,4 @@ export * from './select';
 export * from './switch';
 export * from './tag';
 export * from './text';
+export * from './theme-control';

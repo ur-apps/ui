@@ -12,6 +12,12 @@ import {
   ITagStyleTokens,
 } from 'components';
 
+export enum Theme {
+  Light = 'light',
+  Dark = 'dark',
+  Auto = 'auto',
+}
+
 export enum CssVariableGroup {
   SystemColors = 'uu-sys-colors',
   SystemSizes = 'uu-sys-sizes',
