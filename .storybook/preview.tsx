@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Preview } from '@storybook/react';
 
+import { ThemeControl } from '../src/components/theme-control';
 import { ThemeProvider } from '../src/contexts/theme';
 import './preview.css';
 
@@ -43,6 +44,7 @@ const preview: Preview = {
         <div className="section section--secondary">
           <Story />
         </div>
+        <ThemeControl className="theme-control" size="s" />
       </ThemeProvider>
     ),
   ],
