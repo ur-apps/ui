@@ -31,7 +31,7 @@
   justify-content: center;
   align-items: center;
   gap: 16px;
-  padding: 32px;
+  padding: 48px 32px 32px;
 }
 
 .section--primary {
@@ -40,4 +40,10 @@
 
 .section--secondary {
   background-color: var(--uu-color-bg-secondary);
+}
+
+.theme-control {
+  position: fixed;
+  top: 8px;
+  left: 8px;
 }
