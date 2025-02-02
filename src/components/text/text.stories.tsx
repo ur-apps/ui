@@ -27,7 +27,6 @@ export const Span: Story = {
     size: 'xs',
     children:
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum distinctio asperiores iusto repellendus et at, nulla maiores amet voluptas nemo fugiat sapiente a delectus suscipit nobis illo nesciunt magni? Facere.',
-    onClick: () => {},
   },
 };
 

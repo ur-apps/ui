@@ -1,4 +1,5 @@
 import { InputHTMLAttributes } from 'react';
+
 import { TClasses } from 'utils';
 
 export type InputVariant = 'filled' | 'outlined' | 'clear';

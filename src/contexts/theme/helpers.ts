@@ -1,9 +1,9 @@
 import { isObject } from 'utils';
 
-import { Theme } from './types';
 import { LOCAL_STORAGE_THEME_KEY } from './constants';
+import { Theme } from './types';
 
-export function formatToCSSVariables(variables: Record<string, any>, prefix = ''): string[] {
+export function formatToCSSVariables(variables: any, prefix = ''): string[] {
   const result: string[] = [];
 
   if (isObject(variables)) {

@@ -5,7 +5,7 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "jsx": "react",
+    "jsx": "react-jsx",
     "allowJs": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
@@ -17,7 +17,8 @@
     "declaration": true,
     "outDir": "./lib",
     "baseUrl": "./src",
-    "paths": {}
+    "paths": {},
+    "types": ["node", "react", "react-dom"]
   },
   "include": ["src"],
   "exclude": ["**/*.test.ts"]

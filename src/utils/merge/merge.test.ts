@@ -69,9 +69,16 @@ describe('merge function', () => {
   });
 
   it('should handle functions correctly', () => {
-    const func = () => {};
+    const func = () => {
+      console.info('this is a function');
+    };
     const obj1 = { a: func, c: func };
-    const obj2 = { b: 2, c: () => {} };
+    const obj2 = {
+      b: 2,
+      c: () => {
+        console.info('this is a function');
+      },
+    };
 
     expect(merge(obj1, obj2)).toEqual({ a: func, b: 2, c: obj2.c });
   });

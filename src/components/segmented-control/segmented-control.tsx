@@ -5,6 +5,7 @@ import { useName } from 'hooks';
 import { classNames } from 'utils';
 
 import { Segment } from '../segment';
+
 import { ISegmentedControlComponent, ISegmentedControlProps, TSegmentedControlValue } from './segmented-control.types';
 import styles from './segmented-control.module.scss';
 

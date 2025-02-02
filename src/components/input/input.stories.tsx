@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ReactComponent as InfoIconOutlined } from 'icons/info.circle.outlined.svg';
 import { ReactComponent as InfoIconFilled } from 'icons/info.circle.filled.svg';
+import { ReactComponent as InfoIconOutlined } from 'icons/info.circle.outlined.svg';
 import { ReactComponent as MagnifyingglassIconOutlined } from 'icons/magnifyingglass.outlined.svg';
 
 import { Input } from './input';

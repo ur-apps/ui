@@ -3,8 +3,8 @@ import React, { forwardRef, useId } from 'react';
 import { CssVariableGroup } from 'contexts';
 import { classNames } from 'utils';
 
-import { Portal } from '../portal';
 import { Option } from '../option';
+import { Portal } from '../portal';
 
 import { IDropdownComponent, IDropdownProps } from './dropdown.types';
 import styles from './dropdown.module.scss';

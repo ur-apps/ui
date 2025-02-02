@@ -113,12 +113,12 @@ export const Select = forwardRef(function Select<M extends boolean = false>(
     dropdownRef.current.style.setProperty('left', dropdownLeft);
   }, [isDropdownOpen]);
 
-  const handleClickOutside = useCallback((event: any) => {
+  const handleClickOutside = useCallback((event: MouseEvent) => {
     if (
       dropdownRef.current &&
-      !dropdownRef.current.contains(event.target) &&
+      !dropdownRef.current.contains(event.target as Node) &&
       inputRef.current &&
-      !inputRef.current.contains(event.target)
+      !inputRef.current.contains(event.target as Node)
     ) {
       setIsDropdownOpen(false);
     }
@@ -144,7 +144,7 @@ export const Select = forwardRef(function Select<M extends boolean = false>(
         document.removeEventListener('click', handleClickOutside, true);
       };
     }
-  }, [isDropdownOpen]);
+  }, [handleClickOutside, isDropdownOpen]);
 
   return (
     <>

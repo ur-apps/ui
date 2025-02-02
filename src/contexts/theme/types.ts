@@ -6,8 +6,8 @@ import {
   IModalStyleTokens,
   IOptionStyleTokens,
   IOverlayStyleTokens,
-  ISegmentStyleTokens,
   ISegmentedControlStyleTokens,
+  ISegmentStyleTokens,
   ISwitchStyleTokens,
   ITagStyleTokens,
 } from 'components';

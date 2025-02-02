@@ -27,18 +27,18 @@ export function getType(value: unknown): TValueType {
   return typeof value;
 }
 
-export function isString(value: any): value is string {
+export function isString(value: unknown): value is string {
   return typeof value === 'string';
 }
 
-export function isArray<T>(value: any): value is Array<T> {
+export function isArray<T>(value: unknown): value is Array<T> {
   return Array.isArray(value);
 }
 
-export function isObject(value: any): value is object {
+export function isObject(value: unknown): value is object {
   return getType(value) === 'object';
 }
 
-export function isAllowedType(value: any, allowed: TValueType[]): boolean {
+export function isAllowedType(value: unknown, allowed: TValueType[]): boolean {
   return allowed.includes(getType(value));
 }

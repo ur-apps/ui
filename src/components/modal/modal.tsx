@@ -54,11 +54,12 @@ export const Modal = forwardRef<HTMLDivElement, IModalProps>(function Modal(
 
   useEffect(() => {
     if (isOpen && closeOnESC && overlayRef.current) {
-      overlayRef.current.addEventListener('keydown', escPressHandler);
-      overlayRef.current.focus();
+      const overlay = overlayRef.current;
+      overlay.addEventListener('keydown', escPressHandler);
+      overlay.focus();
 
       return () => {
-        overlayRef.current?.removeEventListener('keydown', escPressHandler);
+        overlay.removeEventListener('keydown', escPressHandler);
       };
     }
   }, [isOpen, closeOnESC, escPressHandler]);

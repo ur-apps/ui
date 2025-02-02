@@ -55,7 +55,7 @@ export function webpackOverride(config: Configuration) {
     include: path.resolve(__dirname, '../src'),
   });
 
-  // @ts-ignore
+  // @ts-ignore ¯_(ツ)_/¯
   const svgRule = config.module.rules.find((rule) => typeof rule === 'object' && rule!.test?.test?.('.svg'));
 
   if (svgRule && typeof svgRule === 'object') {

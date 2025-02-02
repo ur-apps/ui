@@ -16,7 +16,7 @@ describe('pick function', () => {
   });
 
   it('should return an empty object when picking non-existing keys', () => {
-    // @ts-ignore
+    // @ts-expect-error - Testing non-existing keys
     const picked = pick(obj, ['x', 'y']);
     expect(picked).toEqual({});
   });
@@ -32,7 +32,7 @@ describe('pick function', () => {
   });
 
   it('should return an empty object when picking from an empty object', () => {
-    const emptyObj: Record<string, any> = {};
+    const emptyObj: Record<string, unknown> = {};
     const picked = pick(emptyObj, ['a']);
     expect(picked).toEqual({});
   });

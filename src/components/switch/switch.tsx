@@ -1,9 +1,10 @@
 import React, { useEffect, useMemo, useRef } from 'react';
 
+import { CssVariableGroup } from 'contexts';
+import { classNames } from 'utils';
+
 import { ISwitchProps } from './switch.types';
 import styles from './switch.module.scss';
-import { classNames } from 'utils';
-import { CssVariableGroup } from 'contexts';
 
 export function Switch({
   className,

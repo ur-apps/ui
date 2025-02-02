@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ReactComponent as TextAlignLeftIcon } from 'icons/text.align.left.svg';
 import { ReactComponent as TextAlignLeftCenterIcon } from 'icons/text.align.center.svg';
+import { ReactComponent as TextAlignLeftIcon } from 'icons/text.align.left.svg';
 import { ReactComponent as TextAlignLeftRightIcon } from 'icons/text.align.right.svg';
 import { ReactComponent as TextJustifyStretchIcon } from 'icons/text.justify.stretch.svg';
 
