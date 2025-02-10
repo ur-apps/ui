@@ -49,7 +49,7 @@ export default {
     }),
     nodeResolve(),
     commonjs(),
-    typescript(),
+    typescript({ tsconfig: 'tsconfig.app.json' }),
     postcss({
       extract: 'index.css',
       modules: {
