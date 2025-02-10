@@ -25,10 +25,11 @@ export default {
     dir: OUTPUT_DIR,
     format: 'es',
     preserveModules: true,
-    // sourcemap: true,
+    preserveModulesRoot: 'src',
   },
   plugins: [
     del({ targets: OUTPUT_DIR }),
+    eslint({ throwOnError: true }),
     peerDeps(),
     alias({
       entries: {
@@ -46,7 +47,6 @@ export default {
         utils: path.resolve(__dirname, 'src', 'utils'),
       },
     }),
-    eslint({ throwOnError: true }),
     nodeResolve(),
     commonjs(),
     typescript(),
