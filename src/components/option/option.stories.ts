@@ -5,7 +5,6 @@ import { Option } from './option';
 const meta = {
   title: 'Base/Option',
   component: Option,
-  tags: ['autodocs'],
 } satisfies Meta<typeof Option>;
 
 export default meta;

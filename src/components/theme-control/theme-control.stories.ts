@@ -5,7 +5,6 @@ import { ThemeControl } from './theme-control';
 const meta = {
   title: 'Components/ThemeControl',
   component: ThemeControl,
-  tags: ['autodocs'],
 } satisfies Meta<typeof ThemeControl>;
 
 export default meta;

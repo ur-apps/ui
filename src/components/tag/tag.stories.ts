@@ -11,7 +11,6 @@ const meta = {
   title: 'Components/Tag',
   component: Tag,
   argTypes: {},
-  tags: ['autodocs'],
 } satisfies Meta<typeof Tag>;
 
 export default meta;

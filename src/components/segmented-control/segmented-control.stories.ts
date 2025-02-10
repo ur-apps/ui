@@ -10,7 +10,6 @@ import { SegmentedControl } from './segmented-control';
 const meta = {
   title: 'Form/SegmentedControl',
   component: SegmentedControl,
-  tags: ['autodocs'],
 } satisfies Meta<typeof SegmentedControl>;
 
 export default meta;

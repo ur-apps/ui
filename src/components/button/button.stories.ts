@@ -8,7 +8,6 @@ const meta = {
   argTypes: {
     color: { control: { type: 'radio' } },
   },
-  tags: ['autodocs'],
 } satisfies Meta<typeof Button>;
 
 export default meta;

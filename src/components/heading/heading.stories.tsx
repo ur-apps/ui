@@ -7,7 +7,6 @@ import { Heading } from './heading';
 const meta = {
   title: 'Typography/Heading',
   component: Heading,
-  tags: ['autodocs'],
 } satisfies Meta<typeof Heading>;
 
 type Story = StoryObj<typeof meta>;

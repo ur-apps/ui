@@ -5,7 +5,6 @@ import { Text } from './text';
 const meta = {
   title: 'Typography/Text',
   component: Text,
-  tags: ['autodocs'],
 } satisfies Meta<typeof Text>;
 
 type Story = StoryObj<typeof meta>;

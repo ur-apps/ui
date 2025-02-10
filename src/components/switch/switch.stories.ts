@@ -5,7 +5,6 @@ import { Switch } from './switch';
 const meta = {
   title: 'Form/Switch',
   component: Switch,
-  tags: ['autodocs'],
 } satisfies Meta<typeof Switch>;
 
 export default meta;

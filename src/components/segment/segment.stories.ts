@@ -7,7 +7,6 @@ import { Segment } from './segment';
 const meta = {
   title: 'Base/Segment',
   component: Segment,
-  tags: ['autodocs'],
 } satisfies Meta<typeof Segment>;
 
 export default meta;

@@ -21,6 +21,7 @@ const preview: Preview = {
     //     },
     //   },
   },
+  tags: ['autodocs'],
   // globalTypes: {
   //   theme: {
   //     description: 'Global theme for components',

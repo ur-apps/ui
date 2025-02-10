@@ -7,7 +7,6 @@ import { Dropdown } from './dropdown';
 const meta = {
   title: 'Base/Dropdown',
   component: Dropdown,
-  tags: ['autodocs'],
 } satisfies Meta<typeof Dropdown>;
 
 export default meta;
