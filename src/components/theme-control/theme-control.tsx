@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
 
 import { Theme, useTheme } from 'contexts';
 import { ReactComponent as MoonIcon } from 'icons/moon.filled.svg';

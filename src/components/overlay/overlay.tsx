@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
 
 import { CssVariableGroup } from 'contexts';
 import { classNames } from 'utils';

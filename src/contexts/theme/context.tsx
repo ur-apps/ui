@@ -46,7 +46,7 @@ const COMPONENT_CLASSES = [
 ];
 const TOKEN_CLASSES = Object.values(CssVariableGroup).filter((c) => !COMPONENT_CLASSES.includes(c));
 
-export function ThemeProvider({ className, defaultTheme, customePreset = {}, children }: TThemeProps): JSX.Element {
+export function ThemeProvider({ className, defaultTheme, customePreset = {}, children }: TThemeProps) {
   const [theme, setTheme] = useState<Theme>(() => getThemeFromLS(defaultTheme));
   const portal = useRef(document.querySelector('#portal'));
 
