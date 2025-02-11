@@ -1,29 +1,26 @@
-import React, { forwardRef, useId } from 'react';
-
 import { CssVariableGroup } from 'contexts';
+import { useName } from 'hooks';
 import { classNames } from 'utils';
 
 import { Option } from '../option';
 import { Portal } from '../portal';
 
-import { IDropdownComponent, IDropdownProps } from './dropdown.types';
+import { IDropdownProps } from './dropdown.types';
 import styles from './dropdown.module.scss';
 
-export const Dropdown = forwardRef(function Dropdown<M extends boolean = false>(
-  {
-    className,
-    variant = 'filled',
-    shape = 'default',
-    size = 'm',
-    isOpen,
-    value,
-    multiple,
-    options,
-    onChange,
-    ...props
-  }: IDropdownProps<M>,
-  ref: React.ForwardedRef<HTMLDivElement>
-) {
+export function Dropdown<M extends boolean = false>({
+  className,
+  variant = 'filled',
+  shape = 'default',
+  size = 'm',
+  isOpen,
+  value,
+  multiple,
+  options,
+  onChange,
+  ...props
+}: IDropdownProps<M>) {
+  const name = useName(props.name);
   const classes = classNames(
     CssVariableGroup.DropdownTokens,
     styles.dropdown,
@@ -32,11 +29,10 @@ export const Dropdown = forwardRef(function Dropdown<M extends boolean = false>(
     styles[`dropdown--size-${size}`],
     className
   );
-  const name = useId();
 
   return isOpen ? (
     <Portal>
-      <div className={classes} {...props} ref={ref}>
+      <div className={classes} {...props}>
         {options.map((option) => (
           <Option
             className={styles.option}
@@ -44,7 +40,7 @@ export const Dropdown = forwardRef(function Dropdown<M extends boolean = false>(
             variant={variant}
             shape={shape}
             type={multiple ? 'checkbox' : 'radio'}
-            name={props.name || name}
+            name={name}
             checked={
               value
                 ? multiple && Array.isArray(value)
@@ -60,4 +56,4 @@ export const Dropdown = forwardRef(function Dropdown<M extends boolean = false>(
       </div>
     </Portal>
   ) : null;
-}) as IDropdownComponent;
+}

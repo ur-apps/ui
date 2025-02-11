@@ -57,8 +57,6 @@ export interface IDropdownProps<M extends boolean = false>
   ref?: React.ForwardedRef<HTMLDivElement>;
 }
 
-export type IDropdownComponent = <M extends boolean = false>(props: IDropdownProps<M>) => React.ReactElement;
-
 export interface IDropdownStyleTokens {
   color?: {
     bg?: {
