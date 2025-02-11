@@ -8,38 +8,17 @@ import './preview.css';
 
 const preview: Preview = {
   parameters: {
+    actions: { argTypesRegex: '^on.*' },
+    backgrounds: {
+      disable: true,
+      grid: { disable: true },
+    },
     layout: 'fullscreen',
-    //   actions: { argTypesRegex: '^on.*' },
-    //   backgrounds: {
-    //     disable: true,
-    //     grid: { disable: true },
-    //   },
-    //   controls: {
-    //     matchers: {
-    //       color: /(background|color)$/i,
-    //       date: /Date$/,
-    //     },
-    //   },
   },
   tags: ['autodocs'],
-  // globalTypes: {
-  //   theme: {
-  //     description: 'Global theme for components',
-  //     defaultValue: 'auto',
-  //     toolbar: {
-  //       title: 'Theme',
-  //       items: [
-  //         { value: 'light', icon: 'sun', title: 'Light' },
-  //         { value: 'dark', icon: 'moon', title: 'Dark' },
-  //         { value: 'auto', title: 'Auto' },
-  //       ],
-  //       dynamicTitle: true,
-  //     },
-  //   },
-  // },
   decorators: [
-    (Story, context) => (
-      <ThemeProvider className="container" defaultTheme={context.globals.theme} key={context.globals.theme}>
+    (Story) => (
+      <ThemeProvider className="container">
         <div className="section section--primary">
           <Story />
         </div>
