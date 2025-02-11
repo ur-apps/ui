@@ -43,7 +43,8 @@
     }
   },
   "pre-commit": [
-    "lint:fix"
+    "lint",
+    "test"
   ],
   "keywords": [
     "ui-kit",
@@ -94,6 +95,7 @@
     "sass": "^1.84.0",
     "sass-embedded": "^1.83.4",
     "storybook": "^8.5.3",
+    "ts-jest": "^29.2.5",
     "tsc-alias": "^1.8.10",
     "typescript": "^5.7.3",
     "url-loader": "^4.1.1",
