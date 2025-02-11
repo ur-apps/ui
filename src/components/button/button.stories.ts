@@ -2,13 +2,22 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from './button';
 
-const meta = {
+const meta: Meta<typeof Button> = {
   title: 'Form/Button',
   component: Button,
   argTypes: {
     color: { control: { type: 'radio' } },
   },
-} satisfies Meta<typeof Button>;
+  args: {
+    variant: 'filled',
+    color: 'primary',
+    shape: 'default',
+    size: 'm',
+    disabled: false,
+    className: 'custom-class',
+    children: 'Submit',
+  },
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -16,27 +25,25 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     color: 'primary',
-    children: 'Submit',
   },
 };
 
 export const Secondary: Story = {
   args: {
     color: 'secondary',
-    children: 'Submit',
   },
 };
 
 export const Large: Story = {
   args: {
+    color: 'danger',
     size: 'l',
-    children: 'Submit',
   },
 };
 
 export const Small: Story = {
   args: {
+    color: 'success',
     size: 's',
-    children: 'Submit',
   },
 };
