@@ -1,17 +1,24 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ReactComponent as TextAlignLeftIcon } from 'icons/text.align.left.svg';
 import { ReactComponent as TextAlignLeftCenterIcon } from 'icons/text.align.center.svg';
+import { ReactComponent as TextAlignLeftIcon } from 'icons/text.align.left.svg';
 import { ReactComponent as TextAlignLeftRightIcon } from 'icons/text.align.right.svg';
 import { ReactComponent as TextJustifyStretchIcon } from 'icons/text.justify.stretch.svg';
 
 import { SegmentedControl } from './segmented-control';
 
-const meta = {
+const meta: Meta<typeof SegmentedControl> = {
   title: 'Form/SegmentedControl',
   component: SegmentedControl,
-  tags: ['autodocs'],
-} satisfies Meta<typeof SegmentedControl>;
+  argTypes: {
+    color: {
+      control: 'radio',
+    },
+    multiple: {
+      control: 'boolean',
+    },
+  },
+};
 
 export default meta;
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { CssVariableGroup } from 'contexts';
 import { classNames } from 'utils';

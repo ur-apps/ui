@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Input } from 'components/input';
 import { Button } from 'components/button';
+import { Input } from 'components/input';
 import { Select } from 'components/select';
 import { Text } from 'components/text';
 import { FAKE_COUNTRY_LIST } from 'data/fake';
 
 import { Modal } from './modal';
 
-const meta = {
+const meta: Meta<typeof Modal> = {
   title: 'Components/Modal',
   component: Modal,
-  tags: ['autodocs'],
-} satisfies Meta<typeof Modal>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -26,7 +25,7 @@ export const SmallForm: Story = {
     withOverlay: false,
     closeOnESC: true,
     closeOnOverlay: true,
-    onClose: () => console.log('called on close callback'),
+    onClose: () => console.info('called on close callback'),
     children: <ExampleForm size="s" />,
   },
 };
@@ -39,7 +38,7 @@ export const SmallInfo: Story = {
     withOverlay: true,
     closeOnESC: true,
     closeOnOverlay: true,
-    onClose: () => console.log('called on close callback'),
+    onClose: () => console.info('called on close callback'),
     children: <ExampleInfo size="s" />,
   },
 };
@@ -52,7 +51,7 @@ export const MediumForm: Story = {
     withOverlay: true,
     closeOnESC: true,
     closeOnOverlay: true,
-    onClose: () => console.log('called on close callback'),
+    onClose: () => console.info('called on close callback'),
     children: <ExampleForm size="m" />,
   },
 };
@@ -65,7 +64,7 @@ export const MediumInfo: Story = {
     withOverlay: false,
     closeOnESC: true,
     closeOnOverlay: true,
-    onClose: () => console.log('called on close callback'),
+    onClose: () => console.info('called on close callback'),
     children: <ExampleInfo size="m" />,
   },
 };
@@ -78,7 +77,7 @@ export const LargeForm: Story = {
     withOverlay: false,
     closeOnESC: true,
     closeOnOverlay: true,
-    onClose: () => console.log('called on close callback'),
+    onClose: () => console.info('called on close callback'),
     children: <ExampleForm size="l" />,
   },
 };
@@ -91,7 +90,7 @@ export const LargeInfo: Story = {
     withOverlay: true,
     closeOnESC: true,
     closeOnOverlay: true,
-    onClose: () => console.log('called on close callback'),
+    onClose: () => console.info('called on close callback'),
     children: <ExampleInfo size="l" />,
   },
 };
@@ -117,8 +116,7 @@ function ExampleForm({ size }: { size?: 's' | 'm' | 'l' }) {
   const onSubmit = (evt: React.FormEvent) => {
     evt.preventDefault();
 
-    // eslint-disable-next-line no-alert
-    console.log(JSON.stringify(values, undefined, 2));
+    console.info(JSON.stringify(values, undefined, 2));
   };
 
   return (

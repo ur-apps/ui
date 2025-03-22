@@ -7,7 +7,18 @@ import { Segment } from './segment';
 const meta = {
   title: 'Base/Segment',
   component: Segment,
-  tags: ['autodocs'],
+  args: {
+    variant: 'filled',
+    color: 'primary',
+    shape: 'default',
+    size: 'm',
+    type: 'radio',
+    label: 'Label',
+    value: 'value',
+  },
+  argTypes: {
+    color: { control: 'radio' },
+  },
 } satisfies Meta<typeof Segment>;
 
 export default meta;

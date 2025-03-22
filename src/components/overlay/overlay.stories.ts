@@ -2,11 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Overlay } from './overlay';
 
-const meta = {
+const meta: Meta<typeof Overlay> = {
   title: 'Base/Overlay',
   component: Overlay,
-  tags: ['autodocs'],
-} satisfies Meta<typeof Overlay>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

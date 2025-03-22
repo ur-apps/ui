@@ -1,15 +1,13 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Text } from 'components/text';
 
 import { Heading } from './heading';
 
-const meta = {
+const meta: Meta<typeof Heading> = {
   title: 'Typography/Heading',
   component: Heading,
-  tags: ['autodocs'],
-} satisfies Meta<typeof Heading>;
+};
 
 type Story = StoryObj<typeof meta>;
 

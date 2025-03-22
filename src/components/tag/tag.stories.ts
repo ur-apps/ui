@@ -7,12 +7,15 @@ import { ReactComponent as TrashOutlinedIcon } from 'icons/trash.outlined.svg';
 
 import { Tag } from './tag';
 
-const meta = {
+const meta: Meta<typeof Tag> = {
   title: 'Components/Tag',
   component: Tag,
-  argTypes: {},
-  tags: ['autodocs'],
-} satisfies Meta<typeof Tag>;
+  argTypes: {
+    color: {
+      control: 'radio',
+    },
+  },
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -41,13 +44,13 @@ export const FilledWithButtons: Story = {
         icon: PencilIcon,
         title: 'edit',
         position: 'after',
-        onClick: console.log,
+        onClick: console.info,
       },
       {
         icon: TrashFilledIcon,
         title: 'delete',
         position: 'after',
-        onClick: console.log,
+        onClick: console.info,
       },
     ],
   },
@@ -63,7 +66,7 @@ export const OutlinedWithButtons: Story = {
       {
         icon: TrashOutlinedIcon,
         position: 'after',
-        onClick: console.log,
+        onClick: console.info,
       },
     ],
   },

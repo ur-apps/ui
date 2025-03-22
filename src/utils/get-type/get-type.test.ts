@@ -42,6 +42,10 @@ describe('getType function', () => {
   });
 
   it('should identify functions', () => {
-    expect(getType(() => {})).toBe('function');
+    expect(
+      getType(() => {
+        console.info('this is a function');
+      })
+    ).toBe('function');
   });
 });

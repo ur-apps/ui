@@ -54,7 +54,7 @@ describe('clone function', () => {
     const originalObject = {
       key: 'value',
       func: function () {
-        console.log('Original function');
+        console.info('Original function');
       },
     };
 
@@ -68,7 +68,7 @@ describe('clone function', () => {
 
   it('should handle cloning of objects with circular references', () => {
     // Arrange
-    const circularObject: any = { prop: 'value' };
+    const circularObject: Record<string, unknown> = { prop: 'value' };
     circularObject.circularReference = circularObject;
 
     // Act

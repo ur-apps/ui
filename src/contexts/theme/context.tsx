@@ -1,6 +1,7 @@
-import React, { useState, createContext, useMemo, useRef, useEffect } from 'react';
+import React, { createContext, useEffect, useMemo, useRef, useState } from 'react';
 
 import { classNames, clone, merge, pick } from 'utils';
+
 import 'styles/index.scss';
 
 import { getBrowserTheme, getThemeFromLS, getVariableStyles, saveThemeToLS } from './helpers';
@@ -12,9 +13,12 @@ type TThemeContext = {
   switchTheme: (theme?: Theme) => void;
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const ThemeContext = createContext<TThemeContext>({
   theme: Theme.Light,
-  switchTheme: () => {},
+  switchTheme: () => {
+    console.warn('Theme switcher is not provided');
+  },
 });
 
 ThemeContext.displayName = 'ThemeContext';
@@ -42,7 +46,7 @@ const COMPONENT_CLASSES = [
 ];
 const TOKEN_CLASSES = Object.values(CssVariableGroup).filter((c) => !COMPONENT_CLASSES.includes(c));
 
-export function ThemeProvider({ className, defaultTheme, customePreset = {}, children }: TThemeProps): JSX.Element {
+export function ThemeProvider({ className, defaultTheme, customePreset = {}, children }: TThemeProps) {
   const [theme, setTheme] = useState<Theme>(() => getThemeFromLS(defaultTheme));
   const portal = useRef(document.querySelector('#portal'));
 
@@ -89,7 +93,7 @@ export function ThemeProvider({ className, defaultTheme, customePreset = {}, chi
       getVariableStyles(components.switch ?? {}, CssVariableGroup.SwitchTokens),
       getVariableStyles(components.tag ?? {}, CssVariableGroup.TagTokens),
     ];
-  }, [theme, preset]);
+  }, [theme, customePreset]);
 
   useEffect(() => {
     if (portal.current) {

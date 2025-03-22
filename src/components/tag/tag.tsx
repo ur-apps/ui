@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 
 import { CssVariableGroup } from 'contexts';
 import { classNames } from 'utils';
@@ -6,20 +6,18 @@ import { classNames } from 'utils';
 import { ITagButtonProps, ITagProps } from './tag.types';
 import styles from './tag.module.scss';
 
-export const Tag = forwardRef<HTMLDivElement, ITagProps>(function Tag(
-  {
-    className,
-    variant = 'filled',
-    color = 'primary',
-    shape = 'default',
-    size = 'm',
-    label,
-    buttons = [],
-    children,
-    ...props
-  },
-  ref
-) {
+export function Tag({
+  className,
+  variant = 'filled',
+  color = 'primary',
+  shape = 'default',
+  size = 'm',
+  label,
+  buttons = [],
+  children,
+  ref,
+  ...props
+}: ITagProps) {
   const classes = classNames(
     CssVariableGroup.TagTokens,
     styles.tag,
@@ -65,7 +63,7 @@ export const Tag = forwardRef<HTMLDivElement, ITagProps>(function Tag(
       ))}
     </div>
   );
-});
+}
 
 export function TagButton({ className, icon, position = 'after', ...props }: ITagButtonProps) {
   return (

@@ -1,4 +1,5 @@
 import { HTMLAttributes } from 'react';
+
 import { TClasses } from 'utils';
 
 export type THeadingColor = 'primary' | 'secondary' | 'contrast' | 'link' | 'link-visited';

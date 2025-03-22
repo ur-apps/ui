@@ -1,4 +1,5 @@
 import { ButtonHTMLAttributes } from 'react';
+
 import { TClasses } from 'utils';
 
 export type ButtonVariant = 'filled' | 'outlined' | 'ghost' | 'clear';
@@ -9,35 +10,35 @@ export type ButtonState = 'default' | 'hover' | 'active';
 
 export interface IButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className'> {
   /**
-   * @description additinal css class name
+   * additinal css class name
    */
   className?: string | TClasses;
   /**
-   * @description button variant
+   * button variant
    * @default "filled"
    */
   variant?: ButtonVariant;
   /**
-   * @description button color scheme
+   * button color scheme
    * @default "primary"
    * */
   color?: ButtonColor;
   /**
-   * @description button corner shape
+   * button corner shape
    * @default "default"
    */
   shape?: ButtonShape;
   /**
-   * @description button size
+   * button size
    * @default "m"
    */
   size?: ButtonSize;
   /**
-   * @description button label
+   * button label
    * */
   label?: string;
   /**
-   * @description is button disabled
+   * is button disabled
    */
   disabled?: boolean;
 }

@@ -1,24 +1,4 @@
 {
-  /* Visit https://aka.ms/tsconfig to read more about this file */
-  "compilerOptions": {
-    "target": "ES2020",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "jsx": "react",
-    "allowJs": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "sourceMap": false,
-    "declaration": true,
-    "outDir": "./lib",
-    "baseUrl": "./src",
-    "paths": {}
-  },
-  "include": ["src"],
-  "exclude": ["**/*.test.ts"]
+  "files": [],
+  "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }]
 }

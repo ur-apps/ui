@@ -1,4 +1,4 @@
-import { InputHTMLAttributes } from 'react';
+import { InputHTMLAttributes, Ref } from 'react';
 
 import { TClasses } from 'utils';
 
@@ -50,6 +50,10 @@ export interface IOptionProps
    * is option disabled
    */
   disabled?: boolean;
+  /**
+   * option ref
+   */
+  ref?: Ref<HTMLLabelElement>;
 }
 
 export interface IOptionStyleTokens {

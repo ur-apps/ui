@@ -1,27 +1,29 @@
 import { HTMLAttributes } from 'react';
+
 import { TClasses } from 'utils';
 
 export type TextColor = 'primary' | 'secondary' | 'contrast' | 'link' | 'link-visited';
 export type TextSize = 'xs' | 's' | 'm' | 'l' | 'xl';
+export type TextTag = 'p' | 'span';
 
-export interface ITextProps<T extends 'p' | 'span'>
+export interface ITextProps<T extends TextTag>
   extends Omit<HTMLAttributes<T extends 'span' ? HTMLSpanElement : HTMLParagraphElement>, 'className' | 'color'> {
   /**
-   * @description additinal css class name
+   * additinal css class name
    */
   className?: string | TClasses;
   /**
-   * @description text color scheme
+   * text color scheme
    * @default "primary"
    * */
   color?: TextColor;
   /**
-   * @description text size
+   * text size
    * @default "m"
    */
   size?: TextSize;
   /**
-   * @description tag to use
+   * tag to use
    * @default "p"
    */
   tag?: T;
