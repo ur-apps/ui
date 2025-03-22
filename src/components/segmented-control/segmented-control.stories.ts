@@ -7,10 +7,18 @@ import { ReactComponent as TextJustifyStretchIcon } from 'icons/text.justify.str
 
 import { SegmentedControl } from './segmented-control';
 
-const meta = {
+const meta: Meta<typeof SegmentedControl> = {
   title: 'Form/SegmentedControl',
   component: SegmentedControl,
-} satisfies Meta<typeof SegmentedControl>;
+  argTypes: {
+    color: {
+      control: 'radio',
+    },
+    multiple: {
+      control: 'boolean',
+    },
+  },
+};
 
 export default meta;
 

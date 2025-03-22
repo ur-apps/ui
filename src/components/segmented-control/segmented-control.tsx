@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef } from 'react';
+import React, { useRef } from 'react';
 
 import { CssVariableGroup } from 'contexts';
 import { useName } from 'hooks';
@@ -6,25 +6,23 @@ import { classNames } from 'utils';
 
 import { Segment } from '../segment';
 
-import { ISegmentedControlComponent, ISegmentedControlProps, TSegmentedControlValue } from './segmented-control.types';
+import { ISegmentedControlProps, TSegmentedControlValue } from './segmented-control.types';
 import styles from './segmented-control.module.scss';
 
-export const SegmentedControl = forwardRef(function SegmentedControl<M extends boolean = false>(
-  {
-    className,
-    variant = 'filled',
-    color = 'primary',
-    shape = 'default',
-    size = 'm',
-    value,
-    multiple,
-    options,
-    disabled,
-    onChange,
-    ...props
-  }: ISegmentedControlProps<M>,
-  ref: React.ForwardedRef<HTMLDivElement>
-) {
+export function SegmentedControl<M extends boolean = false>({
+  className,
+  variant = 'filled',
+  color = 'primary',
+  shape = 'default',
+  size = 'm',
+  value,
+  multiple,
+  options,
+  disabled,
+  onChange,
+  ref,
+  ...props
+}: ISegmentedControlProps<M>) {
   const classes = classNames(
     CssVariableGroup.SegmentedControlTokens,
     styles.control,
@@ -86,4 +84,4 @@ export const SegmentedControl = forwardRef(function SegmentedControl<M extends b
       ))}
     </div>
   );
-}) as ISegmentedControlComponent;
+}

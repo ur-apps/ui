@@ -1,4 +1,4 @@
-import { ChangeEvent, HTMLAttributes } from 'react';
+import { ChangeEvent, HTMLAttributes, Ref } from 'react';
 
 import { TClasses } from 'utils';
 
@@ -66,7 +66,7 @@ export interface ISegmentedControlProps<M extends boolean = false>
   /**
    * The ref for the segmented control.
    */
-  ref?: React.ForwardedRef<HTMLDivElement>;
+  ref?: Ref<HTMLDivElement>;
 }
 
 export interface ISegmentedControlStyleTokens {
@@ -93,7 +93,3 @@ export interface ISegmentedControlStyleTokens {
     [size in TSegmentedControlSize]?: string;
   };
 }
-
-export type ISegmentedControlComponent = <M extends boolean = false>(
-  props: ISegmentedControlProps<M>
-) => React.ReactElement;
