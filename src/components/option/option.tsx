@@ -1,15 +1,19 @@
-import { forwardRef } from 'react';
-
 import { CssVariableGroup } from 'contexts';
 import { classNames } from 'utils';
 
 import { IOptionProps } from './option.types';
 import styles from './option.module.scss';
 
-export const Option = forwardRef<HTMLLabelElement, IOptionProps>(function Option(
-  { className, variant = 'filled', shape = 'default', size = 'm', type = 'radio', label, ...props },
-  ref
-) {
+export function Option({
+  className,
+  variant = 'filled',
+  shape = 'default',
+  size = 'm',
+  type = 'radio',
+  label,
+  ref,
+  ...props
+}: IOptionProps) {
   const classes = classNames(
     CssVariableGroup.OptionTokens,
     styles.option,
@@ -25,4 +29,4 @@ export const Option = forwardRef<HTMLLabelElement, IOptionProps>(function Option
       {label}
     </label>
   );
-});
+}

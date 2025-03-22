@@ -2,10 +2,18 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Option } from './option';
 
-const meta = {
+const meta: Meta<typeof Option> = {
   title: 'Base/Option',
   component: Option,
-} satisfies Meta<typeof Option>;
+  args: {
+    variant: 'filled',
+    shape: 'default',
+    size: 'm',
+    type: 'radio',
+    label: 'Option',
+    disabled: false,
+  },
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
