@@ -2,10 +2,16 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Text } from './text';
 
-const meta = {
+const meta: Meta<typeof Text> = {
   title: 'Typography/Text',
   component: Text,
-} satisfies Meta<typeof Text>;
+  argTypes: {
+    tag: {
+      control: 'radio',
+      options: ['p', 'span'],
+    },
+  },
+};
 
 type Story = StoryObj<typeof meta>;
 
