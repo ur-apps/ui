@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, forwardRef, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { ChangeEventHandler, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { ReactComponent as ChevronUpDownIcon } from 'icons/chevron.up.down.svg';
 
@@ -6,25 +6,23 @@ import { Dropdown } from '../dropdown';
 import { Input } from '../input';
 import { IOptionProps } from '../option';
 
-import { ISelectComponent, ISelectProps, TSelectValue } from './select.types';
+import { ISelectProps, TSelectValue } from './select.types';
 import styles from './select.module.scss';
 
-export const Select = forwardRef(function Select<M extends boolean = false>(
-  {
-    className,
-    variant = 'filled',
-    dropdownVariant,
-    shape = 'default',
-    size = 'm',
-    name,
-    options,
-    multiple,
-    value,
-    onChange,
-    ...props
-  }: ISelectProps<M>,
-  ref: React.ForwardedRef<HTMLInputElement>
-) {
+export function Select<M extends boolean = false>({
+  className,
+  variant = 'filled',
+  dropdownVariant,
+  shape = 'default',
+  size = 'm',
+  name,
+  options,
+  multiple,
+  value,
+  onChange,
+  ref,
+  ...props
+}: ISelectProps<M>) {
   const inputRef = useRef<HTMLLabelElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -176,4 +174,4 @@ export const Select = forwardRef(function Select<M extends boolean = false>(
       />
     </>
   );
-}) as ISelectComponent;
+}

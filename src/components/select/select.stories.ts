@@ -4,10 +4,15 @@ import { FAKE_COUNTRY_LIST } from 'data/fake';
 
 import { Select } from './select';
 
-const meta = {
+const meta: Meta<typeof Select> = {
   title: 'Form/Select',
   component: Select,
-} satisfies Meta<typeof Select>;
+  argTypes: {
+    multiple: {
+      control: 'boolean',
+    },
+  },
+};
 
 export default meta;
 
