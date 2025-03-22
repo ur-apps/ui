@@ -2,10 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ThemeControl } from './theme-control';
 
-const meta = {
+const meta: Meta<typeof ThemeControl> = {
   title: 'Components/ThemeControl',
   component: ThemeControl,
-} satisfies Meta<typeof ThemeControl>;
+};
 
 export default meta;
 
