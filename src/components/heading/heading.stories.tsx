@@ -4,10 +4,10 @@ import { Text } from 'components/text';
 
 import { Heading } from './heading';
 
-const meta = {
+const meta: Meta<typeof Heading> = {
   title: 'Typography/Heading',
   component: Heading,
-} satisfies Meta<typeof Heading>;
+};
 
 type Story = StoryObj<typeof meta>;
 
