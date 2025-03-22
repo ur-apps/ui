@@ -9,10 +9,10 @@ import { FAKE_COUNTRY_LIST } from 'data/fake';
 
 import { Modal } from './modal';
 
-const meta = {
+const meta: Meta<typeof Modal> = {
   title: 'Components/Modal',
   component: Modal,
-} satisfies Meta<typeof Modal>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

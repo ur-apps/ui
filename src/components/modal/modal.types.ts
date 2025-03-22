@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, Ref } from 'react';
 
 import { TClasses } from 'utils';
 
@@ -45,6 +45,10 @@ export interface IModalProps extends Omit<HTMLAttributes<HTMLDivElement>, 'class
    * @default true
    */
   onClose?: () => void;
+  /**
+   * reference to the modal element
+   */
+  ref?: Ref<HTMLDivElement>;
 }
 
 export interface IModalStyleTokens {

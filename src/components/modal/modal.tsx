@@ -1,4 +1,4 @@
-import React, { forwardRef, useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 
 import { KeyCode } from 'constants/';
 import { CssVariableGroup } from 'contexts';
@@ -10,20 +10,18 @@ import { Portal } from '../portal';
 import { IModalProps } from './modal.types';
 import styles from './modal.module.scss';
 
-export const Modal = forwardRef<HTMLDivElement, IModalProps>(function Modal(
-  {
-    className,
-    shape,
-    size,
-    withOverlay = true,
-    isOpen = true,
-    closeOnOverlay = true,
-    closeOnESC = true,
-    onClose,
-    ...props
-  },
-  ref
-) {
+export function Modal({
+  className,
+  shape,
+  size,
+  withOverlay = true,
+  isOpen = true,
+  closeOnOverlay = true,
+  closeOnESC = true,
+  onClose,
+  ref,
+  ...props
+}: IModalProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
   const classes = classNames(
     CssVariableGroup.ModalTokens,
@@ -75,4 +73,4 @@ export const Modal = forwardRef<HTMLDivElement, IModalProps>(function Modal(
       </Overlay>
     </Portal>
   ) : null;
-});
+}
