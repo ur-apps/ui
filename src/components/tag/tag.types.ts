@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, HTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, HTMLAttributes, Ref } from 'react';
 
 import { TClasses } from 'utils';
 
@@ -40,6 +40,10 @@ export interface ITagProps extends Omit<HTMLAttributes<HTMLDivElement>, 'classNa
    * buttons inside a tag
    */
   buttons?: ITagButtonProps[];
+  /**
+   * reference to tag element
+   */
+  ref?: Ref<HTMLDivElement>;
 }
 
 export interface ITagButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className'> {
