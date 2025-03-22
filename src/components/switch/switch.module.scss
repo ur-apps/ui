@@ -111,7 +111,7 @@
       --background-color: var(--color-bg-primary-checked, blue);
       --text-color: var(--color-text-primary-checked);
       --thumb-color: var(--color-thumb-primary-checked);
-      --loader-color: var(--color-loader-primary-checked), blue;
+      --loader-color: var(--color-loader-primary-checked, blue);
     }
   }
 
