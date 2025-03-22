@@ -1,4 +1,4 @@
-import { forwardRef, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { CssVariableGroup } from 'contexts';
 import { classNames } from 'utils';
@@ -6,20 +6,18 @@ import { classNames } from 'utils';
 import { ISegmentProps } from './segment.types';
 import styles from './segment.module.scss';
 
-export const Segment = forwardRef<HTMLLabelElement, ISegmentProps>(function Segment(
-  {
-    className,
-    variant = 'filled',
-    color = 'primary',
-    shape = 'default',
-    size = 'm',
-    type = 'radio',
-    label,
-    icon: Icon,
-    ...props
-  },
-  ref
-) {
+export function Segment({
+  className,
+  variant = 'filled',
+  color = 'primary',
+  shape = 'default',
+  size = 'm',
+  type = 'radio',
+  label,
+  icon: Icon,
+  ref,
+  ...props
+}: ISegmentProps) {
   const classes = classNames(
     CssVariableGroup.SegmentTokens,
     styles.segment,
@@ -43,4 +41,4 @@ export const Segment = forwardRef<HTMLLabelElement, ISegmentProps>(function Segm
       {label}
     </label>
   );
-});
+}

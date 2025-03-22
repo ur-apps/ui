@@ -1,4 +1,4 @@
-import { InputHTMLAttributes } from 'react';
+import { InputHTMLAttributes, Ref } from 'react';
 
 import { TClasses } from 'utils';
 
@@ -60,6 +60,10 @@ export interface ISegmentProps
    * is segment disabled
    */
   disabled?: boolean;
+  /**
+   * segment ref
+   */
+  ref?: Ref<HTMLLabelElement>;
 }
 
 export interface ISegmentStyleTokens {
