@@ -6,10 +6,10 @@ import { ReactComponent as MagnifyingglassIconOutlined } from 'icons/magnifyingg
 
 import { Input } from './input';
 
-const meta = {
+const meta: Meta<typeof Input> = {
   title: 'Form/Input',
   component: Input,
-} satisfies Meta<typeof Input>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

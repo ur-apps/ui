@@ -1,4 +1,4 @@
-import { InputHTMLAttributes } from 'react';
+import { InputHTMLAttributes, Ref } from 'react';
 
 import { TClasses } from 'utils';
 
@@ -66,9 +66,13 @@ export interface IInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>,
    */
   iconRight?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   /**
+   * reference to the input
+   */
+  ref?: Ref<HTMLInputElement>;
+  /**
    * reference to the input wrapper
    */
-  wrapperRef?: React.LegacyRef<HTMLLabelElement>;
+  wrapperRef?: Ref<HTMLLabelElement>;
 }
 
 export interface IInputStyleTokens {

@@ -1,26 +1,22 @@
-import { forwardRef } from 'react';
-
 import { CssVariableGroup } from 'contexts';
 import { classNames } from 'utils';
 
 import { IInputProps } from './input.types';
 import styles from './input.module.scss';
 
-export const Input = forwardRef<HTMLInputElement, IInputProps>(function Input(
-  {
-    className,
-    variant = 'filled',
-    shape = 'default',
-    size = 'm',
-    prefix,
-    postfix,
-    iconLeft: IconLeft,
-    iconRight: IconRight,
-    wrapperRef,
-    ...props
-  },
-  ref
-) {
+export function Input({
+  className,
+  variant = 'filled',
+  shape = 'default',
+  size = 'm',
+  prefix,
+  postfix,
+  iconLeft: IconLeft,
+  iconRight: IconRight,
+  ref,
+  wrapperRef,
+  ...props
+}: IInputProps) {
   const wrapperClasses = classNames(
     CssVariableGroup.InputTokens,
     styles.wrapper,
@@ -47,4 +43,4 @@ export const Input = forwardRef<HTMLInputElement, IInputProps>(function Input(
       {!postfix && IconRight && <IconRight className={rightIconClasses} />}
     </label>
   );
-});
+}
