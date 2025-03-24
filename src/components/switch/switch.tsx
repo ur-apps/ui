@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef } from 'react';
+import { classNames } from '@ur-apps/common-fe';
 
 import { CssVariableGroup } from 'contexts';
-import { classNames } from 'utils';
 
 import { ISwitchProps } from './switch.types';
 import styles from './switch.module.scss';

@@ -1,5 +1,6 @@
+import { classNames } from '@ur-apps/common-fe';
+
 import { CssVariableGroup } from 'contexts';
-import { classNames } from 'utils';
 
 import { IInputProps } from './input.types';
 import styles from './input.module.scss';

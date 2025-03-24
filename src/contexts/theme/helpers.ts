@@ -1,4 +1,4 @@
-import { isObject } from 'utils';
+import { isObject } from '@ur-apps/common';
 
 import { LOCAL_STORAGE_THEME_KEY } from './constants';
 import { Theme } from './types';

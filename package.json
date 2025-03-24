@@ -10,7 +10,7 @@
     "build:lib": "rollup -c && tsc-alias -p tsconfig.app.json",
     "build:pack": "npm run build:lib && npm pack",
     "build:storybook": "storybook build",
-    "test": "jest",
+    "test": "NODE_OPTIONS=\"--experimental-vm-modules\" jest",
     "lint": "eslint .",
     "lint:fix": "eslint ./src --fix",
     "format": "prettier --check .",
@@ -78,7 +78,6 @@
     "@types/jest": "^29.5.14",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
-    "@ur-apps/common-fe": "^0.0.4",
     "@vitejs/plugin-react-swc": "^3.8.0",
     "eslint": "^9.20.0",
     "eslint-plugin-storybook": "^0.11.3",
@@ -96,6 +95,7 @@
     "sass-embedded": "^1.85.0",
     "storybook": "^8.5.6",
     "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
     "tsc-alias": "^1.8.10",
     "typescript": "^5.7.3",
     "url-loader": "^4.1.1",
@@ -104,6 +104,8 @@
   "peerDependencies": {
     "@types/react": "19.x",
     "@types/react-dom": "19.x",
+    "@ur-apps/common": "^0.0.6",
+    "@ur-apps/common-fe": "^0.0.6",
     "react": "19.x",
     "react-dom": "19.x",
     "react-router-dom": "7.x"

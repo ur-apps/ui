@@ -1,6 +1,5 @@
 import { ButtonHTMLAttributes } from 'react';
-
-import { TClasses } from 'utils';
+import { TClasses } from '@ur-apps/common-fe';
 
 export type ButtonVariant = 'filled' | 'outlined' | 'ghost' | 'clear';
 export type ButtonColor = 'primary' | 'secondary' | 'accent' | 'success' | 'warning' | 'danger';

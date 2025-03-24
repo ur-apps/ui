@@ -1,6 +1,5 @@
 import { HTMLAttributes } from 'react';
-
-import { TClasses } from 'utils';
+import { TClasses } from '@ur-apps/common-fe';
 
 export type THeadingColor = 'primary' | 'secondary' | 'contrast' | 'link' | 'link-visited';
 export type THeadingSize = '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl';

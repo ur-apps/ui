@@ -1,6 +1,5 @@
 import { ChangeEvent, HTMLAttributes } from 'react';
-
-import { TClasses } from 'utils';
+import { TClasses } from '@ur-apps/common-fe';
 
 import { IOptionProps, TOptionShape, TOptionSize, TOptionValue, TOptionVariant } from '../option';
 

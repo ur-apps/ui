@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
+import { classNames } from '@ur-apps/common-fe';
 
 import { CssVariableGroup } from 'contexts';
-import { classNames } from 'utils';
 
 import { IButtonProps } from './button.types';
 import styles from './button.module.scss';

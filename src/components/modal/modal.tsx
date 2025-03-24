@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useRef } from 'react';
+import { classNames } from '@ur-apps/common-fe';
 
 import { KeyCode } from 'constants/';
 import { CssVariableGroup } from 'contexts';
-import { classNames } from 'utils';
 
 import { Overlay } from '../overlay';
 import { Portal } from '../portal';

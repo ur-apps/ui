@@ -1,6 +1,5 @@
 import { InputHTMLAttributes, Ref } from 'react';
-
-import { TClasses } from 'utils';
+import { TClasses } from '@ur-apps/common-fe';
 
 export type TSegmentVariant = 'filled' | 'outlined' | 'clear';
 export type TSegmentColor = 'primary' | 'secondary' | 'accent' | 'success' | 'warning' | 'danger';

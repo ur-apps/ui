@@ -1,6 +1,5 @@
 import { ChangeEvent, HTMLAttributes, Ref } from 'react';
-
-import { TClasses } from 'utils';
+import { TClasses } from '@ur-apps/common-fe';
 
 import { ISegmentProps, TSegmentColor, TSegmentShape, TSegmentSize, TSegmentValue, TSegmentVariant } from '../segment';
 

@@ -1,5 +1,6 @@
+import { classNames } from '@ur-apps/common-fe';
+
 import { CssVariableGroup } from 'contexts';
-import { classNames } from 'utils';
 
 import { IOptionProps } from './option.types';
 import styles from './option.module.scss';

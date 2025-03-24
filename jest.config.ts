@@ -5,8 +5,10 @@ export default {
     '^.+.tsx?$': [
       'ts-jest',
       {
+        useESM: true,
         tsconfig: 'tsconfig.test.json',
       },
     ],
   },
+  extensionsToTreatAsEsm: ['.ts'],
 };

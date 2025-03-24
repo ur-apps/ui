@@ -1,6 +1,7 @@
+import { classNames } from '@ur-apps/common-fe';
+
 import { CssVariableGroup } from 'contexts';
 import { useName } from 'hooks';
-import { classNames } from 'utils';
 
 import { Option } from '../option';
 import { Portal } from '../portal';

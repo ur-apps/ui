@@ -1,6 +1,8 @@
-import React, { createContext, useEffect, useMemo, useRef, useState } from 'react';
+import { createContext, ReactNode, useEffect, useMemo, useRef, useState } from 'react';
+import { clone, pick } from '@ur-apps/common';
+import { classNames } from '@ur-apps/common-fe';
 
-import { classNames, clone, merge, pick } from 'utils';
+import { merge } from 'utils';
 
 import 'styles/index.scss';
 
@@ -27,7 +29,7 @@ type TThemeProps = {
   className?: string;
   defaultTheme?: Theme;
   customePreset?: TStylePreset;
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 const UU_THEME_CLASS_NAME = 'uu-theme';

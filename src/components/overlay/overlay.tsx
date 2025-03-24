@@ -1,5 +1,6 @@
+import { classNames } from '@ur-apps/common-fe';
+
 import { CssVariableGroup } from 'contexts';
-import { classNames } from 'utils';
 
 import { IOverlayProps } from './overlay.types';
 import styles from './overlay.module.scss';

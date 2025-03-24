@@ -1,6 +1,5 @@
 import React, { InputHTMLAttributes } from 'react';
-
-import { TClasses } from 'utils';
+import { TClasses } from '@ur-apps/common-fe';
 
 export type TSwitchColor = 'primary' | 'accent' | 'success' | 'warning' | 'danger';
 export type TSwitchShape = 'default' | 'brick' | 'round';

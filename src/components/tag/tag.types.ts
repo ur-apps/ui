@@ -1,6 +1,5 @@
 import { ButtonHTMLAttributes, HTMLAttributes, Ref } from 'react';
-
-import { TClasses } from 'utils';
+import { TClasses } from '@ur-apps/common-fe';
 
 export type TagVariant = 'filled' | 'outlined' | 'ghost';
 export type TagColor = 'primary' | 'secondary' | 'accent' | 'success' | 'warning' | 'danger';

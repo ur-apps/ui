@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo } from 'react';
+import { classNames } from '@ur-apps/common-fe';
 
 import { CssVariableGroup } from 'contexts';
-import { classNames } from 'utils';
 
 import { ITagButtonProps, ITagProps } from './tag.types';
 import styles from './tag.module.scss';

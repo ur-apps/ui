@@ -1,4 +1,4 @@
-import { isAllowedType, isArray, isObject } from '../get-type';
+import { isAllowedType, isArray, isObject } from '@ur-apps/common';
 
 export function merge<T extends Record<string, any>>(target: T, ...sources: Array<Record<string, any>>): T {
   if (!isAllowedType(target, ['array', 'object'])) {

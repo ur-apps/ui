@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
+import { classNames } from '@ur-apps/common-fe';
 
 import { CssVariableGroup } from 'contexts';
-import { classNames } from 'utils';
 
 import { ISegmentProps } from './segment.types';
 import styles from './segment.module.scss';

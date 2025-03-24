@@ -1,6 +1,5 @@
 import { HTMLAttributes } from 'react';
-
-import { TClasses } from 'utils';
+import { TClasses } from '@ur-apps/common-fe';
 
 export type TextColor = 'primary' | 'secondary' | 'contrast' | 'link' | 'link-visited';
 export type TextSize = 'xs' | 's' | 'm' | 'l' | 'xl';

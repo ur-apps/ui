@@ -1,6 +1,5 @@
 import { InputHTMLAttributes, Ref } from 'react';
-
-import { TClasses } from 'utils';
+import { TClasses } from '@ur-apps/common-fe';
 
 export type InputVariant = 'filled' | 'outlined' | 'clear';
 export type InputShape = 'default' | 'brick' | 'round';
