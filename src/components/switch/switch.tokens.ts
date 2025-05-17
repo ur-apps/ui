@@ -29,6 +29,33 @@ export const switchStyleTokens: ISwitchStyleTokens = {
         checked: 'var(--uu-color-danger-500)',
       },
     },
+    thumb: {
+      primary: {
+        default: 'var(--uu-color-neutral-0)',
+        hover: 'var(--uu-color-neutral-0)',
+        checked: 'var(--uu-color-neutral-0)',
+      },
+      accent: {
+        default: 'var(--uu-color-neutral-0)',
+        hover: 'var(--uu-color-neutral-0)',
+        checked: 'var(--uu-color-neutral-0)',
+      },
+      success: {
+        default: 'var(--uu-color-neutral-0)',
+        hover: 'var(--uu-color-neutral-0)',
+        checked: 'var(--uu-color-neutral-0)',
+      },
+      warning: {
+        default: 'var(--uu-color-neutral-0)',
+        hover: 'var(--uu-color-neutral-0)',
+        checked: 'var(--uu-color-neutral-0)',
+      },
+      danger: {
+        default: 'var(--uu-color-neutral-0)',
+        hover: 'var(--uu-color-neutral-0)',
+        checked: 'var(--uu-color-neutral-0)',
+      },
+    },
     text: {
       primary: {
         default: 'var(--uu-color-primary-500)',
@@ -141,51 +168,24 @@ export const switchDarkModeStyleTokens: ISwitchStyleTokens = {
   color: {
     bg: {
       primary: {
-        default: 'var(--uu-color-neutral-800)',
-        hover: 'var(--uu-color-neutral-750)',
+        default: 'var(--uu-color-neutral-200)',
+        hover: 'var(--uu-color-neutral-250)',
       },
       accent: {
-        default: 'var(--uu-color-neutral-800)',
-        hover: 'var(--uu-color-neutral-750)',
+        default: 'var(--uu-color-neutral-200)',
+        hover: 'var(--uu-color-neutral-250)',
       },
       success: {
-        default: 'var(--uu-color-neutral-800)',
-        hover: 'var(--uu-color-neutral-750)',
+        default: 'var(--uu-color-neutral-200)',
+        hover: 'var(--uu-color-neutral-250)',
       },
       warning: {
-        default: 'var(--uu-color-neutral-800)',
-        hover: 'var(--uu-color-neutral-750)',
+        default: 'var(--uu-color-neutral-200)',
+        hover: 'var(--uu-color-neutral-250)',
       },
       danger: {
-        default: 'var(--uu-color-neutral-800)',
-        hover: 'var(--uu-color-neutral-750)',
-      },
-    },
-    thumb: {
-      primary: {
-        default: 'var(--uu-color-neutral-1000)',
-        hover: 'var(--uu-color-neutral-1000)',
-        checked: 'var(--uu-color-neutral-1000)',
-      },
-      accent: {
-        default: 'var(--uu-color-neutral-1000)',
-        hover: 'var(--uu-color-neutral-1000)',
-        checked: 'var(--uu-color-neutral-1000)',
-      },
-      success: {
-        default: 'var(--uu-color-neutral-1000)',
-        hover: 'var(--uu-color-neutral-1000)',
-        checked: 'var(--uu-color-neutral-1000)',
-      },
-      warning: {
-        default: 'var(--uu-color-neutral-1000)',
-        hover: 'var(--uu-color-neutral-1000)',
-        checked: 'var(--uu-color-neutral-1000)',
-      },
-      danger: {
-        default: 'var(--uu-color-neutral-1000)',
-        hover: 'var(--uu-color-neutral-1000)',
-        checked: 'var(--uu-color-neutral-1000)',
+        default: 'var(--uu-color-neutral-200)',
+        hover: 'var(--uu-color-neutral-250)',
       },
     },
   },

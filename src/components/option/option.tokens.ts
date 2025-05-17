@@ -78,8 +78,8 @@ export const optionDarkModeStyleTokens: IOptionStyleTokens = {
   color: {
     bg: {
       filled: {
-        default: 'var(--uu-color-neutral-800)',
-        hover: 'var(--uu-color-neutral-750)',
+        default: 'var(--uu-color-neutral-200)',
+        hover: 'var(--uu-color-neutral-250)',
       },
       clear: {
         hover: 'var(--uu-color-neutral-a10)',

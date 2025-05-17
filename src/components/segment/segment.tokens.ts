@@ -275,29 +275,28 @@ export const segmentDarkModeStyleTokens: ISegmentStyleTokens = {
     bg: {
       filled: {
         primary: {
-          default: 'var(--uu-color-neutral-800)',
-          hover: 'var(--uu-color-neutral-750)',
+          default: 'var(--uu-color-neutral-200)',
+          hover: 'var(--uu-color-neutral-250)',
         },
         secondary: {
-          default: 'var(--uu-color-neutral-800)',
-          hover: 'var(--uu-color-neutral-750)',
-          selected: 'var(--uu-color-neutral-1000)',
+          default: 'var(--uu-color-neutral-200)',
+          hover: 'var(--uu-color-neutral-250)',
         },
         accent: {
-          default: 'var(--uu-color-neutral-800)',
-          hover: 'var(--uu-color-neutral-750)',
+          default: 'var(--uu-color-neutral-200)',
+          hover: 'var(--uu-color-neutral-250)',
         },
         success: {
-          default: 'var(--uu-color-neutral-800)',
-          hover: 'var(--uu-color-neutral-750)',
+          default: 'var(--uu-color-neutral-200)',
+          hover: 'var(--uu-color-neutral-250)',
         },
         warning: {
-          default: 'var(--uu-color-neutral-800)',
-          hover: 'var(--uu-color-neutral-750)',
+          default: 'var(--uu-color-neutral-200)',
+          hover: 'var(--uu-color-neutral-250)',
         },
         danger: {
-          default: 'var(--uu-color-neutral-800)',
-          hover: 'var(--uu-color-neutral-750)',
+          default: 'var(--uu-color-neutral-200)',
+          hover: 'var(--uu-color-neutral-250)',
         },
       },
     },

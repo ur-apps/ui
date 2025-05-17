@@ -160,19 +160,9 @@ export const inputDarkModeStyleTokens: IInputStyleTokens = {
   color: {
     bg: {
       filled: {
-        default: 'var(--uu-color-neutral-800)',
-        hover: 'var(--uu-color-neutral-750)',
+        default: 'var(--uu-color-neutral-200)',
+        hover: 'var(--uu-color-neutral-250)',
         focus: 'var(--uu-color-primary-900)',
-      },
-    },
-    'icon-left': {
-      filled: {
-        hover: 'var(--uu-color-neutral-0)',
-      },
-    },
-    'icon-right': {
-      filled: {
-        hover: 'var(--uu-color-neutral-0)',
       },
     },
   },
