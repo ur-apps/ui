@@ -38,7 +38,7 @@ export const dropdownDarkModeStyleTokens: IDropdownStyleTokens = {
   color: {
     bg: {
       filled: {
-        default: 'var(--uu-color-neutral-800)',
+        default: 'var(--uu-color-neutral-200)',
       },
     },
   },

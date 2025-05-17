@@ -90,15 +90,10 @@ export const tagDarkModeStyleTokens: ITagStyleTokens = {
   color: {
     bg: {
       filled: {
-        secondary: 'var(--uu-color-neutral-800)',
+        secondary: 'var(--uu-color-neutral-200)',
       },
       ghost: {
         secondary: 'var(--uu-color-neutral-a10)',
-      },
-    },
-    border: {
-      outlined: {
-        secondary: 'var(--uu-color-neutral-0)',
       },
     },
   },

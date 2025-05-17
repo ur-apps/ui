@@ -201,14 +201,15 @@ export const buttonStyleTokens: IButtonStyleTokens = {
     l: 'var(--uu-font-weight-400)',
   },
 };
+
 export const buttonDarkModeStyleTokens: IButtonStyleTokens = {
   color: {
     bg: {
       filled: {
         secondary: {
-          default: 'var(--uu-color-neutral-800)',
-          hover: 'var(--uu-color-neutral-750)',
-          active: 'var(--uu-color-neutral-800)',
+          default: 'var(--uu-color-neutral-200)',
+          hover: 'var(--uu-color-neutral-250)',
+          active: 'var(--uu-color-neutral-200)',
         },
       },
       outlined: {
@@ -294,11 +295,6 @@ export const buttonDarkModeStyleTokens: IButtonStyleTokens = {
           hover: 'var(--uu-color-neutral-a10)',
           active: 'var(--uu-color-neutral-a15)',
         },
-      },
-    },
-    border: {
-      outlined: {
-        secondary: 'var(--uu-color-neutral-0)',
       },
     },
   },

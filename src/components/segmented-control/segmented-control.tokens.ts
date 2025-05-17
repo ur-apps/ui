@@ -44,12 +44,12 @@ export const segmentedControlDarkModeStyleTokens: ISegmentedControlStyleTokens =
   color: {
     bg: {
       filled: {
-        primary: 'var(--uu-color-neutral-800)',
-        secondary: 'var(--uu-color-neutral-800)',
-        accent: 'var(--uu-color-neutral-800)',
-        success: 'var(--uu-color-neutral-800)',
-        warning: 'var(--uu-color-neutral-800)',
-        danger: 'var(--uu-color-neutral-800)',
+        primary: 'var(--uu-color-neutral-200)',
+        secondary: 'var(--uu-color-neutral-200)',
+        accent: 'var(--uu-color-neutral-200)',
+        success: 'var(--uu-color-neutral-200)',
+        warning: 'var(--uu-color-neutral-200)',
+        danger: 'var(--uu-color-neutral-200)',
       },
     },
   },
