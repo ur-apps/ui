@@ -10,6 +10,10 @@ export interface IModalProps extends Omit<HTMLAttributes<HTMLDivElement>, 'class
    */
   className?: string | TClasses;
   /**
+   * overlay additinal css class name(s)
+   */
+  overlayClassName?: string | TClasses;
+  /**
    * modal corner shape
    * @default "default"
    */

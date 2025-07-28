@@ -19,7 +19,7 @@ type Story = StoryObj<typeof meta>;
 
 export const SmallForm: Story = {
   args: {
-    isOpen: true,
+    isOpen: false,
     shape: 'default',
     size: 's',
     withOverlay: false,
@@ -32,7 +32,7 @@ export const SmallForm: Story = {
 
 export const SmallInfo: Story = {
   args: {
-    isOpen: true,
+    isOpen: false,
     shape: 'default',
     size: 's',
     withOverlay: true,
@@ -45,7 +45,7 @@ export const SmallInfo: Story = {
 
 export const MediumForm: Story = {
   args: {
-    isOpen: true,
+    isOpen: false,
     shape: 'default',
     size: 'm',
     withOverlay: true,
@@ -58,7 +58,7 @@ export const MediumForm: Story = {
 
 export const MediumInfo: Story = {
   args: {
-    isOpen: true,
+    isOpen: false,
     shape: 'default',
     size: 'm',
     withOverlay: false,
@@ -71,7 +71,7 @@ export const MediumInfo: Story = {
 
 export const LargeForm: Story = {
   args: {
-    isOpen: true,
+    isOpen: false,
     shape: 'default',
     size: 'l',
     withOverlay: false,
@@ -84,7 +84,7 @@ export const LargeForm: Story = {
 
 export const LargeInfo: Story = {
   args: {
-    isOpen: true,
+    isOpen: false,
     shape: 'default',
     size: 'l',
     withOverlay: true,

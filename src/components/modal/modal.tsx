@@ -12,6 +12,7 @@ import styles from './modal.module.scss';
 
 export function Modal({
   className,
+  overlayClassName,
   shape,
   size,
   withOverlay = true,
@@ -65,7 +66,7 @@ export function Modal({
   return isOpen ? (
     <Portal>
       <Overlay
-        className={classNames(styles.overlay, { [styles['overlay--hidden']]: !withOverlay })}
+        className={classNames(styles.overlay, { [styles['overlay--hidden']]: !withOverlay }, overlayClassName)}
         tabIndex={-1}
         onClick={overlayClickHandler}
         ref={overlayRef}>
