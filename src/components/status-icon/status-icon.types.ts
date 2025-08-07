@@ -5,9 +5,24 @@ export type StatusIconVariant = 'filled' | 'outlined';
 export type StatusIconSize = 'xs' | 's' | 'm' | 'l';
 
 export interface IStatusIconProps extends Omit<React.SVGProps<SVGSVGElement>, 'className'> {
+  /**
+   * additinal css class name
+   */
   className?: string | TClasses;
+  /**
+   * icon status
+   * @default "info"
+   */
   status?: StatusIconStatus;
+  /**
+   * input variant
+   * @default "filled"
+   */
   variant?: StatusIconVariant;
+  /**
+   * input size
+   * @default "m"
+   */
   size?: StatusIconSize;
 }
 
