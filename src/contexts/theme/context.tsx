@@ -92,6 +92,7 @@ export function ThemeProvider({ className, defaultTheme, customePreset = {}, chi
       getVariableStyles(components.overlay ?? {}, CssVariableGroup.OverlayTokens),
       getVariableStyles(components.segment ?? {}, CssVariableGroup.SegmentTokens),
       getVariableStyles(components.segmentedControl ?? {}, CssVariableGroup.SegmentedControlTokens),
+      getVariableStyles(components.statusIcon ?? {}, CssVariableGroup.StatusIconTokens),
       getVariableStyles(components.switch ?? {}, CssVariableGroup.SwitchTokens),
       getVariableStyles(components.tag ?? {}, CssVariableGroup.TagTokens),
     ];

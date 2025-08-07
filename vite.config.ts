@@ -24,6 +24,11 @@ export default defineConfig({
       utils: path.resolve(__dirname, 'src', 'utils'),
     },
   },
+  css: {
+    modules: {
+      generateScopedName: 'uu-[folder]__[local]',
+    },
+  },
   plugins: [
     react(),
     url({ fileName: '[dirname][name][extname]', limit: undefined }),
