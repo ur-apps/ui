@@ -15,12 +15,12 @@ export interface IStatusIconProps extends Omit<React.SVGProps<SVGSVGElement>, 'c
    */
   status?: StatusIconStatus;
   /**
-   * input variant
+   * icon variant
    * @default "filled"
    */
   variant?: StatusIconVariant;
   /**
-   * input size
+   * icon size
    * @default "m"
    */
   size?: StatusIconSize;
