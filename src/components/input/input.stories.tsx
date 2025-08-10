@@ -9,6 +9,16 @@ import { Input } from './input';
 const meta: Meta<typeof Input> = {
   title: 'Form/Input',
   component: Input,
+  args: {
+    type: 'text',
+    variant: 'filled',
+    shape: 'default',
+    size: 'l',
+    disabled: false,
+    status: 'default',
+    placeholder: 'Placeholder',
+    defaultValue: 'Hello World!',
+  },
 };
 
 export default meta;
@@ -19,8 +29,6 @@ export const Filled: Story = {
     variant: 'filled',
     shape: 'default',
     size: 'l',
-    placeholder: 'Placeholder',
-    defaultValue: 'Hello World!',
   },
 };
 
@@ -29,8 +37,6 @@ export const Outlined: Story = {
     variant: 'outlined',
     shape: 'round',
     size: 'm',
-    placeholder: 'Placeholder',
-    defaultValue: 'Hello World!',
   },
 };
 
@@ -39,8 +45,6 @@ export const Clear: Story = {
     variant: 'clear',
     shape: 'brick',
     size: 's',
-    placeholder: 'Placeholder',
-    defaultValue: 'Hello World!',
   },
 };
 
@@ -60,7 +64,6 @@ export const RightIcon: Story = {
     shape: 'round',
     size: 'm',
     placeholder: 'password',
-    defaultValue: 'Hello World!',
     iconRight: InfoIconFilled,
   },
 };
@@ -70,8 +73,6 @@ export const WithLeftAndRightIcon: Story = {
     variant: 'outlined',
     shape: 'round',
     size: 'm',
-    placeholder: 'placeholder',
-    defaultValue: 'Hello World!',
     iconLeft: MagnifyingglassIconOutlined,
     iconRight: InfoIconOutlined,
   },
@@ -82,8 +83,6 @@ export const WithPrefix: Story = {
     variant: 'filled',
     shape: 'round',
     size: 'm',
-    placeholder: 'Placeholder',
-    defaultValue: 'Hello World!',
     prefix: 'Your name:',
   },
 };
@@ -107,8 +106,8 @@ export const WithPrefixAndPostfix: Story = {
     variant: 'filled',
     shape: 'default',
     size: 'm',
-    placeholder: 'Placeholder',
     defaultValue: 'john_doe',
+    placeholder: 'gmail',
     prefix: 'email:',
     postfix: '@gmail.com',
     style: { textAlign: 'right' },

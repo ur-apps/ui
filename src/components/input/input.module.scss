@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: calc(var(--horizontal-padding, 16px) / 4);
 
   height: var(--height, 32px);
   padding: var(--vertical-padding, 0) calc(var(--horizontal-padding, 16px) / 2);
@@ -34,41 +35,137 @@
 
 .wrapper--variant-filled {
   --border-width: 0;
-  --text-color: var(--color-text-filled-default, black);
-  --prefix-color: var(--color-prefix-filled-default, gray);
-  --postfix-color: var(--color-postfix-filled-default, gray);
-  --icon-left-color: var(--color-icon-left-filled-default, gray);
-  --icon-right-color: var(--color-icon-right-filled-default, gray);
-  --background-color: var(--color-bg-filled-default, transparent);
 
-  &:not(:has(.field:disabled)) {
-    &:hover {
-      --prefix-color: var(--color-prefix-filled-hover, gray);
-      --postfix-color: var(--color-postfix-filled-hover, gray);
-      --icon-left-color: var(--color-icon-left-filled-hover, gray);
-      --icon-right-color: var(--color-icon-right-filled-hover, gray);
-      --background-color: var(--color-bg-filled-hover, transparent);
+  &.wrapper--status-default {
+    --text-color: var(--color-text-filled-default-default, black);
+    --prefix-color: var(--color-prefix-filled-default-default, gray);
+    --postfix-color: var(--color-postfix-filled-default-default, gray);
+    --icon-left-color: var(--color-icon-left-filled-default-default, gray);
+    --icon-right-color: var(--color-icon-right-filled-default-default, gray);
+    --icon-status-color: var(--color-icon-status-filled-default-default);
+    --background-color: var(--color-bg-filled-default-default, lightgray);
+
+    &:not(:has(.field:disabled)) {
+      &:hover {
+        --text-color: var(--color-text-filled-default-hover, black);
+        --prefix-color: var(--color-prefix-filled-default-hover, black);
+        --postfix-color: var(--color-postfix-filled-default-hover, black);
+        --icon-left-color: var(--color-icon-left-filled-default-hover, black);
+        --icon-right-color: var(--color-icon-right-filled-default-hover, black);
+        --icon-status-color: var(--color-icon-status-filled-default-hover);
+        --background-color: var(--color-bg-filled-default-hover, lightgray);
+      }
+
+      &:has(.field:focus) {
+        --text-color: var(--color-text-filled-default-focus, black);
+        --prefix-color: var(--color-prefix-filled-default-focus, dodgerblue);
+        --postfix-color: var(--color-postfix-filled-default-focus, dodgerblue);
+        --icon-left-color: var(--color-icon-left-filled-default-focus, dodgerblue);
+        --icon-right-color: var(--color-icon-right-filled-default-focus, dodgerblue);
+        --icon-status-color: var(--color-icon-status-filled-default-focus);
+        --background-color: var(--color-bg-filled-default-focus, lightblue);
+      }
     }
+  }
 
-    &:has(.field:focus) {
-      --prefix-color: var(--color-prefix-filled-focus, gray);
-      --postfix-color: var(--color-postfix-filled-focus, gray);
-      --icon-left-color: var(--color-icon-left-filled-focus, gray);
-      --icon-right-color: var(--color-icon-right-filled-focus, gray);
-      --background-color: var(--color-bg-filled-focus, transparent);
+  &.wrapper--status-success {
+    --text-color: var(--color-text-filled-success-default, black);
+    --prefix-color: var(--color-prefix-filled-success-default, gray);
+    --postfix-color: var(--color-postfix-filled-success-default, gray);
+    --icon-left-color: var(--color-icon-left-filled-success-default, gray);
+    --icon-right-color: var(--color-icon-right-filled-success-default, gray);
+    --icon-status-color: var(--color-icon-status-filled-success-default);
+    --background-color: var(--color-bg-filled-success-default, lightgreen);
+
+    &:not(:has(.field:disabled)) {
+      &:hover {
+        --text-color: var(--color-text-filled-success-hover, black);
+        --prefix-color: var(--color-prefix-filled-success-hover, black);
+        --postfix-color: var(--color-postfix-filled-success-hover, black);
+        --icon-left-color: var(--color-icon-left-filled-success-hover, black);
+        --icon-right-color: var(--color-icon-right-filled-success-hover, black);
+        --icon-status-color: var(--color-icon-status-filled-success-hover);
+        --background-color: var(--color-bg-filled-success-hover, lightgreen);
+      }
+
+      &:has(.field:focus) {
+        --text-color: var(--color-text-filled-success-focus, black);
+        --prefix-color: var(--color-prefix-filled-success-focus, dodgerblue);
+        --postfix-color: var(--color-postfix-filled-success-focus, dodgerblue);
+        --icon-left-color: var(--color-icon-left-filled-success-focus, dodgerblue);
+        --icon-right-color: var(--color-icon-right-filled-success-focus, dodgerblue);
+        --icon-status-color: var(--color-icon-status-filled-success-focus);
+        --background-color: var(--color-bg-filled-success-focus, lightblue);
+      }
+    }
+  }
+
+  &.wrapper--status-warning {
+    --text-color: var(--color-text-filled-warning-default, black);
+    --prefix-color: var(--color-prefix-filled-warning-default, gray);
+    --postfix-color: var(--color-postfix-filled-warning-default, gray);
+    --icon-left-color: var(--color-icon-left-filled-warning-default, gray);
+    --icon-right-color: var(--color-icon-right-filled-warning-default, gray);
+    --icon-status-color: var(--color-icon-status-filled-warning-default);
+    --background-color: var(--color-bg-filled-warning-default, lightyellow);
+
+    &:not(:has(.field:disabled)) {
+      &:hover {
+        --text-color: var(--color-text-filled-warning-hover, black);
+        --prefix-color: var(--color-prefix-filled-warning-hover, black);
+        --postfix-color: var(--color-postfix-filled-warning-hover, black);
+        --icon-left-color: var(--color-icon-left-filled-warning-hover, black);
+        --icon-right-color: var(--color-icon-right-filled-warning-hover, black);
+        --icon-status-color: var(--color-icon-status-filled-warning-hover);
+        --background-color: var(--color-bg-filled-warning-hover, lightyellow);
+      }
+
+      &:has(.field:focus) {
+        --text-color: var(--color-text-filled-warning-focus, black);
+        --prefix-color: var(--color-prefix-filled-warning-focus, dodgerblue);
+        --postfix-color: var(--color-postfix-filled-warning-focus, dodgerblue);
+        --icon-left-color: var(--color-icon-left-filled-warning-focus, dodgerblue);
+        --icon-right-color: var(--color-icon-right-filled-warning-focus, dodgerblue);
+        --icon-status-color: var(--color-icon-status-filled-warning-focus);
+        --background-color: var(--color-bg-filled-warning-focus, lightblue);
+      }
+    }
+  }
+
+  &.wrapper--status-error {
+    --text-color: var(--color-text-filled-error-default, black);
+    --prefix-color: var(--color-prefix-filled-error-default, gray);
+    --postfix-color: var(--color-postfix-filled-error-default, gray);
+    --icon-left-color: var(--color-icon-left-filled-error-default, gray);
+    --icon-right-color: var(--color-icon-right-filled-error-default, gray);
+    --icon-status-color: var(--color-icon-status-filled-error-default);
+    --background-color: var(--color-bg-filled-error-default, lightcoral);
+
+    &:not(:has(.field:disabled)) {
+      &:hover {
+        --text-color: var(--color-text-filled-error-hover, black);
+        --prefix-color: var(--color-prefix-filled-error-hover, black);
+        --postfix-color: var(--color-postfix-filled-error-hover, black);
+        --icon-left-color: var(--color-icon-left-filled-error-hover, black);
+        --icon-right-color: var(--color-icon-right-filled-error-hover, black);
+        --icon-status-color: var(--color-icon-status-filled-error-hover);
+        --background-color: var(--color-bg-filled-error-hover, lightcoral);
+      }
+
+      &:has(.field:focus) {
+        --text-color: var(--color-text-filled-error-focus, black);
+        --prefix-color: var(--color-prefix-filled-error-focus, dodgerblue);
+        --postfix-color: var(--color-postfix-filled-error-focus, dodgerblue);
+        --icon-left-color: var(--color-icon-left-filled-error-focus, dodgerblue);
+        --icon-right-color: var(--color-icon-right-filled-error-focus, dodgerblue);
+        --icon-status-color: var(--color-icon-status-filled-error-focus);
+        --background-color: var(--color-bg-filled-error-focus, lightblue);
+      }
     }
   }
 }
 
 .wrapper--variant-outlined {
-  --text-color: var(--color-text-outlined-default, black);
-  --prefix-color: var(--color-prefix-outlined-default, gray);
-  --postfix-color: var(--color-postfix-outlined-default, gray);
-  --icon-left-color: var(--color-icon-left-outlined-default, gray);
-  --icon-right-color: var(--color-icon-right-outlined-default, gray);
-  --border-color: var(--color-border-outlined-default, black);
-  --background-color: var(--color-bg-outlined-default, transparent);
-
   &.wrapper--size-s {
     --border-width: var(--border-width-s, 1px);
   }
@@ -81,46 +178,275 @@
     --border-width: var(--border-width-l, 1px);
   }
 
-  &:not(:has(.field:disabled)) {
-    &:hover {
-      --prefix-color: var(--color-prefix-outlined-hover, gray);
-      --postfix-color: var(--color-postfix-outlined-hover, gray);
-      --icon-left-color: var(--color-icon-left-outlined-hover, gray);
-      --icon-right-color: var(--color-icon-right-outlined-hover, gray);
-      --border-color: var(--color-border-outlined-hover, black);
-    }
+  &.wrapper--status-default {
+    --text-color: var(--color-text-outlined-default-default, black);
+    --prefix-color: var(--color-prefix-outlined-default-default, gray);
+    --postfix-color: var(--color-postfix-outlined-default-default, gray);
+    --icon-left-color: var(--color-icon-left-outlined-default-default, gray);
+    --icon-right-color: var(--color-icon-right-outlined-default-default, gray);
+    --icon-status-color: var(--color-icon-status-outlined-default-default);
+    --border-color: var(--color-border-outlined-default-default, lightgray);
+    --background-color: var(--color-bg-outlined-default-default, white);
 
-    &:has(.field:focus) {
-      --prefix-color: var(--color-prefix-outlined-focus, gray);
-      --postfix-color: var(--color-postfix-outlined-focus, gray);
-      --icon-left-color: var(--color-icon-left-outlined-focus, gray);
-      --icon-right-color: var(--color-icon-right-outlined-focus, gray);
-      --border-color: var(--color-border-outlined-focus, black);
+    &:not(:has(.field:disabled)) {
+      &:hover {
+        --text-color: var(--color-text-outlined-default-hover, black);
+        --prefix-color: var(--color-prefix-outlined-default-hover, black);
+        --postfix-color: var(--color-postfix-outlined-default-hover, black);
+        --icon-left-color: var(--color-icon-left-outlined-default-hover, black);
+        --icon-right-color: var(--color-icon-right-outlined-default-hover, black);
+        --icon-status-color: var(--color-icon-status-outlined-default-hover);
+        --border-color: var(--color-border-outlined-default-hover, gray);
+        --background-color: var(--color-bg-outlined-default-hover, white);
+      }
+
+      &:has(.field:focus) {
+        --text-color: var(--color-text-outlined-default-focus, black);
+        --prefix-color: var(--color-prefix-outlined-default-focus, dodgerblue);
+        --postfix-color: var(--color-postfix-outlined-default-focus, dodgerblue);
+        --icon-left-color: var(--color-icon-left-outlined-default-focus, dodgerblue);
+        --icon-right-color: var(--color-icon-right-outlined-default-focus, dodgerblue);
+        --icon-status-color: var(--color-icon-status-outlined-default-focus);
+        --border-color: var(--color-border-outlined-default-focus, dodgerblue);
+        --background-color: var(--color-bg-outlined-default-focus, white);
+      }
+    }
+  }
+
+  &.wrapper--status-success {
+    --text-color: var(--color-text-outlined-success-default, black);
+    --prefix-color: var(--color-prefix-outlined-success-default, gray);
+    --postfix-color: var(--color-postfix-outlined-success-default, gray);
+    --icon-left-color: var(--color-icon-left-outlined-success-default, gray);
+    --icon-right-color: var(--color-icon-right-outlined-success-default, gray);
+    --icon-status-color: var(--color-icon-status-outlined-success-default);
+    --border-color: var(--color-border-outlined-success-default, green);
+    --background-color: var(--color-bg-outlined-success-default, white);
+
+    &:not(:has(.field:disabled)) {
+      &:hover {
+        --text-color: var(--color-text-outlined-success-hover, black);
+        --prefix-color: var(--color-prefix-outlined-success-hover, black);
+        --postfix-color: var(--color-postfix-outlined-success-hover, black);
+        --icon-left-color: var(--color-icon-left-outlined-success-hover, black);
+        --icon-right-color: var(--color-icon-right-outlined-success-hover, black);
+        --icon-status-color: var(--color-icon-status-outlined-success-hover);
+        --border-color: var(--color-border-outlined-success-hover, green);
+        --background-color: var(--color-bg-outlined-success-hover, white);
+      }
+
+      &:has(.field:focus) {
+        --text-color: var(--color-text-outlined-success-focus, black);
+        --prefix-color: var(--color-prefix-outlined-success-focus, dodgerblue);
+        --postfix-color: var(--color-postfix-outlined-success-focus, dodgerblue);
+        --icon-left-color: var(--color-icon-left-outlined-success-focus, dodgerblue);
+        --icon-right-color: var(--color-icon-right-outlined-success-focus, dodgerblue);
+        --icon-status-color: var(--color-icon-status-outlined-success-focus);
+        --border-color: var(--color-border-outlined-success-focus, dodgerblue);
+        --background-color: var(--color-bg-outlined-success-focus, white);
+      }
+    }
+  }
+
+  &.wrapper--status-warning {
+    --text-color: var(--color-text-outlined-warning-default, black);
+    --prefix-color: var(--color-prefix-outlined-warning-default, gray);
+    --postfix-color: var(--color-postfix-outlined-warning-default, gray);
+    --icon-left-color: var(--color-icon-left-outlined-warning-default, gray);
+    --icon-right-color: var(--color-icon-right-outlined-warning-default, gray);
+    --icon-status-color: var(--color-icon-status-outlined-warning-default);
+    --border-color: var(--color-border-outlined-warning-default, orange);
+    --background-color: var(--color-bg-outlined-warning-default, white);
+
+    &:not(:has(.field:disabled)) {
+      &:hover {
+        --text-color: var(--color-text-outlined-warning-hover, black);
+        --prefix-color: var(--color-prefix-outlined-warning-hover, black);
+        --postfix-color: var(--color-postfix-outlined-warning-hover, black);
+        --icon-left-color: var(--color-icon-left-outlined-warning-hover, black);
+        --icon-right-color: var(--color-icon-right-outlined-warning-hover, black);
+        --icon-status-color: var(--color-icon-status-outlined-warning-hover);
+        --border-color: var(--color-border-outlined-warning-hover, orange);
+        --background-color: var(--color-bg-outlined-warning-hover, white);
+      }
+
+      &:has(.field:focus) {
+        --text-color: var(--color-text-outlined-warning-focus, black);
+        --prefix-color: var(--color-prefix-outlined-warning-focus, dodgerblue);
+        --postfix-color: var(--color-postfix-outlined-warning-focus, dodgerblue);
+        --icon-left-color: var(--color-icon-left-outlined-warning-focus, dodgerblue);
+        --icon-right-color: var(--color-icon-right-outlined-warning-focus, dodgerblue);
+        --icon-status-color: var(--color-icon-status-outlined-warning-focus);
+        --border-color: var(--color-border-outlined-warning-focus, dodgerblue);
+        --background-color: var(--color-bg-outlined-warning-focus, white);
+      }
+    }
+  }
+
+  &.wrapper--status-error {
+    --text-color: var(--color-text-outlined-error-default, black);
+    --prefix-color: var(--color-prefix-outlined-error-default, gray);
+    --postfix-color: var(--color-postfix-outlined-error-default, gray);
+    --icon-left-color: var(--color-icon-left-outlined-error-default, gray);
+    --icon-right-color: var(--color-icon-right-outlined-error-default, gray);
+    --icon-status-color: var(--color-icon-status-outlined-error-default);
+    --border-color: var(--color-border-outlined-error-default, red);
+    --background-color: var(--color-bg-outlined-error-default, white);
+
+    &:not(:has(.field:disabled)) {
+      &:hover {
+        --text-color: var(--color-text-outlined-error-hover, black);
+        --prefix-color: var(--color-prefix-outlined-error-hover, black);
+        --postfix-color: var(--color-postfix-outlined-error-hover, black);
+        --icon-left-color: var(--color-icon-left-outlined-error-hover, black);
+        --icon-right-color: var(--color-icon-right-outlined-error-hover, black);
+        --icon-status-color: var(--color-icon-status-outlined-error-hover);
+        --border-color: var(--color-border-outlined-error-hover, red);
+        --background-color: var(--color-bg-outlined-error-hover, white);
+      }
+
+      &:has(.field:focus) {
+        --text-color: var(--color-text-outlined-error-focus, black);
+        --prefix-color: var(--color-prefix-outlined-error-focus, dodgerblue);
+        --postfix-color: var(--color-postfix-outlined-error-focus, dodgerblue);
+        --icon-left-color: var(--color-icon-left-outlined-error-focus, dodgerblue);
+        --icon-right-color: var(--color-icon-right-outlined-error-focus, dodgerblue);
+        --icon-status-color: var(--color-icon-status-outlined-error-focus);
+        --border-color: var(--color-border-outlined-error-focus, dodgerblue);
+        --background-color: var(--color-bg-outlined-error-focus, white);
+      }
     }
   }
 }
 
 .wrapper--variant-clear {
   --border-width: 0;
-  --text-color: var(--color-text-clear-default, black);
-  --prefix-color: var(--color-prefix-clear-default, gray);
-  --postfix-color: var(--color-postfix-clear-default, gray);
-  --icon-left-color: var(--color-icon-left-clear-default, gray);
-  --icon-right-color: var(--color-icon-right-clear-default, gray);
 
-  &:not(:has(.field:disabled)) {
-    &:hover {
-      --prefix-color: var(--color-prefix-clear-hover, gray);
-      --postfix-color: var(--color-postfix-clear-hover, gray);
-      --icon-left-color: var(--color-icon-left-clear-hover, gray);
-      --icon-right-color: var(--color-icon-right-clear-hover, gray);
+  &.wrapper--status-default {
+    --text-color: var(--color-text-clear-default-default, black);
+    --prefix-color: var(--color-prefix-clear-default-default, gray);
+    --postfix-color: var(--color-postfix-clear-default-default, gray);
+    --icon-left-color: var(--color-icon-left-clear-default-default, gray);
+    --icon-right-color: var(--color-icon-right-clear-default-default, gray);
+    --icon-status-color: var(--color-icon-status-clear-default-default);
+    --background-color: var(--color-bg-clear-default-default, transparent);
+
+    &:not(:has(.field:disabled)) {
+      &:hover {
+        --text-color: var(--color-text-clear-default-hover, black);
+        --prefix-color: var(--color-prefix-clear-default-hover, black);
+        --postfix-color: var(--color-postfix-clear-default-hover, black);
+        --icon-left-color: var(--color-icon-left-clear-default-hover, black);
+        --icon-right-color: var(--color-icon-right-clear-default-hover, black);
+        --icon-status-color: var(--color-icon-status-clear-default-hover);
+        --background-color: var(--color-bg-clear-default-hover, transparent);
+      }
+
+      &:has(.field:focus) {
+        --text-color: var(--color-text-clear-default-focus, black);
+        --prefix-color: var(--color-prefix-clear-default-focus, dodgerblue);
+        --postfix-color: var(--color-postfix-clear-default-focus, dodgerblue);
+        --icon-left-color: var(--color-icon-left-clear-default-focus, dodgerblue);
+        --icon-right-color: var(--color-icon-right-clear-default-focus, dodgerblue);
+        --icon-status-color: var(--color-icon-status-clear-default-focus);
+        --background-color: var(--color-bg-clear-default-focus, transparent);
+      }
     }
+  }
 
-    &:has(.field:focus) {
-      --prefix-color: var(--color-prefix-clear-focus, gray);
-      --postfix-color: var(--color-postfix-clear-focus, gray);
-      --icon-left-color: var(--color-icon-left-clear-focus, gray);
-      --icon-right-color: var(--color-icon-right-clear-focus, gray);
+  &.wrapper--status-success {
+    --text-color: var(--color-text-clear-success-default, black);
+    --prefix-color: var(--color-prefix-clear-success-default, gray);
+    --postfix-color: var(--color-postfix-clear-success-default, gray);
+    --icon-left-color: var(--color-icon-left-clear-success-default, gray);
+    --icon-right-color: var(--color-icon-right-clear-success-default, gray);
+    --icon-status-color: var(--color-icon-status-clear-success-default);
+    --background-color: var(--color-bg-clear-success-default, transparent);
+
+    &:not(:has(.field:disabled)) {
+      &:hover {
+        --text-color: var(--color-text-clear-success-hover, black);
+        --prefix-color: var(--color-prefix-clear-success-hover, black);
+        --postfix-color: var(--color-postfix-clear-success-hover, black);
+        --icon-left-color: var(--color-icon-left-clear-success-hover, black);
+        --icon-right-color: var(--color-icon-right-clear-success-hover, black);
+        --icon-status-color: var(--color-icon-status-clear-success-hover);
+        --background-color: var(--color-bg-clear-success-hover, transparent);
+      }
+
+      &:has(.field:focus) {
+        --text-color: var(--color-text-clear-success-focus, black);
+        --prefix-color: var(--color-prefix-clear-success-focus, dodgerblue);
+        --postfix-color: var(--color-postfix-clear-success-focus, dodgerblue);
+        --icon-left-color: var(--color-icon-left-clear-success-focus, dodgerblue);
+        --icon-right-color: var(--color-icon-right-clear-success-focus, dodgerblue);
+        --icon-status-color: var(--color-icon-status-clear-success-focus);
+        --background-color: var(--color-bg-clear-success-focus, transparent);
+      }
+    }
+  }
+
+  &.wrapper--status-warning {
+    --text-color: var(--color-text-clear-warning-default, black);
+    --prefix-color: var(--color-prefix-clear-warning-default, gray);
+    --postfix-color: var(--color-postfix-clear-warning-default, gray);
+    --icon-left-color: var(--color-icon-left-clear-warning-default, gray);
+    --icon-right-color: var(--color-icon-right-clear-warning-default, gray);
+    --icon-status-color: var(--color-icon-status-clear-warning-default);
+    --background-color: var(--color-bg-clear-warning-default, transparent);
+
+    &:not(:has(.field:disabled)) {
+      &:hover {
+        --text-color: var(--color-text-clear-warning-hover, black);
+        --prefix-color: var(--color-prefix-clear-warning-hover, black);
+        --postfix-color: var(--color-postfix-clear-warning-hover, black);
+        --icon-left-color: var(--color-icon-left-clear-warning-hover, black);
+        --icon-right-color: var(--color-icon-right-clear-warning-hover, black);
+        --icon-status-color: var(--color-icon-status-clear-warning-hover);
+        --background-color: var(--color-bg-clear-warning-hover, transparent);
+      }
+
+      &:has(.field:focus) {
+        --text-color: var(--color-text-clear-warning-focus, black);
+        --prefix-color: var(--color-prefix-clear-warning-focus, dodgerblue);
+        --postfix-color: var(--color-postfix-clear-warning-focus, dodgerblue);
+        --icon-left-color: var(--color-icon-left-clear-warning-focus, dodgerblue);
+        --icon-right-color: var(--color-icon-right-clear-warning-focus, dodgerblue);
+        --icon-status-color: var(--color-icon-status-clear-warning-focus);
+        --background-color: var(--color-bg-clear-warning-focus, transparent);
+      }
+    }
+  }
+
+  &.wrapper--status-error {
+    --text-color: var(--color-text-clear-error-default, black);
+    --prefix-color: var(--color-prefix-clear-error-default, gray);
+    --postfix-color: var(--color-postfix-clear-error-default, gray);
+    --icon-left-color: var(--color-icon-left-clear-error-default, gray);
+    --icon-right-color: var(--color-icon-right-clear-error-default, gray);
+    --icon-status-color: var(--color-icon-status-clear-error-default);
+    --background-color: var(--color-bg-clear-error-default, transparent);
+
+    &:not(:has(.field:disabled)) {
+      &:hover {
+        --text-color: var(--color-text-clear-error-hover, black);
+        --prefix-color: var(--color-prefix-clear-error-hover, black);
+        --postfix-color: var(--color-postfix-clear-error-hover, black);
+        --icon-left-color: var(--color-icon-left-clear-error-hover, black);
+        --icon-right-color: var(--color-icon-right-clear-error-hover, black);
+        --icon-status-color: var(--color-icon-status-clear-error-hover);
+        --background-color: var(--color-bg-clear-error-hover, transparent);
+      }
+
+      &:has(.field:focus) {
+        --text-color: var(--color-text-clear-error-focus, black);
+        --prefix-color: var(--color-prefix-clear-error-focus, dodgerblue);
+        --postfix-color: var(--color-postfix-clear-error-focus, dodgerblue);
+        --icon-left-color: var(--color-icon-left-clear-error-focus, dodgerblue);
+        --icon-right-color: var(--color-icon-right-clear-error-focus, dodgerblue);
+        --icon-status-color: var(--color-icon-status-clear-error-focus);
+        --background-color: var(--color-bg-clear-error-focus, transparent);
+      }
     }
   }
 }
@@ -184,7 +510,7 @@
 .field {
   flex-grow: 1;
   height: 100%;
-  padding: 0 calc(var(--horizontal-padding, 16px) / 2);
+  padding: 0 calc(var(--horizontal-padding, 16px) / 4);
   border: none;
   margin: 0;
   box-sizing: border-box;
@@ -199,6 +525,14 @@
   background-color: transparent;
   outline: none;
   cursor: pointer;
+
+  &:first-child {
+    padding-left: calc(var(--horizontal-padding, 16px) / 2);
+  }
+
+  &:last-child {
+    padding-right: calc(var(--horizontal-padding, 16px) / 2);
+  }
 
   &:focus {
     cursor: text;
@@ -221,6 +555,9 @@
 }
 
 .prefix {
+  max-height: 100%;
+  overflow: hidden;
+
   font-family: var(--prefix-font-family, inherit);
   font-size: var(--prefix-font-size, inherit);
   font-weight: var(--prefix-font-weight, inherit);
@@ -251,6 +588,9 @@
 }
 
 .postfix {
+  max-height: 100%;
+  overflow: hidden;
+
   font-family: var(--postfix-font-family, inherit);
   font-size: var(--postfix-font-size, inherit);
   font-weight: var(--postfix-font-weight, inherit);
@@ -281,12 +621,13 @@
 }
 
 .icon-left {
+  flex-shrink: 0;
   width: auto;
   height: var(--icon-left-height, 16px);
 
   color: var(--icon-left-color, gray);
 
-  transition: color 100ms;
+  transition: color 200ms;
 
   &--size {
     &-s {
@@ -304,12 +645,13 @@
 }
 
 .icon-right {
+  flex-shrink: 0;
   width: auto;
   height: var(--icon-right-height, 16px);
 
   color: var(--icon-right-color, gray);
 
-  transition: color 100ms;
+  transition: color 200ms;
 
   &--size {
     &-s {
@@ -322,6 +664,29 @@
 
     &-l {
       --icon-right-height: var(--icon-right-height-l, 16px);
+    }
+  }
+}
+
+.icon-status {
+  flex-shrink: 0;
+  height: var(--icon-status-height, var(--height));
+
+  color: var(--icon-status-color, var(--color));
+
+  transition: color 200ms;
+
+  &--size {
+    &-s {
+      --icon-status-height: var(--icon-status-height-s);
+    }
+
+    &-m {
+      --icon-status-height: var(--icon-status-height-m);
+    }
+
+    &-l {
+      --icon-status-height: var(--icon-status-height-l);
     }
   }
 }
