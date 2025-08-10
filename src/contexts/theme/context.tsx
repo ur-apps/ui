@@ -43,6 +43,7 @@ const COMPONENT_CLASSES = [
   CssVariableGroup.OverlayTokens,
   CssVariableGroup.SegmentTokens,
   CssVariableGroup.SegmentedControlTokens,
+  CssVariableGroup.StatusIconTokens,
   CssVariableGroup.SwitchTokens,
   CssVariableGroup.TagTokens,
 ];
