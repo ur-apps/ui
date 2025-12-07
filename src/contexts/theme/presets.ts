@@ -19,6 +19,8 @@ import {
   switchStyleTokens,
   tagDarkModeStyleTokens,
   tagStyleTokens,
+  tooltipDarkModeStyleTokens,
+  tooltipStyleTokens,
 } from 'components';
 
 import { TStylePreset } from './types';
@@ -675,6 +677,7 @@ export const preset: TStylePreset = {
     statusIcon: statusIconStyleTokens,
     switch: switchStyleTokens,
     tag: tagStyleTokens,
+    tooltip: tooltipStyleTokens,
   },
 };
 
@@ -879,5 +882,6 @@ export const darkModePreset: TStylePreset = {
     segmentedControl: segmentedControlDarkModeStyleTokens,
     switch: switchDarkModeStyleTokens,
     tag: tagDarkModeStyleTokens,
+    tooltip: tooltipDarkModeStyleTokens,
   },
 };

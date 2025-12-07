@@ -3,6 +3,7 @@ import { TClasses } from '@ur-apps/common-fe';
 
 export type TooltipVariant = 'filled';
 export type TooltipColor = 'primary' | 'secondary' | 'contrast' | 'success' | 'warning' | 'danger';
+export type TooltipShape = 'default' | 'brick';
 export type TooltipSize = 's' | 'm' | 'l';
 export type TooltipPlacement = 'top' | 'bottom' | 'left' | 'right';
 export type TooltipTrigger = 'hover' | 'click' | 'manual';
@@ -17,10 +18,20 @@ export interface ITooltipProps extends Omit<HTMLAttributes<HTMLDivElement>, 'cla
    */
   anchor: RefObject<HTMLElement | null>;
   /**
+   * Tooltip variant
+   * @default "filled"
+   */
+  variant?: TooltipVariant;
+  /**
    * Tooltip color scheme
    * @default "primary"
    */
   color?: TooltipColor;
+  /**
+   * Tooltip corner shape
+   * @default "default"
+   */
+  shape?: TooltipShape;
   /**
    * Tooltip size
    * @default "m"
@@ -46,6 +57,11 @@ export interface ITooltipProps extends Omit<HTMLAttributes<HTMLDivElement>, 'cla
    * @default 200
    */
   hideDelay?: number;
+  /**
+   * Throttle interval for position updates (ms)
+   * @default 100
+   */
+  throttleInterval?: number;
 }
 
 export interface ITooltipStyleTokens {
@@ -71,7 +87,8 @@ export interface ITooltipStyleTokens {
       };
     };
   };
-  offset?: {
+  'box-shadow'?: string;
+  'offset'?: {
     [size in TooltipSize]?: string;
   };
   'min-width'?: {

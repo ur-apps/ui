@@ -14,6 +14,10 @@ export type TUseTooltipPositionProps = {
    */
   visible: boolean;
   /**
+   * Throttle interval for position updates (ms)
+   */
+  throttleInterval: number;
+  /**
    * A ref to the target element that the tooltip is positioned relative to.
    */
   targetRef?: RefObject<HTMLElement | null> | null;
@@ -23,7 +27,13 @@ export type TUseTooltipPositionProps = {
   tooltipRef?: RefObject<HTMLDivElement | null> | null;
 };
 
-export function useTooltipPosition({ visible, placement, targetRef, tooltipRef }: TUseTooltipPositionProps) {
+export function useTooltipPosition({
+  visible,
+  placement,
+  throttleInterval,
+  targetRef,
+  tooltipRef,
+}: TUseTooltipPositionProps) {
   const [top, setTop] = useState<number | undefined>(undefined);
   const [left, setLeft] = useState<number | undefined>(undefined);
 
@@ -41,7 +51,7 @@ export function useTooltipPosition({ visible, placement, targetRef, tooltipRef }
       setTop(top);
       setLeft(left);
     },
-    100,
+    throttleInterval,
     {
       leading: true,
     }

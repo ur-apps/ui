@@ -14,3 +14,4 @@ export * from './switch';
 export * from './tag';
 export * from './text';
 export * from './theme-control';
+export * from './tooltip';

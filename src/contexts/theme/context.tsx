@@ -46,6 +46,7 @@ const COMPONENT_CLASSES = [
   CssVariableGroup.StatusIconTokens,
   CssVariableGroup.SwitchTokens,
   CssVariableGroup.TagTokens,
+  CssVariableGroup.TooltipTokens,
 ];
 const TOKEN_CLASSES = Object.values(CssVariableGroup).filter((c) => !COMPONENT_CLASSES.includes(c));
 
@@ -53,6 +54,8 @@ export function ThemeProvider({ className, defaultTheme, customePreset = {}, chi
   const [theme, setTheme] = useState<Theme>(() => getThemeFromLS(defaultTheme));
   const portal = useRef(document.querySelector('#portal'));
 
+  // TODO add hook
+  // eslint-disable-next-line complexity
   const styles = useMemo(() => {
     const themeValue = theme === Theme.Auto ? getBrowserTheme() : theme;
 
@@ -96,6 +99,7 @@ export function ThemeProvider({ className, defaultTheme, customePreset = {}, chi
       getVariableStyles(components.statusIcon ?? {}, CssVariableGroup.StatusIconTokens),
       getVariableStyles(components.switch ?? {}, CssVariableGroup.SwitchTokens),
       getVariableStyles(components.tag ?? {}, CssVariableGroup.TagTokens),
+      getVariableStyles(components.tooltip ?? {}, CssVariableGroup.TooltipTokens),
     ];
   }, [theme, customePreset]);
 
