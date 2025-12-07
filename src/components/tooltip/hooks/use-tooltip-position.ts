@@ -33,8 +33,10 @@ export function useTooltipPosition({ visible, placement, targetRef, tooltipRef }
 
       const targetRect = targetRef.current.getBoundingClientRect();
       const tooltipRect = tooltipRef.current.getBoundingClientRect();
+      const tooltipComputedStyle = getComputedStyle(tooltipRef.current);
+      const offset = parseInt(tooltipComputedStyle.getPropertyValue('--offset')) || 0;
 
-      const { top, left } = getTooltipPosition(targetRect, tooltipRect, placement);
+      const { top, left } = getTooltipPosition(targetRect, tooltipRect, placement, offset);
 
       setTop(top);
       setLeft(left);
@@ -49,7 +51,7 @@ export function useTooltipPosition({ visible, placement, targetRef, tooltipRef }
     if (visible) {
       updatePosition();
     }
-  }, [updatePosition, visible]);
+  }, [updatePosition, visible, placement]);
 
   useLayoutEffect(() => {
     window.addEventListener('scroll', updatePosition, { passive: true });
