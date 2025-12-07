@@ -11,6 +11,7 @@ import {
   IStatusIconStyleTokens,
   ISwitchStyleTokens,
   ITagStyleTokens,
+  ITooltipStyleTokens,
 } from 'components';
 
 export enum Theme {
@@ -46,6 +47,7 @@ export enum CssVariableGroup {
   StatusIconTokens = 'uu-status-icon-tokens',
   SwitchTokens = 'uu-switch-tokens',
   TagTokens = 'uu-tag-tokens',
+  TooltipTokens = 'uu-tooltip-tokens',
 }
 
 type Size = '3xs' | '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
@@ -119,5 +121,6 @@ export type TStylePreset = {
     statusIcon?: IStatusIconStyleTokens;
     switch?: ISwitchStyleTokens;
     tag?: ITagStyleTokens;
+    tooltip?: ITooltipStyleTokens;
   };
 };

@@ -1,7 +1,7 @@
 import { HTMLAttributes } from 'react';
 import { TClasses } from '@ur-apps/common-fe';
 
-export type TextColor = 'primary' | 'secondary' | 'contrast' | 'link' | 'link-visited';
+export type TextColor = 'inherit' | 'primary' | 'secondary' | 'contrast' | 'link' | 'link-visited';
 export type TextSize = 'xs' | 's' | 'm' | 'l' | 'xl';
 export type TextTag = 'p' | 'span';
 
@@ -13,7 +13,7 @@ export interface ITextProps<T extends TextTag>
   className?: string | TClasses;
   /**
    * text color scheme
-   * @default "primary"
+   * @default "inherit"
    * */
   color?: TextColor;
   /**
