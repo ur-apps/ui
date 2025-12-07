@@ -1,12 +1,12 @@
-import { useEffect } from 'react';
+import { RefObject, useEffect } from 'react';
 import { useFlag, useHover } from '@ur-apps/common-fe';
 
 import { TooltipTrigger } from '../tooltip.types';
 
 export type UseTooltipVisibilityProps = {
   trigger: TooltipTrigger;
-  targetRef: React.RefObject<HTMLElement | null>;
-  tooltipRef: React.RefObject<HTMLDivElement | null>;
+  targetRef: RefObject<HTMLElement | null>;
+  tooltipRef: RefObject<HTMLDivElement | null>;
 };
 
 export function useTooltipVisibility({ trigger, targetRef, tooltipRef }: UseTooltipVisibilityProps) {
