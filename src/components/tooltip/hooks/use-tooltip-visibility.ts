@@ -5,22 +5,30 @@ import { TooltipTrigger } from '../tooltip.types';
 
 export type UseTooltipVisibilityProps = {
   trigger: TooltipTrigger;
+  showDelay?: number;
+  hideDelay?: number;
   targetRef: RefObject<HTMLElement | null>;
   tooltipRef: RefObject<HTMLDivElement | null>;
 };
 
-export function useTooltipVisibility({ trigger, targetRef, tooltipRef }: UseTooltipVisibilityProps) {
+export function useTooltipVisibility({
+  trigger,
+  showDelay,
+  hideDelay,
+  targetRef,
+  tooltipRef,
+}: UseTooltipVisibilityProps) {
   const [isTooltipVisible, setIsTooltipVisible, toggleTooltipVisible] = useFlag(false);
 
   const targetHovered = useHover(targetRef, {
-    enterDelay: 100,
-    leaveDelay: 200,
+    enterDelay: showDelay,
+    leaveDelay: hideDelay,
     includeFocus: true,
     pointerTypes: ['mouse', 'pen'],
     disabled: trigger !== 'hover',
   });
   const tooltipHovered = useHover(tooltipRef, {
-    leaveDelay: 200,
+    leaveDelay: hideDelay,
     disabled: trigger !== 'hover',
   });
 
