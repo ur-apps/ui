@@ -6,10 +6,14 @@
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   line-height: var(--line-height);
-  color: var(--text-color, black);
+  color: var(--text-color, inherit);
 }
 
 .heading--color {
+  &-inherit {
+    --text-color: inherit;
+  }
+
   &-primary {
     --text-color: var(--uu-color-text-primary);
   }
