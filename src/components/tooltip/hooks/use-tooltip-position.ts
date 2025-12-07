@@ -64,6 +64,8 @@ export function useTooltipPosition({
   }, [updatePosition, visible, placement]);
 
   useLayoutEffect(() => {
+    if (!visible) return;
+
     window.addEventListener('scroll', updatePosition, { passive: true });
     window.addEventListener('resize', updatePosition);
 
@@ -71,7 +73,7 @@ export function useTooltipPosition({
       window.removeEventListener('scroll', updatePosition);
       window.removeEventListener('resize', updatePosition);
     };
-  }, [updatePosition]);
+  }, [updatePosition, visible]);
 
   return useMemo(() => ({ top, left }), [top, left]);
 }
