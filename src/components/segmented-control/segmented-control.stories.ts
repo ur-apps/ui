@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { ReactComponent as TextAlignLeftCenterIcon } from 'icons/text.align.center.svg';
 import { ReactComponent as TextAlignLeftIcon } from 'icons/text.align.left.svg';

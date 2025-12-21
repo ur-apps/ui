@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { ReactComponent as InfoFilledIcon } from 'icons/info.circle.filled.svg';
 import { ReactComponent as PencilIcon } from 'icons/pencil.svg';
