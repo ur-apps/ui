@@ -2,6 +2,7 @@ import {
   IButtonStyleTokens,
   IDropdownStyleTokens,
   IHeadingStyleTokens,
+  IHintStyleTokens,
   IInputStyleTokens,
   IModalStyleTokens,
   IOptionStyleTokens,
@@ -37,6 +38,7 @@ export enum CssVariableGroup {
   ButtonTokens = 'uu-button-tokens',
   DropdownTokens = 'uu-dropdown-tokens',
   HeadingTokens = 'uu-heading-tokens',
+  HintTokens = 'uu-hint-tokens',
   InputTokens = 'uu-input-tokens',
   ModalTokens = 'uu-modal-tokens',
   OptionTokens = 'uu-option-tokens',
@@ -110,6 +112,7 @@ export type TStylePreset = {
     button?: IButtonStyleTokens;
     dropdown?: IDropdownStyleTokens;
     heading?: IHeadingStyleTokens;
+    hint?: IHintStyleTokens;
     input?: IInputStyleTokens;
     modal?: IModalStyleTokens;
     option?: IOptionStyleTokens;

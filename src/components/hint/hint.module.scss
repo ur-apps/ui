@@ -1,0 +1,49 @@
+.hint {
+  color: var(--color, black);
+  height: var(--height, 16px);
+  width: auto;
+
+  &--clickable {
+    cursor: pointer;
+  }
+}
+
+.hint--color {
+  &-primary {
+    --color: var(--color-primary, black);
+  }
+
+  &-secondary {
+    --color: var(--color-secondary, gray);
+  }
+
+  &-success {
+    --color: var(--color-success, green);
+  }
+
+  &-warning {
+    --color: var(--color-warning, orange);
+  }
+
+  &-danger {
+    --color: var(--color-danger, red);
+  }
+}
+
+.hint--size {
+  &-xs {
+    --height: var(--height-xs, 12px);
+  }
+
+  &-s {
+    --height: var(--height-s, 14px);
+  }
+
+  &-m {
+    --height: var(--height-m, 16px);
+  }
+
+  &-l {
+    --height: var(--height-l, 18px);
+  }
+}
