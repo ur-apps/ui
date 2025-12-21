@@ -20,7 +20,7 @@ export type TUseTooltipPositionProps = {
   /**
    * A ref to the target element that the tooltip is positioned relative to.
    */
-  targetRef?: RefObject<HTMLElement | null> | null;
+  targetRef?: RefObject<HTMLElement | SVGElement | null> | null;
   /**
    * A ref to the tooltip element itself.
    */

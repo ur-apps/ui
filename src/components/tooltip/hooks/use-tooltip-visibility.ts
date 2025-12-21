@@ -5,14 +5,16 @@ import { TooltipTrigger } from '../tooltip.types';
 
 export type UseTooltipVisibilityProps = {
   trigger: TooltipTrigger;
+  disabled?: boolean;
   showDelay?: number;
   hideDelay?: number;
-  targetRef: RefObject<HTMLElement | null>;
+  targetRef: RefObject<HTMLElement | SVGElement | null>;
   tooltipRef: RefObject<HTMLDivElement | null>;
 };
 
 export function useTooltipVisibility({
   trigger,
+  disabled,
   showDelay,
   hideDelay,
   targetRef,
@@ -25,11 +27,11 @@ export function useTooltipVisibility({
     leaveDelay: hideDelay,
     includeFocus: true,
     pointerTypes: ['mouse', 'pen'],
-    disabled: trigger !== 'hover',
+    disabled: trigger !== 'hover' || disabled,
   });
   const tooltipHovered = useHover(tooltipRef, {
     leaveDelay: hideDelay,
-    disabled: trigger !== 'hover',
+    disabled: trigger !== 'hover' || disabled,
   });
 
   useEffect(() => {
@@ -39,7 +41,7 @@ export function useTooltipVisibility({
   }, [trigger, setIsTooltipVisible]);
 
   useEffect(() => {
-    if (trigger !== 'click' || !targetRef.current) return;
+    if (disabled || trigger !== 'click' || !targetRef.current) return;
 
     const target = targetRef.current;
 
@@ -48,7 +50,7 @@ export function useTooltipVisibility({
     return () => {
       target.removeEventListener('click', toggleTooltipVisible);
     };
-  }, [targetRef, toggleTooltipVisible, trigger]);
+  }, [disabled, targetRef, toggleTooltipVisible, trigger]);
 
   useEffect(() => {
     if (trigger !== 'click' || !isTooltipVisible) return;

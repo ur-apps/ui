@@ -16,7 +16,7 @@ export interface ITooltipProps extends Omit<HTMLAttributes<HTMLDivElement>, 'cla
   /**
    * Reference to the anchor element that the tooltip is attached to
    */
-  anchor: RefObject<HTMLElement | null>;
+  anchor: RefObject<HTMLElement | SVGElement | null>;
   /**
    * Tooltip variant
    * @default "filled"
@@ -47,6 +47,11 @@ export interface ITooltipProps extends Omit<HTMLAttributes<HTMLDivElement>, 'cla
    * @default "hover"
    */
   trigger?: TooltipTrigger;
+  /**
+   * Is tooltip disabled (won't be shown)
+   * @default false
+   */
+  disabled?: boolean;
   /**
    * Delay before showing tooltip (ms)
    * @default 100

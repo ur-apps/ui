@@ -17,6 +17,7 @@ export function Tooltip({
   size = 'm',
   placement = 'top',
   trigger = 'hover',
+  disabled = false,
   showDelay = 100,
   hideDelay = 200,
   throttleInterval = 100,
@@ -38,6 +39,7 @@ export function Tooltip({
 
   const isTooltipVisible = useTooltipVisibility({
     trigger,
+    disabled,
     showDelay,
     hideDelay,
     targetRef,
