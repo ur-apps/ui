@@ -6,11 +6,11 @@ export type TModalSize = 's' | 'm' | 'l';
 
 export interface IModalProps extends Omit<HTMLAttributes<HTMLDivElement>, 'className'> {
   /**
-   * additinal css class name(s)
+   * additional css class name(s)
    */
   className?: string | TClasses;
   /**
-   * overlay additinal css class name(s)
+   * overlay additional css class name(s)
    */
   overlayClassName?: string | TClasses;
   /**

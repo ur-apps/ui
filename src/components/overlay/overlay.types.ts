@@ -3,7 +3,7 @@ import { TClasses } from '@ur-apps/common-fe';
 
 export interface IOverlayProps extends Omit<HTMLAttributes<HTMLDivElement>, 'className'> {
   /**
-   * additinal css class name(s)
+   * additional css class name(s)
    */
   className?: string | TClasses;
   /**

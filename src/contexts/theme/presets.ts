@@ -4,6 +4,7 @@ import {
   dropdownDarkModeStyleTokens,
   dropdownStyleTokens,
   headingStyleTokens,
+  hintStyleTokens,
   inputDarkModeStyleTokens,
   inputStyleTokens,
   modalStyleTokens,
@@ -14,11 +15,12 @@ import {
   segmentedControlDarkModeStyleTokens,
   segmentedControlStyleTokens,
   segmentStyleTokens,
-  statusIconStyleTokens,
   switchDarkModeStyleTokens,
   switchStyleTokens,
   tagDarkModeStyleTokens,
   tagStyleTokens,
+  tooltipDarkModeStyleTokens,
+  tooltipStyleTokens,
 } from 'components';
 
 import { TStylePreset } from './types';
@@ -666,15 +668,16 @@ export const preset: TStylePreset = {
     button: buttonStyleTokens,
     dropdown: dropdownStyleTokens,
     heading: headingStyleTokens,
+    hint: hintStyleTokens,
     input: inputStyleTokens,
     modal: modalStyleTokens,
     option: optionStyleTokens,
     overlay: overlayStyleTokens,
     segment: segmentStyleTokens,
     segmentedControl: segmentedControlStyleTokens,
-    statusIcon: statusIconStyleTokens,
     switch: switchStyleTokens,
     tag: tagStyleTokens,
+    tooltip: tooltipStyleTokens,
   },
 };
 
@@ -879,5 +882,6 @@ export const darkModePreset: TStylePreset = {
     segmentedControl: segmentedControlDarkModeStyleTokens,
     switch: switchDarkModeStyleTokens,
     tag: tagDarkModeStyleTokens,
+    tooltip: tooltipDarkModeStyleTokens,
   },
 };

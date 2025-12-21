@@ -37,6 +37,7 @@ const COMPONENT_CLASSES = [
   CssVariableGroup.ButtonTokens,
   CssVariableGroup.DropdownTokens,
   CssVariableGroup.HeadingTokens,
+  CssVariableGroup.HintTokens,
   CssVariableGroup.InputTokens,
   CssVariableGroup.ModalTokens,
   CssVariableGroup.OptionTokens,
@@ -45,6 +46,7 @@ const COMPONENT_CLASSES = [
   CssVariableGroup.SegmentedControlTokens,
   CssVariableGroup.SwitchTokens,
   CssVariableGroup.TagTokens,
+  CssVariableGroup.TooltipTokens,
 ];
 const TOKEN_CLASSES = Object.values(CssVariableGroup).filter((c) => !COMPONENT_CLASSES.includes(c));
 
@@ -52,6 +54,8 @@ export function ThemeProvider({ className, defaultTheme, customePreset = {}, chi
   const [theme, setTheme] = useState<Theme>(() => getThemeFromLS(defaultTheme));
   const portal = useRef(document.querySelector('#portal'));
 
+  // TODO add hook
+  // eslint-disable-next-line complexity
   const styles = useMemo(() => {
     const themeValue = theme === Theme.Auto ? getBrowserTheme() : theme;
 
@@ -86,15 +90,16 @@ export function ThemeProvider({ className, defaultTheme, customePreset = {}, chi
       getVariableStyles(components.button ?? {}, CssVariableGroup.ButtonTokens),
       getVariableStyles(components.dropdown ?? {}, CssVariableGroup.DropdownTokens),
       getVariableStyles(components.heading ?? {}, CssVariableGroup.HeadingTokens),
+      getVariableStyles(components.hint ?? {}, CssVariableGroup.HintTokens),
       getVariableStyles(components.input ?? {}, CssVariableGroup.InputTokens),
       getVariableStyles(components.modal ?? {}, CssVariableGroup.ModalTokens),
       getVariableStyles(components.option ?? {}, CssVariableGroup.OptionTokens),
       getVariableStyles(components.overlay ?? {}, CssVariableGroup.OverlayTokens),
       getVariableStyles(components.segment ?? {}, CssVariableGroup.SegmentTokens),
       getVariableStyles(components.segmentedControl ?? {}, CssVariableGroup.SegmentedControlTokens),
-      getVariableStyles(components.statusIcon ?? {}, CssVariableGroup.StatusIconTokens),
       getVariableStyles(components.switch ?? {}, CssVariableGroup.SwitchTokens),
       getVariableStyles(components.tag ?? {}, CssVariableGroup.TagTokens),
+      getVariableStyles(components.tooltip ?? {}, CssVariableGroup.TooltipTokens),
     ];
   }, [theme, customePreset]);
 

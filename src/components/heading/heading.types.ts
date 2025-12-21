@@ -1,18 +1,18 @@
 import { HTMLAttributes } from 'react';
 import { TClasses } from '@ur-apps/common-fe';
 
-export type THeadingColor = 'primary' | 'secondary' | 'contrast' | 'link' | 'link-visited';
+export type THeadingColor = 'inherit' | 'primary' | 'secondary' | 'contrast' | 'link' | 'link-visited';
 export type THeadingSize = '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl';
 export type THeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export interface IHeadingProps extends Omit<HTMLAttributes<HTMLHeadingElement>, 'className' | 'color'> {
   /**
-   * additinal css class name
+   * additional css class name
    */
   className?: string | TClasses;
   /**
    * heading color scheme
-   * @default "primary"
+   * @default "inherit"
    * */
   color?: THeadingColor;
   /**

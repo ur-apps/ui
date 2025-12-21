@@ -104,8 +104,8 @@
   "peerDependencies": {
     "@types/react": "19.x",
     "@types/react-dom": "19.x",
-    "@ur-apps/common": "^0.0.8",
-    "@ur-apps/common-fe": "^0.0.8",
+    "@ur-apps/common": "^0.1.0",
+    "@ur-apps/common-fe": "^0.3.0",
     "react": "19.x",
     "react-dom": "19.x",
     "react-router-dom": "7.x"

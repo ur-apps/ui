@@ -1,6 +1,7 @@
 export * from './button';
 export * from './dropdown';
 export * from './heading';
+export * from './hint';
 export * from './input';
 export * from './modal';
 export * from './option';
@@ -9,8 +10,8 @@ export * from './portal';
 export * from './segment';
 export * from './segmented-control';
 export * from './select';
-export * from './status-icon';
 export * from './switch';
 export * from './tag';
 export * from './text';
 export * from './theme-control';
+export * from './tooltip';

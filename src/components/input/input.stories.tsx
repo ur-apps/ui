@@ -9,6 +9,23 @@ import { Input } from './input';
 const meta: Meta<typeof Input> = {
   title: 'Form/Input',
   component: Input,
+  args: {
+    type: 'text',
+    variant: 'filled',
+    shape: 'default',
+    size: 'l',
+    status: 'default',
+    hint: '',
+    disabled: false,
+    placeholder: 'placeholder',
+    defaultValue: 'Hello World!',
+  },
+  argTypes: {
+    variant: { control: 'inline-radio' },
+    shape: { control: 'inline-radio' },
+    size: { control: 'inline-radio' },
+    status: { control: 'inline-radio' },
+  },
 };
 
 export default meta;
@@ -19,8 +36,6 @@ export const Filled: Story = {
     variant: 'filled',
     shape: 'default',
     size: 'l',
-    placeholder: 'Placeholder',
-    defaultValue: 'Hello World!',
   },
 };
 
@@ -29,8 +44,6 @@ export const Outlined: Story = {
     variant: 'outlined',
     shape: 'round',
     size: 'm',
-    placeholder: 'Placeholder',
-    defaultValue: 'Hello World!',
   },
 };
 
@@ -39,8 +52,6 @@ export const Clear: Story = {
     variant: 'clear',
     shape: 'brick',
     size: 's',
-    placeholder: 'Placeholder',
-    defaultValue: 'Hello World!',
   },
 };
 
@@ -60,7 +71,6 @@ export const RightIcon: Story = {
     shape: 'round',
     size: 'm',
     placeholder: 'password',
-    defaultValue: 'Hello World!',
     iconRight: InfoIconFilled,
   },
 };
@@ -70,8 +80,6 @@ export const WithLeftAndRightIcon: Story = {
     variant: 'outlined',
     shape: 'round',
     size: 'm',
-    placeholder: 'placeholder',
-    defaultValue: 'Hello World!',
     iconLeft: MagnifyingglassIconOutlined,
     iconRight: InfoIconOutlined,
   },
@@ -82,8 +90,6 @@ export const WithPrefix: Story = {
     variant: 'filled',
     shape: 'round',
     size: 'm',
-    placeholder: 'Placeholder',
-    defaultValue: 'Hello World!',
     prefix: 'Your name:',
   },
 };
@@ -107,10 +113,30 @@ export const WithPrefixAndPostfix: Story = {
     variant: 'filled',
     shape: 'default',
     size: 'm',
-    placeholder: 'Placeholder',
     defaultValue: 'john_doe',
+    placeholder: 'gmail',
     prefix: 'email:',
     postfix: '@gmail.com',
     style: { textAlign: 'right' },
+  },
+};
+
+export const WithHint: Story = {
+  args: {
+    type: 'password',
+    variant: 'filled',
+    shape: 'default',
+    size: 'm',
+    defaultValue: '12345',
+    placeholder: 'password',
+    prefix: 'password:',
+    status: 'danger',
+    hint: (
+      <ul style={{ margin: 0, padding: '0px 12px' }}>
+        <li>Your password must be at least 8 characters long</li>
+        <li>Include at least one uppercase letter</li>
+        <li>Include at least one number</li>
+      </ul>
+    ),
   },
 };

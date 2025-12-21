@@ -10,7 +10,7 @@ export type TOptionValue = string | number;
 export interface IOptionProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'className' | 'size' | 'type' | 'value'> {
   /**
-   * additinal css class name
+   * additional css class name
    */
   className?: string | TClasses;
   /**

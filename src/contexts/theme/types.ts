@@ -2,15 +2,16 @@ import {
   IButtonStyleTokens,
   IDropdownStyleTokens,
   IHeadingStyleTokens,
+  IHintStyleTokens,
   IInputStyleTokens,
   IModalStyleTokens,
   IOptionStyleTokens,
   IOverlayStyleTokens,
   ISegmentedControlStyleTokens,
   ISegmentStyleTokens,
-  IStatusIconStyleTokens,
   ISwitchStyleTokens,
   ITagStyleTokens,
+  ITooltipStyleTokens,
 } from 'components';
 
 export enum Theme {
@@ -37,15 +38,16 @@ export enum CssVariableGroup {
   ButtonTokens = 'uu-button-tokens',
   DropdownTokens = 'uu-dropdown-tokens',
   HeadingTokens = 'uu-heading-tokens',
+  HintTokens = 'uu-hint-tokens',
   InputTokens = 'uu-input-tokens',
   ModalTokens = 'uu-modal-tokens',
   OptionTokens = 'uu-option-tokens',
   OverlayTokens = 'uu-overlay-tokens',
   SegmentTokens = 'uu-segment-tokens',
   SegmentedControlTokens = 'uu-segmented-control-tokens',
-  StatusIconTokens = 'uu-status-icon-tokens',
   SwitchTokens = 'uu-switch-tokens',
   TagTokens = 'uu-tag-tokens',
+  TooltipTokens = 'uu-tooltip-tokens',
 }
 
 type Size = '3xs' | '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
@@ -110,14 +112,15 @@ export type TStylePreset = {
     button?: IButtonStyleTokens;
     dropdown?: IDropdownStyleTokens;
     heading?: IHeadingStyleTokens;
+    hint?: IHintStyleTokens;
     input?: IInputStyleTokens;
     modal?: IModalStyleTokens;
     option?: IOptionStyleTokens;
     overlay?: IOverlayStyleTokens;
     segment?: ISegmentStyleTokens;
     segmentedControl?: ISegmentedControlStyleTokens;
-    statusIcon?: IStatusIconStyleTokens;
     switch?: ISwitchStyleTokens;
     tag?: ITagStyleTokens;
+    tooltip?: ITooltipStyleTokens;
   };
 };

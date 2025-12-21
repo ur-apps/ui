@@ -1,6 +1,8 @@
 import { ButtonHTMLAttributes, HTMLAttributes, Ref } from 'react';
 import { TClasses } from '@ur-apps/common-fe';
 
+import { SvgIcon } from 'types';
+
 export type TagVariant = 'filled' | 'outlined' | 'ghost';
 export type TagColor = 'primary' | 'secondary' | 'accent' | 'success' | 'warning' | 'danger';
 export type TagShape = 'default' | 'brick' | 'round';
@@ -8,7 +10,7 @@ export type TagSize = 'm';
 
 export interface ITagProps extends Omit<HTMLAttributes<HTMLDivElement>, 'className'> {
   /**
-   * additinal css class name(s)
+   * additional css class name(s)
    */
   className?: string | TClasses;
   /**
@@ -47,7 +49,7 @@ export interface ITagProps extends Omit<HTMLAttributes<HTMLDivElement>, 'classNa
 
 export interface ITagButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className'> {
   /**
-   * additinal css class name(s)
+   * additional css class name(s)
    */
   className?: string | TClasses;
   /**
@@ -58,7 +60,7 @@ export interface ITagButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonEle
   /**
    * button icon
    */
-  icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  icon: SvgIcon;
 }
 
 export interface ITagStyleTokens {

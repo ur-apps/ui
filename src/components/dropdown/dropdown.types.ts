@@ -12,7 +12,7 @@ export type TDropdownValue<M extends boolean> = M extends true ? TOptionValue[] 
 export interface IDropdownProps<M extends boolean = false>
   extends Omit<HTMLAttributes<HTMLDivElement>, 'className' | 'onChange'> {
   /**
-   * additinal css class name(s)
+   * additional css class name(s)
    */
   className?: string | TClasses;
   /**

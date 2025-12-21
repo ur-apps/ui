@@ -6,7 +6,7 @@ import styles from './text.module.scss';
 
 export function Text<T extends 'p' | 'span' = 'p'>({
   className,
-  color = 'primary',
+  color = 'inherit',
   size = 'm',
   tag = 'p' as T,
   ...props

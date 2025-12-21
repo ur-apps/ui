@@ -1,11 +1,12 @@
-import { IStatusIconStyleTokens } from './status-icon.types';
+import { IHintStyleTokens } from './hint.types';
 
-export const statusIconStyleTokens: IStatusIconStyleTokens = {
+export const hintStyleTokens: IHintStyleTokens = {
   color: {
-    info: 'var(--uu-color-neutral-1000)',
+    primary: 'var(--uu-color-text-primary)',
+    secondary: 'var(--uu-color-text-secondary)',
     success: 'var(--uu-color-success-500)',
     warning: 'var(--uu-color-warning-500)',
-    error: 'var(--uu-color-danger-500)',
+    danger: 'var(--uu-color-danger-500)',
   },
   height: {
     xs: 'var(--uu-icon-height-xs)',

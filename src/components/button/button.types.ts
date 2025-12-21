@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, Ref } from 'react';
 import { TClasses } from '@ur-apps/common-fe';
 
 export type ButtonVariant = 'filled' | 'outlined' | 'ghost' | 'clear';
@@ -9,7 +9,7 @@ export type ButtonState = 'default' | 'hover' | 'active';
 
 export interface IButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className'> {
   /**
-   * additinal css class name
+   * additional css class name
    */
   className?: string | TClasses;
   /**
@@ -40,6 +40,10 @@ export interface IButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElemen
    * is button disabled
    */
   disabled?: boolean;
+  /**
+   * ref to button element
+   */
+  ref?: Ref<HTMLButtonElement>;
 }
 
 export interface IButtonStyleTokens {

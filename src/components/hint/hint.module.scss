@@ -1,4 +1,4 @@
-.icon {
+.hint {
   color: var(--color, black);
   height: var(--height, 16px);
   width: auto;
@@ -8,9 +8,13 @@
   }
 }
 
-.icon--status {
-  &-info {
-    --color: var(--color-info, black);
+.hint--color {
+  &-primary {
+    --color: var(--color-primary, black);
+  }
+
+  &-secondary {
+    --color: var(--color-secondary, gray);
   }
 
   &-success {
@@ -21,12 +25,12 @@
     --color: var(--color-warning, orange);
   }
 
-  &-error {
-    --color: var(--color-error, red);
+  &-danger {
+    --color: var(--color-danger, red);
   }
 }
 
-.icon--size {
+.hint--size {
   &-xs {
     --height: var(--height-xs, 12px);
   }
