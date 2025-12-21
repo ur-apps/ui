@@ -8,7 +8,6 @@ import {
   IOverlayStyleTokens,
   ISegmentedControlStyleTokens,
   ISegmentStyleTokens,
-  IStatusIconStyleTokens,
   ISwitchStyleTokens,
   ITagStyleTokens,
   ITooltipStyleTokens,
@@ -44,7 +43,6 @@ export enum CssVariableGroup {
   OverlayTokens = 'uu-overlay-tokens',
   SegmentTokens = 'uu-segment-tokens',
   SegmentedControlTokens = 'uu-segmented-control-tokens',
-  StatusIconTokens = 'uu-status-icon-tokens',
   SwitchTokens = 'uu-switch-tokens',
   TagTokens = 'uu-tag-tokens',
   TooltipTokens = 'uu-tooltip-tokens',
@@ -118,7 +116,6 @@ export type TStylePreset = {
     overlay?: IOverlayStyleTokens;
     segment?: ISegmentStyleTokens;
     segmentedControl?: ISegmentedControlStyleTokens;
-    statusIcon?: IStatusIconStyleTokens;
     switch?: ISwitchStyleTokens;
     tag?: ITagStyleTokens;
     tooltip?: ITooltipStyleTokens;

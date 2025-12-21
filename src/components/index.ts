@@ -9,7 +9,6 @@ export * from './portal';
 export * from './segment';
 export * from './segmented-control';
 export * from './select';
-export * from './status-icon';
 export * from './switch';
 export * from './tag';
 export * from './text';
