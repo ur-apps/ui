@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, Ref } from 'react';
+import { InputHTMLAttributes, ReactNode, Ref } from 'react';
 import { TClasses } from '@ur-apps/common-fe';
 
 import { IHintProps } from 'components/hint';
@@ -59,7 +59,7 @@ export interface IInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>,
   /**
    * message to show in tooltip for info(default)/success/warning/danger statuses
    */
-  hint?: string;
+  hint?: ReactNode;
   /**
    * additional props for the Hint component
    */
