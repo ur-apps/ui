@@ -19,7 +19,7 @@ export const inputStyleTokens: IInputStyleTokens = {
           hover: 'var(--uu-color-warning-200)',
           focus: 'var(--uu-color-primary-100)',
         },
-        error: {
+        danger: {
           default: 'var(--uu-color-danger-100)',
           hover: 'var(--uu-color-danger-200)',
           focus: 'var(--uu-color-primary-100)',
@@ -41,7 +41,7 @@ export const inputStyleTokens: IInputStyleTokens = {
           hover: 'var(--uu-color-bg-primary)',
           focus: 'var(--uu-color-bg-primary)',
         },
-        error: {
+        danger: {
           default: 'var(--uu-color-bg-primary)',
           hover: 'var(--uu-color-bg-primary)',
           focus: 'var(--uu-color-bg-primary)',
@@ -65,7 +65,7 @@ export const inputStyleTokens: IInputStyleTokens = {
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-text-primary)',
         },
-        error: {
+        danger: {
           default: 'var(--uu-color-text-primary)',
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-text-primary)',
@@ -87,7 +87,7 @@ export const inputStyleTokens: IInputStyleTokens = {
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-text-primary)',
         },
-        error: {
+        danger: {
           default: 'var(--uu-color-text-primary)',
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-text-primary)',
@@ -109,7 +109,7 @@ export const inputStyleTokens: IInputStyleTokens = {
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-text-primary)',
         },
-        error: {
+        danger: {
           default: 'var(--uu-color-text-primary)',
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-text-primary)',
@@ -133,7 +133,7 @@ export const inputStyleTokens: IInputStyleTokens = {
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
         },
-        error: {
+        danger: {
           default: 'var(--uu-color-text-secondary)',
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
@@ -155,7 +155,7 @@ export const inputStyleTokens: IInputStyleTokens = {
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
         },
-        error: {
+        danger: {
           default: 'var(--uu-color-text-secondary)',
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
@@ -177,7 +177,7 @@ export const inputStyleTokens: IInputStyleTokens = {
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
         },
-        error: {
+        danger: {
           default: 'var(--uu-color-text-secondary)',
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
@@ -201,7 +201,7 @@ export const inputStyleTokens: IInputStyleTokens = {
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
         },
-        error: {
+        danger: {
           default: 'var(--uu-color-text-secondary)',
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
@@ -223,7 +223,7 @@ export const inputStyleTokens: IInputStyleTokens = {
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
         },
-        error: {
+        danger: {
           default: 'var(--uu-color-text-secondary)',
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
@@ -245,7 +245,7 @@ export const inputStyleTokens: IInputStyleTokens = {
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
         },
-        error: {
+        danger: {
           default: 'var(--uu-color-text-secondary)',
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
@@ -269,7 +269,7 @@ export const inputStyleTokens: IInputStyleTokens = {
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
         },
-        error: {
+        danger: {
           default: 'var(--uu-color-text-secondary)',
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
@@ -291,7 +291,7 @@ export const inputStyleTokens: IInputStyleTokens = {
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
         },
-        error: {
+        danger: {
           default: 'var(--uu-color-text-secondary)',
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
@@ -313,7 +313,7 @@ export const inputStyleTokens: IInputStyleTokens = {
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
         },
-        error: {
+        danger: {
           default: 'var(--uu-color-text-secondary)',
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
@@ -337,7 +337,7 @@ export const inputStyleTokens: IInputStyleTokens = {
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
         },
-        error: {
+        danger: {
           default: 'var(--uu-color-text-secondary)',
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
@@ -359,7 +359,7 @@ export const inputStyleTokens: IInputStyleTokens = {
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
         },
-        error: {
+        danger: {
           default: 'var(--uu-color-text-secondary)',
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
@@ -381,7 +381,7 @@ export const inputStyleTokens: IInputStyleTokens = {
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
         },
-        error: {
+        danger: {
           default: 'var(--uu-color-text-secondary)',
           hover: 'var(--uu-color-text-primary)',
           focus: 'var(--uu-color-primary-500)',
@@ -405,7 +405,7 @@ export const inputStyleTokens: IInputStyleTokens = {
           hover: 'var(--uu-color-warning-600)',
           focus: 'var(--uu-color-primary-500)',
         },
-        error: {
+        danger: {
           default: 'var(--uu-color-danger-500)',
           hover: 'var(--uu-color-danger-600)',
           focus: 'var(--uu-color-primary-500)',
@@ -494,7 +494,7 @@ export const inputDarkModeStyleTokens: IInputStyleTokens = {
           hover: 'var(--uu-color-warning-800)',
           focus: 'var(--uu-color-primary-900)',
         },
-        error: {
+        danger: {
           default: 'var(--uu-color-danger-900)',
           hover: 'var(--uu-color-danger-800)',
           focus: 'var(--uu-color-primary-900)',
@@ -509,7 +509,7 @@ export const inputDarkModeStyleTokens: IInputStyleTokens = {
         warning: {
           hover: 'var(--uu-color-warning-500)',
         },
-        error: {
+        danger: {
           hover: 'var(--uu-color-danger-500)',
         },
       },

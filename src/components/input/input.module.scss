@@ -132,34 +132,34 @@
     }
   }
 
-  &.wrapper--status-error {
-    --text-color: var(--color-text-filled-error-default, black);
-    --prefix-color: var(--color-prefix-filled-error-default, gray);
-    --postfix-color: var(--color-postfix-filled-error-default, gray);
-    --icon-left-color: var(--color-icon-left-filled-error-default, gray);
-    --icon-right-color: var(--color-icon-right-filled-error-default, gray);
-    --icon-status-color: var(--color-icon-status-filled-error-default);
-    --background-color: var(--color-bg-filled-error-default, lightcoral);
+  &.wrapper--status-danger {
+    --text-color: var(--color-text-filled-danger-default, black);
+    --prefix-color: var(--color-prefix-filled-danger-default, gray);
+    --postfix-color: var(--color-postfix-filled-danger-default, gray);
+    --icon-left-color: var(--color-icon-left-filled-danger-default, gray);
+    --icon-right-color: var(--color-icon-right-filled-danger-default, gray);
+    --icon-status-color: var(--color-icon-status-filled-danger-default);
+    --background-color: var(--color-bg-filled-danger-default, lightcoral);
 
     &:not(:has(.field:disabled)) {
       &:hover {
-        --text-color: var(--color-text-filled-error-hover, black);
-        --prefix-color: var(--color-prefix-filled-error-hover, black);
-        --postfix-color: var(--color-postfix-filled-error-hover, black);
-        --icon-left-color: var(--color-icon-left-filled-error-hover, black);
-        --icon-right-color: var(--color-icon-right-filled-error-hover, black);
-        --icon-status-color: var(--color-icon-status-filled-error-hover);
-        --background-color: var(--color-bg-filled-error-hover, lightcoral);
+        --text-color: var(--color-text-filled-danger-hover, black);
+        --prefix-color: var(--color-prefix-filled-danger-hover, black);
+        --postfix-color: var(--color-postfix-filled-danger-hover, black);
+        --icon-left-color: var(--color-icon-left-filled-danger-hover, black);
+        --icon-right-color: var(--color-icon-right-filled-danger-hover, black);
+        --icon-status-color: var(--color-icon-status-filled-danger-hover);
+        --background-color: var(--color-bg-filled-danger-hover, lightcoral);
       }
 
       &:has(.field:focus) {
-        --text-color: var(--color-text-filled-error-focus, black);
-        --prefix-color: var(--color-prefix-filled-error-focus, dodgerblue);
-        --postfix-color: var(--color-postfix-filled-error-focus, dodgerblue);
-        --icon-left-color: var(--color-icon-left-filled-error-focus, dodgerblue);
-        --icon-right-color: var(--color-icon-right-filled-error-focus, dodgerblue);
-        --icon-status-color: var(--color-icon-status-filled-error-focus);
-        --background-color: var(--color-bg-filled-error-focus, lightblue);
+        --text-color: var(--color-text-filled-danger-focus, black);
+        --prefix-color: var(--color-prefix-filled-danger-focus, dodgerblue);
+        --postfix-color: var(--color-postfix-filled-danger-focus, dodgerblue);
+        --icon-left-color: var(--color-icon-left-filled-danger-focus, dodgerblue);
+        --icon-right-color: var(--color-icon-right-filled-danger-focus, dodgerblue);
+        --icon-status-color: var(--color-icon-status-filled-danger-focus);
+        --background-color: var(--color-bg-filled-danger-focus, lightblue);
       }
     }
   }
@@ -283,37 +283,37 @@
     }
   }
 
-  &.wrapper--status-error {
-    --text-color: var(--color-text-outlined-error-default, black);
-    --prefix-color: var(--color-prefix-outlined-error-default, gray);
-    --postfix-color: var(--color-postfix-outlined-error-default, gray);
-    --icon-left-color: var(--color-icon-left-outlined-error-default, gray);
-    --icon-right-color: var(--color-icon-right-outlined-error-default, gray);
-    --icon-status-color: var(--color-icon-status-outlined-error-default);
-    --border-color: var(--color-border-outlined-error-default, red);
-    --background-color: var(--color-bg-outlined-error-default, white);
+  &.wrapper--status-danger {
+    --text-color: var(--color-text-outlined-danger-default, black);
+    --prefix-color: var(--color-prefix-outlined-danger-default, gray);
+    --postfix-color: var(--color-postfix-outlined-danger-default, gray);
+    --icon-left-color: var(--color-icon-left-outlined-danger-default, gray);
+    --icon-right-color: var(--color-icon-right-outlined-danger-default, gray);
+    --icon-status-color: var(--color-icon-status-outlined-danger-default);
+    --border-color: var(--color-border-outlined-danger-default, red);
+    --background-color: var(--color-bg-outlined-danger-default, white);
 
     &:not(:has(.field:disabled)) {
       &:hover {
-        --text-color: var(--color-text-outlined-error-hover, black);
-        --prefix-color: var(--color-prefix-outlined-error-hover, black);
-        --postfix-color: var(--color-postfix-outlined-error-hover, black);
-        --icon-left-color: var(--color-icon-left-outlined-error-hover, black);
-        --icon-right-color: var(--color-icon-right-outlined-error-hover, black);
-        --icon-status-color: var(--color-icon-status-outlined-error-hover);
-        --border-color: var(--color-border-outlined-error-hover, red);
-        --background-color: var(--color-bg-outlined-error-hover, white);
+        --text-color: var(--color-text-outlined-danger-hover, black);
+        --prefix-color: var(--color-prefix-outlined-danger-hover, black);
+        --postfix-color: var(--color-postfix-outlined-danger-hover, black);
+        --icon-left-color: var(--color-icon-left-outlined-danger-hover, black);
+        --icon-right-color: var(--color-icon-right-outlined-danger-hover, black);
+        --icon-status-color: var(--color-icon-status-outlined-danger-hover);
+        --border-color: var(--color-border-outlined-danger-hover, red);
+        --background-color: var(--color-bg-outlined-danger-hover, white);
       }
 
       &:has(.field:focus) {
-        --text-color: var(--color-text-outlined-error-focus, black);
-        --prefix-color: var(--color-prefix-outlined-error-focus, dodgerblue);
-        --postfix-color: var(--color-postfix-outlined-error-focus, dodgerblue);
-        --icon-left-color: var(--color-icon-left-outlined-error-focus, dodgerblue);
-        --icon-right-color: var(--color-icon-right-outlined-error-focus, dodgerblue);
-        --icon-status-color: var(--color-icon-status-outlined-error-focus);
-        --border-color: var(--color-border-outlined-error-focus, dodgerblue);
-        --background-color: var(--color-bg-outlined-error-focus, white);
+        --text-color: var(--color-text-outlined-danger-focus, black);
+        --prefix-color: var(--color-prefix-outlined-danger-focus, dodgerblue);
+        --postfix-color: var(--color-postfix-outlined-danger-focus, dodgerblue);
+        --icon-left-color: var(--color-icon-left-outlined-danger-focus, dodgerblue);
+        --icon-right-color: var(--color-icon-right-outlined-danger-focus, dodgerblue);
+        --icon-status-color: var(--color-icon-status-outlined-danger-focus);
+        --border-color: var(--color-border-outlined-danger-focus, dodgerblue);
+        --background-color: var(--color-bg-outlined-danger-focus, white);
       }
     }
   }
@@ -418,34 +418,34 @@
     }
   }
 
-  &.wrapper--status-error {
-    --text-color: var(--color-text-clear-error-default, black);
-    --prefix-color: var(--color-prefix-clear-error-default, gray);
-    --postfix-color: var(--color-postfix-clear-error-default, gray);
-    --icon-left-color: var(--color-icon-left-clear-error-default, gray);
-    --icon-right-color: var(--color-icon-right-clear-error-default, gray);
-    --icon-status-color: var(--color-icon-status-clear-error-default);
-    --background-color: var(--color-bg-clear-error-default, transparent);
+  &.wrapper--status-danger {
+    --text-color: var(--color-text-clear-danger-default, black);
+    --prefix-color: var(--color-prefix-clear-danger-default, gray);
+    --postfix-color: var(--color-postfix-clear-danger-default, gray);
+    --icon-left-color: var(--color-icon-left-clear-danger-default, gray);
+    --icon-right-color: var(--color-icon-right-clear-danger-default, gray);
+    --icon-status-color: var(--color-icon-status-clear-danger-default);
+    --background-color: var(--color-bg-clear-danger-default, transparent);
 
     &:not(:has(.field:disabled)) {
       &:hover {
-        --text-color: var(--color-text-clear-error-hover, black);
-        --prefix-color: var(--color-prefix-clear-error-hover, black);
-        --postfix-color: var(--color-postfix-clear-error-hover, black);
-        --icon-left-color: var(--color-icon-left-clear-error-hover, black);
-        --icon-right-color: var(--color-icon-right-clear-error-hover, black);
-        --icon-status-color: var(--color-icon-status-clear-error-hover);
-        --background-color: var(--color-bg-clear-error-hover, transparent);
+        --text-color: var(--color-text-clear-danger-hover, black);
+        --prefix-color: var(--color-prefix-clear-danger-hover, black);
+        --postfix-color: var(--color-postfix-clear-danger-hover, black);
+        --icon-left-color: var(--color-icon-left-clear-danger-hover, black);
+        --icon-right-color: var(--color-icon-right-clear-danger-hover, black);
+        --icon-status-color: var(--color-icon-status-clear-danger-hover);
+        --background-color: var(--color-bg-clear-danger-hover, transparent);
       }
 
       &:has(.field:focus) {
-        --text-color: var(--color-text-clear-error-focus, black);
-        --prefix-color: var(--color-prefix-clear-error-focus, dodgerblue);
-        --postfix-color: var(--color-postfix-clear-error-focus, dodgerblue);
-        --icon-left-color: var(--color-icon-left-clear-error-focus, dodgerblue);
-        --icon-right-color: var(--color-icon-right-clear-error-focus, dodgerblue);
-        --icon-status-color: var(--color-icon-status-clear-error-focus);
-        --background-color: var(--color-bg-clear-error-focus, transparent);
+        --text-color: var(--color-text-clear-danger-focus, black);
+        --prefix-color: var(--color-prefix-clear-danger-focus, dodgerblue);
+        --postfix-color: var(--color-postfix-clear-danger-focus, dodgerblue);
+        --icon-left-color: var(--color-icon-left-clear-danger-focus, dodgerblue);
+        --icon-right-color: var(--color-icon-right-clear-danger-focus, dodgerblue);
+        --icon-status-color: var(--color-icon-status-clear-danger-focus);
+        --background-color: var(--color-bg-clear-danger-focus, transparent);
       }
     }
   }

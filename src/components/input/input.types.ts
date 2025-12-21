@@ -6,7 +6,7 @@ import { SvgIcon } from 'types';
 export type InputVariant = 'filled' | 'outlined' | 'clear';
 export type InputShape = 'default' | 'brick' | 'round';
 export type InputSize = 's' | 'm' | 'l';
-export type InputStatus = 'default' | 'success' | 'warning' | 'error';
+export type InputStatus = 'default' | 'success' | 'warning' | 'danger';
 export type InputState = 'default' | 'hover' | 'focus';
 
 export interface IInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'className' | 'type' | 'size'> {
