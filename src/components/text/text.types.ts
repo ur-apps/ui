@@ -8,7 +8,7 @@ export type TextTag = 'p' | 'span';
 export interface ITextProps<T extends TextTag>
   extends Omit<HTMLAttributes<T extends 'span' ? HTMLSpanElement : HTMLParagraphElement>, 'className' | 'color'> {
   /**
-   * additinal css class name
+   * additional css class name
    */
   className?: string | TClasses;
   /**

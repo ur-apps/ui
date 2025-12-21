@@ -11,7 +11,7 @@ export type HintSize = 'xs' | 's' | 'm' | 'l';
 
 export interface IHintProps extends Omit<React.SVGProps<SVGElement>, 'className'> {
   /**
-   * additinal css class name
+   * additional css class name
    */
   className?: string | TClasses;
   /**

@@ -9,7 +9,7 @@ export type ButtonState = 'default' | 'hover' | 'active';
 
 export interface IButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className'> {
   /**
-   * additinal css class name
+   * additional css class name
    */
   className?: string | TClasses;
   /**

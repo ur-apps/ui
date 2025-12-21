@@ -10,7 +10,7 @@ export type TagSize = 'm';
 
 export interface ITagProps extends Omit<HTMLAttributes<HTMLDivElement>, 'className'> {
   /**
-   * additinal css class name(s)
+   * additional css class name(s)
    */
   className?: string | TClasses;
   /**
@@ -49,7 +49,7 @@ export interface ITagProps extends Omit<HTMLAttributes<HTMLDivElement>, 'classNa
 
 export interface ITagButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className'> {
   /**
-   * additinal css class name(s)
+   * additional css class name(s)
    */
   className?: string | TClasses;
   /**

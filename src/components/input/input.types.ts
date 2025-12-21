@@ -12,7 +12,7 @@ export type InputState = 'default' | 'hover' | 'focus';
 
 export interface IInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'className' | 'type' | 'size'> {
   /**
-   * additinal css class name
+   * additional css class name
    */
   className?: string | TClasses;
   /**

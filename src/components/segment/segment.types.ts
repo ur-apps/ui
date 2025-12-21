@@ -13,7 +13,7 @@ export type TSegmentValue = string | number;
 export interface ISegmentProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'className' | 'color' | 'type' | 'value' | 'size'> {
   /**
-   * additinal css class names
+   * additional css class names
    */
   className?: string | TClasses;
   /**

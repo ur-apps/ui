@@ -8,7 +8,7 @@ export type TSwitchState = 'default' | 'hover' | 'checked';
 
 export interface ISwitchProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'className' | 'type' | 'size'> {
   /**
-   * additinal css class name
+   * additional css class name
    */
   className?: string | TClasses;
   /**
