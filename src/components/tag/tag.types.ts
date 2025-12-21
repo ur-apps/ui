@@ -1,6 +1,8 @@
 import { ButtonHTMLAttributes, HTMLAttributes, Ref } from 'react';
 import { TClasses } from '@ur-apps/common-fe';
 
+import { SvgIcon } from 'types';
+
 export type TagVariant = 'filled' | 'outlined' | 'ghost';
 export type TagColor = 'primary' | 'secondary' | 'accent' | 'success' | 'warning' | 'danger';
 export type TagShape = 'default' | 'brick' | 'round';
@@ -58,7 +60,7 @@ export interface ITagButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonEle
   /**
    * button icon
    */
-  icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  icon: SvgIcon;
 }
 
 export interface ITagStyleTokens {

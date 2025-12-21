@@ -1,6 +1,8 @@
 import { InputHTMLAttributes, Ref } from 'react';
 import { TClasses } from '@ur-apps/common-fe';
 
+import { SvgIcon } from 'types';
+
 export type TSegmentVariant = 'filled' | 'outlined' | 'clear';
 export type TSegmentColor = 'primary' | 'secondary' | 'accent' | 'success' | 'warning' | 'danger';
 export type TSegmentShape = 'default' | 'brick' | 'round';
@@ -54,7 +56,7 @@ export interface ISegmentProps
   /**
    * segment icon
    */
-  icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  icon?: SvgIcon;
   /**
    * is segment disabled
    */

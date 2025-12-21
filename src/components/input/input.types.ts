@@ -1,6 +1,8 @@
 import { InputHTMLAttributes, Ref } from 'react';
 import { TClasses } from '@ur-apps/common-fe';
 
+import { SvgIcon } from 'types';
+
 export type InputVariant = 'filled' | 'outlined' | 'clear';
 export type InputShape = 'default' | 'brick' | 'round';
 export type InputSize = 's' | 'm' | 'l';
@@ -68,11 +70,11 @@ export interface IInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>,
   /**
    * icon before input
    */
-  iconLeft?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  iconLeft?: SvgIcon;
   /**
    * icon after input
    */
-  iconRight?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  iconRight?: SvgIcon;
   /**
    * reference to the input
    */
