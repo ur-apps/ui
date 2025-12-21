@@ -1,8 +1,10 @@
 import { classNames } from '@ur-apps/common-fe';
 
-import { StatusIcon } from 'components/status-icon';
 import { CssVariableGroup } from 'contexts';
 
+import { Hint } from '../hint';
+
+import { hintIconMap, hintShapeMap, hintVariantMap } from './constants';
 import { IInputProps } from './input.types';
 import styles from './input.module.scss';
 
@@ -12,7 +14,8 @@ export function Input({
   shape = 'default',
   size = 'm',
   status = 'default',
-  message,
+  hint,
+  hintProps,
   prefix,
   postfix,
   iconLeft: IconLeft,
@@ -34,16 +37,7 @@ export function Input({
   const postfixClasses = classNames(styles.postfix, styles[`postfix--size-${size}`]);
   const leftIconClasses = classNames(styles['icon-left'], styles[`icon-left--size-${size}`]);
   const rightIconClasses = classNames(styles['icon-right'], styles[`icon-right--size-${size}`]);
-  const statusIconClasses = classNames(styles['icon-status'], styles[`icon-status--size-${size}`]);
-
-  const statusIcon = (message || status !== 'default') && (
-    <StatusIcon
-      className={statusIconClasses}
-      status={status === 'default' || (!status && message) ? 'info' : status}
-      variant={variant === 'filled' ? 'filled' : 'outlined'}
-      size={size}
-    />
-  );
+  const showHint = Boolean(hint || status !== 'default');
 
   return (
     <label className={wrapperClasses} ref={wrapperRef}>
@@ -55,9 +49,22 @@ export function Input({
 
       {postfix && <span className={postfixClasses}>{postfix}</span>}
 
-      {!postfix && !statusIcon && IconRight && <IconRight className={rightIconClasses} />}
+      {!postfix && IconRight && <IconRight className={rightIconClasses} />}
 
-      {statusIcon}
+      {showHint && (
+        <Hint
+          icon={hintIconMap[status]}
+          variant={hintVariantMap[variant]}
+          color="auto"
+          size={size}
+          {...hintProps}
+          tooltipProps={{
+            ...hintProps?.tooltipProps,
+            shape: hintShapeMap[shape],
+          }}>
+          {hint}
+        </Hint>
+      )}
     </label>
   );
 }

@@ -14,10 +14,17 @@ const meta: Meta<typeof Input> = {
     variant: 'filled',
     shape: 'default',
     size: 'l',
-    disabled: false,
     status: 'default',
-    placeholder: 'Placeholder',
+    hint: '',
+    disabled: false,
+    placeholder: 'placeholder',
     defaultValue: 'Hello World!',
+  },
+  argTypes: {
+    variant: { control: 'inline-radio' },
+    shape: { control: 'inline-radio' },
+    size: { control: 'inline-radio' },
+    status: { control: 'inline-radio' },
   },
 };
 
@@ -111,5 +118,25 @@ export const WithPrefixAndPostfix: Story = {
     prefix: 'email:',
     postfix: '@gmail.com',
     style: { textAlign: 'right' },
+  },
+};
+
+export const WithHint: Story = {
+  args: {
+    type: 'password',
+    variant: 'filled',
+    shape: 'default',
+    size: 'm',
+    defaultValue: '12345',
+    placeholder: 'password',
+    prefix: 'password:',
+    status: 'danger',
+    hint: (
+      <ul style={{ margin: 0, padding: '0px 12px' }}>
+        <li>Your password must be at least 8 characters long</li>
+        <li>Include at least one uppercase letter</li>
+        <li>Include at least one number</li>
+      </ul>
+    ),
   },
 };

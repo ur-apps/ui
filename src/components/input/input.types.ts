@@ -1,6 +1,7 @@
 import { InputHTMLAttributes, Ref } from 'react';
 import { TClasses } from '@ur-apps/common-fe';
 
+import { IHintProps } from 'components/hint';
 import { SvgIcon } from 'types';
 
 export type InputVariant = 'filled' | 'outlined' | 'clear';
@@ -56,9 +57,13 @@ export interface IInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>,
    */
   status?: InputStatus;
   /**
-   * message to show in tooltip for info(default)/success/warning/error statuses
+   * message to show in tooltip for info(default)/success/warning/danger statuses
    */
-  message?: string;
+  hint?: string;
+  /**
+   * additional props for the Hint component
+   */
+  hintProps?: IHintProps;
   /**
    * additional text before input
    */
