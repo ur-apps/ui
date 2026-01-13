@@ -27,6 +27,11 @@
 
   cursor: pointer;
 
+  &--icon-only {
+    width: var(--height, 32px);
+    padding: var(--vertical-padding, 0);
+  }
+
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;

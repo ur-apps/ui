@@ -22,6 +22,7 @@ const meta: Meta<typeof Button> = {
     loading: false,
     disabled: false,
     iconPosition: 'before',
+    iconOnly: false,
     className: 'custom-class',
     children: 'Submit',
   },

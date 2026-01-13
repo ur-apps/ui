@@ -48,6 +48,10 @@ export interface IButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElemen
    */
   iconPosition?: 'before' | 'after';
   /**
+   * is button icon only (no label)
+   */
+  iconOnly?: boolean;
+  /**
    * is button in loading state
    */
   loading?: boolean;
@@ -60,10 +64,6 @@ export interface IButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElemen
    * is button disabled
    */
   disabled?: boolean;
-  /**
-   * is button icon only (no label)
-   */
-  iconOnly?: boolean;
   /**
    * ref to button element
    */

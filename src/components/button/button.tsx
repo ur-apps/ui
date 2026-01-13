@@ -17,6 +17,7 @@ export function Button({
   children,
   icon,
   iconPosition = 'before',
+  iconOnly = false,
   loading = false,
   loadingIcon = ArcIcon,
   disabled = false,
@@ -29,6 +30,7 @@ export function Button({
     styles[`button--color-${color}`],
     styles[`button--shape-${shape}`],
     styles[`button--size-${size}`],
+    { [styles['button--icon-only']]: iconOnly },
     className
   );
   const Icon = loading ? loadingIcon : icon;
@@ -48,7 +50,7 @@ export function Button({
     <button {...props} className={classes} disabled={disabled || loading}>
       {iconPosition === 'before' && IconElement}
 
-      {children || label}
+      {!iconOnly && (children || label)}
 
       {iconPosition === 'after' && IconElement}
     </button>
