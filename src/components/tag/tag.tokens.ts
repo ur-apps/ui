@@ -67,7 +67,7 @@ export const tagStyleTokens: ITagStyleTokens = {
     m: 'var(--uu-space-xs)',
   },
   gap: {
-    m: 'var(--uu-spaec-2xs)',
+    m: 'var(--uu-space-2xs)',
   },
   'border-radius': {
     m: 'var(--uu-radius-xs)',
