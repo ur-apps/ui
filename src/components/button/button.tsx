@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { classNames } from '@ur-apps/common-fe';
 
 import { CssVariableGroup } from 'contexts';
@@ -14,6 +14,8 @@ export function Button({
   size = 'm',
   label,
   children,
+  icon,
+  iconPosition = 'before',
   ...props
 }: IButtonProps) {
   const classes = classNames(
@@ -36,7 +38,11 @@ export function Button({
 
   return (
     <button {...props} className={classes}>
+      {icon && iconPosition === 'before' && React.createElement(icon, { className: styles.icon })}
+
       {children || label}
+
+      {icon && iconPosition === 'after' && React.createElement(icon, { className: styles.icon })}
     </button>
   );
 }

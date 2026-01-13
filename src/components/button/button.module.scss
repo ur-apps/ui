@@ -1,4 +1,9 @@
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap, 4px);
+
   width: auto;
   height: var(--height, 32px);
   padding: var(--vertical-padding, 0) var(--horizontal-padding, 16px);
@@ -8,6 +13,7 @@
   border-radius: var(--border-radius, 6px);
   margin: 0;
   box-sizing: border-box;
+  overflow: hidden;
 
   font-family: var(--font-family, inherit);
   font-size: var(--font-size, 14px);
@@ -432,8 +438,10 @@
 .button--size {
   &-s {
     --height: var(--height-s);
+    --icon-height: var(--icon-height-s);
     --horizontal-padding: var(--horizontal-padding-s);
     --vertical-padding: var(--vertical-padding-s);
+    --gap: var(--gap-s);
 
     --font-size: var(--font-size-s);
     --line-height: var(--line-height-s);
@@ -442,8 +450,10 @@
 
   &-m {
     --height: var(--height-m);
+    --icon-height: var(--icon-height-m);
     --horizontal-padding: var(--horizontal-padding-m);
     --vertical-padding: var(--vertical-padding-m);
+    --gap: var(--gap-m);
 
     --font-size: var(--font-size-m);
     --line-height: var(--line-height-m);
@@ -452,11 +462,21 @@
 
   &-l {
     --height: var(--height-l);
+    --icon-height: var(--icon-height-l);
     --horizontal-padding: var(--horizontal-padding-l);
     --vertical-padding: var(--vertical-padding-l);
+    --gap: var(--gap-l);
 
     --font-size: var(--font-size-l);
     --line-height: var(--line-height-l);
     --font-weight: var(--font-weight-l);
   }
+}
+
+.icon {
+  flex-shrink: 0;
+  width: auto;
+  height: var(--icon-height, 14px);
+
+  transition: 200ms;
 }

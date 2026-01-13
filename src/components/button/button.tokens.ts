@@ -170,10 +170,25 @@ export const buttonStyleTokens: IButtonStyleTokens = {
     m: 'var(--uu-height-m)',
     l: 'var(--uu-height-l)',
   },
+  'icon-height': {
+    s: 'var(--uu-icon-height-xs)',
+    m: 'var(--uu-icon-height-s)',
+    l: 'var(--uu-icon-height-m)',
+  },
   'horizontal-padding': {
     s: 'var(--uu-space-s)',
     m: 'var(--uu-space-m)',
     l: 'var(--uu-space-l)',
+  },
+  'vertical-padding': {
+    s: 'var(--uu-space-3xs)',
+    m: 'var(--uu-space-2xs)',
+    l: 'var(--uu-space-xs)',
+  },
+  gap: {
+    s: 'var(--uu-space-3xs)',
+    m: 'var(--uu-space-2xs)',
+    l: 'var(--uu-space-xs)',
   },
   'border-radius': {
     s: 'var(--uu-radius-xs)',

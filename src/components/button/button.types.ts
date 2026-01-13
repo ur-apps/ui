@@ -1,6 +1,8 @@
 import { ButtonHTMLAttributes, Ref } from 'react';
 import { TClasses } from '@ur-apps/common-fe';
 
+import { SvgIcon } from 'types';
+
 export type ButtonVariant = 'filled' | 'outlined' | 'ghost' | 'clear';
 export type ButtonColor = 'primary' | 'secondary' | 'accent' | 'success' | 'warning' | 'danger';
 export type ButtonShape = 'default' | 'brick' | 'round';
@@ -33,9 +35,18 @@ export interface IButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElemen
    */
   size?: ButtonSize;
   /**
-   * button label
+   * button label (same as children)
    * */
   label?: string;
+  /**
+   * icon
+   */
+  icon?: SvgIcon;
+  /**
+   * icon position
+   * @default "before"
+   */
+  iconPosition?: 'before' | 'after';
   /**
    * is button disabled
    */
@@ -67,6 +78,12 @@ export interface IButtonStyleTokens {
     };
   };
   height?: {
+    [size in ButtonSize]?: string;
+  };
+  'icon-height'?: {
+    [size in ButtonSize]?: string;
+  };
+  gap?: {
     [size in ButtonSize]?: string;
   };
   'horizontal-padding'?: {
