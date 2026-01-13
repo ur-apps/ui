@@ -13,8 +13,8 @@ import styles from './modal.module.scss';
 export function Modal({
   className,
   overlayClassName,
-  shape,
-  size,
+  shape = 'default',
+  size = 'm',
   withOverlay = true,
   isOpen = true,
   closeOnOverlay = true,
@@ -70,7 +70,7 @@ export function Modal({
         tabIndex={-1}
         onClick={overlayClickHandler}
         ref={overlayRef}>
-        <div {...props} className={classes} ref={ref} />
+        <div {...props} className={classes} ref={ref} role="dialog" />
       </Overlay>
     </Portal>
   ) : null;
