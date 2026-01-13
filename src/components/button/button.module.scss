@@ -29,6 +29,7 @@
 
   &--icon-only {
     width: var(--height, 32px);
+    min-width: var(--height, 32px);
     padding: var(--vertical-padding, 0);
   }
 
