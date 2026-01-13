@@ -48,9 +48,22 @@ export interface IButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElemen
    */
   iconPosition?: 'before' | 'after';
   /**
+   * is button in loading state
+   */
+  loading?: boolean;
+  /**
+   * custom loading icon
+   * @default ArcIcon
+   */
+  loadingIcon?: SvgIcon;
+  /**
    * is button disabled
    */
   disabled?: boolean;
+  /**
+   * is button icon only (no label)
+   */
+  iconOnly?: boolean;
   /**
    * ref to button element
    */

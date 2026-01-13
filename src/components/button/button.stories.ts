@@ -19,6 +19,7 @@ const meta: Meta<typeof Button> = {
     color: 'primary',
     shape: 'default',
     size: 'm',
+    loading: false,
     disabled: false,
     iconPosition: 'before',
     className: 'custom-class',

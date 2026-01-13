@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { classNames } from '@ur-apps/common-fe';
 
 import { CssVariableGroup } from 'contexts';
+import { ReactComponent as ArcIcon } from 'icons/circle.arc.svg';
 
 import { IButtonProps } from './button.types';
 import styles from './button.module.scss';
@@ -16,6 +17,9 @@ export function Button({
   children,
   icon,
   iconPosition = 'before',
+  loading = false,
+  loadingIcon = ArcIcon,
+  disabled = false,
   ...props
 }: IButtonProps) {
   const classes = classNames(
@@ -27,6 +31,10 @@ export function Button({
     styles[`button--size-${size}`],
     className
   );
+  const Icon = loading ? loadingIcon : icon;
+  const IconElement = Icon
+    ? React.createElement(Icon, { className: classNames(styles.icon, { [styles.loader]: loading }) })
+    : null;
 
   useEffect(() => {
     if (label && children) {
@@ -37,12 +45,12 @@ export function Button({
   }, [label, children]);
 
   return (
-    <button {...props} className={classes}>
-      {icon && iconPosition === 'before' && React.createElement(icon, { className: styles.icon })}
+    <button {...props} className={classes} disabled={disabled || loading}>
+      {iconPosition === 'before' && IconElement}
 
       {children || label}
 
-      {icon && iconPosition === 'after' && React.createElement(icon, { className: styles.icon })}
+      {iconPosition === 'after' && IconElement}
     </button>
   );
 }
