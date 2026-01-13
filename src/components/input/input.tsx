@@ -53,6 +53,7 @@ export function Input({
 
       {showHint && (
         <Hint
+          className={styles.hint}
           icon={hintIconMap[status]}
           variant={hintVariantMap[variant]}
           color="auto"

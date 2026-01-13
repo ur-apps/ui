@@ -4,6 +4,7 @@
   align-items: center;
   gap: calc(var(--horizontal-padding, 16px) / 4);
 
+  min-width: min-content;
   height: var(--height, 32px);
   padding: var(--vertical-padding, 0) calc(var(--horizontal-padding, 16px) / 2);
   border-width: var(--border-width, 1px);
@@ -12,6 +13,7 @@
   border-radius: var(--border-radius, 6px);
   margin: 0;
   box-sizing: border-box;
+  overflow: hidden;
 
   font-family: var(--font-family, inherit);
   font-size: var(--font-size, 14px);
@@ -509,6 +511,8 @@
 
 .field {
   flex-grow: 1;
+  width: 100%;
+  min-width: min-content;
   height: 100%;
   padding: 0 calc(var(--horizontal-padding, 16px) / 4);
   border: none;
@@ -552,6 +556,16 @@
       margin: 0;
     }
   }
+}
+
+.prefix,
+.postfix {
+  flex-grow: 1;
+  width: 100%;
+  max-width: max-content;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .prefix {
@@ -621,7 +635,6 @@
 }
 
 .icon-left {
-  flex-shrink: 0;
   width: auto;
   height: var(--icon-left-height, 16px);
 
@@ -645,7 +658,6 @@
 }
 
 .icon-right {
-  flex-shrink: 0;
   width: auto;
   height: var(--icon-right-height, 16px);
 
@@ -669,7 +681,6 @@
 }
 
 .icon-status {
-  flex-shrink: 0;
   height: var(--icon-status-height, var(--height));
 
   color: var(--icon-status-color, var(--color));
@@ -689,4 +700,11 @@
       --icon-status-height: var(--icon-status-height-l);
     }
   }
+}
+
+.icon-left,
+.icon-right,
+.icon-status,
+.hint {
+  flex-shrink: 0;
 }
