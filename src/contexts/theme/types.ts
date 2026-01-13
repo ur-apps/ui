@@ -85,6 +85,7 @@ export type TStyleTokens = {
       primary: string;
       secondary: string;
       contrast: string;
+      placeholder: string;
       link: string;
       'link-visited': string;
     };

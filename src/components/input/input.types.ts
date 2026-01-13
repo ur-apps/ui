@@ -106,6 +106,13 @@ export interface IInputStyleTokens {
         };
       };
     };
+    placeholder?: {
+      [variant in InputVariant]?: {
+        [status in InputStatus]?: {
+          [state in InputState]?: string;
+        };
+      };
+    };
     prefix?: {
       [variant in InputVariant]?: {
         [status in InputStatus]?: {

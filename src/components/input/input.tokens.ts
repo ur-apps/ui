@@ -116,6 +116,74 @@ export const inputStyleTokens: IInputStyleTokens = {
         },
       },
     },
+    placeholder: {
+      filled: {
+        default: {
+          default: 'var(--uu-color-text-placeholder)',
+          hover: 'var(--uu-color-text-placeholder)',
+          focus: 'var(--uu-color-text-placeholder)',
+        },
+        success: {
+          default: 'var(--uu-color-text-placeholder)',
+          hover: 'var(--uu-color-text-placeholder)',
+          focus: 'var(--uu-color-text-placeholder)',
+        },
+        warning: {
+          default: 'var(--uu-color-text-placeholder)',
+          hover: 'var(--uu-color-text-placeholder)',
+          focus: 'var(--uu-color-text-placeholder)',
+        },
+        danger: {
+          default: 'var(--uu-color-text-placeholder)',
+          hover: 'var(--uu-color-text-placeholder)',
+          focus: 'var(--uu-color-text-placeholder)',
+        },
+      },
+      outlined: {
+        default: {
+          default: 'var(--uu-color-text-placeholder)',
+          hover: 'var(--uu-color-text-placeholder)',
+          focus: 'var(--uu-color-text-placeholder)',
+        },
+        success: {
+          default: 'var(--uu-color-text-placeholder)',
+          hover: 'var(--uu-color-text-placeholder)',
+          focus: 'var(--uu-color-text-placeholder)',
+        },
+        warning: {
+          default: 'var(--uu-color-text-placeholder)',
+          hover: 'var(--uu-color-text-placeholder)',
+          focus: 'var(--uu-color-text-placeholder)',
+        },
+        danger: {
+          default: 'var(--uu-color-text-placeholder)',
+          hover: 'var(--uu-color-text-placeholder)',
+          focus: 'var(--uu-color-text-placeholder)',
+        },
+      },
+      clear: {
+        default: {
+          default: 'var(--uu-color-text-placeholder)',
+          hover: 'var(--uu-color-text-placeholder)',
+          focus: 'var(--uu-color-text-placeholder)',
+        },
+        success: {
+          default: 'var(--uu-color-text-placeholder)',
+          hover: 'var(--uu-color-text-placeholder)',
+          focus: 'var(--uu-color-text-placeholder)',
+        },
+        warning: {
+          default: 'var(--uu-color-text-placeholder)',
+          hover: 'var(--uu-color-text-placeholder)',
+          focus: 'var(--uu-color-text-placeholder)',
+        },
+        danger: {
+          default: 'var(--uu-color-text-placeholder)',
+          hover: 'var(--uu-color-text-placeholder)',
+          focus: 'var(--uu-color-text-placeholder)',
+        },
+      },
+    },
     prefix: {
       filled: {
         default: {
