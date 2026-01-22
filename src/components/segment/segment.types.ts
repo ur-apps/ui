@@ -10,8 +10,10 @@ export type TSegmentSize = 's' | 'm' | 'l';
 export type TSegmentState = 'default' | 'hover' | 'selected';
 export type TSegmentValue = string | number;
 
-export interface ISegmentProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'className' | 'color' | 'type' | 'value' | 'size'> {
+export interface ISegmentProps extends Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'className' | 'color' | 'type' | 'value' | 'size'
+> {
   /**
    * additional css class names
    */

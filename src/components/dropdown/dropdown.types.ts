@@ -9,8 +9,10 @@ export type TDropdownSize = TOptionSize;
 export type TDropdownState = 'default';
 export type TDropdownValue<M extends boolean> = M extends true ? TOptionValue[] : TOptionValue;
 
-export interface IDropdownProps<M extends boolean = false>
-  extends Omit<HTMLAttributes<HTMLDivElement>, 'className' | 'onChange'> {
+export interface IDropdownProps<M extends boolean = false> extends Omit<
+  HTMLAttributes<HTMLDivElement>,
+  'className' | 'onChange'
+> {
   /**
    * additional css class name(s)
    */

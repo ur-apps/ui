@@ -5,8 +5,10 @@ export type TextColor = 'inherit' | 'primary' | 'secondary' | 'contrast' | 'link
 export type TextSize = 'xs' | 's' | 'm' | 'l' | 'xl';
 export type TextTag = 'p' | 'span';
 
-export interface ITextProps<T extends TextTag>
-  extends Omit<HTMLAttributes<T extends 'span' ? HTMLSpanElement : HTMLParagraphElement>, 'className' | 'color'> {
+export interface ITextProps<T extends TextTag> extends Omit<
+  HTMLAttributes<T extends 'span' ? HTMLSpanElement : HTMLParagraphElement>,
+  'className' | 'color'
+> {
   /**
    * additional css class name
    */

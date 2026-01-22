@@ -9,8 +9,10 @@ export type TSegmentedControlShape = TSegmentShape;
 export type TSegmentedControlSize = TSegmentSize;
 export type TSegmentedControlValue<M extends boolean> = M extends true ? TSegmentValue[] : TSegmentValue;
 
-export interface ISegmentedControlProps<M extends boolean = false>
-  extends Omit<HTMLAttributes<HTMLDivElement>, 'className' | 'color' | 'onChange'> {
+export interface ISegmentedControlProps<M extends boolean = false> extends Omit<
+  HTMLAttributes<HTMLDivElement>,
+  'className' | 'color' | 'onChange'
+> {
   /**
    * Additional CSS class name for the segmented control.
    */

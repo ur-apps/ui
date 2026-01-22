@@ -7,8 +7,10 @@ export type TOptionSize = 's' | 'm' | 'l';
 export type TOptionState = 'default' | 'hover' | 'selected';
 export type TOptionValue = string | number;
 
-export interface IOptionProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'className' | 'size' | 'type' | 'value'> {
+export interface IOptionProps extends Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'className' | 'size' | 'type' | 'value'
+> {
   /**
    * additional css class name
    */
