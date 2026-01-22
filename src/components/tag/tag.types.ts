@@ -47,6 +47,9 @@ export interface ITagProps extends Omit<HTMLAttributes<HTMLDivElement>, 'classNa
   ref?: Ref<HTMLDivElement>;
 }
 
+export type TagButtonPosition = 'before' | 'after';
+export type TagButtonColor = 'inherit' | 'primary' | 'secondary' | 'accent' | 'success' | 'warning' | 'danger';
+
 export interface ITagButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className'> {
   /**
    * additional css class name(s)
@@ -56,7 +59,12 @@ export interface ITagButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonEle
    * button position inside tag
    * @default after
    */
-  position?: 'before' | 'after';
+  position?: TagButtonPosition;
+  /**
+   * button color scheme
+   * @default inherit
+   */
+  color?: TagButtonColor;
   /**
    * button icon
    */
@@ -80,9 +88,9 @@ export interface ITagStyleTokens {
         [color in TagColor]?: string;
       };
     };
-    icon?: {
+    button?: {
       [variant in TagVariant]?: {
-        [color in TagColor]?: string;
+        [color in TagButtonColor]?: string;
       };
     };
   };

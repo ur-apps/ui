@@ -180,9 +180,95 @@
   border: none;
   margin: 0;
 
-  color: var(--icon-color, inherit);
+  color: var(--button-color, inherit);
 
   background-color: transparent;
+}
+
+.tag--variant {
+  &-filled {
+    & .button--color {
+      &-primary {
+        --button-color: var(--color-button-filled-primary);
+      }
+
+      &-secondary {
+        --button-color: var(--color-button-filled-secondary);
+      }
+
+      &-accent {
+        --button-color: var(--color-button-filled-accent);
+      }
+
+      &-success {
+        --button-color: var(--color-button-filled-success);
+      }
+
+      &-warning {
+        --button-color: var(--color-button-filled-warning);
+      }
+
+      &-danger {
+        --button-color: var(--color-button-filled-danger);
+      }
+    }
+  }
+
+  &-outlined {
+    & .button--color {
+      &-primary {
+        --button-color: var(--color-button-outlined-primary);
+      }
+
+      &-secondary {
+        --button-color: var(--color-button-outlined-secondary);
+      }
+
+      &-accent {
+        --button-color: var(--color-button-outlined-accent);
+      }
+
+      &-success {
+        --button-color: var(--color-button-outlined-success);
+      }
+
+      &-warning {
+        --button-color: var(--color-button-outlined-warning);
+      }
+
+      &-danger {
+        --button-color: var(--color-button-outlined-danger);
+      }
+    }
+  }
+
+  &-ghost {
+    & .button--color {
+      &-primary {
+        --button-color: var(--color-button-ghost-primary);
+      }
+
+      &-secondary {
+        --button-color: var(--color-button-ghost-secondary);
+      }
+
+      &-accent {
+        --button-color: var(--color-button-ghost-accent);
+      }
+
+      &-success {
+        --button-color: var(--color-button-ghost-success);
+      }
+
+      &-warning {
+        --button-color: var(--color-button-ghost-warning);
+      }
+
+      &-danger {
+        --button-color: var(--color-button-ghost-danger);
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 640px) {
@@ -202,6 +288,7 @@
 .button__icon {
   width: auto;
   height: var(--icon-height, 14px);
+  color: inherit;
 
   transition: 200ms;
 }

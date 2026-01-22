@@ -46,6 +46,32 @@ export const tagStyleTokens: ITagStyleTokens = {
         danger: 'var(--uu-color-danger-500)',
       },
     },
+    button: {
+      filled: {
+        primary: 'var(--uu-color-primary-500)',
+        secondary: 'var(--uu-color-text-primary)',
+        accent: 'var(--uu-color-accent-500)',
+        success: 'var(--uu-color-success-500)',
+        warning: 'var(--uu-color-warning-500)',
+        danger: 'var(--uu-color-danger-500)',
+      },
+      outlined: {
+        primary: 'var(--uu-color-primary-500)',
+        secondary: 'var(--uu-color-text-primary)',
+        accent: 'var(--uu-color-accent-500)',
+        success: 'var(--uu-color-success-500)',
+        warning: 'var(--uu-color-warning-500)',
+        danger: 'var(--uu-color-danger-500)',
+      },
+      ghost: {
+        primary: 'var(--uu-color-primary-500)',
+        secondary: 'var(--uu-color-text-primary)',
+        accent: 'var(--uu-color-accent-500)',
+        success: 'var(--uu-color-success-500)',
+        warning: 'var(--uu-color-warning-500)',
+        danger: 'var(--uu-color-danger-500)',
+      },
+    },
     border: {
       outlined: {
         primary: 'var(--uu-color-primary-500)',

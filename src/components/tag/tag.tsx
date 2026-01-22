@@ -65,13 +65,14 @@ export function Tag({
   );
 }
 
-export function TagButton({ className, icon, position = 'after', ...props }: ITagButtonProps) {
+export function TagButton({ className, icon, position = 'after', color = 'inherit', ...props }: ITagButtonProps) {
   return (
     <button
       {...props}
       className={classNames(
         styles.button,
         styles[`button--position-${position}`],
+        styles[`button--color-${color}`],
         { [styles['button--interactive']]: Boolean(props.onClick) },
         className
       )}>
