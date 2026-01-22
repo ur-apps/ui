@@ -39,6 +39,20 @@
     --line-height: var(--line-height-m);
     --font-weight: var(--font-weight-m);
   }
+
+  &-l {
+    --height: var(--height-l);
+    --icon-height: var(--icon-height-l);
+    --horizontal-padding: var(--horizontal-padding-l);
+    --vertical-padding: var(--vertical-padding-l);
+    --gap: var(--gap-l);
+    --border-width: var(--border-width-l);
+    --border-radius: var(--border-radius-l);
+
+    --font-size: var(--font-size-l);
+    --line-height: var(--line-height-l);
+    --font-weight: var(--font-weight-l);
+  }
 }
 
 .tag--shape {

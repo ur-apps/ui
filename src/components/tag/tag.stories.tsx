@@ -23,6 +23,15 @@ const meta: Meta<typeof Tag> = {
     shape: {
       control: 'inline-radio',
     },
+    size: {
+      control: 'inline-radio',
+    },
+  },
+  args: {
+    variant: 'filled',
+    color: 'primary',
+    shape: 'default',
+    size: 'm',
   },
 };
 

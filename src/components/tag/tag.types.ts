@@ -6,7 +6,7 @@ import { SvgIcon } from 'types';
 export type TagVariant = 'filled' | 'outlined' | 'ghost';
 export type TagColor = 'primary' | 'secondary' | 'accent' | 'success' | 'warning' | 'danger';
 export type TagShape = 'default' | 'brick' | 'round';
-export type TagSize = 'm';
+export type TagSize = 'm' | 'l';
 
 export interface ITagProps extends Omit<HTMLAttributes<HTMLDivElement>, 'className'> {
   /**
