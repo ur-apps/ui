@@ -69,6 +69,10 @@ export interface ITagButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonEle
    * button icon
    */
   icon: SvgIcon;
+  /**
+   * reference to the button
+   */
+  ref?: Ref<HTMLButtonElement>;
 }
 
 export interface ITagStyleTokens {
