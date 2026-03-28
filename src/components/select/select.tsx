@@ -27,7 +27,7 @@ export function Select<M extends boolean = false>({
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [innerValue, setInnerValue] = useState<TSelectValue<M>>(
-    multiple ? ([] as unknown as TSelectValue<M>) : undefined
+    multiple ? (value ?? ([] as unknown as TSelectValue<M>)) : value
   );
 
   const optionsMap = useMemo(
