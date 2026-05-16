@@ -4,9 +4,10 @@ import { ReactComponent as ChevronUpDownIcon } from 'icons/chevron.up.down.svg';
 
 import { Dropdown } from '../dropdown';
 import { Input } from '../input';
-import { IOptionProps } from '../option';
+import { IOptionProps, TOptionValue } from '../option';
 
 import { ISelectProps, TSelectValue } from './select.types';
+import { stringifyValue } from './utils';
 import styles from './select.module.scss';
 
 export function Select<M extends boolean = false>({
@@ -32,26 +33,14 @@ export function Select<M extends boolean = false>({
 
   const optionsMap = useMemo(
     () =>
-      options.reduce<Record<string, IOptionProps>>((acc, current) => {
+      options.reduce<Record<TOptionValue, IOptionProps>>((acc, current) => {
         acc[current.value] = current;
 
         return acc;
       }, {}),
     [options]
   );
-  const shownValue = useMemo<string | string[]>(() => {
-    if (value) {
-      return Array.isArray(value) ? value.map((el) => optionsMap[el].label) : optionsMap[value as string].label;
-    }
-
-    if (innerValue) {
-      return Array.isArray(innerValue)
-        ? innerValue.map((el) => optionsMap[el].label)
-        : optionsMap[innerValue as string].label;
-    }
-
-    return '';
-  }, [value, innerValue, optionsMap]);
+  const shownValue = useMemo(() => stringifyValue(value ?? innerValue, optionsMap), [value, innerValue, optionsMap]);
 
   const onToggleDropdown = () => {
     setIsDropdownOpen((prev) => !prev);
@@ -155,6 +144,7 @@ export function Select<M extends boolean = false>({
         iconRight={ChevronUpDownIcon}
         value={shownValue}
         readOnly
+        title={shownValue}
         onClick={onToggleDropdown}
         wrapperRef={inputRef}
         ref={ref}
