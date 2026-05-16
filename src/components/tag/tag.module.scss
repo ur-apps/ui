@@ -17,6 +17,7 @@
   font-weight: var(--font-weight, 400);
   line-height: var(--line-height, 16px);
   color: var(--text-color, black);
+  white-space: nowrap;
 
   background-color: var(--background-color, lightgray);
 
