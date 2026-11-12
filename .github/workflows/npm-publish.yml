@@ -13,10 +13,10 @@ jobs:
       contents: read
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
 
       - name: Setup Node.JS
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '24'
           registry-url: 'https://registry.npmjs.org'
@@ -28,4 +28,7 @@ jobs:
         run: npm run build:lib
 
       - name: Publish package
-        run: npm publish
+        run: |
+          TAG=latest
+          [[ "$GITHUB_REF_NAME" == *-* ]] && TAG=next
+          npm publish --tag "$TAG"

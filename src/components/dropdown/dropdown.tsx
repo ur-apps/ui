@@ -1,8 +1,7 @@
-import { classNames } from '@ur-apps/common-fe';
+import { classNames } from '@urapps/react';
 
-import { CssVariableGroup } from 'contexts';
-import { useName } from 'hooks';
-
+import { CssVariableGroup } from '../../contexts';
+import { useName } from '../../hooks';
 import { Option } from '../option';
 import { Portal } from '../portal';
 

@@ -1,9 +1,8 @@
 import React, { useMemo, useRef } from 'react';
-import { isString } from '@ur-apps/common';
-import { classNames } from '@ur-apps/common-fe';
+import { isString } from '@urapps/common';
+import { classNames } from '@urapps/react';
 
-import { CssVariableGroup } from 'contexts';
-
+import { CssVariableGroup } from '../../contexts';
 import { Tooltip } from '../tooltip';
 
 import { iconMap, tooltipSizeMap } from './constants';
@@ -43,11 +42,11 @@ export function Hint({
 
       {children && (
         <Tooltip
+          key={`ht-${variant}-${resolvedColor}-${size}`}
           size={tooltipSizeMap[size]}
           color={resolvedColor}
           {...tooltipProps}
-          anchor={iconRef}
-          key={`ht-${variant}-${resolvedColor}-${size}`}>
+          anchor={iconRef}>
           {children}
         </Tooltip>
       )}

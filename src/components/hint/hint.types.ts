@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
-import { TClasses } from '@ur-apps/common-fe';
+import { TClasses } from '@urapps/react';
 
-import { ITooltipProps } from 'components';
-import { SvgIcon } from 'types';
+import { SvgIcon } from '../../types';
+import { ITooltipProps } from '../tooltip';
 
 export type HintIcon = 'info' | 'question' | 'success' | 'warning' | 'danger';
 export type HintVariant = 'filled' | 'outlined';

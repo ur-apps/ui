@@ -1,5 +1,5 @@
 import { HTMLAttributes, Ref } from 'react';
-import { TClasses } from '@ur-apps/common-fe';
+import { TClasses } from '@urapps/react';
 
 export interface IOverlayProps extends Omit<HTMLAttributes<HTMLDivElement>, 'className'> {
   /**

@@ -1,7 +1,6 @@
 import { ChangeEventHandler, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import { ReactComponent as ChevronUpDownIcon } from 'icons/chevron.up.down.svg';
-
+import { ReactComponent as ChevronUpDownIcon } from '../../icons/chevron.up.down.svg';
 import { Dropdown } from '../dropdown';
 import { Input } from '../input';
 import { IOptionProps, TOptionValue } from '../option';

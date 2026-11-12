@@ -12,7 +12,7 @@ import {
   ISwitchStyleTokens,
   ITagStyleTokens,
   ITooltipStyleTokens,
-} from 'components';
+} from '../../components';
 
 export enum Theme {
   Light = 'light',

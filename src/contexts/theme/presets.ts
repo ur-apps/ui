@@ -21,7 +21,7 @@ import {
   tagStyleTokens,
   tooltipDarkModeStyleTokens,
   tooltipStyleTokens,
-} from 'components';
+} from '../../components';
 
 import { TStylePreset } from './types';
 

@@ -1,5 +1,5 @@
 import { InputHTMLAttributes, Ref } from 'react';
-import { TClasses } from '@ur-apps/common-fe';
+import { TClasses } from '@urapps/react';
 
 export type TOptionVariant = 'filled' | 'outlined' | 'clear';
 export type TOptionShape = 'default' | 'brick' | 'round';

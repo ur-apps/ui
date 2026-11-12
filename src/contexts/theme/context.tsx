@@ -1,14 +1,13 @@
 import { createContext, ReactNode, useEffect, useMemo, useRef, useState } from 'react';
-import { clone, pick } from '@ur-apps/common';
-import { classNames } from '@ur-apps/common-fe';
+import { clone, pick } from '@urapps/common';
+import { classNames } from '@urapps/react';
 
-import { merge } from 'utils';
-
-import 'styles/index.scss';
+import { merge } from '../../utils';
 
 import { getBrowserTheme, getThemeFromLS, getVariableStyles, saveThemeToLS } from './helpers';
 import { darkModePreset, preset } from './presets';
 import { CssVariableGroup, Theme, TStylePreset } from './types';
+import styles from './context.module.scss';
 
 type TThemeContext = {
   theme: Theme;
@@ -32,7 +31,6 @@ type TThemeProps = {
   children: ReactNode;
 };
 
-const UU_THEME_CLASS_NAME = 'uu-theme';
 const COMPONENT_CLASSES = [
   CssVariableGroup.ButtonTokens,
   CssVariableGroup.DropdownTokens,
@@ -50,20 +48,20 @@ const COMPONENT_CLASSES = [
 ];
 const TOKEN_CLASSES = Object.values(CssVariableGroup).filter((c) => !COMPONENT_CLASSES.includes(c));
 
-export function ThemeProvider({ className, defaultTheme, customePreset = {}, children }: TThemeProps) {
+export function ThemeProvider({ className, defaultTheme, customePreset, children }: TThemeProps) {
   const [theme, setTheme] = useState<Theme>(() => getThemeFromLS(defaultTheme));
-  const portal = useRef(document.querySelector('#portal'));
+  const portalRef = useRef(document.querySelector('#portal'));
 
   // TODO add hook
   // eslint-disable-next-line complexity
-  const styles = useMemo(() => {
+  const variableStyles = useMemo(() => {
     const themeValue = theme === Theme.Auto ? getBrowserTheme() : theme;
 
     const {
       primitives = {},
       tokens = {},
       components = {},
-    } = merge(clone(preset), themeValue === Theme.Dark ? darkModePreset : customePreset);
+    } = merge(clone(preset), themeValue === Theme.Dark ? clone(darkModePreset) : {}, customePreset ?? {});
 
     return [
       // Primitives
@@ -104,8 +102,8 @@ export function ThemeProvider({ className, defaultTheme, customePreset = {}, chi
   }, [theme, customePreset]);
 
   useEffect(() => {
-    if (portal.current) {
-      portal.current.classList.add(UU_THEME_CLASS_NAME, ...TOKEN_CLASSES);
+    if (portalRef.current) {
+      portalRef.current.classList.add(styles.theme, ...TOKEN_CLASSES);
     } else {
       console.error('portal container was not found');
     }
@@ -119,9 +117,9 @@ export function ThemeProvider({ className, defaultTheme, customePreset = {}, chi
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, switchTheme }}>
-      <style>{styles}</style>
-      <div className={classNames(UU_THEME_CLASS_NAME, TOKEN_CLASSES, className)}>{children}</div>
-    </ThemeContext.Provider>
+    <ThemeContext value={{ theme, switchTheme }}>
+      <style>{variableStyles}</style>
+      <div className={classNames(styles.theme, TOKEN_CLASSES, className)}>{children}</div>
+    </ThemeContext>
   );
 }

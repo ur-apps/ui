@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { classNames } from '@ur-apps/common-fe';
+import { classNames } from '@urapps/react';
 
-import { CssVariableGroup } from 'contexts';
-import { ReactComponent as ArcIcon } from 'icons/circle.arc.svg';
+import { CssVariableGroup } from '../../contexts';
+import { ReactComponent as ArcIcon } from '../../icons/circle.arc.svg';
 
 import { IButtonProps } from './button.types';
 import styles from './button.module.scss';

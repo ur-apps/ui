@@ -1,8 +1,8 @@
 import { InputHTMLAttributes, ReactNode, Ref } from 'react';
-import { TClasses } from '@ur-apps/common-fe';
+import { TClasses } from '@urapps/react';
 
-import { IHintProps } from 'components/hint';
-import { SvgIcon } from 'types';
+import { SvgIcon } from '../../types';
+import { IHintProps } from '../hint';
 
 export type InputVariant = 'filled' | 'outlined' | 'clear';
 export type InputShape = 'default' | 'brick' | 'round';

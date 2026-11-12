@@ -1,9 +1,9 @@
-import { isObject } from '@ur-apps/common';
+import { isObject } from '@urapps/common';
 
 import { LOCAL_STORAGE_THEME_KEY } from './constants';
 import { Theme } from './types';
 
-export function formatToCSSVariables(variables: any, prefix = ''): string[] {
+export function formatToCSSVariables(variables: unknown, prefix = ''): string[] {
   const result: string[] = [];
 
   if (isObject(variables)) {
@@ -21,7 +21,7 @@ export function formatToCSSVariables(variables: any, prefix = ''): string[] {
   return result;
 }
 
-export function getVariableStyles(variables: Record<string, any>, className: string, prefix = '') {
+export function getVariableStyles(variables: object, className: string, prefix = '') {
   const tokens = formatToCSSVariables(variables, prefix);
 
   return tokens.length ? `.${className} { \n${tokens.join(';\n')};\n}` : '';

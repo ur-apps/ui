@@ -1,39 +1,63 @@
-import path from 'path';
-import url from '@rollup/plugin-url';
-import svgr from '@svgr/rollup';
-import react from '@vitejs/plugin-react-swc';
-import { defineConfig } from 'vite';
+/// <reference types="vitest/config" />
+
+import path from 'node:path';
+import react from '@vitejs/plugin-react';
+import { BuildEnvironmentOptions, defineConfig } from 'vite';
+import svgr from 'vite-plugin-svgr';
+
+import pkg from './package.json' with { type: 'json' };
+
+const peerDependencies = Object.keys(pkg.peerDependencies);
 
 // https://vite.dev/config/
-export default defineConfig({
-  root: path.resolve(__dirname, 'src'),
-  publicDir: path.resolve(__dirname, 'public'),
-  resolve: {
-    alias: {
-      components: path.resolve(__dirname, 'src', 'components'),
-      constants: path.resolve(__dirname, 'src', 'constants'),
-      contexts: path.resolve(__dirname, 'src', 'contexts'),
-      data: path.resolve(__dirname, 'src', 'data'),
-      fonts: path.resolve(__dirname, 'src', 'fonts'),
-      icons: path.resolve(__dirname, 'src', 'icons'),
-      images: path.resolve(__dirname, 'src', 'images'),
-      hooks: path.resolve(__dirname, 'src', 'hooks'),
-      styles: path.resolve(__dirname, 'src', 'styles'),
-      services: path.resolve(__dirname, 'src', 'services'),
-      types: path.resolve(__dirname, 'src', 'types'),
-      utils: path.resolve(__dirname, 'src', 'utils'),
-    },
-  },
-  css: {
-    modules: {
-      generateScopedName: 'uu-[folder]__[local]',
-    },
-  },
+export default defineConfig(({ mode }) => ({
+  build: getBuildOptions(mode),
   plugins: [
     react(),
-    url({ fileName: '[dirname][name][extname]', limit: undefined }),
     svgr({
-      svgo: false,
+      include: '**/*.svg',
+      svgrOptions: {
+        exportType: 'named',
+        namedExport: 'ReactComponent',
+        jsxRuntime: 'automatic',
+      },
     }),
   ],
-});
+  css: { modules: { generateScopedName: 'uu_[folder]__[local]' } },
+  test: {
+    include: ['src/**/*.{test,spec}.{ts,tsx}'],
+    environment: 'jsdom',
+    coverage: {
+      provider: 'v8',
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: ['**/index.{ts,tsx}', '**/*.stories.{ts,tsx}', 'src/data/**'],
+    },
+  },
+}));
+
+function getBuildOptions(mode: string): BuildEnvironmentOptions | undefined {
+  if (mode === 'lib') {
+    return {
+      outDir: path.resolve(import.meta.dirname, 'lib'),
+      minify: false,
+      cssMinify: true,
+      cssCodeSplit: false,
+      lib: {
+        entry: {
+          'index': path.resolve(import.meta.dirname, 'src', 'index.ts'),
+          'utils/index': path.resolve(import.meta.dirname, 'src', 'utils', 'index.ts'),
+        },
+        formats: ['es'],
+        cssFileName: 'index',
+      },
+      rolldownOptions: {
+        external: (id) => peerDependencies.some((name) => id === name || id.startsWith(`${name}/`)),
+        output: {
+          preserveModules: true,
+          preserveModulesRoot: path.resolve(import.meta.dirname, 'src'),
+          entryFileNames: '[name].js',
+        },
+      },
+    };
+  }
+}

@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { FAKE_COUNTRY_LIST } from 'data/fake';
-
+import { FAKE_COUNTRY_LIST } from '../../data/fake';
 import { Text } from '../text';
 
 import { Dropdown } from './dropdown';
