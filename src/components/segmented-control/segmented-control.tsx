@@ -1,9 +1,8 @@
 import React, { useRef } from 'react';
-import { classNames } from '@ur-apps/common-fe';
+import { classNames } from '@urapps/react';
 
-import { CssVariableGroup } from 'contexts';
-import { useName } from 'hooks';
-
+import { CssVariableGroup } from '../../contexts';
+import { useName } from '../../hooks';
 import { Segment } from '../segment';
 
 import { ISegmentedControlProps, TSegmentedControlValue } from './segmented-control.types';
@@ -33,7 +32,7 @@ export function SegmentedControl<M extends boolean = false>({
     className
   );
   const name = useName(props.name);
-  const valuesMap = useRef<Record<string, Record<string, boolean>>>({});
+  const valuesMapRef = useRef<Record<string, Record<string, boolean>>>({});
 
   const onChangeInner = (
     evt: React.ChangeEvent<HTMLInputElement>,
@@ -41,14 +40,14 @@ export function SegmentedControl<M extends boolean = false>({
   ) => {
     const { type, name, value, checked } = evt.target;
 
-    if (!valuesMap.current[name]) {
-      valuesMap.current[name] = {};
+    if (!valuesMapRef.current[name]) {
+      valuesMapRef.current[name] = {};
     }
 
-    valuesMap.current[name][value] = checked;
+    valuesMapRef.current[name][value] = checked;
 
     if (type === 'checkbox') {
-      const newValue = Object.keys(valuesMap.current[name]).filter((key) => valuesMap.current[name][key]);
+      const newValue = Object.keys(valuesMapRef.current[name]).filter((key) => valuesMapRef.current[name][key]);
 
       onChange?.(evt, newValue as TSegmentedControlValue<M>);
     } else {
@@ -62,6 +61,7 @@ export function SegmentedControl<M extends boolean = false>({
 
       {options.map((option) => (
         <Segment
+          key={option.value}
           type={multiple ? 'checkbox' : 'radio'}
           name={name}
           checked={
@@ -79,7 +79,6 @@ export function SegmentedControl<M extends boolean = false>({
           shape={shape}
           size={size}
           onChange={(evt) => onChangeInner(evt, option.onChange ?? onChange)}
-          key={option.value}
         />
       ))}
     </div>

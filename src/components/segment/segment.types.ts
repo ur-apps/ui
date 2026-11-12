@@ -1,7 +1,7 @@
 import { InputHTMLAttributes, Ref } from 'react';
-import { TClasses } from '@ur-apps/common-fe';
+import { TClasses } from '@urapps/react';
 
-import { SvgIcon } from 'types';
+import { SvgIcon } from '../../types';
 
 export type TSegmentVariant = 'filled' | 'outlined' | 'clear';
 export type TSegmentColor = 'primary' | 'secondary' | 'accent' | 'success' | 'warning' | 'danger';

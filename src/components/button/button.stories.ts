@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { ReactComponent as PlaceholderIcon } from 'icons/placeholder.svg';
+import { ReactComponent as PlaceholderIcon } from '../../icons/placeholder.svg';
 
 import { Button } from './button';
 

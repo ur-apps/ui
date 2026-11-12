@@ -1,8 +1,8 @@
 import { useRef } from 'react';
-import { classNames } from '@ur-apps/common-fe';
+import { classNames } from '@urapps/react';
 
-import { Portal } from 'components';
-import { CssVariableGroup } from 'contexts';
+import { CssVariableGroup } from '../../contexts';
+import { Portal } from '../portal';
 
 import { useTooltipPosition, useTooltipVisibility } from './hooks';
 import { ITooltipProps } from './tooltip.types';

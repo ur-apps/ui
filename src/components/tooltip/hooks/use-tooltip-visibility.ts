@@ -1,5 +1,5 @@
 import { RefObject, useEffect } from 'react';
-import { useFlag, useHover } from '@ur-apps/common-fe';
+import { useFlag, useFocus, useHover } from '@urapps/react';
 
 import { TooltipTrigger } from '../tooltip.types';
 
@@ -25,8 +25,11 @@ export function useTooltipVisibility({
   const targetHovered = useHover(targetRef, {
     enterDelay: showDelay,
     leaveDelay: hideDelay,
-    includeFocus: true,
     pointerTypes: ['mouse', 'pen'],
+    disabled: trigger !== 'hover' || disabled,
+  });
+  const targetFocused = useFocus(targetRef, {
+    visibleOnly: true,
     disabled: trigger !== 'hover' || disabled,
   });
   const tooltipHovered = useHover(tooltipRef, {
@@ -74,5 +77,5 @@ export function useTooltipVisibility({
     };
   }, [isTooltipVisible, setIsTooltipVisible, targetRef, tooltipRef, trigger]);
 
-  return trigger === 'manual' || tooltipHovered || targetHovered || isTooltipVisible;
+  return trigger === 'manual' || tooltipHovered || targetHovered || targetFocused || isTooltipVisible;
 }

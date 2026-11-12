@@ -1,5 +1,6 @@
-import { isAllowedType, isArray, isObject } from '@ur-apps/common';
+import { isAllowedType, isArray, isObject } from '@urapps/common';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function merge<T extends Record<string, any>>(target: T, ...sources: Array<Record<string, any>>): T {
   if (!isAllowedType(target, ['array', 'object'])) {
     console.warn('Target must be object or array');

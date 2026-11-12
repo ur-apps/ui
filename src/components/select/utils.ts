@@ -1,4 +1,4 @@
-import { isArray } from '@ur-apps/common';
+import { isArray } from '@urapps/common';
 
 import { IOptionProps, TOptionValue } from '../option';
 

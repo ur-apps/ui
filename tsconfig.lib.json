@@ -1,0 +1,23 @@
+{
+  /* Visit https://aka.ms/tsconfig to read more about this file */
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    // Emit
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "./lib"
+  },
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist",
+    "lib",
+    "src/data",
+    "**/*.stories.ts",
+    "**/*.stories.tsx",
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "**/*.test.data.ts"
+  ]
+}

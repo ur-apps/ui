@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { ReactComponent as SunIcon } from 'icons/sun.max.filled.svg';
+import { ReactComponent as SunIcon } from '../../icons/sun.max.filled.svg';
 
 import { Segment } from './segment';
 

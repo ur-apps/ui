@@ -24,9 +24,11 @@ lerna-debug.log*
 
 # misc
 .DS_Store
+.tmp
+.temp
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-ur-ui*.tgz
+urapps-ui-*.tgz

@@ -1,10 +1,12 @@
-import urappsCommonConfigs from '@ur-apps/common-fe/eslint';
+import path from 'node:path';
+import config from '@urapps/eslint-config/react';
 import storybookPlugin from 'eslint-plugin-storybook';
-import { globalIgnores } from 'eslint/config';
+import { defineConfig, includeIgnoreFile } from 'eslint/config';
 
-export default urappsCommonConfigs.concat(
+export default defineConfig(
+  config,
   storybookPlugin.configs['flat/recommended'],
-  globalIgnores(['node_modules/**/*', 'lib/**/*', 'storybook-static/**/*']),
+  includeIgnoreFile(path.resolve(import.meta.dirname, '.gitignore')),
   {
     languageOptions: {
       parserOptions: {

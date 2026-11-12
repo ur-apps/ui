@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo } from 'react';
-import { classNames } from '@ur-apps/common-fe';
+import { classNames } from '@urapps/react';
 
-import { CssVariableGroup } from 'contexts';
+import { CssVariableGroup } from '../../contexts';
 
 import { ITagButtonProps, ITagProps } from './tag.types';
 import styles from './tag.module.scss';
@@ -53,13 +53,15 @@ export function Tag({
   return (
     <div {...props} className={classes} ref={ref}>
       {startButtons.map((button, i) => (
-        <TagButton {...button} key={button.id ?? i} />
+        // eslint-disable-next-line @eslint-react/no-array-index-key
+        <TagButton key={button.id ?? i} {...button} />
       ))}
 
       <span>{children || label}</span>
 
       {endButtons.map((button, i) => (
-        <TagButton {...button} key={button.id ?? i} />
+        // eslint-disable-next-line @eslint-react/no-array-index-key
+        <TagButton key={button.id ?? i} {...button} />
       ))}
     </div>
   );

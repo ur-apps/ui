@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 
 export interface IPortalProps {
@@ -6,7 +6,7 @@ export interface IPortalProps {
 }
 
 export function Portal({ children }: IPortalProps) {
-  const portal = useRef(document.querySelector('#portal'));
+  const [container] = useState(() => document.querySelector('#portal'));
 
-  return portal.current ? createPortal(children, portal.current) : null;
+  return container ? createPortal(children, container) : null;
 }

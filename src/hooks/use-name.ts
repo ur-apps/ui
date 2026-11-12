@@ -7,7 +7,7 @@ import { useId } from 'react';
  * @returns {string} - The provided name if available, otherwise a fallback name.
  */
 export function useName(name?: string): string {
-  const falbackName = useId();
+  const fallbackId = useId();
 
-  return name ?? falbackName;
+  return name ?? fallbackId;
 }

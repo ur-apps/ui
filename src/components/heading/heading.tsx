@@ -1,7 +1,7 @@
 import React from 'react';
-import { classNames } from '@ur-apps/common-fe';
+import { classNames } from '@urapps/react';
 
-import { CssVariableGroup } from 'contexts';
+import { CssVariableGroup } from '../../contexts';
 
 import { sizeByTagMap } from './heading.constants';
 import { IHeadingProps } from './heading.types';

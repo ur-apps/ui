@@ -1,4 +1,4 @@
-import { SvgIcon } from 'types';
+import { SvgIcon } from '../../types';
 
 import { HintColor, HintIcon } from './hint.types';
 

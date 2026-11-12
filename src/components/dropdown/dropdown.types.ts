@@ -1,5 +1,5 @@
 import { ChangeEvent, HTMLAttributes } from 'react';
-import { TClasses } from '@ur-apps/common-fe';
+import { TClasses } from '@urapps/react';
 
 import { IOptionProps, TOptionShape, TOptionSize, TOptionValue, TOptionVariant } from '../option';
 

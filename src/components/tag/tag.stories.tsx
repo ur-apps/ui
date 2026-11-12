@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { ReactComponent as CheckmarkFilledIcon } from 'icons/checkmark.circle.filled.svg';
-import { ReactComponent as ExclamationTriangleIconFilled } from 'icons/exclamationmark.triangle.filled.svg';
-import { ReactComponent as InfoFilledIcon } from 'icons/info.circle.filled.svg';
-import { ReactComponent as PencilIcon } from 'icons/pencil.svg';
-import { ReactComponent as TrashFilledIcon } from 'icons/trash.filled.svg';
-import { ReactComponent as TrashOutlinedIcon } from 'icons/trash.outlined.svg';
+import { ReactComponent as CheckmarkFilledIcon } from '../../icons/checkmark.circle.filled.svg';
+import { ReactComponent as ExclamationTriangleIconFilled } from '../../icons/exclamationmark.triangle.filled.svg';
+import { ReactComponent as InfoFilledIcon } from '../../icons/info.circle.filled.svg';
+import { ReactComponent as PencilIcon } from '../../icons/pencil.svg';
+import { ReactComponent as TrashFilledIcon } from '../../icons/trash.filled.svg';
+import { ReactComponent as TrashOutlinedIcon } from '../../icons/trash.outlined.svg';
 
 import { Tag } from './tag';
 import { ITagButtonProps } from './tag.types';

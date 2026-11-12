@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes, Ref } from 'react';
-import { TClasses } from '@ur-apps/common-fe';
+import { TClasses } from '@urapps/react';
 
-import { SvgIcon } from 'types';
+import { SvgIcon } from '../../types';
 
 export type ButtonVariant = 'filled' | 'outlined' | 'ghost' | 'clear';
 export type ButtonColor = 'primary' | 'secondary' | 'accent' | 'success' | 'warning' | 'danger';

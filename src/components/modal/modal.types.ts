@@ -1,5 +1,5 @@
 import { HTMLAttributes, Ref } from 'react';
-import { TClasses } from '@ur-apps/common-fe';
+import { TClasses } from '@urapps/react';
 
 export type TModalShape = 'default' | 'brick';
 export type TModalSize = 's' | 'm' | 'l';

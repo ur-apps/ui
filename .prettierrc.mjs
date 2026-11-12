@@ -1,1 +1,1 @@
-export { default } from '@ur-apps/common-fe/prettier';
+export { default } from '@urapps/prettier-config/react';

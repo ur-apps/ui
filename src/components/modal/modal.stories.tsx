@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { Button } from 'components/button';
-import { Input } from 'components/input';
-import { Select } from 'components/select';
-import { Text } from 'components/text';
-import { FAKE_COUNTRY_LIST } from 'data/fake';
+import { FAKE_COUNTRY_LIST } from '../../data/fake';
+import { Button } from '../button';
+import { Input } from '../input';
+import { Select } from '../select';
+import { Text } from '../text';
 
 import { Modal } from './modal';
 

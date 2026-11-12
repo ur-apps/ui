@@ -1,5 +1,5 @@
 import { RefObject, useLayoutEffect, useMemo, useState } from 'react';
-import { useThrottle } from '@ur-apps/common-fe';
+import { useThrottle } from '@urapps/react';
 
 import { getTooltipPosition } from '../helpers/get-position';
 import { TooltipPlacement } from '../tooltip.types';

@@ -1,5 +1,5 @@
 import { HTMLAttributes, RefObject } from 'react';
-import { TClasses } from '@ur-apps/common-fe';
+import { TClasses } from '@urapps/react';
 
 export type TooltipVariant = 'filled';
 export type TooltipColor = 'primary' | 'secondary' | 'contrast' | 'success' | 'warning' | 'danger';

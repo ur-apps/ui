@@ -1,5 +1,5 @@
 import React from 'react';
-import { classNames } from '@ur-apps/common-fe';
+import { classNames } from '@urapps/react';
 
 import { ITextProps } from './text.types';
 import styles from './text.module.scss';

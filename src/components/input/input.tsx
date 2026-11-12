@@ -1,7 +1,6 @@
-import { classNames } from '@ur-apps/common-fe';
+import { classNames } from '@urapps/react';
 
-import { CssVariableGroup } from 'contexts';
-
+import { CssVariableGroup } from '../../contexts';
 import { Hint } from '../hint';
 
 import { hintIconMap, hintShapeMap, hintVariantMap } from './constants';
