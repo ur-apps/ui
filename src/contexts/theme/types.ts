@@ -72,6 +72,7 @@ export type TStylePrimitives = {
   space?: Record<number | string, number | string>;
   weight?: Record<number | string, number | string>;
   'font-family'?: Record<number | string, string>;
+  'font-family-mono'?: Record<number | string, string>;
 };
 
 export type TStyleTokens = {
@@ -97,6 +98,7 @@ export type TStyleTokens = {
     neutral?: Color;
   };
   'font-family'?: string;
+  'font-family-mono'?: string;
   'font-size'?: FontSize;
   'font-weight'?: FontWeight;
   'line-height'?: LineHeight;

@@ -70,7 +70,11 @@ export function ThemeProvider({ className, defaultTheme, customePreset, children
       getVariableStyles(pick(primitives, ['space']), CssVariableGroup.SystemSpaces, 'uu-sys'),
       getVariableStyles(pick(primitives, ['radius']), CssVariableGroup.SystemRadiuses, 'uu-sys'),
       getVariableStyles(pick(primitives, ['weight']), CssVariableGroup.SystemWeights, 'uu-sys'),
-      getVariableStyles(pick(primitives, ['font-family']), CssVariableGroup.SystemFontFamilies, 'uu-sys'),
+      getVariableStyles(
+        pick(primitives, ['font-family', 'font-family-mono']),
+        CssVariableGroup.SystemFontFamilies,
+        'uu-sys'
+      ),
 
       // Tokens
       getVariableStyles(pick(tokens, ['color']), CssVariableGroup.Colors, 'uu'),
@@ -79,7 +83,7 @@ export function ThemeProvider({ className, defaultTheme, customePreset, children
       getVariableStyles(pick(tokens, ['space']), CssVariableGroup.Spaces, 'uu'),
       getVariableStyles(pick(tokens, ['radius']), CssVariableGroup.Radiuses, 'uu'),
       getVariableStyles(
-        pick(tokens, ['font-family', 'font-size', 'font-weight', 'line-height']),
+        pick(tokens, ['font-family', 'font-family-mono', 'font-size', 'font-weight', 'line-height']),
         CssVariableGroup.Texts,
         'uu'
       ),

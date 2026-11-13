@@ -370,6 +370,13 @@ export const preset: TStylePreset = {
       /** font weights: 100, 200, 400, 500, 700 */
       5: "'Helvetica Neue'",
     },
+    'font-family-mono': {
+      1: 'monospace',
+      2: "'Liberation Mono'",
+      3: 'Consolas',
+      4: 'Menlo',
+      5: 'ui-monospace',
+    },
   },
 
   tokens: {
@@ -593,6 +600,8 @@ export const preset: TStylePreset = {
     },
     'font-family':
       'var(--uu-sys-font-family-5), var(--uu-sys-font-family-4), var(--uu-sys-font-family-3), var(--uu-sys-font-family-2), var(--uu-sys-font-family-1)',
+    'font-family-mono':
+      'var(--uu-sys-font-family-mono-5), var(--uu-sys-font-family-mono-4), var(--uu-sys-font-family-mono-3), var(--uu-sys-font-family-mono-2), var(--uu-sys-font-family-mono-1)',
     'font-size': {
       '2xs': 'var(--uu-sys-size-6)',
       'xs': 'var(--uu-sys-size-7)',
