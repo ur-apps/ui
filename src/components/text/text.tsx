@@ -11,7 +11,13 @@ export function Text<T extends TextTag = 'p'>({
   tag = 'p' as T,
   ...props
 }: ITextProps<T>) {
-  const classes = classNames(styles.text, styles[`text--color-${color}`], styles[`text--size-${size}`], className);
+  const classes = classNames(
+    styles.text,
+    styles[`text--color-${color}`],
+    styles[`text--size-${size}`],
+    styles[`text--tag-${tag}`],
+    className
+  );
 
   return React.createElement(tag, { ...props, className: classes });
 }

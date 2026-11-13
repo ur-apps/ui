@@ -66,3 +66,26 @@
     --font-weight: var(--uu-font-weight-400);
   }
 }
+
+.text--tag {
+  &-b,
+  &-strong {
+    --font-weight: var(--uu-font-weight-700);
+  }
+
+  &-code,
+  &-kbd,
+  &-samp {
+    --font-family: var(--uu-font-family-mono);
+  }
+
+  &-sub,
+  &-sup {
+    font-size: calc(var(--font-size, 16px) * 0.75);
+    line-height: 1;
+  }
+
+  &-mark {
+    background-color: var(--uu-color-warning-a30);
+  }
+}
