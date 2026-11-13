@@ -85,6 +85,9 @@ export type TStyleTokens = {
     text?: {
       primary: string;
       secondary: string;
+      success: string;
+      warning: string;
+      danger: string;
       contrast: string;
       placeholder: string;
       link: string;

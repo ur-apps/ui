@@ -22,6 +22,18 @@
     --text-color: var(--uu-color-text-secondary);
   }
 
+  &-success {
+    --text-color: var(--uu-color-text-success);
+  }
+
+  &-warning {
+    --text-color: var(--uu-color-text-warning);
+  }
+
+  &-danger {
+    --text-color: var(--uu-color-text-danger);
+  }
+
   &-contrast {
     --text-color: var(--uu-color-text-contrast);
   }

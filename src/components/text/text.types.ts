@@ -3,7 +3,8 @@ import { TClasses } from '@urapps/react';
 
 import { TEXT_TAGS } from './text.constants';
 
-export type TextColor = 'inherit' | 'primary' | 'secondary' | 'contrast' | 'link' | 'link-visited';
+export type TextColor =
+  'inherit' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'contrast' | 'link' | 'link-visited';
 export type TextSize = 'xs' | 's' | 'm' | 'l' | 'xl';
 export type TextTag = (typeof TEXT_TAGS)[number];
 

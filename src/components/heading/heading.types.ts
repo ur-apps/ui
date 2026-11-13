@@ -1,7 +1,8 @@
 import { HTMLAttributes } from 'react';
 import { TClasses } from '@urapps/react';
 
-export type THeadingColor = 'inherit' | 'primary' | 'secondary' | 'contrast' | 'link' | 'link-visited';
+export type THeadingColor =
+  'inherit' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'contrast' | 'link' | 'link-visited';
 export type THeadingSize = '2xs' | 'xs' | 's' | 'm' | 'l' | 'xl';
 export type THeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 

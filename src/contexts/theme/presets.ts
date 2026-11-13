@@ -389,6 +389,9 @@ export const preset: TStylePreset = {
       text: {
         primary: 'var(--uu-color-neutral-1000)',
         secondary: 'var(--uu-color-neutral-500)',
+        success: 'var(--uu-sys-color-green-600)',
+        warning: 'var(--uu-sys-color-orange-600)',
+        danger: 'var(--uu-sys-color-red-600)',
         contrast: 'var(--uu-color-neutral-0)',
         placeholder: 'var(--uu-color-neutral-350)',
         link: 'var(--uu-sys-color-blue-600)',
@@ -838,6 +841,9 @@ export const darkModePreset: TStylePreset = {
         placeholder: 'var(--uu-color-neutral-450)',
         link: 'var(--uu-sys-color-blue-400)',
         'link-visited': 'var(--uu-sys-color-blue-300)',
+        success: 'var(--uu-sys-color-green-500)',
+        warning: 'var(--uu-sys-color-orange-500)',
+        danger: 'var(--uu-sys-color-red-500)',
       },
       neutral: {
         '0': 'var(--uu-sys-color-black)',
