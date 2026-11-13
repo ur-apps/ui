@@ -35,11 +35,19 @@ export function saveThemeToLS(theme: Theme): void {
   localStorage.setItem(LOCAL_STORAGE_THEME_KEY, theme);
 }
 
-export function getBrowserTheme(): Theme {
+export function getBrowserTheme(): Theme.Light | Theme.Dark {
   // Check if the user has set a theme preference in the browser
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     return Theme.Dark;
   }
 
   return Theme.Light;
+}
+
+export function subscribeToBrowserTheme(onChange: () => void): () => void {
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+  mediaQuery.addEventListener('change', onChange);
+
+  return () => mediaQuery.removeEventListener('change', onChange);
 }

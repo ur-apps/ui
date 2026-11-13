@@ -1,22 +1,24 @@
-import { createContext, ReactNode, useEffect, useMemo, useRef, useState } from 'react';
+import { createContext, ReactNode, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import { clone, pick } from '@urapps/common';
 import { classNames } from '@urapps/react';
 
 import { merge } from '../../utils';
 
-import { getBrowserTheme, getThemeFromLS, getVariableStyles, saveThemeToLS } from './helpers';
+import { getBrowserTheme, getThemeFromLS, getVariableStyles, saveThemeToLS, subscribeToBrowserTheme } from './helpers';
 import { darkModePreset, preset } from './presets';
 import { CssVariableGroup, Theme, TStylePreset } from './types';
 import styles from './context.module.scss';
 
 type TThemeContext = {
   theme: Theme;
+  resolvedTheme: Theme.Light | Theme.Dark;
   switchTheme: (theme?: Theme) => void;
 };
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const ThemeContext = createContext<TThemeContext>({
   theme: Theme.Light,
+  resolvedTheme: Theme.Light,
   switchTheme: () => {
     console.warn('Theme switcher is not provided');
   },
@@ -50,18 +52,18 @@ const TOKEN_CLASSES = Object.values(CssVariableGroup).filter((c) => !COMPONENT_C
 
 export function ThemeProvider({ className, defaultTheme, customePreset, children }: TThemeProps) {
   const [theme, setTheme] = useState<Theme>(() => getThemeFromLS(defaultTheme));
+  const browserTheme = useSyncExternalStore(subscribeToBrowserTheme, getBrowserTheme);
+  const resolvedTheme = theme === Theme.Auto ? browserTheme : theme;
   const portalRef = useRef(document.querySelector('#portal'));
 
   // TODO add hook
   // eslint-disable-next-line complexity
   const variableStyles = useMemo(() => {
-    const themeValue = theme === Theme.Auto ? getBrowserTheme() : theme;
-
     const {
       primitives = {},
       tokens = {},
       components = {},
-    } = merge(clone(preset), themeValue === Theme.Dark ? clone(darkModePreset) : {}, customePreset ?? {});
+    } = merge(clone(preset), resolvedTheme === Theme.Dark ? clone(darkModePreset) : {}, customePreset ?? {});
 
     return [
       // Primitives
@@ -103,7 +105,7 @@ export function ThemeProvider({ className, defaultTheme, customePreset, children
       getVariableStyles(components.tag ?? {}, CssVariableGroup.TagTokens),
       getVariableStyles(components.tooltip ?? {}, CssVariableGroup.TooltipTokens),
     ];
-  }, [theme, customePreset]);
+  }, [resolvedTheme, customePreset]);
 
   useEffect(() => {
     if (portalRef.current) {
@@ -114,14 +116,14 @@ export function ThemeProvider({ className, defaultTheme, customePreset, children
   }, []);
 
   const switchTheme = (value?: Theme) => {
-    const newValue = value ? value : theme === Theme.Light ? Theme.Dark : Theme.Light;
+    const newValue = value ? value : resolvedTheme === Theme.Light ? Theme.Dark : Theme.Light;
 
     saveThemeToLS(newValue);
     setTheme(newValue);
   };
 
   return (
-    <ThemeContext value={{ theme, switchTheme }}>
+    <ThemeContext value={{ theme, resolvedTheme, switchTheme }}>
       <style>{variableStyles}</style>
       <div className={classNames(styles.theme, TOKEN_CLASSES, className)}>{children}</div>
     </ThemeContext>
