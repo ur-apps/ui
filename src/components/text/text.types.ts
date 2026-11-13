@@ -1,45 +1,13 @@
-import { HTMLAttributes } from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 import { TClasses } from '@urapps/react';
+
+import { TEXT_TAGS } from './text.constants';
 
 export type TextColor = 'inherit' | 'primary' | 'secondary' | 'contrast' | 'link' | 'link-visited';
 export type TextSize = 'xs' | 's' | 'm' | 'l' | 'xl';
-export type TextTag =
-  | 'a'
-  | 'abbr'
-  | 'address'
-  | 'b'
-  | 'bdi'
-  | 'bdo'
-  | 'blockquote'
-  | 'cite'
-  | 'code'
-  | 'data'
-  | 'del'
-  | 'dfn'
-  | 'div'
-  | 'em'
-  | 'i'
-  | 'ins'
-  | 'kbd'
-  | 'label'
-  | 'mark'
-  | 'p'
-  | 'q'
-  | 's'
-  | 'samp'
-  | 'small'
-  | 'span'
-  | 'strong'
-  | 'sub'
-  | 'sup'
-  | 'time'
-  | 'u'
-  | 'var';
+export type TextTag = (typeof TEXT_TAGS)[number];
 
-export interface ITextProps<T extends TextTag> extends Omit<
-  HTMLAttributes<T extends 'span' ? HTMLSpanElement : HTMLParagraphElement>,
-  'className' | 'color'
-> {
+export type ITextProps<T extends TextTag> = Omit<ComponentPropsWithoutRef<T>, 'className' | 'color'> & {
   /**
    * additional css class name
    */
@@ -59,4 +27,4 @@ export interface ITextProps<T extends TextTag> extends Omit<
    * @default "p"
    */
   tag?: T;
-}
+};

@@ -1,14 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { Text } from './text';
+import { TEXT_TAGS } from './text.constants';
 
 const meta: Meta<typeof Text> = {
   title: 'Typography/Text',
   component: Text,
   argTypes: {
     tag: {
-      control: 'radio',
-      options: ['p', 'span'],
+      control: 'select',
+      options: TEXT_TAGS,
     },
   },
 };

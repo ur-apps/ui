@@ -1,10 +1,10 @@
 import React from 'react';
 import { classNames } from '@urapps/react';
 
-import { ITextProps } from './text.types';
+import { ITextProps, TextTag } from './text.types';
 import styles from './text.module.scss';
 
-export function Text<T extends 'p' | 'span' = 'p'>({
+export function Text<T extends TextTag = 'p'>({
   className,
   color = 'inherit',
   size = 'm',
