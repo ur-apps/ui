@@ -26,7 +26,7 @@
   height: var(--height-dialog, auto);
   max-width: 100%;
   max-height: 100%;
-  padding: var(--padding-dialog, 24px);
+  padding: var(--vertical-padding-dialog, 24px) var(--horizontal-padding-dialog, 24px);
   border-width: var(--border-width-dialog, 1px);
   border-style: var(--border-style, solid);
   border-color: var(--color-border, lightgray);
@@ -50,8 +50,10 @@
     --width-dialog: var(--width-dialog-s);
     --height-dialog: var(--height-dialog-s);
     --height-sheet: var(--height-sheet-s);
-    --padding-dialog: var(--padding-dialog-s);
-    --padding-sheet: var(--padding-sheet-s);
+    --horizontal-padding-dialog: var(--horizontal-padding-dialog-s);
+    --horizontal-padding-sheet: var(--horizontal-padding-sheet-s);
+    --vertical-padding-dialog: var(--vertical-padding-dialog-s);
+    --vertical-padding-sheet: var(--vertical-padding-sheet-s);
     --border-width-dialog: var(--border-width-dialog-s);
     --border-width-sheet: var(--border-width-sheet-s);
     --border-radius-dialog: var(--border-radius-dialog-s);
@@ -62,8 +64,10 @@
     --width-dialog: var(--width-dialog-m);
     --height-dialog: var(--height-dialog-m);
     --height-sheet: var(--height-sheet-m);
-    --padding-dialog: var(--padding-dialog-m);
-    --padding-sheet: var(--padding-sheet-m);
+    --horizontal-padding-dialog: var(--horizontal-padding-dialog-m);
+    --horizontal-padding-sheet: var(--horizontal-padding-sheet-m);
+    --vertical-padding-dialog: var(--vertical-padding-dialog-m);
+    --vertical-padding-sheet: var(--vertical-padding-sheet-m);
     --border-width-dialog: var(--border-width-dialog-m);
     --border-width-sheet: var(--border-width-sheet-m);
     --border-radius-dialog: var(--border-radius-dialog-m);
@@ -74,8 +78,10 @@
     --width-dialog: var(--width-dialog-l);
     --height-dialog: var(--height-dialog-l);
     --height-sheet: var(--height-sheet-l);
-    --padding-dialog: var(--padding-dialog-l);
-    --padding-sheet: var(--padding-sheet-l);
+    --horizontal-padding-dialog: var(--horizontal-padding-dialog-l);
+    --horizontal-padding-sheet: var(--horizontal-padding-sheet-l);
+    --vertical-padding-dialog: var(--vertical-padding-dialog-l);
+    --vertical-padding-sheet: var(--vertical-padding-sheet-l);
     --border-width-dialog: var(--border-width-dialog-l);
     --border-width-sheet: var(--border-width-sheet-l);
     --border-radius-dialog: var(--border-radius-dialog-l);
@@ -103,8 +109,8 @@
   .modal--mobile-sheet {
     width: 100%;
     height: var(--height-sheet, auto);
-    padding: var(--padding-sheet, 16px);
-    padding-bottom: calc(var(--padding-sheet, 16px) + env(safe-area-inset-bottom, 0px));
+    padding: var(--vertical-padding-sheet, 16px) var(--horizontal-padding-sheet, 16px);
+    padding-bottom: calc(var(--vertical-padding-sheet, 16px) + env(safe-area-inset-bottom, 0px));
     border-width: var(--border-width-sheet, 0) 0 0;
     border-radius: var(--border-radius-sheet, 12px) var(--border-radius-sheet, 12px) 0 0;
 

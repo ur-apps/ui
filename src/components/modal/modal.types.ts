@@ -82,7 +82,12 @@ export interface IModalStyleTokens {
       [size in TModalSize]?: string;
     };
   };
-  padding?: {
+  'horizontal-padding'?: {
+    [variant in TModalMobileVariant]?: {
+      [size in TModalSize]?: string;
+    };
+  };
+  'vertical-padding'?: {
     [variant in TModalMobileVariant]?: {
       [size in TModalSize]?: string;
     };

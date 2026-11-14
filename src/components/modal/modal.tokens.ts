@@ -16,7 +16,19 @@ export const modalStyleTokens: IModalStyleTokens = {
       l: '560px',
     },
   },
-  padding: {
+  'horizontal-padding': {
+    dialog: {
+      s: 'var(--uu-space-l)',
+      m: 'var(--uu-space-xl)',
+      l: 'var(--uu-space-2xl)',
+    },
+    sheet: {
+      s: 'var(--uu-space-m)',
+      m: 'var(--uu-space-l)',
+      l: 'var(--uu-space-xl)',
+    },
+  },
+  'vertical-padding': {
     dialog: {
       s: 'var(--uu-space-l)',
       m: 'var(--uu-space-xl)',
