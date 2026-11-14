@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { classNames, useScrollLock } from '@urapps/react';
 
 import { KeyCode } from '../../constants';
@@ -25,6 +25,11 @@ export function Modal({
 }: IModalProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
   const pointerDownOnOverlayRef = useRef(false);
+  const [isRendered, setIsRendered] = useState(isOpen);
+
+  if (isOpen && !isRendered) {
+    setIsRendered(true);
+  }
 
   useScrollLock(isOpen);
   useFocusTrap(overlayRef, isOpen);
@@ -81,10 +86,34 @@ export function Modal({
     }
   }, [isOpen]);
 
-  return isOpen ? (
+  // keeps the modal mounted until the closing animations of the overlay and the dialog finish
+  useEffect(() => {
+    if (isOpen || !isRendered) return;
+
+    const overlay = overlayRef.current;
+    const dialog = overlay?.querySelector<HTMLElement>(':scope > [role="dialog"]');
+    const animations = [overlay, dialog].flatMap((element) => element?.getAnimations() ?? []);
+    let cancelled = false;
+
+    Promise.allSettled(animations.map((animation) => animation.finished)).then(() => {
+      if (!cancelled) {
+        setIsRendered(false);
+      }
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [isOpen, isRendered]);
+
+  return isRendered ? (
     <Portal>
       <Overlay
-        className={classNames(styles.overlay, { [styles['overlay--hidden']]: !withOverlay }, overlayClassName)}
+        className={classNames(
+          styles.overlay,
+          { [styles['overlay--hidden']]: !withOverlay, [styles['overlay--closing']]: !isOpen },
+          overlayClassName
+        )}
         tabIndex={-1}
         onPointerDown={overlayPointerDownHandler}
         onClick={overlayClickHandler}

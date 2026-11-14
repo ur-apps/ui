@@ -21,7 +21,8 @@ function getTabbableElements(container: HTMLElement): HTMLElement[] {
 /**
  * Custom hook that keeps keyboard focus inside the container while enabled
  * and returns it to the previously focused element once disabled.
- * Focus is returned only if it was not moved anywhere else in the meantime.
+ * Focus is returned only if it is still inside the container or was lost,
+ * not if it was moved anywhere else in the meantime.
  *
  * @param containerRef - The element to keep focus in.
  * @param enabled - Whether the focus should be trapped.
@@ -75,14 +76,17 @@ export function useFocusTrap(containerRef: RefObject<HTMLElement | null>, enable
   }, [enabled, containerRef]);
 
   useEffect(() => {
+    const container = containerRef.current;
+
     if (!(returnFocusTo instanceof HTMLElement)) return;
 
     return () => {
       const active = document.activeElement;
+      const isFocusLost = active === null || active === document.body || container?.contains(active);
 
-      if ((active === null || active === document.body) && returnFocusTo.isConnected) {
+      if (isFocusLost && returnFocusTo.isConnected) {
         returnFocusTo.focus();
       }
     };
-  }, [returnFocusTo]);
+  }, [returnFocusTo, containerRef]);
 }
