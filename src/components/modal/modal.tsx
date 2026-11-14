@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef } from 'react';
-import { classNames } from '@urapps/react';
+import { classNames, useScrollLock } from '@urapps/react';
 
 import { KeyCode } from '../../constants';
 import { CssVariableGroup } from '../../contexts';
@@ -22,6 +22,8 @@ export function Modal({
   ref,
   ...props
 }: IModalProps) {
+  useScrollLock(isOpen);
+
   const overlayRef = useRef<HTMLDivElement>(null);
   const pointerDownOnOverlayRef = useRef(false);
   const classes = classNames(
