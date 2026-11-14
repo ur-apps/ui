@@ -36,7 +36,9 @@ export interface IModalProps extends Omit<HTMLAttributes<HTMLDivElement>, 'class
    */
   withOverlay?: boolean;
   /**
-   * is modal open (shown)
+   * is modal open (shown);
+   * the closing animation plays only when the modal is closed through this prop,
+   * a conditionally rendered modal (`{open && <Modal />}`) disappears at once
    * @default true
    */
   isOpen?: boolean;
