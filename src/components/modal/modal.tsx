@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef } from 'react';
-import { classNames, useScrollLock } from '@urapps/react';
+import { classNames, useMergeRefs, useScrollLock } from '@urapps/react';
 
 import { KeyCode } from '../../constants';
 import { CssVariableGroup } from '../../contexts';
@@ -25,12 +25,14 @@ export function Modal({
   ...props
 }: IModalProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const mergedDialogRef = useMergeRefs(dialogRef, ref);
   const pointerDownOnOverlayRef = useRef(false);
   const isRendered = usePresence(isOpen, overlayRef);
 
   useScrollLock(isOpen);
   useFocusTrap(overlayRef, isOpen);
-  useSwipeToDismiss(overlayRef, isOpen && mobileVariant === 'sheet', onClose);
+  useSwipeToDismiss(dialogRef, isOpen && mobileVariant === 'sheet', onClose);
 
   const classes = classNames(
     CssVariableGroup.ModalTokens,
@@ -78,7 +80,7 @@ export function Modal({
   }, [isOpen, closeOnESC, escPressHandler]);
 
   useEffect(() => {
-    const dialog = overlayRef.current?.querySelector<HTMLElement>(':scope > [role="dialog"]');
+    const dialog = dialogRef.current;
 
     if (isOpen && dialog && !dialog.contains(document.activeElement)) {
       dialog.focus();
@@ -98,7 +100,7 @@ export function Modal({
         onPointerDown={overlayPointerDownHandler}
         onClick={overlayClickHandler}
         ref={overlayRef}>
-        <div {...props} className={classes} ref={ref} role="dialog" aria-modal="true" tabIndex={-1} />
+        <div {...props} className={classes} ref={mergedDialogRef} role="dialog" aria-modal="true" tabIndex={-1} />
       </Overlay>
     </Portal>
   ) : null;

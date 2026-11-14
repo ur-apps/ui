@@ -28,22 +28,21 @@ function isScrolledFromTop(target: Element, dialog: HTMLElement): boolean {
  * is scrolled to the top. Released past a quarter of the dialog height or with a flick, the dialog is dismissed,
  * otherwise it returns to its place.
  *
- * @param containerRef - The overlay element that holds the dialog.
+ * @param dialogRef - The dialog element to drag.
  * @param enabled - Whether the dialog can be dragged.
  * @param onDismiss - Called when the dialog is released in the dismiss position.
  */
 export function useSwipeToDismiss(
-  containerRef: RefObject<HTMLElement | null>,
+  dialogRef: RefObject<HTMLElement | null>,
   enabled: boolean,
   onDismiss?: () => void
 ): void {
   const onDismissRef = useLatest(onDismiss);
 
   useEffect(() => {
-    const container = containerRef.current;
-    const dialog = container?.querySelector<HTMLElement>(':scope > [role="dialog"]');
+    const dialog = dialogRef.current;
 
-    if (!enabled || !container || !dialog) return;
+    if (!enabled || !dialog) return;
 
     // the dialog keeps its drag offset while closing, so it is reset if the modal is reopened meanwhile
     dialog.style.removeProperty('transform');
@@ -75,7 +74,6 @@ export function useSwipeToDismiss(
         !!onDismissRef.current &&
         window.matchMedia(SHEET_MEDIA_QUERY).matches &&
         target instanceof Element &&
-        dialog.contains(target) &&
         !isScrolledFromTop(target, dialog);
       isDragging = false;
       startY = evt.touches[0].clientY;
@@ -138,18 +136,18 @@ export function useSwipeToDismiss(
       snapBack(offset);
     };
 
-    container.addEventListener('touchstart', touchStartHandler, { passive: true });
-    container.addEventListener('touchmove', touchMoveHandler, { passive: false });
-    container.addEventListener('touchend', touchEndHandler);
-    container.addEventListener('touchcancel', touchEndHandler);
+    dialog.addEventListener('touchstart', touchStartHandler, { passive: true });
+    dialog.addEventListener('touchmove', touchMoveHandler, { passive: false });
+    dialog.addEventListener('touchend', touchEndHandler);
+    dialog.addEventListener('touchcancel', touchEndHandler);
 
     return () => {
       isDisposed = true;
 
-      container.removeEventListener('touchstart', touchStartHandler);
-      container.removeEventListener('touchmove', touchMoveHandler);
-      container.removeEventListener('touchend', touchEndHandler);
-      container.removeEventListener('touchcancel', touchEndHandler);
+      dialog.removeEventListener('touchstart', touchStartHandler);
+      dialog.removeEventListener('touchmove', touchMoveHandler);
+      dialog.removeEventListener('touchend', touchEndHandler);
+      dialog.removeEventListener('touchcancel', touchEndHandler);
     };
-  }, [enabled, containerRef, onDismissRef]);
+  }, [enabled, dialogRef, onDismissRef]);
 }
