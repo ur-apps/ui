@@ -22,6 +22,7 @@ export const dropdownStyleTokens: IDropdownStyleTokens = {
       },
     },
   },
+  'box-shadow': '0 2px 8px 0 rgba(0, 0, 0, 0.15)',
   height: {
     s: 'var(--uu-height-s)',
     m: 'var(--uu-height-m)',
@@ -42,4 +43,5 @@ export const dropdownDarkModeStyleTokens: IDropdownStyleTokens = {
       },
     },
   },
+  'box-shadow': '0 2px 8px 0 rgba(0, 0, 0, 0.4)',
 };

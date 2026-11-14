@@ -71,6 +71,7 @@ export interface IDropdownStyleTokens {
       };
     };
   };
+  'box-shadow'?: string;
   height?: {
     [size in TDropdownSize]?: string;
   };
