@@ -57,7 +57,6 @@ export interface IModalStyleTokens {
   color?: {
     bg?: string;
     border?: string;
-    'overlay-bg'?: string;
   };
   width?: {
     [size in TModalSize]?: string;
