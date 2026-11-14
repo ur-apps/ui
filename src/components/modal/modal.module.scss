@@ -94,7 +94,7 @@
   --border-radius-sheet: 0;
 }
 
-@media (max-width: 639.98px) {
+@media (width < 640px) {
   .overlay--mobile-sheet {
     align-items: flex-end;
     padding: calc(var(--uu-space-3xl, 40px) + env(safe-area-inset-top, 0px)) 0 0;
@@ -113,6 +113,7 @@
     padding-bottom: calc(var(--vertical-padding-sheet, 16px) + env(safe-area-inset-bottom, 0px));
     border-width: var(--border-width-sheet, 0) 0 0;
     border-radius: var(--border-radius-sheet, 12px) var(--border-radius-sheet, 12px) 0 0;
+    overscroll-behavior-y: contain;
 
     box-shadow: var(--box-shadow-sheet, 0 -3px 8px 0 rgba(0, 0, 0, 0.15));
 
@@ -124,7 +125,7 @@
   }
 }
 
-@media (max-width: 639.98px) and (forced-colors: active) {
+@media (width < 640px) and (forced-colors: active) {
   .modal--mobile-sheet {
     border-top-width: 1px;
   }

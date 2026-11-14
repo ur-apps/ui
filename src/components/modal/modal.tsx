@@ -6,7 +6,7 @@ import { CssVariableGroup } from '../../contexts';
 import { Overlay } from '../overlay';
 import { Portal } from '../portal';
 
-import { useFocusTrap } from './hooks';
+import { useFocusTrap, useSwipeToDismiss } from './hooks';
 import { IModalProps } from './modal.types';
 import styles from './modal.module.scss';
 
@@ -34,6 +34,7 @@ export function Modal({
 
   useScrollLock(isOpen);
   useFocusTrap(overlayRef, isOpen);
+  useSwipeToDismiss(overlayRef, isOpen && mobileVariant === 'sheet', onClose);
 
   const classes = classNames(
     CssVariableGroup.ModalTokens,

@@ -12,6 +12,35 @@ import { Modal } from './modal';
 const meta: Meta<typeof Modal> = {
   title: 'Components/Modal',
   component: Modal,
+  args: {
+    isOpen: false,
+    shape: 'default',
+    size: 'm',
+    withOverlay: true,
+    mobileVariant: 'sheet',
+    children: null,
+  },
+  decorators: [
+    (Story, { args }) => {
+      const [isOpen, setIsOpen] = useState(false);
+
+      return (
+        <>
+          <Button onClick={() => setIsOpen(true)}>Open</Button>
+          <Story
+            args={{
+              ...args,
+              isOpen,
+              onClose: () => {
+                args.onClose?.();
+                setIsOpen(false);
+              },
+            }}
+          />
+        </>
+      );
+    },
+  ],
 };
 
 export default meta;
@@ -19,7 +48,6 @@ type Story = StoryObj<typeof meta>;
 
 export const SmallForm: Story = {
   args: {
-    isOpen: false,
     shape: 'default',
     size: 's',
     withOverlay: false,
@@ -32,7 +60,6 @@ export const SmallForm: Story = {
 
 export const SmallInfo: Story = {
   args: {
-    isOpen: false,
     shape: 'default',
     size: 's',
     withOverlay: true,
@@ -45,7 +72,6 @@ export const SmallInfo: Story = {
 
 export const MediumForm: Story = {
   args: {
-    isOpen: false,
     shape: 'default',
     size: 'm',
     withOverlay: true,
@@ -58,7 +84,6 @@ export const MediumForm: Story = {
 
 export const MediumInfo: Story = {
   args: {
-    isOpen: false,
     shape: 'default',
     size: 'm',
     withOverlay: false,
@@ -71,7 +96,6 @@ export const MediumInfo: Story = {
 
 export const LargeForm: Story = {
   args: {
-    isOpen: false,
     shape: 'default',
     size: 'l',
     withOverlay: false,
@@ -84,7 +108,6 @@ export const LargeForm: Story = {
 
 export const LargeInfo: Story = {
   args: {
-    isOpen: false,
     shape: 'default',
     size: 'l',
     withOverlay: true,
@@ -97,7 +120,6 @@ export const LargeInfo: Story = {
 
 export const LongContent: Story = {
   args: {
-    isOpen: false,
     shape: 'default',
     size: 'm',
     mobileVariant: 'sheet',
