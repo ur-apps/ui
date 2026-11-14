@@ -15,6 +15,7 @@ export function Modal({
   overlayClassName,
   shape = 'default',
   size = 'm',
+  mobileVariant = 'sheet',
   withOverlay = true,
   isOpen = true,
   closeOnOverlay = true,
@@ -39,6 +40,7 @@ export function Modal({
     styles.modal,
     styles[`modal--shape-${shape}`],
     styles[`modal--size-${size}`],
+    styles[`modal--mobile-${mobileVariant}`],
     className
   );
 
@@ -111,6 +113,7 @@ export function Modal({
       <Overlay
         className={classNames(
           styles.overlay,
+          styles[`overlay--mobile-${mobileVariant}`],
           { [styles['overlay--hidden']]: !withOverlay, [styles['overlay--closing']]: !isOpen },
           overlayClassName
         )}

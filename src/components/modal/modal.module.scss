@@ -74,9 +74,44 @@
   --border-radius: 0;
 }
 
+@media (max-width: 639.98px) {
+  .overlay--mobile-sheet {
+    align-items: flex-end;
+    padding: calc(var(--uu-space-3xl, 40px) + env(safe-area-inset-top, 0px)) 0 0;
+
+    animation-name: overlay-backdrop-in;
+
+    &.overlay--closing {
+      animation-name: overlay-backdrop-out;
+    }
+  }
+
+  .modal--mobile-sheet {
+    width: 100%;
+    padding-bottom: calc(var(--padding, 24px) + env(safe-area-inset-bottom, 0px));
+    border-width: 0;
+    border-radius: var(--border-radius, 12px) var(--border-radius, 12px) 0 0;
+
+    box-shadow: var(--box-shadow, 0 -3px 8px 0 rgba(0, 0, 0, 0.15));
+
+    animation: modal-slide-in 300ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .overlay--closing > .modal--mobile-sheet {
+    animation: modal-slide-out 200ms ease-in forwards;
+  }
+}
+
+@media (max-width: 639.98px) and (forced-colors: active) {
+  .modal--mobile-sheet {
+    border-top-width: 1px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .overlay,
   .overlay--closing,
+  .overlay--mobile-sheet.overlay--closing,
   .modal,
   .overlay--closing > .modal {
     animation: none;
@@ -95,6 +130,20 @@
   }
 }
 
+@keyframes overlay-backdrop-in {
+  from {
+    background-color: transparent;
+    backdrop-filter: blur(0);
+  }
+}
+
+@keyframes overlay-backdrop-out {
+  to {
+    background-color: transparent;
+    backdrop-filter: blur(0);
+  }
+}
+
 @keyframes modal-scale-in {
   from {
     transform: scale(0.95);
@@ -104,5 +153,17 @@
 @keyframes modal-scale-out {
   to {
     transform: scale(0.95);
+  }
+}
+
+@keyframes modal-slide-in {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes modal-slide-out {
+  to {
+    transform: translateY(100%);
   }
 }

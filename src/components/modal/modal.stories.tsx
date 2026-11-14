@@ -95,6 +95,20 @@ export const LargeInfo: Story = {
   },
 };
 
+export const LongContent: Story = {
+  args: {
+    isOpen: false,
+    shape: 'default',
+    size: 'm',
+    mobileVariant: 'sheet',
+    withOverlay: true,
+    closeOnESC: true,
+    closeOnOverlay: true,
+    onClose: () => console.info('called on close callback'),
+    children: <ExampleLongInfo size="m" />,
+  },
+};
+
 function ExampleForm({ size }: { size?: 's' | 'm' | 'l' }) {
   const [values, setValues] = useState({
     name: 'John Doe',
@@ -163,6 +177,26 @@ function ExampleInfo({ size }: { size?: 's' | 'm' | 'l' }) {
       <Text style={{ width: 'fit-content', margin: '0 0 var(--uu-space-s) 0' }} size={size}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem totam nulla dolorem.
       </Text>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 'var(--uu-space-s)' }}>
+        <Button color="secondary" size={size}>
+          Cancel
+        </Button>
+        <Button size={size}>Confirm</Button>
+      </div>
+    </>
+  );
+}
+
+function ExampleLongInfo({ size }: { size?: 's' | 'm' | 'l' }) {
+  return (
+    <>
+      <h2 style={{ margin: '0 0 var(--uu-space-s) 0' }}>Lorem ipsum</h2>
+      {Array.from({ length: 12 }, (_, index) => (
+        <Text style={{ margin: '0 0 var(--uu-space-s) 0' }} size={size} key={index}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem totam nulla dolorem. Quas voluptatum, quibusdam
+          dolorum eius iure accusantium perferendis tempora vitae nostrum.
+        </Text>
+      ))}
       <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 'var(--uu-space-s)' }}>
         <Button color="secondary" size={size}>
           Cancel

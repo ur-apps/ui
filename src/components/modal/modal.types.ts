@@ -3,6 +3,7 @@ import { TClasses } from '@urapps/react';
 
 export type TModalShape = 'default' | 'brick';
 export type TModalSize = 's' | 'm' | 'l';
+export type TModalMobileVariant = 'sheet' | 'dialog';
 
 export interface IModalProps extends Omit<HTMLAttributes<HTMLDivElement>, 'className'> {
   /**
@@ -23,6 +24,12 @@ export interface IModalProps extends Omit<HTMLAttributes<HTMLDivElement>, 'class
    * @default "m"
    */
   size?: TModalSize;
+  /**
+   * modal presentation on screens narrower than 640px:
+   * "sheet" slides up from the bottom edge, "dialog" stays centered
+   * @default "sheet"
+   */
+  mobileVariant?: TModalMobileVariant;
   /**
    * use overlay
    * @default true
@@ -58,6 +65,7 @@ export interface IModalStyleTokens {
     bg?: string;
     border?: string;
   };
+  'box-shadow'?: string;
   width?: {
     [size in TModalSize]?: string;
   };

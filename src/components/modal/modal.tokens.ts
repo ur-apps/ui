@@ -5,6 +5,7 @@ export const modalStyleTokens: IModalStyleTokens = {
     bg: 'var(--uu-color-bg-primary)',
     border: 'var(--uu-color-neutral-a15)',
   },
+  'box-shadow': '0 -3px 8px 0 rgba(0, 0, 0, 0.15)',
   width: {
     s: '320px',
     m: '480px',
@@ -20,4 +21,8 @@ export const modalStyleTokens: IModalStyleTokens = {
     m: 'var(--uu-radius-l)',
     l: 'var(--uu-radius-xl)',
   },
+};
+
+export const modalDarkModeStyleTokens: IModalStyleTokens = {
+  'box-shadow': '0 -3px 8px 0 rgba(0, 0, 0, 0.4)',
 };
