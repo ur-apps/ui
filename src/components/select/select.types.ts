@@ -1,4 +1,4 @@
-import React, { Ref } from 'react';
+import React, { ReactNode, Ref } from 'react';
 
 import { IDropdownProps } from '../dropdown';
 import { IInputProps, InputShape, InputSize, InputVariant } from '../input';
@@ -46,6 +46,16 @@ export interface ISelectProps<M extends boolean = false> extends Omit<IInputProp
    * @default false
    */
   multiple?: M;
+  /**
+   * is it possible to search among the options by typing in the select field
+   * @default false
+   */
+  searchable?: boolean;
+  /**
+   * content shown in the dropdown when there are no options to show (e.g. nothing matches the search query)
+   * @default "No options"
+   */
+  emptyText?: ReactNode;
   /**
    * is select disabled
    * @default false

@@ -17,6 +17,7 @@ export function Dropdown<M extends boolean = false>({
   value,
   multiple,
   options,
+  emptyText = 'No options',
   onChange,
   ...props
 }: IDropdownProps<M>) {
@@ -33,6 +34,8 @@ export function Dropdown<M extends boolean = false>({
   return isOpen ? (
     <Portal>
       <div className={classes} {...props}>
+        {options.length === 0 && <div className={styles.empty}>{emptyText}</div>}
+
         {options.map((option) => (
           <Option
             className={styles.option}

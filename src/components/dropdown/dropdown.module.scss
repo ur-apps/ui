@@ -23,18 +23,30 @@
     --height: var(--height-s, 32px);
     --border-width: var(--border-width-s, 1px);
     --border-radius: var(--border-radius-s, 6px);
+    --horizontal-padding: var(--horizontal-padding-s, 8px);
+    --font-size: var(--font-size-s, 12px);
+    --line-height: var(--line-height-s, 16px);
+    --font-weight: var(--font-weight-s, 400);
   }
 
   &-m {
     --height: var(--height-m, 32px);
     --border-width: var(--border-width-m, 1px);
     --border-radius: var(--border-radius-m, 6px);
+    --horizontal-padding: var(--horizontal-padding-m, 12px);
+    --font-size: var(--font-size-m, 14px);
+    --line-height: var(--line-height-m, 18px);
+    --font-weight: var(--font-weight-m, 400);
   }
 
   &-l {
     --height: var(--height-l, 32px);
     --border-width: var(--border-width-l, 1px);
     --border-radius: var(--border-radius-l, 6px);
+    --horizontal-padding: var(--horizontal-padding-l, 16px);
+    --font-size: var(--font-size-l, 16px);
+    --line-height: var(--line-height-l, 20px);
+    --font-weight: var(--font-weight-l, 400);
   }
 }
 
@@ -52,17 +64,35 @@
   &-filled {
     --border-width: 0px;
     --background-color: var(--color-bg-filled-default, lightgray);
+    --text-color: var(--color-text-filled-empty, gray);
   }
 
   &-outlined {
     --border-color: var(--color-border-outlined-default, black);
     --background-color: var(--color-bg-outlined-default, white);
+    --text-color: var(--color-text-outlined-empty, gray);
   }
 
   &-clear {
     --border-color: var(--color-border-clear-default, black);
     --background-color: var(--color-bg-clear-default, white);
+    --text-color: var(--color-text-clear-empty, gray);
   }
+}
+
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--height, 32px);
+  padding: 0 var(--horizontal-padding, 12px);
+  flex-shrink: 0;
+
+  font-family: var(--font-family, inherit);
+  font-size: var(--font-size, 14px);
+  font-weight: var(--font-weight, 400);
+  line-height: var(--line-height, 18px);
+  color: var(--text-color, gray);
 }
 
 .option {

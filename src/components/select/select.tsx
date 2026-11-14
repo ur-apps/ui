@@ -1,4 +1,4 @@
-import { ChangeEventHandler, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { ChangeEvent, ChangeEventHandler, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { ReactComponent as ChevronUpDownIcon } from '../../icons/chevron.up.down.svg';
 import { Dropdown } from '../dropdown';
@@ -18,6 +18,8 @@ export function Select<M extends boolean = false>({
   name,
   options,
   multiple,
+  searchable,
+  emptyText,
   value,
   onChange,
   ref,
@@ -26,6 +28,7 @@ export function Select<M extends boolean = false>({
   const inputRef = useRef<HTMLLabelElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [query, setQuery] = useState('');
   const [innerValue, setInnerValue] = useState<TSelectValue<M>>(
     multiple ? (value ?? ([] as unknown as TSelectValue<M>)) : value
   );
@@ -40,9 +43,30 @@ export function Select<M extends boolean = false>({
     [options]
   );
   const shownValue = useMemo(() => stringifyValue(value ?? innerValue, optionsMap), [value, innerValue, optionsMap]);
+  const filteredOptions = useMemo(() => {
+    const normalizedQuery = query.trim().toLowerCase();
 
-  const onToggleDropdown = () => {
-    setIsDropdownOpen((prev) => !prev);
+    return searchable && normalizedQuery
+      ? options.filter((option) => option.label.toLowerCase().includes(normalizedQuery))
+      : options;
+  }, [searchable, query, options]);
+
+  const closeDropdown = useCallback(() => {
+    setIsDropdownOpen(false);
+    setQuery('');
+  }, []);
+
+  const onClickInput = () => {
+    if (searchable) {
+      setIsDropdownOpen(true);
+    } else {
+      setIsDropdownOpen((prev) => !prev);
+    }
+  };
+
+  const onChangeQuery = (evt: ChangeEvent<HTMLInputElement>) => {
+    setQuery(evt.target.value);
+    setIsDropdownOpen(true);
   };
 
   const onChangeInner: ChangeEventHandler<HTMLInputElement> = (evt) => {
@@ -67,7 +91,7 @@ export function Select<M extends boolean = false>({
         newValue = newValue.filter((el) => el !== value) as TSelectValue<M>;
       }
     } else {
-      setIsDropdownOpen(false);
+      closeDropdown();
 
       newValue = value as TSelectValue<M>;
     }
@@ -99,16 +123,19 @@ export function Select<M extends boolean = false>({
     dropdownRef.current.style.setProperty('left', dropdownLeft);
   }, [isDropdownOpen]);
 
-  const handleClickOutside = useCallback((event: MouseEvent) => {
-    if (
-      dropdownRef.current &&
-      !dropdownRef.current.contains(event.target as Node) &&
-      inputRef.current &&
-      !inputRef.current.contains(event.target as Node)
-    ) {
-      setIsDropdownOpen(false);
-    }
-  }, []);
+  const handleClickOutside = useCallback(
+    (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node) &&
+        inputRef.current &&
+        !inputRef.current.contains(event.target as Node)
+      ) {
+        closeDropdown();
+      }
+    },
+    [closeDropdown]
+  );
 
   useEffect(() => {
     if (isDropdownOpen) {
@@ -120,7 +147,7 @@ export function Select<M extends boolean = false>({
         window.removeEventListener('resize', positionDropdown);
       };
     }
-  }, [isDropdownOpen, positionDropdown]);
+  }, [isDropdownOpen, positionDropdown, filteredOptions]);
 
   useEffect(() => {
     if (isDropdownOpen) {
@@ -141,10 +168,11 @@ export function Select<M extends boolean = false>({
         shape={shape}
         size={size}
         iconRight={ChevronUpDownIcon}
-        value={shownValue}
-        readOnly
+        value={searchable && isDropdownOpen ? query : shownValue}
+        readOnly={!searchable}
         title={shownValue}
-        onClick={onToggleDropdown}
+        onClick={onClickInput}
+        onChange={searchable ? onChangeQuery : undefined}
         wrapperRef={inputRef}
         ref={ref}
       />
@@ -155,7 +183,8 @@ export function Select<M extends boolean = false>({
         shape={shape}
         size={size}
         name={name}
-        options={options}
+        options={filteredOptions}
+        emptyText={emptyText}
         multiple={multiple}
         value={value ?? innerValue}
         onChange={onChangeInner}

@@ -11,6 +11,9 @@ const meta: Meta<typeof Select> = {
     multiple: {
       control: 'boolean',
     },
+    searchable: {
+      control: 'boolean',
+    },
   },
 };
 
@@ -25,6 +28,7 @@ export const Filled: Story = {
     size: 'l',
     name: 'test_name',
     multiple: false,
+    searchable: true,
     options: FAKE_COUNTRY_LIST,
   },
 };

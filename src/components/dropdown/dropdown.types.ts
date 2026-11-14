@@ -1,4 +1,4 @@
-import { ChangeEvent, HTMLAttributes } from 'react';
+import { ChangeEvent, HTMLAttributes, ReactNode } from 'react';
 import { TClasses } from '@urapps/react';
 
 import { IOptionProps, TOptionShape, TOptionSize, TOptionValue, TOptionVariant } from '../option';
@@ -6,7 +6,7 @@ import { IOptionProps, TOptionShape, TOptionSize, TOptionValue, TOptionVariant }
 export type TDropdownVariant = TOptionVariant;
 export type TDropdownShape = TOptionShape;
 export type TDropdownSize = TOptionSize;
-export type TDropdownState = 'default';
+export type TDropdownState = 'default' | 'empty';
 export type TDropdownValue<M extends boolean> = M extends true ? TOptionValue[] : TOptionValue;
 
 export interface IDropdownProps<M extends boolean = false> extends Omit<
@@ -54,6 +54,11 @@ export interface IDropdownProps<M extends boolean = false> extends Omit<
    * options list
    */
   options: IOptionProps[];
+  /**
+   * content shown when the options list is empty
+   * @default "No options"
+   */
+  emptyText?: ReactNode;
   onChange?: (evt: ChangeEvent<HTMLInputElement>) => void;
   ref?: React.ForwardedRef<HTMLDivElement>;
 }
@@ -70,15 +75,32 @@ export interface IDropdownStyleTokens {
         [color in TDropdownState]?: string;
       };
     };
+    text?: {
+      [variant in TDropdownVariant]?: {
+        [color in TDropdownState]?: string;
+      };
+    };
   };
   'box-shadow'?: string;
   height?: {
+    [size in TDropdownSize]?: string;
+  };
+  'horizontal-padding'?: {
     [size in TDropdownSize]?: string;
   };
   'border-width'?: {
     [size in TDropdownSize]?: string;
   };
   'border-radius'?: {
+    [size in TDropdownSize]?: string;
+  };
+  'font-size'?: {
+    [size in TDropdownSize]?: string;
+  };
+  'line-height'?: {
+    [size in TDropdownSize]?: string;
+  };
+  'font-weight'?: {
     [size in TDropdownSize]?: string;
   };
 }
