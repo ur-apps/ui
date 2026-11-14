@@ -1,7 +1,6 @@
-import { classNames } from '@urapps/react';
+import { classNames, useName } from '@urapps/react';
 
 import { CssVariableGroup } from '../../contexts';
-import { useName } from '../../hooks';
 import { Option } from '../option';
 import { Portal } from '../portal';
 
