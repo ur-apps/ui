@@ -6,6 +6,7 @@ import { CssVariableGroup } from '../../contexts';
 import { Overlay } from '../overlay';
 import { Portal } from '../portal';
 
+import { useFocusTrap } from './hooks';
 import { IModalProps } from './modal.types';
 import styles from './modal.module.scss';
 
@@ -22,10 +23,12 @@ export function Modal({
   ref,
   ...props
 }: IModalProps) {
-  useScrollLock(isOpen);
-
   const overlayRef = useRef<HTMLDivElement>(null);
   const pointerDownOnOverlayRef = useRef(false);
+
+  useScrollLock(isOpen);
+  useFocusTrap(overlayRef, isOpen);
+
   const classes = classNames(
     CssVariableGroup.ModalTokens,
     styles.modal,
