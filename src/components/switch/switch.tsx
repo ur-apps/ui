@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef } from 'react';
-import { classNames } from '@urapps/react';
+import { classNames, useMergeRefs } from '@urapps/react';
 
 import { CssVariableGroup } from '../../contexts';
 
@@ -15,6 +15,7 @@ export function Switch({
   uncheckedChildren,
   isLoading = false,
   disabled,
+  wrapperRef,
   ...props
 }: ISwitchProps) {
   const switchClassNames = useMemo(() => {
@@ -29,6 +30,7 @@ export function Switch({
     );
   }, [color, shape, size, isLoading, className]);
   const switchRef = useRef<HTMLLabelElement>(null);
+  const mergedSwitchRef = useMergeRefs(switchRef, wrapperRef);
   const checkedRef = useRef<HTMLSpanElement>(null);
   const uncheckedRef = useRef<HTMLSpanElement>(null);
 
@@ -43,7 +45,7 @@ export function Switch({
   }, [checkedChildren, uncheckedChildren, size]);
 
   return (
-    <label className={switchClassNames} role="switch" tabIndex={0} ref={switchRef}>
+    <label className={switchClassNames} role="switch" tabIndex={0} ref={mergedSwitchRef}>
       <input {...props} disabled={disabled || isLoading} className={styles.input} type="checkbox" />
       <span className={styles.content}>
         <span className={styles['checked-block']} ref={checkedRef}>
