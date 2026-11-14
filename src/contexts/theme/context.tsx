@@ -1,10 +1,17 @@
 import { createContext, ReactNode, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
-import { clone, pick } from '@urapps/common';
+import { clone } from '@urapps/common';
 import { classNames } from '@urapps/react';
 
 import { merge } from '../../utils';
 
-import { getBrowserTheme, getThemeFromLS, getVariableStyles, saveThemeToLS, subscribeToBrowserTheme } from './helpers';
+import {
+  getBrowserTheme,
+  getRootVariableStyles,
+  getThemeFromLS,
+  getVariableStyles,
+  saveThemeToLS,
+  subscribeToBrowserTheme,
+} from './helpers';
 import { darkModePreset, preset } from './presets';
 import { CssVariableGroup, Theme, TStylePreset } from './types';
 import styles from './context.module.scss';
@@ -33,22 +40,23 @@ type TThemeProps = {
   children: ReactNode;
 };
 
-const COMPONENT_CLASSES = [
-  CssVariableGroup.ButtonTokens,
-  CssVariableGroup.DropdownTokens,
-  CssVariableGroup.HeadingTokens,
-  CssVariableGroup.HintTokens,
-  CssVariableGroup.InputTokens,
-  CssVariableGroup.ModalTokens,
-  CssVariableGroup.OptionTokens,
-  CssVariableGroup.OverlayTokens,
-  CssVariableGroup.SegmentTokens,
-  CssVariableGroup.SegmentedControlTokens,
-  CssVariableGroup.SwitchTokens,
-  CssVariableGroup.TagTokens,
-  CssVariableGroup.TooltipTokens,
-];
-const TOKEN_CLASSES = Object.values(CssVariableGroup).filter((c) => !COMPONENT_CLASSES.includes(c));
+type TComponentName = keyof NonNullable<TStylePreset['components']>;
+
+const COMPONENT_TOKEN_CLASSES: Record<TComponentName, CssVariableGroup> = {
+  button: CssVariableGroup.ButtonTokens,
+  dropdown: CssVariableGroup.DropdownTokens,
+  heading: CssVariableGroup.HeadingTokens,
+  hint: CssVariableGroup.HintTokens,
+  input: CssVariableGroup.InputTokens,
+  modal: CssVariableGroup.ModalTokens,
+  option: CssVariableGroup.OptionTokens,
+  overlay: CssVariableGroup.OverlayTokens,
+  segment: CssVariableGroup.SegmentTokens,
+  segmentedControl: CssVariableGroup.SegmentedControlTokens,
+  switch: CssVariableGroup.SwitchTokens,
+  tag: CssVariableGroup.TagTokens,
+  tooltip: CssVariableGroup.TooltipTokens,
+};
 
 export function ThemeProvider({ className, defaultTheme, customePreset, children }: TThemeProps) {
   const [theme, setTheme] = useState<Theme>(() => getThemeFromLS(defaultTheme));
@@ -57,7 +65,6 @@ export function ThemeProvider({ className, defaultTheme, customePreset, children
   const portalRef = useRef(document.querySelector('#portal'));
 
   // TODO add hook
-  // eslint-disable-next-line complexity
   const variableStyles = useMemo(() => {
     const {
       primitives = {},
@@ -66,50 +73,17 @@ export function ThemeProvider({ className, defaultTheme, customePreset, children
     } = merge(clone(preset), resolvedTheme === Theme.Dark ? clone(darkModePreset) : {}, customePreset ?? {});
 
     return [
-      // Primitives
-      getVariableStyles(pick(primitives, ['color']), CssVariableGroup.SystemColors, 'uu-sys'),
-      getVariableStyles(pick(primitives, ['size']), CssVariableGroup.SystemSizes, 'uu-sys'),
-      getVariableStyles(pick(primitives, ['space']), CssVariableGroup.SystemSpaces, 'uu-sys'),
-      getVariableStyles(pick(primitives, ['radius']), CssVariableGroup.SystemRadiuses, 'uu-sys'),
-      getVariableStyles(pick(primitives, ['weight']), CssVariableGroup.SystemWeights, 'uu-sys'),
-      getVariableStyles(
-        pick(primitives, ['font-family', 'font-family-mono']),
-        CssVariableGroup.SystemFontFamilies,
-        'uu-sys'
+      ...getRootVariableStyles(primitives, 'uu-sys'),
+      ...getRootVariableStyles(tokens, 'uu'),
+      ...(Object.keys(COMPONENT_TOKEN_CLASSES) as TComponentName[]).map((name) =>
+        getVariableStyles(components[name] ?? {}, `.${COMPONENT_TOKEN_CLASSES[name]}`)
       ),
-
-      // Tokens
-      getVariableStyles(pick(tokens, ['color']), CssVariableGroup.Colors, 'uu'),
-      getVariableStyles(pick(tokens, ['height']), CssVariableGroup.Heights, 'uu'),
-      getVariableStyles(pick(tokens, ['icon-height']), CssVariableGroup.IconHeights, 'uu'),
-      getVariableStyles(pick(tokens, ['space']), CssVariableGroup.Spaces, 'uu'),
-      getVariableStyles(pick(tokens, ['radius']), CssVariableGroup.Radiuses, 'uu'),
-      getVariableStyles(
-        pick(tokens, ['font-family', 'font-family-mono', 'font-size', 'font-weight', 'line-height']),
-        CssVariableGroup.Texts,
-        'uu'
-      ),
-
-      // Components
-      getVariableStyles(components.button ?? {}, CssVariableGroup.ButtonTokens),
-      getVariableStyles(components.dropdown ?? {}, CssVariableGroup.DropdownTokens),
-      getVariableStyles(components.heading ?? {}, CssVariableGroup.HeadingTokens),
-      getVariableStyles(components.hint ?? {}, CssVariableGroup.HintTokens),
-      getVariableStyles(components.input ?? {}, CssVariableGroup.InputTokens),
-      getVariableStyles(components.modal ?? {}, CssVariableGroup.ModalTokens),
-      getVariableStyles(components.option ?? {}, CssVariableGroup.OptionTokens),
-      getVariableStyles(components.overlay ?? {}, CssVariableGroup.OverlayTokens),
-      getVariableStyles(components.segment ?? {}, CssVariableGroup.SegmentTokens),
-      getVariableStyles(components.segmentedControl ?? {}, CssVariableGroup.SegmentedControlTokens),
-      getVariableStyles(components.switch ?? {}, CssVariableGroup.SwitchTokens),
-      getVariableStyles(components.tag ?? {}, CssVariableGroup.TagTokens),
-      getVariableStyles(components.tooltip ?? {}, CssVariableGroup.TooltipTokens),
     ];
   }, [resolvedTheme, customePreset]);
 
   useEffect(() => {
     if (portalRef.current) {
-      portalRef.current.classList.add(styles.theme, ...TOKEN_CLASSES);
+      portalRef.current.classList.add(styles.theme);
     } else {
       console.error('portal container was not found');
     }
@@ -125,7 +99,7 @@ export function ThemeProvider({ className, defaultTheme, customePreset, children
   return (
     <ThemeContext value={{ theme, resolvedTheme, switchTheme }}>
       <style>{variableStyles}</style>
-      <div className={classNames(styles.theme, TOKEN_CLASSES, className)}>{children}</div>
+      <div className={classNames(styles.theme, className)}>{children}</div>
     </ThemeContext>
   );
 }

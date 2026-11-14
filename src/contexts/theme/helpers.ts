@@ -21,10 +21,15 @@ export function formatToCSSVariables(variables: unknown, prefix = ''): string[] 
   return result;
 }
 
-export function getVariableStyles(variables: object, className: string, prefix = '') {
+export function getVariableStyles(variables: object, selector: string, prefix = '') {
   const tokens = formatToCSSVariables(variables, prefix);
 
-  return tokens.length ? `.${className} { \n${tokens.join(';\n')};\n}` : '';
+  return tokens.length ? `${selector} { \n${tokens.join(';\n')};\n}` : '';
+}
+
+/** Emits a separate `:root` rule for every top-level key of `groups`. */
+export function getRootVariableStyles(groups: object, prefix: string): string[] {
+  return Object.entries(groups).map(([key, value]) => getVariableStyles({ [key]: value }, ':root', prefix));
 }
 
 export function getThemeFromLS(defaultTheme?: Theme): Theme {
