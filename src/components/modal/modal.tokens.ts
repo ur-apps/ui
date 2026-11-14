@@ -5,24 +5,46 @@ export const modalStyleTokens: IModalStyleTokens = {
     bg: 'var(--uu-color-bg-primary)',
     border: 'var(--uu-color-neutral-a15)',
   },
-  'box-shadow': '0 -3px 8px 0 rgba(0, 0, 0, 0.15)',
+  'box-shadow': {
+    dialog: '0 2px 8px 0 rgba(0, 0, 0, 0.15)',
+    sheet: '0 -3px 8px 0 rgba(0, 0, 0, 0.15)',
+  },
   width: {
-    s: '320px',
-    m: '480px',
-    l: '560px',
+    dialog: {
+      s: '320px',
+      m: '480px',
+      l: '560px',
+    },
   },
   padding: {
-    s: 'var(--uu-space-l)',
-    m: 'var(--uu-space-xl)',
-    l: 'var(--uu-space-2xl)',
+    dialog: {
+      s: 'var(--uu-space-l)',
+      m: 'var(--uu-space-xl)',
+      l: 'var(--uu-space-2xl)',
+    },
+    sheet: {
+      s: 'var(--uu-space-m)',
+      m: 'var(--uu-space-l)',
+      l: 'var(--uu-space-xl)',
+    },
   },
   'border-radius': {
-    s: 'var(--uu-radius-m)',
-    m: 'var(--uu-radius-l)',
-    l: 'var(--uu-radius-xl)',
+    dialog: {
+      s: 'var(--uu-radius-m)',
+      m: 'var(--uu-radius-l)',
+      l: 'var(--uu-radius-xl)',
+    },
+    sheet: {
+      s: 'var(--uu-radius-m)',
+      m: 'var(--uu-radius-l)',
+      l: 'var(--uu-radius-xl)',
+    },
   },
 };
 
 export const modalDarkModeStyleTokens: IModalStyleTokens = {
-  'box-shadow': '0 -3px 8px 0 rgba(0, 0, 0, 0.4)',
+  'box-shadow': {
+    dialog: '0 2px 8px 0 rgba(0, 0, 0, 0.4)',
+    sheet: '0 -3px 8px 0 rgba(0, 0, 0, 0.4)',
+  },
 };

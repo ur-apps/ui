@@ -22,20 +22,21 @@
 }
 
 .modal {
-  width: var(--width, auto);
-  height: var(--height, auto);
+  width: var(--width-dialog, auto);
+  height: var(--height-dialog, auto);
   max-width: 100%;
   max-height: 100%;
-  padding: var(--padding, 24px);
-  border-width: var(--border-width, 1px);
+  padding: var(--padding-dialog, 24px);
+  border-width: var(--border-width-dialog, 1px);
   border-style: var(--border-style, solid);
   border-color: var(--color-border, lightgray);
-  border-radius: var(--border-radius, 12px);
+  border-radius: var(--border-radius-dialog, 12px);
   box-sizing: border-box;
   overflow: auto;
   outline: none;
 
   background-color: var(--color-bg, white);
+  box-shadow: var(--box-shadow-dialog, 0 2px 8px 0 rgba(0, 0, 0, 0.15));
 
   animation: modal-scale-in 200ms ease-out;
 
@@ -46,32 +47,45 @@
 
 .modal--size {
   &-s {
-    --width: var(--width-s);
-    --height: var(--height-s);
-    --padding: var(--padding-s);
-    --border-width: var(--border-width-s);
-    --border-radius: var(--border-radius-s);
+    --width-dialog: var(--width-dialog-s);
+    --height-dialog: var(--height-dialog-s);
+    --height-sheet: var(--height-sheet-s);
+    --padding-dialog: var(--padding-dialog-s);
+    --padding-sheet: var(--padding-sheet-s);
+    --border-width-dialog: var(--border-width-dialog-s);
+    --border-width-sheet: var(--border-width-sheet-s);
+    --border-radius-dialog: var(--border-radius-dialog-s);
+    --border-radius-sheet: var(--border-radius-sheet-s);
   }
 
   &-m {
-    --width: var(--width-m);
-    --height: var(--height-m);
-    --padding: var(--padding-m);
-    --border-width: var(--border-width-m);
-    --border-radius: var(--border-radius-m);
+    --width-dialog: var(--width-dialog-m);
+    --height-dialog: var(--height-dialog-m);
+    --height-sheet: var(--height-sheet-m);
+    --padding-dialog: var(--padding-dialog-m);
+    --padding-sheet: var(--padding-sheet-m);
+    --border-width-dialog: var(--border-width-dialog-m);
+    --border-width-sheet: var(--border-width-sheet-m);
+    --border-radius-dialog: var(--border-radius-dialog-m);
+    --border-radius-sheet: var(--border-radius-sheet-m);
   }
 
   &-l {
-    --width: var(--width-l);
-    --height: var(--height-l);
-    --padding: var(--padding-l);
-    --border-width: var(--border-width-l);
-    --border-radius: var(--border-radius-l);
+    --width-dialog: var(--width-dialog-l);
+    --height-dialog: var(--height-dialog-l);
+    --height-sheet: var(--height-sheet-l);
+    --padding-dialog: var(--padding-dialog-l);
+    --padding-sheet: var(--padding-sheet-l);
+    --border-width-dialog: var(--border-width-dialog-l);
+    --border-width-sheet: var(--border-width-sheet-l);
+    --border-radius-dialog: var(--border-radius-dialog-l);
+    --border-radius-sheet: var(--border-radius-sheet-l);
   }
 }
 
 .modal--shape-brick {
-  --border-radius: 0;
+  --border-radius-dialog: 0;
+  --border-radius-sheet: 0;
 }
 
 @media (max-width: 639.98px) {
@@ -88,11 +102,13 @@
 
   .modal--mobile-sheet {
     width: 100%;
-    padding-bottom: calc(var(--padding, 24px) + env(safe-area-inset-bottom, 0px));
-    border-width: 0;
-    border-radius: var(--border-radius, 12px) var(--border-radius, 12px) 0 0;
+    height: var(--height-sheet, auto);
+    padding: var(--padding-sheet, 16px);
+    padding-bottom: calc(var(--padding-sheet, 16px) + env(safe-area-inset-bottom, 0px));
+    border-width: var(--border-width-sheet, 0) 0 0;
+    border-radius: var(--border-radius-sheet, 12px) var(--border-radius-sheet, 12px) 0 0;
 
-    box-shadow: var(--box-shadow, 0 -3px 8px 0 rgba(0, 0, 0, 0.15));
+    box-shadow: var(--box-shadow-sheet, 0 -3px 8px 0 rgba(0, 0, 0, 0.15));
 
     animation: modal-slide-in 300ms cubic-bezier(0.32, 0.72, 0, 1);
   }

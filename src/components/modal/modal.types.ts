@@ -60,25 +60,41 @@ export interface IModalProps extends Omit<HTMLAttributes<HTMLDivElement>, 'class
   ref?: Ref<HTMLDivElement>;
 }
 
+/**
+ * Geometry tokens are keyed by presentation: "sheet" applies only on screens narrower than 640px
+ * when mobileVariant is "sheet", "dialog" applies in every other case.
+ */
 export interface IModalStyleTokens {
   color?: {
     bg?: string;
     border?: string;
   };
-  'box-shadow'?: string;
+  'box-shadow'?: {
+    [variant in TModalMobileVariant]?: string;
+  };
   width?: {
-    [size in TModalSize]?: string;
+    dialog?: {
+      [size in TModalSize]?: string;
+    };
   };
   height?: {
-    [size in TModalSize]?: string;
+    [variant in TModalMobileVariant]?: {
+      [size in TModalSize]?: string;
+    };
   };
   padding?: {
-    [size in TModalSize]?: string;
+    [variant in TModalMobileVariant]?: {
+      [size in TModalSize]?: string;
+    };
   };
   'border-width'?: {
-    [size in TModalSize]?: string;
+    [variant in TModalMobileVariant]?: {
+      [size in TModalSize]?: string;
+    };
   };
   'border-radius'?: {
-    [size in TModalSize]?: string;
+    [variant in TModalMobileVariant]?: {
+      [size in TModalSize]?: string;
+    };
   };
 }
