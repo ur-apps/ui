@@ -58,6 +58,10 @@ export interface IModalProps extends Omit<HTMLAttributes<HTMLDivElement>, 'class
    * reference to the modal element
    */
   ref?: Ref<HTMLDivElement>;
+  /**
+   * reference to the overlay element
+   */
+  overlayRef?: Ref<HTMLDivElement>;
 }
 
 /**

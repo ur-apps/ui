@@ -22,9 +22,11 @@ export function Modal({
   closeOnESC = true,
   onClose,
   ref,
+  overlayRef: consumerOverlayRef,
   ...props
 }: IModalProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
+  const mergedOverlayRef = useMergeRefs(overlayRef, consumerOverlayRef);
   const dialogRef = useRef<HTMLDivElement>(null);
   const mergedDialogRef = useMergeRefs(dialogRef, ref);
   const pointerDownOnOverlayRef = useRef(false);
@@ -99,7 +101,7 @@ export function Modal({
         tabIndex={-1}
         onPointerDown={overlayPointerDownHandler}
         onClick={overlayClickHandler}
-        ref={overlayRef}>
+        ref={mergedOverlayRef}>
         <div {...props} className={classes} ref={mergedDialogRef} role="dialog" aria-modal="true" tabIndex={-1} />
       </Overlay>
     </Portal>
