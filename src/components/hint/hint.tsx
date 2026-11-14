@@ -1,6 +1,6 @@
 import React, { useMemo, useRef } from 'react';
 import { isString } from '@urapps/common';
-import { classNames } from '@urapps/react';
+import { classNames, useMergeRefs } from '@urapps/react';
 
 import { CssVariableGroup } from '../../contexts';
 import { Tooltip } from '../tooltip';
@@ -18,9 +18,11 @@ export function Hint({
   size = 'm',
   children,
   tooltipProps,
+  ref,
   ...props
 }: IHintProps) {
   const iconRef = useRef<SVGSVGElement | null>(null);
+  const mergedIconRef = useMergeRefs(iconRef, ref);
   const resolvedColor = useMemo(() => determineHintColorByIcon(icon, color), [icon, color]);
   const classes = classNames(
     CssVariableGroup.HintTokens,
@@ -31,7 +33,7 @@ export function Hint({
     className
   );
 
-  const iconProps = { ...props, className: classes, ref: iconRef };
+  const iconProps = { ...props, className: classes, ref: mergedIconRef };
   const iconElement = isString(icon)
     ? React.createElement(iconMap[variant][icon], iconProps)
     : React.createElement(icon, iconProps);
