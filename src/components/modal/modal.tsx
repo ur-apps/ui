@@ -23,6 +23,7 @@ export function Modal({
   ...props
 }: IModalProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
+  const pointerDownOnOverlayRef = useRef(false);
   const classes = classNames(
     CssVariableGroup.ModalTokens,
     styles.modal,
@@ -31,8 +32,14 @@ export function Modal({
     className
   );
 
+  const overlayPointerDownHandler = (evt: React.PointerEvent) => {
+    pointerDownOnOverlayRef.current = evt.currentTarget === evt.target;
+  };
+
+  // closes only when both the press and the release happened on the overlay itself,
+  // so a text selection started inside the modal and released outside does not close it
   const overlayClickHandler = (evt: React.MouseEvent) => {
-    if (onClose && closeOnOverlay && evt.currentTarget === evt.target) {
+    if (onClose && closeOnOverlay && pointerDownOnOverlayRef.current && evt.currentTarget === evt.target) {
       onClose();
     }
   };
@@ -54,7 +61,6 @@ export function Modal({
     if (isOpen && closeOnESC && overlayRef.current) {
       const overlay = overlayRef.current;
       overlay.addEventListener('keydown', escPressHandler);
-      overlay.focus();
 
       return () => {
         overlay.removeEventListener('keydown', escPressHandler);
@@ -62,14 +68,23 @@ export function Modal({
     }
   }, [isOpen, closeOnESC, escPressHandler]);
 
+  useEffect(() => {
+    const dialog = overlayRef.current?.querySelector<HTMLElement>(':scope > [role="dialog"]');
+
+    if (isOpen && dialog && !dialog.contains(document.activeElement)) {
+      dialog.focus();
+    }
+  }, [isOpen]);
+
   return isOpen ? (
     <Portal>
       <Overlay
         className={classNames(styles.overlay, { [styles['overlay--hidden']]: !withOverlay }, overlayClassName)}
         tabIndex={-1}
+        onPointerDown={overlayPointerDownHandler}
         onClick={overlayClickHandler}
         ref={overlayRef}>
-        <div {...props} className={classes} ref={ref} role="dialog" />
+        <div {...props} className={classes} ref={ref} role="dialog" aria-modal="true" tabIndex={-1} />
       </Overlay>
     </Portal>
   ) : null;

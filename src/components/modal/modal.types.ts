@@ -30,7 +30,7 @@ export interface IModalProps extends Omit<HTMLAttributes<HTMLDivElement>, 'class
   withOverlay?: boolean;
   /**
    * is modal open (shown)
-   * @default false
+   * @default true
    */
   isOpen?: boolean;
   /**
@@ -45,7 +45,6 @@ export interface IModalProps extends Omit<HTMLAttributes<HTMLDivElement>, 'class
   closeOnESC?: boolean;
   /**
    * close modal handler
-   * @default true
    */
   onClose?: () => void;
   /**
