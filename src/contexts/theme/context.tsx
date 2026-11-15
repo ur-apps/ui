@@ -2,6 +2,7 @@ import {
   createContext,
   ReactNode,
   useEffect,
+  useInsertionEffect,
   useLayoutEffect,
   useMemo,
   useRef,
@@ -35,20 +36,30 @@ ThemeContext.displayName = 'ThemeContext';
 type TThemeProps = {
   className?: string;
   defaultTheme?: Theme;
-  customePreset?: TStylePreset;
+  customPreset?: TStylePreset;
   customDarkPreset?: TStylePreset;
   children: ReactNode;
 };
 
-export function ThemeProvider({ className, defaultTheme, customePreset, customDarkPreset, children }: TThemeProps) {
+export function ThemeProvider({ className, defaultTheme, customPreset, customDarkPreset, children }: TThemeProps) {
   const [theme, setTheme] = useState<Theme>(() => getThemeFromLS(defaultTheme));
   const browserTheme = useSyncExternalStore(subscribeToBrowserTheme, getBrowserTheme);
   const resolvedTheme = theme === Theme.Auto ? browserTheme : theme;
   const portalRef = useRef(document.querySelector('#portal'));
   const variableStyles = useMemo(
-    () => getThemeStyles(customePreset, customDarkPreset),
-    [customePreset, customDarkPreset]
+    () => getThemeStyles(customPreset, customDarkPreset),
+    [customPreset, customDarkPreset]
   );
+
+  useInsertionEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = variableStyles;
+
+    // Prepended so that application styles of equal specificity override the theme.
+    document.head.prepend(style);
+
+    return () => style.remove();
+  }, [variableStyles]);
 
   useLayoutEffect(() => {
     document.documentElement.setAttribute(THEME_ATTRIBUTE, resolvedTheme);
@@ -71,7 +82,6 @@ export function ThemeProvider({ className, defaultTheme, customePreset, customDa
 
   return (
     <ThemeContext value={{ theme, resolvedTheme, switchTheme }}>
-      <style>{variableStyles}</style>
       <div className={classNames(styles.theme, className)}>{children}</div>
     </ThemeContext>
   );

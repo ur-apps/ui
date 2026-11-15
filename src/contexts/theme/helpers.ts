@@ -67,7 +67,7 @@ function getVariableStyles(selector: string, variables: string[]) {
  * `customPreset` applies to both themes, `customDarkPreset` to the dark theme only.
  * Dark rules hold only the variables whose values differ from the light theme.
  */
-export function getThemeStyles(customPreset: TStylePreset = {}, customDarkPreset: TStylePreset = {}): string[] {
+export function getThemeStyles(customPreset: TStylePreset = {}, customDarkPreset: TStylePreset = {}): string {
   const light = getVariableGroups(merge(clone(preset), clone(customPreset)));
   const dark = getVariableGroups(merge(clone(darkModePreset), clone(customPreset), customDarkPreset));
   const lightVariables = new Set(
@@ -82,7 +82,9 @@ export function getThemeStyles(customPreset: TStylePreset = {}, customDarkPreset
         variables.filter((variable) => !lightVariables.has(`${selector} ${variable}`))
       )
     ),
-  ];
+  ]
+    .filter(Boolean)
+    .join('\n');
 }
 
 export function getThemeFromLS(defaultTheme?: Theme): Theme {
