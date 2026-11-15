@@ -12,6 +12,35 @@ import { Modal } from './modal';
 const meta: Meta<typeof Modal> = {
   title: 'Components/Modal',
   component: Modal,
+  args: {
+    isOpen: false,
+    shape: 'default',
+    size: 'm',
+    withOverlay: true,
+    mobileVariant: 'sheet',
+    children: null,
+  },
+  decorators: [
+    (Story, { args }) => {
+      const [isOpen, setIsOpen] = useState(false);
+
+      return (
+        <>
+          <Button onClick={() => setIsOpen(true)}>Open</Button>
+          <Story
+            args={{
+              ...args,
+              isOpen,
+              onClose: () => {
+                args.onClose?.();
+                setIsOpen(false);
+              },
+            }}
+          />
+        </>
+      );
+    },
+  ],
 };
 
 export default meta;
@@ -19,7 +48,6 @@ type Story = StoryObj<typeof meta>;
 
 export const SmallForm: Story = {
   args: {
-    isOpen: false,
     shape: 'default',
     size: 's',
     withOverlay: false,
@@ -32,7 +60,6 @@ export const SmallForm: Story = {
 
 export const SmallInfo: Story = {
   args: {
-    isOpen: false,
     shape: 'default',
     size: 's',
     withOverlay: true,
@@ -45,7 +72,6 @@ export const SmallInfo: Story = {
 
 export const MediumForm: Story = {
   args: {
-    isOpen: false,
     shape: 'default',
     size: 'm',
     withOverlay: true,
@@ -58,7 +84,6 @@ export const MediumForm: Story = {
 
 export const MediumInfo: Story = {
   args: {
-    isOpen: false,
     shape: 'default',
     size: 'm',
     withOverlay: false,
@@ -71,7 +96,6 @@ export const MediumInfo: Story = {
 
 export const LargeForm: Story = {
   args: {
-    isOpen: false,
     shape: 'default',
     size: 'l',
     withOverlay: false,
@@ -84,7 +108,6 @@ export const LargeForm: Story = {
 
 export const LargeInfo: Story = {
   args: {
-    isOpen: false,
     shape: 'default',
     size: 'l',
     withOverlay: true,
@@ -92,6 +115,19 @@ export const LargeInfo: Story = {
     closeOnOverlay: true,
     onClose: () => console.info('called on close callback'),
     children: <ExampleInfo size="l" />,
+  },
+};
+
+export const LongContent: Story = {
+  args: {
+    shape: 'default',
+    size: 'm',
+    mobileVariant: 'sheet',
+    withOverlay: true,
+    closeOnESC: true,
+    closeOnOverlay: true,
+    onClose: () => console.info('called on close callback'),
+    children: <ExampleLongInfo size="m" />,
   },
 };
 
@@ -163,6 +199,26 @@ function ExampleInfo({ size }: { size?: 's' | 'm' | 'l' }) {
       <Text style={{ width: 'fit-content', margin: '0 0 var(--uu-space-s) 0' }} size={size}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem totam nulla dolorem.
       </Text>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 'var(--uu-space-s)' }}>
+        <Button color="secondary" size={size}>
+          Cancel
+        </Button>
+        <Button size={size}>Confirm</Button>
+      </div>
+    </>
+  );
+}
+
+function ExampleLongInfo({ size }: { size?: 's' | 'm' | 'l' }) {
+  return (
+    <>
+      <h2 style={{ margin: '0 0 var(--uu-space-s) 0' }}>Lorem ipsum</h2>
+      {Array.from({ length: 12 }, (_, index) => (
+        <Text style={{ margin: '0 0 var(--uu-space-s) 0' }} size={size} key={index}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem totam nulla dolorem. Quas voluptatum, quibusdam
+          dolorum eius iure accusantium perferendis tempora vitae nostrum.
+        </Text>
+      ))}
       <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 'var(--uu-space-s)' }}>
         <Button color="secondary" size={size}>
           Cancel

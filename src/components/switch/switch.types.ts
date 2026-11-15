@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes } from 'react';
+import React, { InputHTMLAttributes, Ref } from 'react';
 import { TClasses } from '@urapps/react';
 
 export type TSwitchColor = 'primary' | 'accent' | 'success' | 'warning' | 'danger';
@@ -44,6 +44,14 @@ export interface ISwitchProps extends Omit<InputHTMLAttributes<HTMLInputElement>
    * @default false
    */
   disabled?: boolean;
+  /**
+   * reference to the input
+   */
+  ref?: Ref<HTMLInputElement>;
+  /**
+   * reference to the switch wrapper
+   */
+  wrapperRef?: Ref<HTMLLabelElement>;
 }
 
 export interface ISwitchStyleTokens {

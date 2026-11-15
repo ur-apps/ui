@@ -1,4 +1,5 @@
 import { ChangeEvent, ChangeEventHandler, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useMergeRefs } from '@urapps/react';
 
 import { ReactComponent as ChevronUpDownIcon } from '../../icons/chevron.up.down.svg';
 import { Dropdown } from '../dropdown';
@@ -23,9 +24,11 @@ export function Select<M extends boolean = false>({
   value,
   onChange,
   ref,
+  wrapperRef,
   ...props
 }: ISelectProps<M>) {
   const inputRef = useRef<HTMLLabelElement>(null);
+  const mergedWrapperRef = useMergeRefs(inputRef, wrapperRef);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [query, setQuery] = useState('');
@@ -173,7 +176,7 @@ export function Select<M extends boolean = false>({
         title={shownValue}
         onClick={onClickInput}
         onChange={searchable ? onChangeQuery : undefined}
-        wrapperRef={inputRef}
+        wrapperRef={mergedWrapperRef}
         ref={ref}
       />
       <Dropdown

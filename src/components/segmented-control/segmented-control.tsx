@@ -1,8 +1,7 @@
 import React, { useRef } from 'react';
-import { classNames } from '@urapps/react';
+import { classNames, useName } from '@urapps/react';
 
 import { CssVariableGroup } from '../../contexts';
-import { useName } from '../../hooks';
 import { Segment } from '../segment';
 
 import { ISegmentedControlProps, TSegmentedControlValue } from './segmented-control.types';

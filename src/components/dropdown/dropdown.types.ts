@@ -1,4 +1,4 @@
-import { ChangeEvent, HTMLAttributes, ReactNode } from 'react';
+import { ChangeEvent, HTMLAttributes, ReactNode, Ref } from 'react';
 import { TClasses } from '@urapps/react';
 
 import { IOptionProps, TOptionShape, TOptionSize, TOptionValue, TOptionVariant } from '../option';
@@ -60,7 +60,7 @@ export interface IDropdownProps<M extends boolean = false> extends Omit<
    */
   emptyText?: ReactNode;
   onChange?: (evt: ChangeEvent<HTMLInputElement>) => void;
-  ref?: React.ForwardedRef<HTMLDivElement>;
+  ref?: Ref<HTMLDivElement>;
 }
 
 export interface IDropdownStyleTokens {

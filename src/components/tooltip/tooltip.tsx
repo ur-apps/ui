@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { classNames } from '@urapps/react';
+import { classNames, useMergeRefs } from '@urapps/react';
 
 import { CssVariableGroup } from '../../contexts';
 import { Portal } from '../portal';
@@ -22,6 +22,7 @@ export function Tooltip({
   hideDelay = 200,
   throttleInterval = 100,
   children,
+  ref,
   ...props
 }: ITooltipProps) {
   const tooltipClasses = classNames(
@@ -36,6 +37,7 @@ export function Tooltip({
 
   const targetRef = anchor;
   const tooltipRef = useRef<HTMLDivElement | null>(null);
+  const mergedTooltipRef = useMergeRefs(tooltipRef, ref);
 
   const isTooltipVisible = useTooltipVisibility({
     trigger,
@@ -61,7 +63,7 @@ export function Tooltip({
           style={{ ...props.style, ...position }}
           className={tooltipClasses}
           role="tooltip"
-          ref={tooltipRef}>
+          ref={mergedTooltipRef}>
           {children}
         </div>
       </Portal>

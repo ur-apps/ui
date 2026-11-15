@@ -3,6 +3,7 @@ import { TClasses } from '@urapps/react';
 
 export type TModalShape = 'default' | 'brick';
 export type TModalSize = 's' | 'm' | 'l';
+export type TModalMobileVariant = 'sheet' | 'dialog';
 
 export interface IModalProps extends Omit<HTMLAttributes<HTMLDivElement>, 'className'> {
   /**
@@ -24,13 +25,21 @@ export interface IModalProps extends Omit<HTMLAttributes<HTMLDivElement>, 'class
    */
   size?: TModalSize;
   /**
+   * modal presentation on screens narrower than 640px:
+   * "sheet" slides up from the bottom edge, "dialog" stays centered
+   * @default "sheet"
+   */
+  mobileVariant?: TModalMobileVariant;
+  /**
    * use overlay
    * @default true
    */
   withOverlay?: boolean;
   /**
-   * is modal open (shown)
-   * @default false
+   * is modal open (shown);
+   * the closing animation plays only when the modal is closed through this prop,
+   * a conditionally rendered modal (`{open && <Modal />}`) disappears at once
+   * @default true
    */
   isOpen?: boolean;
   /**
@@ -45,34 +54,58 @@ export interface IModalProps extends Omit<HTMLAttributes<HTMLDivElement>, 'class
   closeOnESC?: boolean;
   /**
    * close modal handler
-   * @default true
    */
   onClose?: () => void;
   /**
    * reference to the modal element
    */
   ref?: Ref<HTMLDivElement>;
+  /**
+   * reference to the overlay element
+   */
+  overlayRef?: Ref<HTMLDivElement>;
 }
 
+/**
+ * Geometry tokens are keyed by presentation: "sheet" applies only on screens narrower than 640px
+ * when mobileVariant is "sheet", "dialog" applies in every other case.
+ */
 export interface IModalStyleTokens {
   color?: {
     bg?: string;
     border?: string;
-    'overlay-bg'?: string;
+  };
+  'box-shadow'?: {
+    [variant in TModalMobileVariant]?: string;
   };
   width?: {
-    [size in TModalSize]?: string;
+    dialog?: {
+      [size in TModalSize]?: string;
+    };
   };
   height?: {
-    [size in TModalSize]?: string;
+    [variant in TModalMobileVariant]?: {
+      [size in TModalSize]?: string;
+    };
   };
-  padding?: {
-    [size in TModalSize]?: string;
+  'horizontal-padding'?: {
+    [variant in TModalMobileVariant]?: {
+      [size in TModalSize]?: string;
+    };
+  };
+  'vertical-padding'?: {
+    [variant in TModalMobileVariant]?: {
+      [size in TModalSize]?: string;
+    };
   };
   'border-width'?: {
-    [size in TModalSize]?: string;
+    [variant in TModalMobileVariant]?: {
+      [size in TModalSize]?: string;
+    };
   };
   'border-radius'?: {
-    [size in TModalSize]?: string;
+    [variant in TModalMobileVariant]?: {
+      [size in TModalSize]?: string;
+    };
   };
 }

@@ -2,57 +2,191 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: var(--uu-space-m, 16px);
+  box-sizing: border-box;
 
   outline: none;
+
+  animation: overlay-fade-in 200ms ease-out;
 
   &--hidden {
     background-color: transparent;
     backdrop-filter: none;
   }
+
+  &--closing {
+    pointer-events: none;
+
+    animation: overlay-fade-out 200ms ease-in forwards;
+  }
 }
 
 .modal {
-  width: var(--width, auto);
-  height: var(--height, auto);
-  max-width: 100vw;
-  max-height: 100vh;
-  padding: var(--padding, 24px);
-  border-width: var(--border-width, 1px);
+  width: var(--width-dialog, auto);
+  height: var(--height-dialog, auto);
+  max-width: 100%;
+  max-height: 100%;
+  padding: var(--vertical-padding-dialog, 24px) var(--horizontal-padding-dialog, 24px);
+  border-width: var(--border-width-dialog, 1px);
   border-style: var(--border-style, solid);
   border-color: var(--color-border, lightgray);
-  border-radius: var(--border-radius, 12px);
+  border-radius: var(--border-radius-dialog, 12px);
   box-sizing: border-box;
   overflow: auto;
+  outline: none;
 
   background-color: var(--color-bg, white);
+  box-shadow: var(--box-shadow-dialog, 0 2px 8px 0 rgba(0, 0, 0, 0.15));
+
+  animation: modal-scale-in 200ms ease-out;
+
+  .overlay--closing > & {
+    animation: modal-scale-out 200ms ease-in forwards;
+  }
 }
 
 .modal--size {
   &-s {
-    --width: var(--width-s);
-    --height: var(--height-s);
-    --padding: var(--padding-s);
-    --border-width: var(--border-width-s);
-    --border-radius: var(--border-radius-s);
+    --width-dialog: var(--width-dialog-s);
+    --height-dialog: var(--height-dialog-s);
+    --height-sheet: var(--height-sheet-s);
+    --horizontal-padding-dialog: var(--horizontal-padding-dialog-s);
+    --horizontal-padding-sheet: var(--horizontal-padding-sheet-s);
+    --vertical-padding-dialog: var(--vertical-padding-dialog-s);
+    --vertical-padding-sheet: var(--vertical-padding-sheet-s);
+    --border-width-dialog: var(--border-width-dialog-s);
+    --border-width-sheet: var(--border-width-sheet-s);
+    --border-radius-dialog: var(--border-radius-dialog-s);
+    --border-radius-sheet: var(--border-radius-sheet-s);
   }
 
   &-m {
-    --width: var(--width-m);
-    --height: var(--height-m);
-    --padding: var(--padding-m);
-    --border-width: var(--border-width-m);
-    --border-radius: var(--border-radius-m);
+    --width-dialog: var(--width-dialog-m);
+    --height-dialog: var(--height-dialog-m);
+    --height-sheet: var(--height-sheet-m);
+    --horizontal-padding-dialog: var(--horizontal-padding-dialog-m);
+    --horizontal-padding-sheet: var(--horizontal-padding-sheet-m);
+    --vertical-padding-dialog: var(--vertical-padding-dialog-m);
+    --vertical-padding-sheet: var(--vertical-padding-sheet-m);
+    --border-width-dialog: var(--border-width-dialog-m);
+    --border-width-sheet: var(--border-width-sheet-m);
+    --border-radius-dialog: var(--border-radius-dialog-m);
+    --border-radius-sheet: var(--border-radius-sheet-m);
   }
 
   &-l {
-    --width: var(--width-l);
-    --height: var(--height-l);
-    --padding: var(--padding-l);
-    --border-width: var(--border-width-l);
-    --border-radius: var(--border-radius-l);
+    --width-dialog: var(--width-dialog-l);
+    --height-dialog: var(--height-dialog-l);
+    --height-sheet: var(--height-sheet-l);
+    --horizontal-padding-dialog: var(--horizontal-padding-dialog-l);
+    --horizontal-padding-sheet: var(--horizontal-padding-sheet-l);
+    --vertical-padding-dialog: var(--vertical-padding-dialog-l);
+    --vertical-padding-sheet: var(--vertical-padding-sheet-l);
+    --border-width-dialog: var(--border-width-dialog-l);
+    --border-width-sheet: var(--border-width-sheet-l);
+    --border-radius-dialog: var(--border-radius-dialog-l);
+    --border-radius-sheet: var(--border-radius-sheet-l);
   }
 }
 
 .modal--shape-brick {
-  --border-radius: 0;
+  --border-radius-dialog: 0;
+  --border-radius-sheet: 0;
+}
+
+@media (width < 640px) {
+  .overlay--mobile-sheet {
+    align-items: flex-end;
+    padding: calc(var(--uu-space-3xl, 40px) + env(safe-area-inset-top, 0px)) 0 0;
+
+    animation-name: overlay-backdrop-in;
+
+    &.overlay--closing {
+      animation-name: overlay-backdrop-out;
+    }
+  }
+
+  .modal--mobile-sheet {
+    width: 100%;
+    height: var(--height-sheet, auto);
+    padding: var(--vertical-padding-sheet, 16px) var(--horizontal-padding-sheet, 16px);
+    padding-bottom: calc(var(--vertical-padding-sheet, 16px) + env(safe-area-inset-bottom, 0px));
+    border-width: var(--border-width-sheet, 0) 0 0;
+    border-radius: var(--border-radius-sheet, 12px) var(--border-radius-sheet, 12px) 0 0;
+    overscroll-behavior-y: contain;
+
+    box-shadow: var(--box-shadow-sheet, 0 -3px 8px 0 rgba(0, 0, 0, 0.15));
+
+    animation: modal-slide-in 300ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .overlay--closing > .modal--mobile-sheet {
+    animation: modal-slide-out 200ms ease-in forwards;
+  }
+}
+
+@media (width < 640px) and (forced-colors: active) {
+  .modal--mobile-sheet {
+    border-top-width: 1px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay,
+  .overlay--closing,
+  .overlay--mobile-sheet.overlay--closing,
+  .modal,
+  .overlay--closing > .modal {
+    animation: none;
+  }
+}
+
+@keyframes overlay-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes overlay-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes overlay-backdrop-in {
+  from {
+    background-color: transparent;
+    backdrop-filter: blur(0);
+  }
+}
+
+@keyframes overlay-backdrop-out {
+  to {
+    background-color: transparent;
+    backdrop-filter: blur(0);
+  }
+}
+
+@keyframes modal-scale-in {
+  from {
+    transform: scale(0.95);
+  }
+}
+
+@keyframes modal-scale-out {
+  to {
+    transform: scale(0.95);
+  }
+}
+
+@keyframes modal-slide-in {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes modal-slide-out {
+  to {
+    transform: translateY(100%);
+  }
 }

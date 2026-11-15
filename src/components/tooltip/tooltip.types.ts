@@ -1,4 +1,4 @@
-import { HTMLAttributes, RefObject } from 'react';
+import { HTMLAttributes, Ref, RefObject } from 'react';
 import { TClasses } from '@urapps/react';
 
 export type TooltipVariant = 'filled';
@@ -67,6 +67,10 @@ export interface ITooltipProps extends Omit<HTMLAttributes<HTMLDivElement>, 'cla
    * @default 100
    */
   throttleInterval?: number;
+  /**
+   * Reference to the tooltip element
+   */
+  ref?: Ref<HTMLDivElement>;
 }
 
 export interface ITooltipStyleTokens {
