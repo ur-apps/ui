@@ -1,19 +1,18 @@
-import { createContext, ReactNode, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
-import { clone } from '@urapps/common';
+import {
+  createContext,
+  ReactNode,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from 'react';
 import { classNames } from '@urapps/react';
 
-import { merge } from '../../utils';
-
-import {
-  getBrowserTheme,
-  getRootVariableStyles,
-  getThemeFromLS,
-  getVariableStyles,
-  saveThemeToLS,
-  subscribeToBrowserTheme,
-} from './helpers';
-import { darkModePreset, preset } from './presets';
-import { CssVariableGroup, Theme, TStylePreset } from './types';
+import { THEME_ATTRIBUTE } from './constants';
+import { getBrowserTheme, getThemeFromLS, getThemeStyles, saveThemeToLS, subscribeToBrowserTheme } from './helpers';
+import { Theme, TStylePreset } from './types';
 import styles from './context.module.scss';
 
 type TThemeContext = {
@@ -37,49 +36,23 @@ type TThemeProps = {
   className?: string;
   defaultTheme?: Theme;
   customePreset?: TStylePreset;
+  customDarkPreset?: TStylePreset;
   children: ReactNode;
 };
 
-type TComponentName = keyof NonNullable<TStylePreset['components']>;
-
-const COMPONENT_TOKEN_CLASSES: Record<TComponentName, CssVariableGroup> = {
-  button: CssVariableGroup.ButtonTokens,
-  dropdown: CssVariableGroup.DropdownTokens,
-  heading: CssVariableGroup.HeadingTokens,
-  hint: CssVariableGroup.HintTokens,
-  input: CssVariableGroup.InputTokens,
-  modal: CssVariableGroup.ModalTokens,
-  option: CssVariableGroup.OptionTokens,
-  overlay: CssVariableGroup.OverlayTokens,
-  segment: CssVariableGroup.SegmentTokens,
-  segmentedControl: CssVariableGroup.SegmentedControlTokens,
-  switch: CssVariableGroup.SwitchTokens,
-  tag: CssVariableGroup.TagTokens,
-  tooltip: CssVariableGroup.TooltipTokens,
-};
-
-export function ThemeProvider({ className, defaultTheme, customePreset, children }: TThemeProps) {
+export function ThemeProvider({ className, defaultTheme, customePreset, customDarkPreset, children }: TThemeProps) {
   const [theme, setTheme] = useState<Theme>(() => getThemeFromLS(defaultTheme));
   const browserTheme = useSyncExternalStore(subscribeToBrowserTheme, getBrowserTheme);
   const resolvedTheme = theme === Theme.Auto ? browserTheme : theme;
   const portalRef = useRef(document.querySelector('#portal'));
+  const variableStyles = useMemo(
+    () => getThemeStyles(customePreset, customDarkPreset),
+    [customePreset, customDarkPreset]
+  );
 
-  // TODO add hook
-  const variableStyles = useMemo(() => {
-    const {
-      primitives = {},
-      tokens = {},
-      components = {},
-    } = merge(clone(preset), resolvedTheme === Theme.Dark ? clone(darkModePreset) : {}, customePreset ?? {});
-
-    return [
-      ...getRootVariableStyles(primitives, 'uu-sys'),
-      ...getRootVariableStyles(tokens, 'uu'),
-      ...(Object.keys(COMPONENT_TOKEN_CLASSES) as TComponentName[]).map((name) =>
-        getVariableStyles(components[name] ?? {}, `.${COMPONENT_TOKEN_CLASSES[name]}`)
-      ),
-    ];
-  }, [resolvedTheme, customePreset]);
+  useLayoutEffect(() => {
+    document.documentElement.setAttribute(THEME_ATTRIBUTE, resolvedTheme);
+  }, [resolvedTheme]);
 
   useEffect(() => {
     if (portalRef.current) {
