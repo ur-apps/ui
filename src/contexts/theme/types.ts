@@ -21,20 +21,6 @@ export enum Theme {
 }
 
 export enum CssVariableGroup {
-  SystemColors = 'uu-sys-colors',
-  SystemSizes = 'uu-sys-sizes',
-  SystemRadiuses = 'uu-sys-radiuses',
-  SystemSpaces = 'uu-sys-spaces',
-  SystemWeights = 'uu-sys-weights',
-  SystemFontFamilies = 'uu-sys-font-families',
-
-  Colors = 'uu-colors',
-  Texts = 'uu-texts',
-  Heights = 'uu-heights',
-  IconHeights = 'uu-icon-heights',
-  Radiuses = 'uu-radiuses',
-  Spaces = 'uu-spaces',
-
   ButtonTokens = 'uu-button-tokens',
   DropdownTokens = 'uu-dropdown-tokens',
   HeadingTokens = 'uu-heading-tokens',

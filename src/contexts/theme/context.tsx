@@ -1,12 +1,19 @@
-import { createContext, ReactNode, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
-import { clone, pick } from '@urapps/common';
+import {
+  createContext,
+  ReactNode,
+  useEffect,
+  useInsertionEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from 'react';
 import { classNames } from '@urapps/react';
 
-import { merge } from '../../utils';
-
-import { getBrowserTheme, getThemeFromLS, getVariableStyles, saveThemeToLS, subscribeToBrowserTheme } from './helpers';
-import { darkModePreset, preset } from './presets';
-import { CssVariableGroup, Theme, TStylePreset } from './types';
+import { THEME_ATTRIBUTE } from './constants';
+import { getBrowserTheme, getThemeFromLS, getThemeStyles, saveThemeToLS, subscribeToBrowserTheme } from './helpers';
+import { Theme, TStylePreset } from './types';
 import styles from './context.module.scss';
 
 type TThemeContext = {
@@ -29,87 +36,38 @@ ThemeContext.displayName = 'ThemeContext';
 type TThemeProps = {
   className?: string;
   defaultTheme?: Theme;
-  customePreset?: TStylePreset;
+  customPreset?: TStylePreset;
+  customDarkPreset?: TStylePreset;
   children: ReactNode;
 };
 
-const COMPONENT_CLASSES = [
-  CssVariableGroup.ButtonTokens,
-  CssVariableGroup.DropdownTokens,
-  CssVariableGroup.HeadingTokens,
-  CssVariableGroup.HintTokens,
-  CssVariableGroup.InputTokens,
-  CssVariableGroup.ModalTokens,
-  CssVariableGroup.OptionTokens,
-  CssVariableGroup.OverlayTokens,
-  CssVariableGroup.SegmentTokens,
-  CssVariableGroup.SegmentedControlTokens,
-  CssVariableGroup.SwitchTokens,
-  CssVariableGroup.TagTokens,
-  CssVariableGroup.TooltipTokens,
-];
-const TOKEN_CLASSES = Object.values(CssVariableGroup).filter((c) => !COMPONENT_CLASSES.includes(c));
-
-export function ThemeProvider({ className, defaultTheme, customePreset, children }: TThemeProps) {
+export function ThemeProvider({ className, defaultTheme, customPreset, customDarkPreset, children }: TThemeProps) {
   const [theme, setTheme] = useState<Theme>(() => getThemeFromLS(defaultTheme));
   const browserTheme = useSyncExternalStore(subscribeToBrowserTheme, getBrowserTheme);
   const resolvedTheme = theme === Theme.Auto ? browserTheme : theme;
   const portalRef = useRef(document.querySelector('#portal'));
+  const variableStyles = useMemo(
+    () => getThemeStyles(customPreset, customDarkPreset),
+    [customPreset, customDarkPreset]
+  );
 
-  // TODO add hook
-  // eslint-disable-next-line complexity
-  const variableStyles = useMemo(() => {
-    const {
-      primitives = {},
-      tokens = {},
-      components = {},
-    } = merge(clone(preset), resolvedTheme === Theme.Dark ? clone(darkModePreset) : {}, customePreset ?? {});
+  useInsertionEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = variableStyles;
 
-    return [
-      // Primitives
-      getVariableStyles(pick(primitives, ['color']), CssVariableGroup.SystemColors, 'uu-sys'),
-      getVariableStyles(pick(primitives, ['size']), CssVariableGroup.SystemSizes, 'uu-sys'),
-      getVariableStyles(pick(primitives, ['space']), CssVariableGroup.SystemSpaces, 'uu-sys'),
-      getVariableStyles(pick(primitives, ['radius']), CssVariableGroup.SystemRadiuses, 'uu-sys'),
-      getVariableStyles(pick(primitives, ['weight']), CssVariableGroup.SystemWeights, 'uu-sys'),
-      getVariableStyles(
-        pick(primitives, ['font-family', 'font-family-mono']),
-        CssVariableGroup.SystemFontFamilies,
-        'uu-sys'
-      ),
+    // Prepended so that application styles of equal specificity override the theme.
+    document.head.prepend(style);
 
-      // Tokens
-      getVariableStyles(pick(tokens, ['color']), CssVariableGroup.Colors, 'uu'),
-      getVariableStyles(pick(tokens, ['height']), CssVariableGroup.Heights, 'uu'),
-      getVariableStyles(pick(tokens, ['icon-height']), CssVariableGroup.IconHeights, 'uu'),
-      getVariableStyles(pick(tokens, ['space']), CssVariableGroup.Spaces, 'uu'),
-      getVariableStyles(pick(tokens, ['radius']), CssVariableGroup.Radiuses, 'uu'),
-      getVariableStyles(
-        pick(tokens, ['font-family', 'font-family-mono', 'font-size', 'font-weight', 'line-height']),
-        CssVariableGroup.Texts,
-        'uu'
-      ),
+    return () => style.remove();
+  }, [variableStyles]);
 
-      // Components
-      getVariableStyles(components.button ?? {}, CssVariableGroup.ButtonTokens),
-      getVariableStyles(components.dropdown ?? {}, CssVariableGroup.DropdownTokens),
-      getVariableStyles(components.heading ?? {}, CssVariableGroup.HeadingTokens),
-      getVariableStyles(components.hint ?? {}, CssVariableGroup.HintTokens),
-      getVariableStyles(components.input ?? {}, CssVariableGroup.InputTokens),
-      getVariableStyles(components.modal ?? {}, CssVariableGroup.ModalTokens),
-      getVariableStyles(components.option ?? {}, CssVariableGroup.OptionTokens),
-      getVariableStyles(components.overlay ?? {}, CssVariableGroup.OverlayTokens),
-      getVariableStyles(components.segment ?? {}, CssVariableGroup.SegmentTokens),
-      getVariableStyles(components.segmentedControl ?? {}, CssVariableGroup.SegmentedControlTokens),
-      getVariableStyles(components.switch ?? {}, CssVariableGroup.SwitchTokens),
-      getVariableStyles(components.tag ?? {}, CssVariableGroup.TagTokens),
-      getVariableStyles(components.tooltip ?? {}, CssVariableGroup.TooltipTokens),
-    ];
-  }, [resolvedTheme, customePreset]);
+  useLayoutEffect(() => {
+    document.documentElement.setAttribute(THEME_ATTRIBUTE, resolvedTheme);
+  }, [resolvedTheme]);
 
   useEffect(() => {
     if (portalRef.current) {
-      portalRef.current.classList.add(styles.theme, ...TOKEN_CLASSES);
+      portalRef.current.classList.add(styles.theme);
     } else {
       console.error('portal container was not found');
     }
@@ -124,8 +82,7 @@ export function ThemeProvider({ className, defaultTheme, customePreset, children
 
   return (
     <ThemeContext value={{ theme, resolvedTheme, switchTheme }}>
-      <style>{variableStyles}</style>
-      <div className={classNames(styles.theme, TOKEN_CLASSES, className)}>{children}</div>
+      <div className={classNames(styles.theme, className)}>{children}</div>
     </ThemeContext>
   );
 }
